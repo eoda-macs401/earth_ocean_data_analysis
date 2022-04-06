@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Unix &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="First Class - Assignment" href="../Assignments/first_class_assignment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_day_of_class.html">
+   For the first day of class:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installing_jupyterlab.html">
+   Installing Jupyter Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+   First Class - Assignment
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to Unix
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Pages/intro_to_unix.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/intro_to_unix.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-of-background">
+   A bit of Background:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
+   Navigating Files and Directories in Unix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-pwd">
+     Useful Command: pwd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-ls">
+     Useful Command: ls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-f">
+     Handy “Flag”: -F
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-man">
+     Useful Command: man
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-cd">
+     Useful Command: cd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortcut-for-navigation">
+     Shortcut for Navigation: ..
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-a">
+     Handy “Flag”: -a
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-practice">
+     More Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-this">
+     Try this:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-more-shortcuts">
+       Two More Shortcuts
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion">
+       Tab Completion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-points">
+       Key Points:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-directories">
+   Working with Files and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
+   Good names for files and directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-is-forever">
+     Deleting Is Forever
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
+     With Great Power Comes Great Responsibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Key Points
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-more">
+   Learning More
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to Unix</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-of-background">
+   A bit of Background:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
+   Navigating Files and Directories in Unix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-pwd">
+     Useful Command: pwd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-ls">
+     Useful Command: ls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-f">
+     Handy “Flag”: -F
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-man">
+     Useful Command: man
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-cd">
+     Useful Command: cd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortcut-for-navigation">
+     Shortcut for Navigation: ..
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-a">
+     Handy “Flag”: -a
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-practice">
+     More Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-this">
+     Try this:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-more-shortcuts">
+       Two More Shortcuts
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion">
+       Tab Completion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-points">
+       Key Points:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-directories">
+   Working with Files and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
+   Good names for files and directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-is-forever">
+     Deleting Is Forever
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
+     With Great Power Comes Great Responsibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Key Points
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-more">
+   Learning More
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-unix">
+<h1>Intro to Unix<a class="headerlink" href="#intro-to-unix" title="Permalink to this headline">¶</a></h1>
+<p><em>Modified from An <a class="reference external" href="https://earth-env-data-science.github.io">Introduction to Earth and Environmental Data Science</a></em></p>
+<p>An introduction to basic Unix commands and the file system.</p>
+<p><em>The notes below are modified from the excellent <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Unix Shell tutorial </a> that is freely available on the Software Carpentry website. We highly recommend checking out the full version for further reading. The material is being used here under the terms of the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a>.</em></p>
+<hr class="docutils" />
+<div class="section" id="a-bit-of-background">
+<h2>A bit of Background:<a class="headerlink" href="#a-bit-of-background" title="Permalink to this headline">¶</a></h2>
+<p>Did you know that you can access almost any part of your computer, run most software, and create your own computational tools… all from the command line via a Terminal interface? In order to do this (and a generally really really handy skill for most coding efforts), you’ll need an understanding of how to navigate a Unix-type operating system.  Macintosh computers are built on a Unix backbone system, so these commands will also work in a Mac Terminal.  If you ever run across a Linux comptuter (running an OS like Ubuntu), it is simular to Unix as well.</p>
+<p><em>To get started with the following tutorial, simply find a Terminal on the computer you are working on.  If you are working on a Windows computer, open up an instance of JupyterLab and use the Terminal from there. Command output examples are for my computer - yours may be different.  Instead of just typing in commands, pay attention to what you are doing, the output, etc. If something is confusing, get help, or Google it!</em></p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="navigating-files-and-directories-in-unix">
+<h2>Navigating Files and Directories in Unix<a class="headerlink" href="#navigating-files-and-directories-in-unix" title="Permalink to this headline">¶</a></h2>
+<p>Several commands are frequently used to create, inspect, rename, and delete files and directories.</p>
+<p>To get started, open a terminal using the JupyterLab launcher. You will see
+something like this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bash-3.2$
+</pre></div>
+</div>
+<p>The dollar sign is a <strong>prompt</strong>, which shows us that the shell is waiting for input.
+<code class="docutils literal notranslate"><span class="pre">bash</span></code> is the the “shell”, or command language interpreter, for the GNU operating system. The name is an acronym for the ‘ Bourne-Again SHell ‘. You may see another type of prompt or a different shell listed in front of the dollar sign. zsh and csh are other common shells.</p>
+<p>We all have a username that is the log-in user (usually some variation of your name) and the name of the computer you’re using (hostname).</p>
+<p>To find out your username in general, you can use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ whoami
+</pre></div>
+</div>
+<p>When I type the above, I get <code class="docutils literal notranslate"><span class="pre">emily</span></code> back, because that’s the username on my laptop.  You may see your WWU log-in name if you’re on a University computer.</p>
+<p>And to find out your hostname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ hostname
+</pre></div>
+</div>
+<p>When I type this, I see: <code class="docutils literal notranslate"><span class="pre">Emilys-MacBook-Air.local</span></code> because that’s the name of my laptop computer.</p>
+<div class="section" id="useful-command-pwd">
+<h3>Useful Command: pwd<a class="headerlink" href="#useful-command-pwd" title="Permalink to this headline">¶</a></h3>
+<p>Next,
+let’s find out where we are by running a command called <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
+(which stands for “print working directory”).
+At any moment,
+our <strong>current working directory</strong>
+is our current default directory,
+i.e.,
+the directory that the computer assumes we want to run commands in
+unless we explicitly specify something else.
+Here, for me,
+the computer’s response is <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code>,
+which is my <strong>home directory</strong>, or more specifically, the home direcgtory of the user named <code class="docutils literal notranslate"><span class="pre">emily</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">emily</span>
+</pre></div>
+</div>
+<p>To understand what a “home directory” is,
+let’s have a look at how the file system as a whole is organized.  For the
+sake of this example, we’ll be
+illustrating the filesystem on our friend Emily’s computer.  After this
+illustration, you’ll be learning commands to explore your own filesystem,
+which will be constructed in a similar way, but not be exactly identical.</p>
+<p>On a Unix (or Mac, based on Unix) computer, the filesystem looks like something this:</p>
+<p><img alt="The File System" src="https://www.oreilly.com/library/view/macintosh-terminal-pocket/9781449328962/httpatomoreillycomsourceoreillyimages1448104.png" /></p>
+<p>At the top is the <strong>root directory</strong>
+that holds everything else.
+We refer to it using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own;
+this is the leading slash in <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code>.</p>
+<p>Inside that directory are several other directories:
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> (which is where some built-in programs are stored),
+<code class="docutils literal notranslate"><span class="pre">lib</span></code> (for the software “libraries” used by different programs),
+<code class="docutils literal notranslate"><span class="pre">Users</span></code> (where users’ personal directories are located, this is true for a Mac. For a pure Unix system, this is called <code class="docutils literal notranslate"><span class="pre">home</span></code>),
+<code class="docutils literal notranslate"><span class="pre">etc</span></code> (system-wide configuration files),
+and so on.</p>
+</div>
+<div class="section" id="useful-command-ls">
+<h3>Useful Command: ls<a class="headerlink" href="#useful-command-ls" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s learn the command that will let us see the contents of our
+own filesystem.  We can see what’s in our home directory by running <code class="docutils literal notranslate"><span class="pre">ls</span></code>,
+which stands for “listing” (note, this is an example, but yours will look different, depending on the folders and files in your home directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cute_pic_of_Hugo</span><span class="o">.</span><span class="n">png</span>  <span class="n">Desktop</span> <span class="n">Downloads</span> <span class="n">jupyter_notebooks</span> <span class="n">Pictures</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory in
+alphabetical order,
+arranged neatly into columns.</p>
+</div>
+<div class="section" id="handy-flag-f">
+<h3>Handy “Flag”: -F<a class="headerlink" href="#handy-flag-f" title="Permalink to this headline">¶</a></h3>
+<p>We can make the <code class="docutils literal notranslate"><span class="pre">ls</span></code> output more comprehensible by using the <strong>flag</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code>,
+which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> to the names of directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cute_pic_of_Hugo</span><span class="o">.</span><span class="n">png</span>  <span class="n">Desktop</span><span class="o">/</span> <span class="n">Downloads</span><span class="o">/</span> <span class="n">jupyter_notebooks</span><span class="o">/</span> <span class="n">Pictures</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="useful-command-man">
+<h3>Useful Command: man<a class="headerlink" href="#useful-command-man" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has lots of other options. To find out what they are, we can type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man ls
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">man</span></code> is the Unix “manual” command:
+it prints a description of a command and its options,
+and (if you’re lucky) provides a few examples of how to use it. To navigate through the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages,
+you may use the up and down arrow keys to move line-by-line,
+or try the “b” and spacebar keys to skip up and down by full page.
+Quit the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages by typing “q”.</p>
+<p>Here,
+we can see that our home directory contains mostly <strong>sub-directories</strong>.
+Any names in your output that don’t have trailing slashes,
+are plain old <strong>files</strong>.</p>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents of a different directory.  Let’s take a
+look at our <code class="docutils literal notranslate"><span class="pre">jupyter_notebooks</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">jupyter_notebooks</span></code>,
+i.e.,
+the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <strong>arguments</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyter_notebooks</span></code>.
+The second argument — the one <em>without</em> a leading dash — tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> that
+we want a listing of something other than our current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F jupyter_notebooks
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seismic_tutorial_PNSNemily_waveforms</span><span class="o">.</span><span class="n">ipynb</span>
+<span class="n">seismic_tutorial_part1_waveforms</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+<p>The output is the list of all the files in the <code class="docutils literal notranslate"><span class="pre">jupyter_notebooks</span></code> directory.
+Execute the ‘ls -F’ command for a directory in your <code class="docutils literal notranslate"><span class="pre">home</span></code> directory such as <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> and see what the output is.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F Desktop
+</pre></div>
+</div>
+<p>Unless you have a nice neat Desktop, it’s likely you’ll see a lot of files and directories listed, but you should recognize some of them as things on your Desktop now!</p>
+</div>
+<div class="section" id="useful-command-cd">
+<h3>Useful Command: cd<a class="headerlink" href="#useful-command-cd" title="Permalink to this headline">¶</a></h3>
+<p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
+directory name to change our working directory.
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for “change directory”,
+which is a bit misleading:
+the command doesn’t change the directory,
+it changes the shell’s idea of what directory we are in.</p>
+<p>Let’s say we want to move to the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory.  We can
+use the following command to get there:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Desktop
+</pre></div>
+</div>
+<p>This commands will move us from our home directory onto into
+the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>. <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything,
+but if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after it, we can see that we are now
+in <code class="docutils literal notranslate"><span class="pre">/Users/emily/Desktop</span></code>.</p>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> without arguments now,
+it lists the contents of <code class="docutils literal notranslate"><span class="pre">/Users/emily/Desktop</span></code>,
+because that’s where we now are.</p>
+</div>
+<div class="section" id="shortcut-for-navigation">
+<h3>Shortcut for Navigation: ..<a class="headerlink" href="#shortcut-for-navigation" title="Permalink to this headline">¶</a></h3>
+<p>We now know how to go <strong>down</strong> the directory tree, but
+how do we go up?<br />
+There is a shortcut in the shell to move up one directory level
+that looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special directory name meaning
+“the directory containing this one”,
+or more succinctly,
+the <strong>parent</strong> of the current directory.
+Sure enough,
+if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">/Users/emily/</span></code> (or whatever yur home directory is):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">emily</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handy-flag-a">
+<h3>Handy “Flag”: -a<a class="headerlink" href="#handy-flag-a" title="Permalink to this headline">¶</a></h3>
+<p>The special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>.  If we want
+to display it, we can give <code class="docutils literal notranslate"><span class="pre">ls</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F -a
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> stands for “show all”;
+it forces <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show us file and directory names that begin with <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">/Users</span></code> directory)
+As you can see,
+it also displays another special directory that’s just called <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+which means “the current working directory”.
+It may seem redundant to have a name for it,
+but we’ll see some uses for it soon.</p>
+<p>Note that in most command line tools, multiple parameters can be combined
+with a single <code class="docutils literal notranslate"><span class="pre">-</span></code> and no spaces between the parameters: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">-a</span></code> is
+equivalent to <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-Fa</span></code>.</p>
+<p>These then, are the basic commands for navigating the filesystem on your computer:
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p>
+<p>Practice changing directories into a directory within your current working directory by typing the following two commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
+$ cd &lt;name of a directory&gt;
+</pre></div>
+</div>
+<p>Did it work? What is in the new directory you just moved (down) into? (Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> to figure that out.)</p>
+</div>
+<div class="section" id="more-practice">
+<h3>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h3>
+<p>Let’s explore some variations on those commands.  What happens
+if you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> on its own, without giving
+a directory?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+</pre></div>
+</div>
+<p>How can you check what happened?  <code class="docutils literal notranslate"><span class="pre">pwd</span></code> gives us the answer!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">emily</span>
+</pre></div>
+</div>
+<p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span></code> without an argument will return you to <strong>your home directory</strong>,
+which is great if you’ve gotten lost in your own filesystem.</p>
+</div>
+<div class="section" id="try-this">
+<h3>Try this:<a class="headerlink" href="#try-this" title="Permalink to this headline">¶</a></h3>
+<p>As an advance move - let’s try navigating <em>two</em> directories down in our file structure from our home directory.  I had a directory called <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> that was on my <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> (you’ll have some other folder on your Desktop probably that you could practice with).  There are actually two ways to get to this <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> directory one with three commands, one with one. The long way first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Desktop
+$ ls
+$ cd PhotosForBlog
+</pre></div>
+</div>
+<p>After you did this (maybe with something other than <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> - a folder on <em>your</em> Desktop) - did typing <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command give you something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">emily</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">PhotosForBlog</span>
+</pre></div>
+</div>
+<p>If you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> with no arguements, it will move you back to your home directory (you knew that). Then we can do the same thing, the slightly easier way.
+This time combine the first and third lines above to one command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Desktop/PhotosForBlog
+</pre></div>
+</div>
+<p>Check that we’ve moved to the right place by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> again.</p>
+<p>If we want to move up one level from the <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> directory, we could use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.  But
+there is another way to move to any directory, regardless of your
+current location.</p>
+<p>So far, when specifying directory names, or even a directory path (as above),
+we have been using <strong>relative paths</strong>.  When you use a relative path with a command
+like <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span></code>, it tries to find that location  from where we are,
+rather than from the root of the file system.</p>
+<p>However, it is possible to specify the <strong>absolute path</strong> to a directory by
+including its entire path from the root directory, which is indicated by a
+leading slash.  The leading <code class="docutils literal notranslate"><span class="pre">/</span></code> tells the computer to follow the path from
+the root of the file system, so it always refers to exactly one directory,
+no matter where we are when we run the command.</p>
+<p>This allows us to move to our <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory from anywhere on
+the filesystem.  To find the absolute path
+we’re looking for, we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and then extract the piece we need
+to move to <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">emily</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">PhotosForBlog</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /Users/emily/Desktop
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to ensure that we’re in the directory we expect.</p>
+<div class="section" id="two-more-shortcuts">
+<h4>Two More Shortcuts<a class="headerlink" href="#two-more-shortcuts" title="Permalink to this headline">¶</a></h4>
+<p>The shell interprets the character <code class="docutils literal notranslate"><span class="pre">~</span></code> (tilde) at the start of a path to
+mean “the current user’s home directory”. For example, if Emily’s home
+directory is <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code>, then <code class="docutils literal notranslate"><span class="pre">~/Desktop</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">/Users/emily/Desktop</span></code>. This only works if it is the first character in the
+path.</p>
+<p>Another shortcut is the <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) character.  <code class="docutils literal notranslate"><span class="pre">cd</span></code> will translate <code class="docutils literal notranslate"><span class="pre">-</span></code> into
+<em>the previous directory I was in</em>, which is faster than having to remember,
+then type, the full path.  This is a <em>very</em> efficient way of moving back
+and forth between directories. The difference between <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> is
+that the former brings you <em>up</em>, while the latter brings you <em>back</em>. You can
+think of it as the <em>Last Channel</em> button on a TV remote.</p>
+</div>
+<div class="section" id="tab-completion">
+<h4>Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h4>
+<p>Typing the full path to directories and files can be slow and annoying.
+Fortunately, we have “tab completion” to help us. Try typing <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Des</span></code> and then
+press the <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code>. The system will try to “auto complete” your command.
+Pressing tab twice brings up a list of all the files, and so on.
+This is called <strong>tab completion</strong>,
+and we will see it in many other tools as we go on.</p>
+</div>
+<div class="section" id="key-points">
+<h4>Key Points:<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>“The file system is responsible for managing information on the disk.”</p></li>
+<li><p>“Information is stored in files, which are stored in directories (folders).”</p></li>
+<li><p>“Directories can also store other directories, which forms a directory tree.”</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">path</span></code> changes the current working directory.”</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">path</span></code> prints a listing of a specific file or directory; <code class="docutils literal notranslate"><span class="pre">ls</span></code> on its own lists the current working directory.”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> prints the user’s current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">whoami</span></code> shows the user’s current identity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> on its own is the root directory of the whole file system.</p></li>
+<li><p>A relative path specifies a location starting from the current location.</p></li>
+<li><p>An absolute path specifies a location from the root of the file system.</p></li>
+<li><p>Directory names in a path are separated with ‘/’ on Unix, but ‘\’ on Windows.</p></li>
+<li><p>‘..’ means ‘the directory above the current one’; ‘.’ on its own means ‘the current directory’.</p></li>
+<li><p>Most files’ names are <code class="docutils literal notranslate"><span class="pre">something.extension</span></code>. The extension isn’t required, and doesn’t guarantee anything, but is normally used to indicate the type of data in the file.</p></li>
+<li><p>Most commands take options (flags) which begin with a ‘-‘.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-files-and-directories">
+<h2>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>We now know how to explore files and directories,
+but how do we create them in the first place?
+Let’s go back to our home directory
+and use <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> to see what it contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">emily</span><span class="o">/</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cute_pic_of_Hugo</span><span class="o">.</span><span class="n">png</span>  <span class="n">Desktop</span><span class="o">/</span> <span class="n">Downloads</span><span class="o">/</span> <span class="n">jupyter_notebooks</span><span class="o">/</span> <span class="n">Pictures</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Let’s create a new directory called <code class="docutils literal notranslate"><span class="pre">thesis</span></code> using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">thesis</span></code>
+(which has no output):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir thesis
+</pre></div>
+</div>
+<p>As you might guess from its name,
+<code class="docutils literal notranslate"><span class="pre">mkdir</span></code> means “make directory”.
+Since <code class="docutils literal notranslate"><span class="pre">thesis</span></code> is a relative path
+(i.e., doesn’t have a leading slash),
+the new directory is created in the current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cute_pic_of_Hugo</span><span class="o">.</span><span class="n">png</span>  <span class="n">Desktop</span><span class="o">/</span> <span class="n">Downloads</span><span class="o">/</span> <span class="n">jupyter_notebooks</span><span class="o">/</span> <span class="n">Pictures</span><span class="o">/</span> <span class="n">thesis</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="good-names-for-files-and-directories">
+<h2>Good names for files and directories<a class="headerlink" href="#good-names-for-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>Complicated names of files and directories can make your life painful
+when working on the command line. Here we provide a few useful
+tips for the names of your files.</p>
+<ol>
+<li><p>Don’t use whitespaces.</p>
+<p>Whitespaces can make a name more meaningful
+but since whitespace is used to break arguments on the command line
+is better to avoid them on name of files and directories.
+You can use <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">_</span></code> instead of whitespace.</p>
+</li>
+<li><p>Don’t begin the name with <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash).</p>
+<p>Commands treat names starting with <code class="docutils literal notranslate"><span class="pre">-</span></code> as options.</p>
+</li>
+<li><p>Stick with letters, numbers, <code class="docutils literal notranslate"><span class="pre">.</span></code> (period), <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) and <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore).</p>
+<p>Many other characters have special meanings on the command line.
+We will learn about some of these during this lesson.
+There are special characters that can cause your command to not work as
+expected and can even result in data loss.</p>
+</li>
+</ol>
+<p>If you need to refer to names of files or directories that have whitespace
+or another non-alphanumeric character, you should surround the name in quotes (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>).</p>
+<p>Since we’ve just created the <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory, there’s nothing in it yet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F thesis
+</pre></div>
+</div>
+<p>Let’s change our working directory to <code class="docutils literal notranslate"><span class="pre">thesis</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span></code>.
+We then create a blank new file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code> using the <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">command</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd thesis
+$ touch draft.txt
+</pre></div>
+</div>
+<p>Now we can edit the file in JupyterLab’s text editor.
+Let’s type in a few lines of text.
+Once we’re happy with our text, we save the file, and
+return to the shell.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> now shows that we have created a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+draft.txt
+</pre></div>
+</div>
+<p>Let’s tidy up by running <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm draft.txt
+</pre></div>
+</div>
+<p>This command removes files (<code class="docutils literal notranslate"><span class="pre">rm</span></code> is short for “remove”).
+If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again,
+its output is empty once more,
+which tells us that our file is gone:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="section" id="deleting-is-forever">
+<h3>Deleting Is Forever<a class="headerlink" href="#deleting-is-forever" title="Permalink to this headline">¶</a></h3>
+<p>The Unix shell doesn’t have a trash bin that we can recover deleted
+files from (though most graphical interfaces to Unix do).  Instead,
+when we delete files, they are unhooked from the file system so that
+their storage space on disk can be recycled. Tools for finding and
+recovering deleted files do exist, but there’s no guarantee they’ll
+work in any particular situation, since the computer may recycle the
+file’s disk space right away.</p>
+<p>Let’s re-create that file
+and then move up one directory to <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ touch draft.txt
+$ cd ..
+</pre></div>
+</div>
+<p>If we try to remove the entire <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory using <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">thesis</span></code>,
+we get an error message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rm: cannot remove `thesis`: Is a directory
+</pre></div>
+</div>
+<p>This happens because <code class="docutils literal notranslate"><span class="pre">rm</span></code> by default only works on files, not directories.</p>
+<p>To really get rid of <code class="docutils literal notranslate"><span class="pre">thesis</span></code> we must also delete the file <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code>.
+We can do this with the <a class="reference external" href="https://en.wikipedia.org/wiki/Recursion">recursive</a> option for <code class="docutils literal notranslate"><span class="pre">rm</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r thesis
+</pre></div>
+</div>
+</div>
+<div class="section" id="with-great-power-comes-great-responsibility">
+<h3>With Great Power Comes Great Responsibility<a class="headerlink" href="#with-great-power-comes-great-responsibility" title="Permalink to this headline">¶</a></h3>
+<p>Removing the files in a directory recursively can be very dangerous
+operation. If we’re concerned about what we might be deleting we can
+add the “interactive” flag <code class="docutils literal notranslate"><span class="pre">-i</span></code> to <code class="docutils literal notranslate"><span class="pre">rm</span></code> which will ask us for confirmation
+before each step</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ rm -r -i thesis
+ rm: descend into directory ‘thesis’? y
+ rm: remove regular file ‘thesis/draft.txt’? y
+ rm: remove directory ‘thesis’? y
+</pre></div>
+</div>
+<p>This removes everything in the directory, then the directory itself, asking
+at each step for you to confirm the deletion.</p>
+<p>Let’s create that directory and file one more time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir thesis
+$ touch thesis/draft.txt
+$ ls thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">draft</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">draft.txt</span></code> isn’t a particularly informative name,
+so let’s change the file’s name using <code class="docutils literal notranslate"><span class="pre">mv</span></code>,
+which is short for “move”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv thesis/draft.txt thesis/quotes.txt
+</pre></div>
+</div>
+<p>The first parameter tells <code class="docutils literal notranslate"><span class="pre">mv</span></code> what we’re “moving”,
+while the second is where it’s to go.
+In this case,
+we’re moving <code class="docutils literal notranslate"><span class="pre">thesis/draft.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">thesis/quotes.txt</span></code>,
+which has the same effect as renaming the file.
+Sure enough,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> shows us that <code class="docutils literal notranslate"><span class="pre">thesis</span></code> now contains one file called <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>One has to be careful when specifying the target file name, since <code class="docutils literal notranslate"><span class="pre">mv</span></code> will
+silently overwrite any existing file with the same name, which could
+lead to data loss. An additional flag, <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-i</span></code> (or <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">--interactive</span></code>),
+can be used to make <code class="docutils literal notranslate"><span class="pre">mv</span></code> ask you for confirmation before overwriting.</p>
+<p>Just for the sake of consistency,
+<code class="docutils literal notranslate"><span class="pre">mv</span></code> also works on directories</p>
+<p>Let’s move <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> into the current working directory.
+We use <code class="docutils literal notranslate"><span class="pre">mv</span></code> once again,
+but this time we’ll just use the name of a directory as the second parameter
+to tell <code class="docutils literal notranslate"><span class="pre">mv</span></code> that we want to keep the filename,
+but put the file somewhere new.
+(This is why the command is called “move”.)
+In this case,
+the directory name we use is the special directory name <code class="docutils literal notranslate"><span class="pre">.</span></code> that we mentioned earlier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv thesis/quotes.txt .
+</pre></div>
+</div>
+<p>The effect is to move the file from the directory it was in to the current working directory.
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> now shows us that <code class="docutils literal notranslate"><span class="pre">thesis</span></code> is empty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls thesis
+</pre></div>
+</div>
+<p>Further,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> with a filename or directory name as a parameter only lists that file or directory.
+We can use this to see that <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> is still in our current directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls quotes.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> command works very much like <code class="docutils literal notranslate"><span class="pre">mv</span></code>,
+except it copies a file instead of moving it.
+We can check that it did the right thing using <code class="docutils literal notranslate"><span class="pre">ls</span></code>
+with two paths as parameters — like most Unix commands,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> can be given multiple paths at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp quotes.txt thesis/quotations.txt
+$ ls quotes.txt thesis/quotations.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>   <span class="n">thesis</span><span class="o">/</span><span class="n">quotations</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>To prove that we made a copy,
+let’s delete the <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> file in the current directory
+and then run that same <code class="docutils literal notranslate"><span class="pre">ls</span></code> again.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm quotes.txt
+$ ls quotes.txt thesis/quotations.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">access</span> <span class="n">quotes</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">thesis</span><span class="o">/</span><span class="n">quotations</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This time it tells us that it can’t find <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> in the current directory,
+but it does find the copy in <code class="docutils literal notranslate"><span class="pre">thesis</span></code> that we didn’t delete.</p>
+</div>
+<div class="section" id="id1">
+<h3>Key Points<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> copies a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">path</span></code> creates a new directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">old</span> <span class="pre">new</span></code> moves (renames) a file or directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">path</span></code> removes (deletes) a file.</p></li>
+<li><p>Use of the Control key may be described in many ways, including <code class="docutils literal notranslate"><span class="pre">Ctrl-X</span></code>, <code class="docutils literal notranslate"><span class="pre">Control-X</span></code>, and <code class="docutils literal notranslate"><span class="pre">^X</span></code>.</p></li>
+<li><p>The shell does not have a trash bin: once something is deleted, it’s really gone.</p></li>
+<li><p>Depending on the type of work you do, you may need a more powerful text editor than Nano.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="learning-more">
+<h2>Learning More<a class="headerlink" href="#learning-more" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this lesson was to familiarize you with the basics of working
+with files and directories.
+There is a <strong>lot more</strong> to the unix shell and filexsystem than what we have  covered here!
+To ge deeper with self study, we recommend the excellent
+<a class="reference external" href="https://swcarpentry.github.io/shell-novice/">Software Carpentry Unix Shell Lesson</a>,
+on which the above material was based.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Assignments/first_class_assignment.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">First Class - Assignment</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

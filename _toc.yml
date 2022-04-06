@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Pages/first_day_of_class
+- file: Pages/installing_jupyterlab
+- file: Pages/intro_to_jupyterlab
+- file: Assignments/first_class_assignment
+- file: Pages/intro_to_unix
+
+
