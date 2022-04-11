@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Git for Version Control &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 2: Files, Git, and Github" href="../Assignments/files_markdown_git.html" />
+    <link rel="prev" title="For the second day of class:" href="second_day.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_day_of_class.html">
+   For the first day of class:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installing_jupyterlab.html">
+   Installing JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+   First Class - Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_unix.html">
+   Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="second_day.html">
+   For the second day of class:
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to Git for Version Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/files_markdown_git.html">
+   Assignment 2: Files, Git, and Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
+   Python Fundamentals
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Pages/intro_to_git.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/intro_to_git.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-useful-git-commands">
+   Summary of useful Git commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-github-ssh-keys-inside-jupyterhub">
+   Setting Up GitHub SSH Keys inside JupyterHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborating-with-git-and-github">
+   Collaborating with Git and Github
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to Git for Version Control</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-of-useful-git-commands">
+   Summary of useful Git commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-github-ssh-keys-inside-jupyterhub">
+   Setting Up GitHub SSH Keys inside JupyterHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborating-with-git-and-github">
+   Collaborating with Git and Github
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-git-for-version-control">
+<h1>Intro to Git for Version Control<a class="headerlink" href="#intro-to-git-for-version-control" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Version_control"><em>Version control</em></a> is a powerful way to organize, back up, and share with collaborators your research computing code.
+A Verson control system keeps track of a set of files and saves snapshots (i.e. <em>versions</em>, <em>commits</em>) of the files at any point in time.
+Using version control allows you to confidently make changes to your code (any any other files), with the ability to roll back to any previous state. This help avoid filling our directories up with files that look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">my_code</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">my_code_version2</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">my_code_version2B</span><span class="o">-</span><span class="n">RPA</span><span class="o">-</span><span class="n">edit</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">my_code_FINAL_VERSION</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">my_code_THIS_IS_ACTUALLY_THE</span> <span class="n">FINAL</span> <span class="n">VERSION</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Version control also allows you to share code with collaborators, make simultaneous edits, and merge your changes in a systematic, controlled way.</p>
+<p>Version control has been used for a long time in software development.
+More recently, it has become an essential part of modern data and computational science.
+Our strong recommendation is that <em>all of your research code be stored in a version control system</em>.</p>
+<p>The tool we will be using for version control is called <a class="reference external" href="https://git-scm.com">Git</a>.
+Git is incredibly powerful–it also has a somewhat steep learning curve.
+Fortunately, in this class, we will only be using a small subset of what git can do, avoiding the more complex aspects.</p>
+<p>For a full-length tutorial, we recommend the article <a class="reference external" href="http://swcarpentry.github.io/git-novice/">Version Control with Git</a> on Software Carpentry website.
+Here we simply enumerate the most common git commands.</p>
+</div>
+<div class="section" id="summary-of-useful-git-commands">
+<h2>Summary of useful Git commands<a class="headerlink" href="#summary-of-useful-git-commands" title="Permalink to this headline">¶</a></h2>
+<p>Set up your username and email</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;your-user-name-here&quot;</span>
+    <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;your_email@ldeo.columbia.edu&quot;</span>
+</pre></div>
+</div>
+<p>Create a new repository (note, this is after you’ve generated a directory for your project):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">my_project</span>
+    <span class="n">git</span> <span class="n">init</span>      
+</pre></div>
+</div>
+<p>Stage files for addition to the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">filenames</span><span class="o">&gt;</span>  
+</pre></div>
+</div>
+<p>Commit staged files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;your brief commit message goes here&quot;</span>
+</pre></div>
+</div>
+<p>Get information about your repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">status</span>    <span class="c1"># tells you what files are staged, which ones have been modified, are new,... )</span>
+    <span class="n">git</span> <span class="n">log</span>       <span class="c1"># view the commit log</span>
+    <span class="n">git</span> <span class="n">diff</span>      <span class="c1"># view file content differences</span>
+</pre></div>
+</div>
+<p>Revert a file to an earlier version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">commit</span> <span class="n">tag</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filenames</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-github-ssh-keys-inside-jupyterhub">
+<h2>Setting Up GitHub SSH Keys inside JupyterHub<a class="headerlink" href="#setting-up-github-ssh-keys-inside-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of August 12, 2021, GitHub <a class="reference external" href="https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/">no longer supports username / password authentication</a>.
+Users must switch to personal access tokens or SSH-keys for authentication.</p>
+</div>
+<p>This is a very quick guide to getting your GitHub authentication set up,
+adopted from the <a class="reference external" href="https://swcarpentry.github.io/git-novice/07-github/index.html#ssh-background-and-setup">Carpentries GitHub Remotes lesson</a>.</p>
+<ol>
+<li><p>Open a terminal (this can be any-old termina for Mac users, for windows users you may need to open a JupyterLab terminal)</p></li>
+<li><p>Type the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -C &quot;YOUR EMAIL ADDRESS GOES HERE&quot;`
+</pre></div>
+</div>
+<p>(Don’t just copy this text; you have to put in tour actual email address in between the quotes.) This command will create an ssh public / private key pair.</p>
+</li>
+<li><p>Enter a password for your new SSH key and record it in a safe place.
+This password is used to “lock” the SSH key. It can’t be used without the password.</p></li>
+<li><p>Type the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="o">.</span><span class="n">pub</span>
+</pre></div>
+</div>
+<p>and copy the result. It should look something like <code class="docutils literal notranslate"><span class="pre">ssh-ed25519</span> <span class="pre">AAAAC3NzaC1lZDI1NTE5AAAAIJOMg813PWuWX/ilyexj2k/di1lBHwQHCHbRB6l4dV9K</span> <span class="pre">emily.roland&#64;wwu.edu</span></code>. (Note that this is my <em>real</em> public key, but it is completely
+safe to share. Without the corresponding private key it is useless.)</p>
+</li>
+<li><p>Go to <a class="reference external" href="https://github.com/settings/keys">https://github.com/settings/keys</a>. Click the green  button that says “New SSH Key”.
+Give your key the title “JupyterLab SSH Key for Research Computing” and paste the
+public key from the previous step into the “Key” box.</p></li>
+<li><p>Verify that your key works by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>on the command like of the JupyterLab Terminal (or Mac Terminal). (Note you may be asked if you want to continue connecting. If you’re asked this, type <code class="docutils literal notranslate"><span class="pre">yes</span></code>. You will have to enter your SSH key password from step 3 to finish the test.)</p>
+</li>
+</ol>
+<p>You should now be able to push to GitHub. Congradulations (this may be the hardest thing you do this quarter!!)</p>
+</div>
+<div class="section" id="collaborating-with-git-and-github">
+<h2>Collaborating with Git and Github<a class="headerlink" href="#collaborating-with-git-and-github" title="Permalink to this headline">¶</a></h2>
+<p>These are the general steps you would take to create a new project and share it on the web via GitHub. The general steps will be listed here, and you will be asked to practes them through <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2</span></a>. Of course, you are incouraged to read more via the <a class="reference external" href="http://swcarpentry.github.io/git-novice/">Version Control with Git</a>.</p>
+<ul>
+<li><p>Create a new repository on GitHub</p></li>
+<li><p>Follow the instructions and run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">&lt;repo</span> <span class="pre">url&gt;</span></code> on your local repo</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to authenticate with your SSH key from the previous section, you need use SSH-style GitHub urls.
+When setting up a new repo, underneath where it says “Quick setup — if you’ve done this kind of thing before”,
+make sure you click the SSH box. The repo URL should look something like <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:rabernat/planets.git</span></code>
+(NOT <code class="docutils literal notranslate"><span class="pre">https://github.com/rabernat/planets.git</span></code>).</p>
+<p>If you already added a remote with <code class="docutils literal notranslate"><span class="pre">http://</span></code>, you can remove it by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">rm</span> <span class="n">origin</span>
+</pre></div>
+</div>
+<p>On the command line on yoru local repo (assuming the name of your remote is indeed <code class="docutils literal notranslate"><span class="pre">origin</span></code>.)</p>
+</div>
+</li>
+<li><p>make your changes and stage them with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>,</p></li>
+<li><p>commit your changes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code>, and</p></li>
+<li><p>upload the changes to GitHub with<code class="docutils literal notranslate"> <span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+<li><p>update your local repo with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+</ul>
+<p>This is an excellent way to move code in and out of your cloud-based environment (while simultaneously backing it up.)</p>
+<p>Make sure you’ve read the above istructions for Collaborating. You’ll practice this in our first Asignment. Go slowly through this and make sure you follow the steps.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="second_day.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">For the second day of class:</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Assignments/files_markdown_git.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2: Files, Git, and Github</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
