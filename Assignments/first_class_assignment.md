@@ -13,11 +13,11 @@ Try to have used the "Show Markdown Preview" functionality within JupyterLab to 
 1. How are you planning on working this quarter? What computer do you plan to use? What opporating system is it? 
 2. Did you have any issues setting up JupyterLab or accessing it for the first time?
 
-#### Next, move on to the [Introduciton to Unix](Pages/intro_to_unix) page. Get as far as you can through the tutorial.  
+#### Next, move on to the [Introduciton to Unix](../Pages/intro_to_unix) page. Get as far as you can through the tutorial.  
 
 *I'd say try to give it at least an hour of attention outside of class.*
 
-When you've completed the [Unix Tutorial](Pages/intro_to_unix), (or as much as possible) add the following additional inforamtion to your new Markdown file:
+When you've completed the [Unix Tutorial](../Pages/intro_to_unix), (or as much as possible) add the following additional inforamtion to your new Markdown file:
 
 3. How did the Unix Tutorial go?  Do you feel like you are understanding how to access and navigate through your computer's file structure? Are there any commands you practiced that are confusing or did you hit any "roadblocks"?
 

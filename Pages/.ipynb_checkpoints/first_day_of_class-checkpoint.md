@@ -26,7 +26,7 @@ I'm excited to be working with you!
 - Con: You should still always have your EODA thumd drive with you. 
 
 #### After you decide what computer you'll be working on for the quarter: 
-Start with either finding a Terminal (you can search for this using *Finder* on a Mac - on the Lab Computers, or a Mac laptop) or by following instructions in the [Installing JupyterLab](Pages/installing_jupyterlab) page to install Anaconda and JupyterLab on your personnal machine (Windows or Mac). 
+Start with either finding a Terminal (you can search for this using *Finder* on a Mac - on the Lab Computers, or a Mac laptop) or by following instructions in the [Installing JupyterLab](../Pages/installing_jupyterlab) page to install Anaconda and JupyterLab on your personnal machine (Windows or Mac). 
 
 Once JupyterLab is installed - open a Terminal and type the following to launch JupyterLab (DO NOT TYPE THE $) - 
 
@@ -34,6 +34,6 @@ Once JupyterLab is installed - open a Terminal and type the following to launch 
 $ jupyter lab
 ```
 
-This will open a JupyterLab application in your web browser.  Follow instructions and links in the [Intro to JupyterLab](Pages/intro_to_jupyterlab) page to get started!
+This will open a JupyterLab application in your web browser.  Follow instructions and links in the [Intro to JupyterLab](../Pages/intro_to_jupyterlab) page to get started!
 
-Check in with the [First Class Assignment](Assignments/first_class_assignment) for what to work on for this week.  If you have trouble navigating JupyterLab, the Markdown syntax, or how to find your first Markdown file once you make it, do your best, and seek help from [Emily](emily.roland@wwu.edu) and [Paige](koenigp@wwu.edu) 
+Check in with the [First Class Assignment](../Assignments/first_class_assignment) for what to work on for this week.  If you have trouble navigating JupyterLab, the Markdown syntax, or how to find your first Markdown file once you make it, do your best, and seek help from [Emily](emily.roland@wwu.edu) and [Paige](koenigp@wwu.edu) 

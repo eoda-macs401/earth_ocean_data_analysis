@@ -1,4 +1,4 @@
-# Installing Jupyter Lab
+# Installing JupyterLab
 ## Installation instructions for Anaconda (or miniConda) on your machine:
 ## MACS497 (MACS401)
 
@@ -66,4 +66,4 @@ $ jupyter lab
 8. This will open up a Jupyter Lab session in a browser.  Follow the guide here: to start to familiarize yourself with the functions within Jupyter Lab. 
 8. Moving on to excercises like the Unix Tutorial - you will want to use the terminal, accessed within Jupyter Lab to access your computers directory structure, etc. 
 
-### Next, move on to [Intro to JupyterLab](Pages/intro_to_jupyterlab.md) to learn more about the tool. 
+### Next, move on to [Intro to JupyterLab](../Pages/intro_to_jupyterlab.md) to learn more about the tool. 

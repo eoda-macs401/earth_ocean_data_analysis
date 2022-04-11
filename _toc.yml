@@ -9,5 +9,9 @@ chapters:
 - file: Pages/intro_to_jupyterlab
 - file: Assignments/first_class_assignment
 - file: Pages/intro_to_unix
+- file: Pages/second_day
+- file: Pages/intro_to_git
+- file: Assignments/files_markdown_git
+- file: Notebooks/python_fundamentals
 
 
