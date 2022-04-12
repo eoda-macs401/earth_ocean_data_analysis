@@ -12,6 +12,7 @@ chapters:
 - file: Pages/second_day
 - file: Pages/intro_to_git
 - file: Assignments/files_markdown_git
+- file: Pages/git_gitHub_cheatsheet
 - file: Notebooks/python_fundamentals
 
 

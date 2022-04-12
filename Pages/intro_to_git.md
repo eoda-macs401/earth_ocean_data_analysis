@@ -4,7 +4,7 @@
 
 [_Version control_](https://en.wikipedia.org/wiki/Version_control) is a powerful way to organize, back up, and share with collaborators your research computing code.
 A Verson control system keeps track of a set of files and saves snapshots (i.e. _versions_, _commits_) of the files at any point in time.
-Using version control allows you to confidently make changes to your code (any any other files), with the ability to roll back to any previous state. This help avoid filling our directories up with files that look like this:
+Using version control allows you to confidently make changes to your code (and any other files), with the ability to roll back to any previous state. This help avoid filling our directories up with files that look like this:
 
 ~~~
     my_code.py

@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python Fundamentals" href="../Notebooks/python_fundamentals.html" />
+    <link rel="next" title="Git/GitHub Cheatsheet!" href="../Pages/git_gitHub_cheatsheet.html" />
     <link rel="prev" title="Intro to Git for Version Control" href="../Pages/intro_to_git.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -134,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Assignment 2: Files, Git, and Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">
+   Git/GitHub Cheatsheet!
   </a>
  </li>
  <li class="toctree-l1">
@@ -254,8 +259,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-go-back-to-the-terminal-and-do-the-following">
-     Now go back to the terminal and do the following:
+    <a class="reference internal nav-link" href="#now-go-back-to-the-terminal-and-publish-to-github">
+     Now go back to the terminal and publish to GitHub!:
     </a>
    </li>
   </ul>
@@ -311,8 +316,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-go-back-to-the-terminal-and-do-the-following">
-     Now go back to the terminal and do the following:
+    <a class="reference internal nav-link" href="#now-go-back-to-the-terminal-and-publish-to-github">
+     Now go back to the terminal and publish to GitHub!:
     </a>
    </li>
   </ul>
@@ -336,18 +341,18 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="create-a-dummy-resume-repository">
 <h2>Create a Dummy Resume Repository<a class="headerlink" href="#create-a-dummy-resume-repository" title="Permalink to this headline">¶</a></h2>
 <p>Use JupyterLab to launch a terminal and use the terminal to do the following tasks:</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>Create a new directory called <code class="docutils literal notranslate"><span class="pre">resume</span></code> on your new “eoda” thumbdrive</p></li>
-</ol>
-<p>To get to your new thumbdrive from the command line (terminal), you’ll need to change directories into it.  You should know how to do this from the Unix Tutorial, however, you may not knwo how to find it on your system.</p>
+</ul>
+<p>To get to your new thumbdrive from the command line (terminal), you’ll need to change directories into it.  You should know how to do this from the <a class="reference internal" href="../Pages/intro_to_unix.html"><span class="doc std std-doc">Unix Tutorial</span></a>, however, you may not know how to find it on your specific system.</p>
 <div class="section" id="for-mac-users">
 <h3>For Mac users<a class="headerlink" href="#for-mac-users" title="Permalink to this headline">¶</a></h3>
-<p>External hard drives tend to ‘auto mount’ to the <code class="docutils literal notranslate"><span class="pre">/Volumes</span></code> directory. So to move to within your new thumb drive, you could type the following into terminal:</p>
+<p>External hard drives tend to ‘auto mount’ to the <code class="docutils literal notranslate"><span class="pre">/Volumes</span></code> directory. So to move to within your new thumb drive (and make the new directory), you could type the following into terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /Volumes/eoda
 $ mkdir resume
 </pre></div>
 </div>
-<p>Then change directories into your new <code class="docutils literal notranslate"><span class="pre">resume</span></code> directory (you know how to do that!)</p>
+<p>Then change directories <em>into</em> your new <code class="docutils literal notranslate"><span class="pre">resume</span></code> directory (you know how to do that!)</p>
 </div>
 <div class="section" id="for-windows-users">
 <h3>For Windows users<a class="headerlink" href="#for-windows-users" title="Permalink to this headline">¶</a></h3>
@@ -358,15 +363,21 @@ $ mkdir resume
 </div>
 <p>Then change directories into your new <code class="docutils literal notranslate"><span class="pre">resume</span></code> directory (you know how to do that!)
 Get help from Emily if you’re having trouble with this.</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>Create an empty file within this directory called <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code></p></li>
-</ol>
+</ul>
+<p>You can do this using the <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">Readme.md</span></code> option (works well on Mac/Unix), alternativey the following should work on any operating system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;&quot; &gt; Readme.md
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span></code> is another Unix command that essentially repeats whatever you give it in the <em>arguement</em> (here nothing, because there’s nothing inside the quotes), into the file you give it after the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (redirect) symbol.</p>
+<p>If that doesnt work, simply start Jupyter Lab (easiest from the command line <strong>after</strong> you’ve already changed directories into your thumb drive), and use the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code> menu option to make a new Markdown file. Save as <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> (ahh… sometimes it’s OK to work in the old GUI inerface too).</p>
 </div>
 <div class="section" id="now-use-jupyterlab-to-edit-the-file">
 <h3>Now use JupyterLab to edit the file:<a class="headerlink" href="#now-use-jupyterlab-to-edit-the-file" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Navigate to the directory in the file browser</p></li>
-</ol>
+<ul class="simple">
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">resume</span></code> directory in the file browser within Jupyter Lab</p></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is one thing that can be a bit tricky when we’re using an external harddrive. When you open JupyterLab from your home directory - this is the top “parent” directory we can access easily. My recommendation for accessing your new file in that case:</p>
@@ -397,8 +408,9 @@ Get help from Emily if you’re having trouble with this.</p>
 </div>
 <p>Also note - if your photo is a weird size, try Googling solutions!</p>
 </div>
-<div class="section" id="now-go-back-to-the-terminal-and-do-the-following">
-<h3>Now go back to the terminal and do the following:<a class="headerlink" href="#now-go-back-to-the-terminal-and-do-the-following" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="now-go-back-to-the-terminal-and-publish-to-github">
+<h3>Now go back to the terminal and publish to GitHub!:<a class="headerlink" href="#now-go-back-to-the-terminal-and-publish-to-github" title="Permalink to this headline">¶</a></h3>
+<p>This will require a basic understanding of how to push material to a GitHub repository (using git).  Read the <a class="reference internal" href="../Pages/intro_to_git.html"><span class="doc std std-doc">Intro to Git</span></a> thoroughly though this process, and also reference the <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html"><span class="doc std std-doc">GitHub Cheatsheet</span></a> for a summary of the key commands.</p>
 <ol class="simple">
 <li><p>Initialize a new git repository in the <code class="docutils literal notranslate"><span class="pre">resume</span></code> directory</p></li>
 <li><p>Add the <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file and your photo to the repository.</p></li>
@@ -461,10 +473,10 @@ Get help from Emily if you’re having trouble with this.</p>
             <p class="prev-next-title">Intro to Git for Version Control</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Notebooks/python_fundamentals.html" title="next page">
+    <a class='right-next' id="next-link" href="../Pages/git_gitHub_cheatsheet.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Fundamentals</p>
+        <p class="prev-next-title">Git/GitHub Cheatsheet!</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
