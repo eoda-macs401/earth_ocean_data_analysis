@@ -90,14 +90,14 @@ To "hand in" this part of the assignment, put a link to it in the `Readme.md` fi
 
 ## Create your Assignments Repository
 
-Now that you know how to create a git repository, you should create your assignments repository.
+Now that you know how to create a git repository, you should create your assignments repository. **This will be used for the WHOLE quarter to 'hand in' your assignments. No Canvas Submissions here! Just shared documents (with links to your projects) via GitHub. I think this is so cool!*
 
-- Create a new directory called `eoda-assignments` in your home directory.
-- Create a `Readme.md` markdown file that contains your name and a link to your "resume" repo.
-- Also place your "First_Class_Reflection.md" file from last week in the new assignments director (in your new repo). 
-- Initialize a new git repository 
-- Add the file and make your first commit
+- Create a new directory called `eoda-assignments` on your thumb drive (just like you did for resume.. but NOT WITHIN the resume directory).
+- Inside your `eoda-assignments` project folder, create a `Readme.md` markdown file that contains your name and a link to your "resume" repo (link to github.com URL access point, copy and past this from your web browser into the file).
+- Also place your "First_Class_Reflection.md" file from last week in the new assignments directory (in your new repo). 
+- Initialize a new git repository (see [GitHub Cheatsheet](../Pages/git_gitHub_cheatsheet) for help)
+- Add the files and make your first commit
 - Create a new **private** repository on GitHub called `eoda-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
 - Push your `eoda-assignments` repository to GitHub
-- On GitHub, go to "settings" -> "collaborators" and add `rolandocean`.
+- **Back on GitHub**, in your new repository, go to "settings" -> "collaborators" and add `rolandocean`.
 - Push new commits to this repository whenever you are ready to hand in your assignments.
