@@ -1,5 +1,5 @@
 
-# For the first day of class:
+# **For the first day of class**:
 
 First of all- 
 

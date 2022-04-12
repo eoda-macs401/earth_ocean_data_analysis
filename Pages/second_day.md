@@ -1,5 +1,5 @@
 
-# For the second day of class:
+# **For the second day of class:**
 
 #### Where we're at:
 Last week we installed JupyterLab and got started familiarizing ourselves with the Unix file system, and how to navigat through it.  This week we'll start to use some of the skills we practiced in the [Unix Tutorial](../Pages/intro_to_unix) and get introduced to GitHub. In class we'll practice making a GitHub account and *pushing* our first repository to Git.  
