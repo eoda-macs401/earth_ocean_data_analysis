@@ -4,18 +4,18 @@
 
 Use JupyterLab to launch a terminal and use the terminal to do the following tasks:
 
-1. Create a new directory called `resume` on your new "eoda" thumbdrive
+- Create a new directory called `resume` on your new "eoda" thumbdrive
 
-To get to your new thumbdrive from the command line (terminal), you'll need to change directories into it.  You should know how to do this from the Unix Tutorial, however, you may not knwo how to find it on your system.
+To get to your new thumbdrive from the command line (terminal), you'll need to change directories into it.  You should know how to do this from the [Unix Tutorial](../Pages/intro_to_unix), however, you may not know how to find it on your specific system.
 
 #### For Mac users 
-External hard drives tend to 'auto mount' to the `/Volumes` directory. So to move to within your new thumb drive, you could type the following into terminal: 
+External hard drives tend to 'auto mount' to the `/Volumes` directory. So to move to within your new thumb drive (and make the new directory), you could type the following into terminal: 
 
 ```
 $ cd /Volumes/eoda
 $ mkdir resume
 ```
-Then change directories into your new `resume` directory (you know how to do that!)
+Then change directories *into* your new `resume` directory (you know how to do that!)
 #### For Windows users 
 External hard drives tend to 'auto mount' to a new directory - kind of like your main C:\\ directory, but with a diffrent letter (i.e. `E`, `W`... something else). You may need to find it in the filesystem within Windows to know where to go, but then to get there in JupyterLab Terminal, the command will likely look something like this (for `E` directory example mount point): 
 
@@ -27,11 +27,21 @@ Then change directories into your new `resume` directory (you know how to do tha
 Get help from Emily if you're having trouble with this. 
 
 
-2. Create an empty file within this directory called `Readme.md`
+- Create an empty file within this directory called `Readme.md`
+
+You can do this using the `touch Readme.md` option (works well on Mac/Unix), alternativey the following should work on any operating system: 
+
+```
+$ echo "" > Readme.md
+```
+
+`echo` is another Unix command that essentially repeats whatever you give it in the *arguement* (here nothing, because there's nothing inside the quotes), into the file you give it after the `>` (redirect) symbol. 
+
+If that doesnt work, simply start Jupyter Lab (easiest from the command line **after** you've already changed directories into your thumb drive), and use the `File > New` menu option to make a new Markdown file. Save as `Readme.md` (ahh... sometimes it's OK to work in the old GUI inerface too). 
 
 #### Now use JupyterLab to edit the file:
 
-1. Navigate to the directory in the file browser
+- Navigate to the `resume` directory in the file browser within Jupyter Lab
 
 ```{warning}
 This is one thing that can be a bit tricky when we're using an external harddrive. When you open JupyterLab from your home directory - this is the top "parent" directory we can access easily. My recommendation for accessing your new file in that case:
@@ -61,7 +71,9 @@ This is one thing that can be a bit tricky when we're using an external harddriv
     
     Also note - if your photo is a weird size, try Googling solutions!
     
-#### Now go back to the terminal and do the following:
+#### Now go back to the terminal and publish to GitHub!:
+
+This will require a basic understanding of how to push material to a GitHub repository (using git).  Read the [Intro to Git](../Pages/intro_to_git) thoroughly though this process, and also reference the [GitHub Cheatsheet](../Pages/git_gitHub_cheatsheet) for a summary of the key commands. 
 
 1. Initialize a new git repository in the `resume` directory
 1. Add the `Readme.md` file and your photo to the repository. 

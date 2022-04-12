@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For the second day of class: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Git/GitHub Cheatsheet! &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Intro to Git for Version Control" href="intro_to_git.html" />
-    <link rel="prev" title="Intro to Unix" href="intro_to_unix.html" />
+    <link rel="next" title="Python Fundamentals" href="../Notebooks/python_fundamentals.html" />
+    <link rel="prev" title="Assignment 2: Files, Git, and Github" href="../Assignments/files_markdown_git.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,10 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="first_day_of_class.html">
-   <strong>
-    For the first day of class
-   </strong>
-   :
+   For the first day of class:
   </a>
  </li>
  <li class="toctree-l1">
@@ -124,11 +121,9 @@ const thebe_selector_output = ".output, .cell_output"
    Intro to Unix
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   <strong>
-    For the second day of class:
-   </strong>
+ <li class="toctree-l1">
+  <a class="reference internal" href="second_day.html">
+   For the second day of class:
   </a>
  </li>
  <li class="toctree-l1">
@@ -141,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
    Assignment 2: Files, Git, and Github
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="git_gitHub_cheatsheet.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Git/GitHub Cheatsheet!
   </a>
  </li>
@@ -192,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/second_day.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Pages/git_gitHub_cheatsheet.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -212,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/second_day.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/git_gitHub_cheatsheet.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -239,41 +234,66 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
+  <a class="reference internal nav-link" href="#first-move-into-the-directory-where-your-project-is-located-in-the-examples-below-the-project-folder-is-called-my-project-folder">
+   First move into the directory where your project is located. In the examples below, the project folder is called ‘my_project_folder’:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#from-within-the-folder-initialize-your-repository-only-need-to-do-once">
+   <strong>
+    From within the folder, initialize your repository (only need to do once):
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-content-getting-it-ready-to-commit">
+   <strong>
+    Add content, getting it ready to commit:
+   </strong>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
+    <a class="reference internal nav-link" href="#this-adds-one-file-named-my-file-in-example-below">
+     This adds one file, named “my_file” in example below.
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
+    <a class="reference internal nav-link" href="#this-adds-all-the-content-within-your-poject-directory">
+     This adds all the content within your poject directory:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit-the-material-you-added-with-a-message">
      <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
+      Commit the material you added, with a message:
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
+  <a class="reference internal nav-link" href="#now-move-to-github-if-you-havent-already-made-one-make-a-new-repository-usually-with-the-same-name-as-my-project-folder">
+   Now move to GitHub.  If you havent already made one, make a new repository, usually with the same name as
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     my_project_folder
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-in-terminal-follow-instructions-above-and-push-your-repo-to-github">
+   Back in Terminal - follow instructions above and push your repo. to GitHub:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-subsequent-modificaitons">
+   For subsequent modificaitons:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#not-so-bad">
+   Not so bad!!
   </a>
  </li>
 </ul>
@@ -286,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>For the second day of class:</h1>
+                <h1>Git/GitHub Cheatsheet!</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -297,41 +317,66 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
+  <a class="reference internal nav-link" href="#first-move-into-the-directory-where-your-project-is-located-in-the-examples-below-the-project-folder-is-called-my-project-folder">
+   First move into the directory where your project is located. In the examples below, the project folder is called ‘my_project_folder’:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#from-within-the-folder-initialize-your-repository-only-need-to-do-once">
+   <strong>
+    From within the folder, initialize your repository (only need to do once):
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-content-getting-it-ready-to-commit">
+   <strong>
+    Add content, getting it ready to commit:
+   </strong>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
+    <a class="reference internal nav-link" href="#this-adds-one-file-named-my-file-in-example-below">
+     This adds one file, named “my_file” in example below.
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
+    <a class="reference internal nav-link" href="#this-adds-all-the-content-within-your-poject-directory">
+     This adds all the content within your poject directory:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit-the-material-you-added-with-a-message">
      <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
+      Commit the material you added, with a message:
      </strong>
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
+  <a class="reference internal nav-link" href="#now-move-to-github-if-you-havent-already-made-one-make-a-new-repository-usually-with-the-same-name-as-my-project-folder">
+   Now move to GitHub.  If you havent already made one, make a new repository, usually with the same name as
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     my_project_folder
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-in-terminal-follow-instructions-above-and-push-your-repo-to-github">
+   Back in Terminal - follow instructions above and push your repo. to GitHub:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-subsequent-modificaitons">
+   For subsequent modificaitons:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#not-so-bad">
+   Not so bad!!
   </a>
  </li>
 </ul>
@@ -343,38 +388,77 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="for-the-second-day-of-class">
-<h1><strong>For the second day of class:</strong><a class="headerlink" href="#for-the-second-day-of-class" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="where-we-re-at">
-<h2>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h2>
-<p>Last week we installed JupyterLab and got started familiarizing ourselves with the Unix file system, and how to navigat through it.  This week we’ll start to use some of the skills we practiced in the <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Unix Tutorial</span></a> and get introduced to GitHub. In class we’ll practice making a GitHub account and <em>pushing</em> our first repository to Git.</p>
-</div>
-<div class="section" id="preperation-for-the-future">
-<h2>Preperation for the future:<a class="headerlink" href="#preperation-for-the-future" title="Permalink to this headline">¶</a></h2>
-<p>Over the week ahead, prepare yourself to start doing some actual coding (finally!).  Read the <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a> page as homework to start familiarizing yourself with basic Python programming - this is where things will get fun.</p>
-<div class="section" id="note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-<h3><em>Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.</em><a class="headerlink" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="git-github-cheatsheet">
+<h1>Git/GitHub Cheatsheet!<a class="headerlink" href="#git-github-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<p>Here are a list of the commands you need to create, commit and push material to a remote GitHub repository.</p>
+<div class="section" id="first-move-into-the-directory-where-your-project-is-located-in-the-examples-below-the-project-folder-is-called-my-project-folder">
+<h2>First move into the directory where your project is located. In the examples below, the project folder is called ‘my_project_folder’:<a class="headerlink" href="#first-move-into-the-directory-where-your-project-is-located-in-the-examples-below-the-project-folder-is-called-my-project-folder" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd path/to/my_project_folder
+</pre></div>
 </div>
 </div>
-<div class="section" id="for-today-in-class">
-<h2>For today, in class:<a class="headerlink" href="#for-today-in-class" title="Permalink to this headline">¶</a></h2>
-<p><em>The following instructions have been modified from <a class="reference external" href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">the hubspot blog</a> on getting started with Git &amp; GitHub:</em></p>
-<div class="section" id="the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
-<h3><strong>The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.</strong><a class="headerlink" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment" title="Permalink to this headline">¶</a></h3>
-<p><strong>Step 0: Install git if you are working on your personal computer.</strong>
-Follow the instructions <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> to install git (if it’s not already installed). Note that for this tutorial we will be using git on the command line only. While there are some great git GUIs (graphical user interfaces), I think it’s easier to learn git using git-specific commands first and then to try out a git GUI once you’re more comfortable with the command. A note: 95% of other online git resources and discussions will also be for the command-line interface.</p>
-<p><strong>Step 1: Make an account on GitHub</strong>
-Once you’ve done that, create a GitHub account from the <a class="reference external" href="https://github.com/">GitHub website</a>. When selecting your username, email and password, try to stick with options you’ll like to use in the long-term.  A personal email may be a bit more reliable long-term than you university email, for example. Select the free account when given the option.</p>
-<p><strong>Step 2: Start playing with Git!</strong>
-Next, start with the <a class="reference internal" href="intro_to_git.html"><span class="doc std std-doc">Intro to Git</span></a> page. Then engage with the <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2</span></a> material which will also allow you to submit your <code class="docutils literal notranslate"><span class="pre">First_Class_Reflection.md</span></code> Markdown file that you created last week.</p>
+<div class="section" id="from-within-the-folder-initialize-your-repository-only-need-to-do-once">
+<h2><strong>From within the folder, initialize your repository (only need to do once):</strong><a class="headerlink" href="#from-within-the-folder-initialize-your-repository-only-need-to-do-once" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git init
+</pre></div>
 </div>
 </div>
-<div class="section" id="homework-summary">
-<h2>Homework Summary:<a class="headerlink" href="#homework-summary" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Complete <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2: Files, Git, and Github</span></a></p></li>
-<li><p>Before next week, read ahead about <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a></p></li>
-</ol>
+<div class="section" id="add-content-getting-it-ready-to-commit">
+<h2><strong>Add content, getting it ready to commit:</strong><a class="headerlink" href="#add-content-getting-it-ready-to-commit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="this-adds-one-file-named-my-file-in-example-below">
+<h3>This adds one file, named “my_file” in example below.<a class="headerlink" href="#this-adds-one-file-named-my-file-in-example-below" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add my_file
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-adds-all-the-content-within-your-poject-directory">
+<h3>This adds all the content within your poject directory:<a class="headerlink" href="#this-adds-all-the-content-within-your-poject-directory" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add ./*
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-the-material-you-added-with-a-message">
+<h3><strong>Commit the material you added, with a message:</strong><a class="headerlink" href="#commit-the-material-you-added-with-a-message" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m &quot;Message about what I am doing&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="now-move-to-github-if-you-havent-already-made-one-make-a-new-repository-usually-with-the-same-name-as-my-project-folder">
+<h2>Now move to <a class="reference external" href="https://github.com">GitHub</a>.  If you havent already made one, make a new repository, usually with the same name as <code class="docutils literal notranslate"><span class="pre">my_project_folder</span></code><a class="headerlink" href="#now-move-to-github-if-you-havent-already-made-one-make-a-new-repository-usually-with-the-same-name-as-my-project-folder" title="Permalink to this headline">¶</a></h2>
+<p>Follow the instructions that come next from the <a class="reference external" href="http://github.com">github.com</a> website to push to your new repository (repeated below) but make sure you’ve selected the “SSH” option on the top of the repository settings (for our class… this is how we’re authenticating):</p>
+<p><img alt="New Repo Settings" src="../_images/GitHub_new_repo1.jpg" /></p>
+</div>
+<div class="section" id="back-in-terminal-follow-instructions-above-and-push-your-repo-to-github">
+<h2>Back in Terminal - follow instructions above and push your repo. to GitHub:<a class="headerlink" href="#back-in-terminal-follow-instructions-above-and-push-your-repo-to-github" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add origin git@github.com:&lt;your_username&gt;/my_project_folder.git
+
+$ git branch -M main
+
+$ git push -u origin main
+</pre></div>
+</div>
+<p>(hopefully) Obviously, in the first command from the list above, you’ll change <code class="docutils literal notranslate"><span class="pre">your_username</span></code> and <code class="docutils literal notranslate"><span class="pre">my_project_folder</span></code> to your actual username and the actual name of your new repository (see example in image for my project).</p>
+</div>
+<div class="section" id="for-subsequent-modificaitons">
+<h2>For subsequent modificaitons:<a class="headerlink" href="#for-subsequent-modificaitons" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve made a repository the first time, and pushed to it the first time, if you modify it within your <em>local</em> project folder, you can skip a few of the steps above.  The ones you’d still do if you were just updating your project, might include the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add &lt;my_file&gt;
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add ./*
+
+$ git commit -m &quot;Message about Awesome Update&quot;
+
+$ git push -u origin main
+
+</pre></div>
+</div>
+<p>Check out your updates on <a class="reference external" href="http://GitHub.com">GitHub.com</a></p>
+</div>
+<div class="section" id="not-so-bad">
+<h2>Not so bad!!<a class="headerlink" href="#not-so-bad" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -403,17 +487,17 @@ Next, start with the <a class="reference internal" href="intro_to_git.html"><spa
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro_to_unix.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Assignments/files_markdown_git.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Intro to Unix</p>
+            <p class="prev-next-title">Assignment 2: Files, Git, and Github</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="intro_to_git.html" title="next page">
+    <a class='right-next' id="next-link" href="../Notebooks/python_fundamentals.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Git for Version Control</p>
+        <p class="prev-next-title">Python Fundamentals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
