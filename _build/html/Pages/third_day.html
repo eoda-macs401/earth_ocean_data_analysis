@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For the second day of class: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>For the third day of class: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Intro to Git for Version Control" href="intro_to_git.html" />
-    <link rel="prev" title="Intro to Unix" href="intro_to_unix.html" />
+    <link rel="next" title="Assignment 3: Basic Python" href="../Assignments/python_basics.html" />
+    <link rel="prev" title="Python Fundamentals" href="../Notebooks/python_fundamentals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,8 +124,8 @@ const thebe_selector_output = ".output, .cell_output"
    Intro to Unix
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="second_day.html">
    <strong>
     For the second day of class:
    </strong>
@@ -151,8 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
    Python Fundamentals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="third_day.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    <strong>
     For the third day of class:
    </strong>
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/second_day.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Pages/third_day.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -229,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/second_day.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/third_day.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -264,15 +264,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#preperation-for-the-future">
    Preperation for the future:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-today-in-class">
@@ -280,10 +271,39 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
+    <a class="reference internal nav-link" href="#also-note-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new-i-recommend-making-a-new-directory-within-your-eoda-thumb-drive-called-inclass-working-and-using-notebooks-saved-within-that-directory-to-take-notes-follow-along-with-demos-inclass">
      <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
+      Also note:
      </strong>
+     you can open a new Jupyter Notebook from within JupyterLab (click on the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Notebook
+      </span>
+     </code>
+     button when it first opens, or from
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       File
+      </span>
+      <span class="pre">
+       &gt;
+      </span>
+      <span class="pre">
+       New
+      </span>
+     </code>
+     . I recommend making a new directory within your eoda thumb drive called
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       inclass-working
+      </span>
+     </code>
+     , and using notebooks saved within that directory to take notes (follow along with demos)
+     <em>
+      inclass
+     </em>
+     .
     </a>
    </li>
   </ul>
@@ -303,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>For the second day of class:</h1>
+                <h1>For the third day of class:</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -322,15 +342,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#preperation-for-the-future">
    Preperation for the future:
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-today-in-class">
@@ -338,10 +349,39 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
+    <a class="reference internal nav-link" href="#also-note-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new-i-recommend-making-a-new-directory-within-your-eoda-thumb-drive-called-inclass-working-and-using-notebooks-saved-within-that-directory-to-take-notes-follow-along-with-demos-inclass">
      <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
+      Also note:
      </strong>
+     you can open a new Jupyter Notebook from within JupyterLab (click on the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Notebook
+      </span>
+     </code>
+     button when it first opens, or from
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       File
+      </span>
+      <span class="pre">
+       &gt;
+      </span>
+      <span class="pre">
+       New
+      </span>
+     </code>
+     . I recommend making a new directory within your eoda thumb drive called
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       inclass-working
+      </span>
+     </code>
+     , and using notebooks saved within that directory to take notes (follow along with demos)
+     <em>
+      inclass
+     </em>
+     .
     </a>
    </li>
   </ul>
@@ -360,37 +400,33 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="for-the-second-day-of-class">
-<h1><strong>For the second day of class:</strong><a class="headerlink" href="#for-the-second-day-of-class" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="for-the-third-day-of-class">
+<h1><strong>For the third day of class:</strong><a class="headerlink" href="#for-the-third-day-of-class" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="where-we-re-at">
 <h2>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h2>
-<p>Last week we installed JupyterLab and got started familiarizing ourselves with the Unix file system, and how to navigat through it.  This week we’ll start to use some of the skills we practiced in the <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Unix Tutorial</span></a> and get introduced to GitHub. In class we’ll practice making a GitHub account and <em>pushing</em> our first repository to Git.</p>
+<p>Today we’ll start class by <strong>reviewing</strong> how to create a git repository and making a remote origin on GitHub (allowing us to share a repository via a web-interface).  If you haven’t finished up <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2: Files, Git, and Github</span></a>, make sure to do that today with help you receive in class (or let me know if you think you’ll need more time)!</p>
+<p>We’ll then move on to talking about Python basics (and do some coding) - In class we’ll demo many of the new ideas about variables, objects, and methods outlined in the <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a>, that you reviewed at home last week. This material will help you to complete <a class="reference internal" href="../Assignments/python_basics.html"><span class="doc std std-doc">Assignment 3</span></a>.</p>
 </div>
 <div class="section" id="preperation-for-the-future">
 <h2>Preperation for the future:<a class="headerlink" href="#preperation-for-the-future" title="Permalink to this headline">¶</a></h2>
-<p>Over the week ahead, prepare yourself to start doing some actual coding (finally!).  Read the <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a> page as homework to start familiarizing yourself with basic Python programming - this is where things will get fun.</p>
-<div class="section" id="note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-<h3><em>Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.</em><a class="headerlink" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials" title="Permalink to this headline">¶</a></h3>
-</div>
+<p>For next week, please read about <a class="reference internal" href="../Notebooks/functions_classes.html"><span class="doc std std-doc">Python Functions and Classes</span></a>.  There may be a short reading quiz at the beginning of class based on this material.</p>
 </div>
 <div class="section" id="for-today-in-class">
 <h2>For today, in class:<a class="headerlink" href="#for-today-in-class" title="Permalink to this headline">¶</a></h2>
-<p><em>The following instructions have been modified from <a class="reference external" href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">the hubspot blog</a> on getting started with Git &amp; GitHub:</em></p>
-<div class="section" id="the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
-<h3><strong>The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.</strong><a class="headerlink" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment" title="Permalink to this headline">¶</a></h3>
-<p><strong>Step 0: Install git if you are working on your personal computer.</strong>
-Follow the instructions <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> to install git (if it’s not already installed). Note that for this tutorial we will be using git on the command line only. While there are some great git GUIs (graphical user interfaces), I think it’s easier to learn git using git-specific commands first and then to try out a git GUI once you’re more comfortable with the command. A note: 95% of other online git resources and discussions will also be for the command-line interface.</p>
-<p><strong>Step 1: Make an account on GitHub</strong>
-Once you’ve done that, create a GitHub account from the <a class="reference external" href="https://github.com/">GitHub website</a>. When selecting your username, email and password, try to stick with options you’ll like to use in the long-term.  A personal email may be a bit more reliable long-term than you university email, for example. Select the free account when given the option.</p>
-<p><strong>Step 2: Start playing with Git!</strong>
-Next, start with the <a class="reference internal" href="intro_to_git.html"><span class="doc std std-doc">Intro to Git</span></a> page. Then engage with the <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2</span></a> material which will also allow you to submit your <code class="docutils literal notranslate"><span class="pre">First_Class_Reflection.md</span></code> Markdown file that you created last week.</p>
+<p>Today we’ll be working through the intro to Python fundamentals.  To practice setting variables and talking about objects, their attributes and behaviors, etc., I’ll be demoing some of the commands you read about last week (in <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a>) in real time, via entering code into a Jupyter Notebook. We’ll talk a bit about what Jupyter Notebooks are, but if you’d like more information, read more about Jupyter Notebooks from <a class="reference external" href="https://realpython.com/jupyter-notebook-introduction/">RealPython.com</a>.  Also if you plan to follow along but haven’t used a Jupyter Notebook much in the past, here’s a <a class="reference external" href="https://www.edureka.co/blog/wp-content/uploads/2018/10/Jupyter_Notebook_CheatSheet_Edureka.pdf">really handy cheatsheet</a> you can reference for navigating the notebook.</p>
+<div class="section" id="also-note-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new-i-recommend-making-a-new-directory-within-your-eoda-thumb-drive-called-inclass-working-and-using-notebooks-saved-within-that-directory-to-take-notes-follow-along-with-demos-inclass">
+<h3><strong>Also note:</strong> you can open a new Jupyter Notebook from within JupyterLab (click on the <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> button when it first opens, or from <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code>. I recommend making a new directory within your eoda thumb drive called <code class="docutils literal notranslate"><span class="pre">inclass-working</span></code>, and using notebooks saved within that directory to take notes (follow along with demos) <em>inclass</em>.<a class="headerlink" href="#also-note-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new-i-recommend-making-a-new-directory-within-your-eoda-thumb-drive-called-inclass-working-and-using-notebooks-saved-within-that-directory-to-take-notes-follow-along-with-demos-inclass" title="Permalink to this headline">¶</a></h3>
+<p>Following class today, you will be asked to complete a homework assignment, <a class="reference internal" href="../Assignments/python_basics.html"><span class="doc std std-doc">Assignment 3 - Python Basics</span></a>.  This is in the form of a Jupyter Notebook.  You can download the <em>template</em> notebook from the <a class="reference internal" href="../Assignments/python_basics.html"><span class="doc std std-doc">Assignment 3 Page</span></a> directly by pressing the small icon in the upper right side of the page and selecting <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> format -<br />
+<img alt="icon" src="../_images/icon.png" /></p>
+<p>Then you can save it to a new directory on your eoda thumb drive for this assignment  called <code class="docutils literal notranslate"><span class="pre">python-assignments</span></code>. Complete the homework by filling out the <code class="docutils literal notranslate"><span class="pre">code</span></code> cells in the Jupyter Notebook as directed.  You can then <em>submit</em> your assignment by creating a new git repository and pushing your <code class="docutils literal notranslate"><span class="pre">python-assignments</span></code> repo, containing the <code class="docutils literal notranslate"><span class="pre">python_basics.ipynb</span></code> Jupyter Notebook to GitHub (you know how to do this!).</p>
+<p>When you’ve completed the above, add a web link to the new repository (maybe something like <code class="docutils literal notranslate"><span class="pre">https://github.com/your_username/python-assignments</span></code>) to your <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file and push an update of that <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> as well. Good Luck! Do your best!</p>
 </div>
 </div>
 <div class="section" id="homework-summary">
 <h2>Homework Summary:<a class="headerlink" href="#homework-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Complete <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2: Files, Git, and Github</span></a></p></li>
-<li><p>Before next week, read ahead about <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a></p></li>
+<li><p>Complete <a class="reference internal" href="../Assignments/python_basics.html"><span class="doc std std-doc">Assignment 3: Python Basics</span></a></p></li>
+<li><p>Before next week, read ahead about <a class="reference internal" href="../Notebooks/functions_classes.html"><span class="doc std std-doc">Python Functions and Classes</span></a></p></li>
 </ol>
 </div>
 </div>
@@ -420,17 +456,17 @@ Next, start with the <a class="reference internal" href="intro_to_git.html"><spa
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro_to_unix.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Notebooks/python_fundamentals.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Intro to Unix</p>
+            <p class="prev-next-title">Python Fundamentals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="intro_to_git.html" title="next page">
+    <a class='right-next' id="next-link" href="../Assignments/python_basics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Git for Version Control</p>
+        <p class="prev-next-title">Assignment 3: Basic Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

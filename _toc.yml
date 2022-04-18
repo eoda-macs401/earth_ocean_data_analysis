@@ -14,5 +14,6 @@ chapters:
 - file: Assignments/files_markdown_git
 - file: Pages/git_gitHub_cheatsheet
 - file: Notebooks/python_fundamentals
-
-
+- file: Pages/third_day
+- file: Assignments/python_basics
+- file: Notebooks/functions_classes

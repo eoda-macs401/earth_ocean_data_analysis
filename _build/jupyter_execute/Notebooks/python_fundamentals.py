@@ -17,7 +17,7 @@
 
 # ## Python Versions ##
 # 
-# There are two versions of the Python language out there: Python 2 and Python 3. In 2019, the vast majority of the scientific community now uses Python 3. As new Python learners, you should definitely learn Python 3. But it is important to be aware that Python 2 exists, since you might encounter it in the wild. 
+# There are two versions of the Python language out there: Python 2 and Python 3. Currently, the vast majority of the scientific community now uses Python 3. As new Python learners, you should definitely learn Python 3. But it is important to be aware that Python 2 exists, since you might encounter it in the wild. 
 # 
 # Some of the main changes introduced in Python 3 are:
 # 
@@ -25,6 +25,8 @@
 # * Integer division returns a float
 # * Iterators behave differently
 # * Unicode is used for encoding code
+# 
+# Note - if some of the language above is confusing to you - don't worry! We'l be getting familiar with it this week. 
 # 
 
 # ## Basic Variables: Numbers and String ##
