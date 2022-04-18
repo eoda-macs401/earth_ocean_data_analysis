@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For the second day of class: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Assignment 3: Basic Python &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Intro to Git for Version Control" href="intro_to_git.html" />
-    <link rel="prev" title="Intro to Unix" href="intro_to_unix.html" />
+    <link rel="next" title="Python Functions and Classes" href="../Notebooks/functions_classes.html" />
+    <link rel="prev" title="For the third day of class:" href="../Pages/third_day.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="first_day_of_class.html">
+  <a class="reference internal" href="../Pages/first_day_of_class.html">
    <strong>
     For the first day of class
    </strong>
@@ -105,44 +105,44 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="installing_jupyterlab.html">
+  <a class="reference internal" href="../Pages/installing_jupyterlab.html">
    Installing JupyterLab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_jupyterlab.html">
+  <a class="reference internal" href="../Pages/intro_to_jupyterlab.html">
    Intro to JupyterLab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+  <a class="reference internal" href="first_class_assignment.html">
    First Class - Assignment
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_unix.html">
+  <a class="reference internal" href="../Pages/intro_to_unix.html">
    Intro to Unix
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/second_day.html">
    <strong>
     For the second day of class:
    </strong>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_git.html">
+  <a class="reference internal" href="../Pages/intro_to_git.html">
    Intro to Git for Version Control
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/files_markdown_git.html">
+  <a class="reference internal" href="files_markdown_git.html">
    Assignment 2: Files, Git, and Github
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="git_gitHub_cheatsheet.html">
+  <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">
    Git/GitHub Cheatsheet!
   </a>
  </li>
@@ -152,14 +152,14 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="third_day.html">
+  <a class="reference internal" href="../Pages/third_day.html">
    <strong>
     For the third day of class:
    </strong>
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/python_basics.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Assignment 3: Basic Python
   </a>
  </li>
@@ -209,9 +209,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/second_day.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Assignments/python_basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -229,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/second_day.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAssignments/python_basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -245,6 +245,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Assignments/python_basics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -256,42 +273,64 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#part-i-lists-and-loops">
+   Part I: Lists and Loops
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
+    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
+     1) Create a list with the names of every planet in the solar system (in order)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
+     2) Have Python tell you how many planets there are by examining your list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
+     3) Use slicing to display the first four planets (the rocky planets)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
+     4) Iterate through your planets and print the planet name only if it has an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       s
+      </span>
+     </code>
+     at the end
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
+  <a class="reference internal nav-link" href="#part-ii-dictionaries">
+   Part II: Dictionaries
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
-     <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
-     </strong>
+    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
+     1) Now create a dictionary that maps each planet name to its mass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
+     2) Use your dictionary to look up Earth’s mass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
+     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
+     4) Now add pluto to your dictionary
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
-  </a>
  </li>
 </ul>
 
@@ -303,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>For the second day of class:</h1>
+                <h1>Assignment 3: Basic Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -314,42 +353,64 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#part-i-lists-and-loops">
+   Part I: Lists and Loops
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-     <em>
-      Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.
-     </em>
+    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
+     1) Create a list with the names of every planet in the solar system (in order)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
+     2) Have Python tell you how many planets there are by examining your list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
+     3) Use slicing to display the first four planets (the rocky planets)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
+     4) Iterate through your planets and print the planet name only if it has an
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       s
+      </span>
+     </code>
+     at the end
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
+  <a class="reference internal nav-link" href="#part-ii-dictionaries">
+   Part II: Dictionaries
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
-     <strong>
-      The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.
-     </strong>
+    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
+     1) Now create a dictionary that maps each planet name to its mass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
+     2) Use your dictionary to look up Earth’s mass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
+     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
+     4) Now add pluto to your dictionary
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
-  </a>
  </li>
 </ul>
 
@@ -360,38 +421,54 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="for-the-second-day-of-class">
-<h1><strong>For the second day of class:</strong><a class="headerlink" href="#for-the-second-day-of-class" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="where-we-re-at">
-<h2>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h2>
-<p>Last week we installed JupyterLab and got started familiarizing ourselves with the Unix file system, and how to navigat through it.  This week we’ll start to use some of the skills we practiced in the <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Unix Tutorial</span></a> and get introduced to GitHub. In class we’ll practice making a GitHub account and <em>pushing</em> our first repository to Git.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-3-basic-python">
+<h1>Assignment 3: Basic Python<a class="headerlink" href="#assignment-3-basic-python" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Learning Goals</p>
+<p>This assignment will verify that you have the following skills:</p>
+<ul class="simple">
+<li><p>Create lists and dictionaries</p></li>
+<li><p>Iterate through lists, tuples, and dictionaries</p></li>
+<li><p>Index sequences (e.g. lists and tuples)</p></li>
+</ul>
 </div>
-<div class="section" id="preperation-for-the-future">
-<h2>Preperation for the future:<a class="headerlink" href="#preperation-for-the-future" title="Permalink to this headline">¶</a></h2>
-<p>Over the week ahead, prepare yourself to start doing some actual coding (finally!).  Read the <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a> page as homework to start familiarizing yourself with basic Python programming - this is where things will get fun.</p>
-<div class="section" id="note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials">
-<h3><em>Note - this is the first homework reading assignment.  You may be asked to complete a short (graded!) reading quiz next week based on your pre-class reading materials.</em><a class="headerlink" href="#note-this-is-the-first-homework-reading-assignment-you-may-be-asked-to-complete-a-short-graded-reading-quiz-next-week-based-on-your-pre-class-reading-materials" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-i-lists-and-loops">
+<h2>Part I: Lists and Loops<a class="headerlink" href="#part-i-lists-and-loops" title="Permalink to this headline">¶</a></h2>
+<p>In this problem, we will explore the basic data structures and flow controls of Python by <em>manually creating data structures</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pluto is <a class="reference external" href="https://www.loc.gov/everyday-mysteries/item/why-is-pluto-no-longer-a-planet/">not a planet any more</a>.</p>
+</div>
+<div class="section" id="create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
+<h3>1) Create a list with the names of every planet in the solar system (in order)<a class="headerlink" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
+<h3>2) Have Python tell you how many planets there are by examining your list<a class="headerlink" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="use-slicing-to-display-the-first-four-planets-the-rocky-planets">
+<h3>3) Use slicing to display the first four planets (the rocky planets)<a class="headerlink" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
+<h3>4) Iterate through your planets and print the planet name only if it has an <code class="docutils literal notranslate"><span class="pre">s</span></code> at the end<a class="headerlink" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
-<div class="section" id="for-today-in-class">
-<h2>For today, in class:<a class="headerlink" href="#for-today-in-class" title="Permalink to this headline">¶</a></h2>
-<p><em>The following instructions have been modified from <a class="reference external" href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">the hubspot blog</a> on getting started with Git &amp; GitHub:</em></p>
-<div class="section" id="the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment">
-<h3><strong>The first two things you’ll want to do are install git and create a free GitHub account. Then you’ll proceed with learning about Git and your first assignment.</strong><a class="headerlink" href="#the-first-two-things-you-ll-want-to-do-are-install-git-and-create-a-free-github-account-then-you-ll-proceed-with-learning-about-git-and-your-first-assignment" title="Permalink to this headline">¶</a></h3>
-<p><strong>Step 0: Install git if you are working on your personal computer.</strong>
-Follow the instructions <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> to install git (if it’s not already installed). Note that for this tutorial we will be using git on the command line only. While there are some great git GUIs (graphical user interfaces), I think it’s easier to learn git using git-specific commands first and then to try out a git GUI once you’re more comfortable with the command. A note: 95% of other online git resources and discussions will also be for the command-line interface.</p>
-<p><strong>Step 1: Make an account on GitHub</strong>
-Once you’ve done that, create a GitHub account from the <a class="reference external" href="https://github.com/">GitHub website</a>. When selecting your username, email and password, try to stick with options you’ll like to use in the long-term.  A personal email may be a bit more reliable long-term than you university email, for example. Select the free account when given the option.</p>
-<p><strong>Step 2: Start playing with Git!</strong>
-Next, start with the <a class="reference internal" href="intro_to_git.html"><span class="doc std std-doc">Intro to Git</span></a> page. Then engage with the <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2</span></a> material which will also allow you to submit your <code class="docutils literal notranslate"><span class="pre">First_Class_Reflection.md</span></code> Markdown file that you created last week.</p>
+<div class="section" id="part-ii-dictionaries">
+<h2>Part II: Dictionaries<a class="headerlink" href="#part-ii-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
+<h3>1) Now create a dictionary that maps each planet name to its mass<a class="headerlink" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass" title="Permalink to this headline">¶</a></h3>
+<p>You can use values from this <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA fact sheet</a>.
+You can use whatever units you want, but be consistent.</p>
 </div>
+<div class="section" id="use-your-dictionary-to-look-up-earth-s-mass">
+<h3>2) Use your dictionary to look up Earth’s mass<a class="headerlink" href="#use-your-dictionary-to-look-up-earth-s-mass" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="homework-summary">
-<h2>Homework Summary:<a class="headerlink" href="#homework-summary" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Complete <a class="reference internal" href="../Assignments/files_markdown_git.html"><span class="doc std std-doc">Assignment 2: Files, Git, and Github</span></a></p></li>
-<li><p>Before next week, read ahead about <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a></p></li>
-</ol>
+<div class="section" id="loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
+<h3>3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg<a class="headerlink" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg" title="Permalink to this headline">¶</a></h3>
+<p>Display your result</p>
+</div>
+<div class="section" id="now-add-pluto-to-your-dictionary">
+<h3>4) Now add pluto to your dictionary<a class="headerlink" href="#now-add-pluto-to-your-dictionary" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -408,7 +485,7 @@ Next, start with the <a class="reference internal" href="intro_to_git.html"><spa
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Pages"
+            path: "./Assignments"
         },
         predefinedOutput: true
     }
@@ -420,17 +497,17 @@ Next, start with the <a class="reference internal" href="intro_to_git.html"><spa
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro_to_unix.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Pages/third_day.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Intro to Unix</p>
+            <p class="prev-next-title"><strong>For the third day of class:</strong></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="intro_to_git.html" title="next page">
+    <a class='right-next' id="next-link" href="../Notebooks/functions_classes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intro to Git for Version Control</p>
+        <p class="prev-next-title">Python Functions and Classes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
