@@ -17,3 +17,6 @@ chapters:
 - file: Pages/third_day
 - file: Assignments/python_basics
 - file: Notebooks/functions_classes
+- file: Pages/fourth_day
+- file: Assignments/python_functions
+- file: Notebooks/organization_and_packaging

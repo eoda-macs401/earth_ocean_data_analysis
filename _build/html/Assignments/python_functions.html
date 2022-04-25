@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment: Basic Python &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Assignment 4: Python Functions &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -166,6 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
    Python Functions and Classes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/fourth_day.html">
+   <strong>
+    For the fourth day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/organization_and_packaging.html">
+   Organization and Packaging of Python Projects
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -271,73 +283,13 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-i-lists-and-loops">
-   Part I: Lists and Loops
+  <a class="reference internal nav-link" href="#part-i-practice-with-functions">
+   Part I: Practice with Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-     1) Create a list with the names of every planet in the solar system (in order)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-     2) Have Python tell you how many planets there are by examining your list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-     3) Use slicing to display the first four planets (the rocky planets)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-     4) Iterate through your planets and print the planet name only if it has an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       s
-      </span>
-     </code>
-     at the end
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-dictionaries">
-   Part II: Dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-     1) Now create a dictionary that maps each planet name to its mass
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
-     2) Use your dictionary to look up Earth’s mass
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
-     4) Now add pluto to your dictionary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-functions">
-   Part III: Functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius">
-     1. Write a function to convert temperature from kelvin to celsius
+    <a class="reference internal nav-link" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius-and-celsius-to-kelvin">
+     1. Write a function to convert temperature from kelvin to celsius and celsius to kelvin
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -346,17 +298,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-that-the-outputs-are-sensible">
-     3) Check that the outputs are sensible
+    <a class="reference internal nav-link" href="#check-that-the-outputs-are-sensible-by-trying-a-few-examples">
+     3) Check that the outputs are sensible by trying a few examples
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-write-a-function-that-converts-from-farenheit">
+    <a class="reference internal nav-link" href="#now-write-a-function-that-converts-from-farenheit-and-uses-a-keyword-argument-to-specify-whether-you-want-the-output-in-celcius-or-kelvin">
      4) Now write a function that converts
      <em>
       from
      </em>
-     farenheit
+     farenheit and uses a keyword argument to specify whether you want the output in celcius or kelvin
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -386,7 +338,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment: Basic Python</h1>
+                <h1>Assignment 4: Python Functions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -397,73 +349,13 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-i-lists-and-loops">
-   Part I: Lists and Loops
+  <a class="reference internal nav-link" href="#part-i-practice-with-functions">
+   Part I: Practice with Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-     1) Create a list with the names of every planet in the solar system (in order)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-     2) Have Python tell you how many planets there are by examining your list
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-     3) Use slicing to display the first four planets (the rocky planets)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-     4) Iterate through your planets and print the planet name only if it has an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       s
-      </span>
-     </code>
-     at the end
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-ii-dictionaries">
-   Part II: Dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-     1) Now create a dictionary that maps each planet name to its mass
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
-     2) Use your dictionary to look up Earth’s mass
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
-     4) Now add pluto to your dictionary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-iii-functions">
-   Part III: Functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius">
-     1. Write a function to convert temperature from kelvin to celsius
+    <a class="reference internal nav-link" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius-and-celsius-to-kelvin">
+     1. Write a function to convert temperature from kelvin to celsius and celsius to kelvin
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -472,17 +364,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-that-the-outputs-are-sensible">
-     3) Check that the outputs are sensible
+    <a class="reference internal nav-link" href="#check-that-the-outputs-are-sensible-by-trying-a-few-examples">
+     3) Check that the outputs are sensible by trying a few examples
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-write-a-function-that-converts-from-farenheit">
+    <a class="reference internal nav-link" href="#now-write-a-function-that-converts-from-farenheit-and-uses-a-keyword-argument-to-specify-whether-you-want-the-output-in-celcius-or-kelvin">
      4) Now write a function that converts
      <em>
       from
      </em>
-     farenheit
+     farenheit and uses a keyword argument to specify whether you want the output in celcius or kelvin
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -511,75 +403,31 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-basic-python">
-<h1>Assignment: Basic Python<a class="headerlink" href="#assignment-basic-python" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-4-python-functions">
+<h1>Assignment 4: Python Functions<a class="headerlink" href="#assignment-4-python-functions" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Learning Goals</p>
 <p>This assignment will verify that you have the following skills:</p>
 <ul class="simple">
-<li><p>Create lists and dictionaries</p></li>
-<li><p>Iterate through lists, tuples, and dictionaries</p></li>
-<li><p>Index sequences (e.g. lists and tuples)</p></li>
 <li><p>Define functions</p></li>
 <li><p>Use optional keyword arguments in functions</p></li>
 </ul>
 </div>
-<div class="section" id="part-i-lists-and-loops">
-<h2>Part I: Lists and Loops<a class="headerlink" href="#part-i-lists-and-loops" title="Permalink to this headline">¶</a></h2>
-<p>In this problem, we will explore the basic data structures and flow controls of Python by <em>manually creating data structures</em>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pluto is <a class="reference external" href="https://www.loc.gov/everyday-mysteries/item/why-is-pluto-no-longer-a-planet/">not a planet any more</a>.</p>
-</div>
-<div class="section" id="create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-<h3>1) Create a list with the names of every planet in the solar system (in order)<a class="headerlink" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-<h3>2) Have Python tell you how many planets there are by examining your list<a class="headerlink" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-<h3>3) Use slicing to display the first four planets (the rocky planets)<a class="headerlink" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-<h3>4) Iterate through your planets and print the planet name only if it has an <code class="docutils literal notranslate"><span class="pre">s</span></code> at the end<a class="headerlink" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="part-ii-dictionaries">
-<h2>Part II: Dictionaries<a class="headerlink" href="#part-ii-dictionaries" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-<h3>1) Now create a dictionary that maps each planet name to its mass<a class="headerlink" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass" title="Permalink to this headline">¶</a></h3>
-<p>You can use values from this <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA fact sheet</a>.
-You can use whatever units you want, but be consistent.</p>
-</div>
-<div class="section" id="use-your-dictionary-to-look-up-earth-s-mass">
-<h3>2) Use your dictionary to look up Earth’s mass<a class="headerlink" href="#use-your-dictionary-to-look-up-earth-s-mass" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-<h3>3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg<a class="headerlink" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg" title="Permalink to this headline">¶</a></h3>
-<p>Display your result</p>
-</div>
-<div class="section" id="now-add-pluto-to-your-dictionary">
-<h3>4) Now add pluto to your dictionary<a class="headerlink" href="#now-add-pluto-to-your-dictionary" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="part-iii-functions">
-<h2>Part III: Functions<a class="headerlink" href="#part-iii-functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="write-a-function-to-convert-temperature-from-kelvin-to-celsius">
-<h3>1. Write a function to convert temperature from kelvin to celsius<a class="headerlink" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius" title="Permalink to this headline">¶</a></h3>
-<p>and celsius to kelvin</p>
+<div class="section" id="part-i-practice-with-functions">
+<h2>Part I: Practice with Functions<a class="headerlink" href="#part-i-practice-with-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="write-a-function-to-convert-temperature-from-kelvin-to-celsius-and-celsius-to-kelvin">
+<h3>1. Write a function to convert temperature from kelvin to celsius and celsius to kelvin<a class="headerlink" href="#write-a-function-to-convert-temperature-from-kelvin-to-celsius-and-celsius-to-kelvin" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="write-a-function-to-convert-temperature-to-fahrenheit">
 <h3>2. Write a function to convert temperature to fahrenheit<a class="headerlink" href="#write-a-function-to-convert-temperature-to-fahrenheit" title="Permalink to this headline">¶</a></h3>
 <p>Include an optional keyword argument to specify whether the input is in  celcius or kelvin.
 Call your previously defined functions if necessary.</p>
 </div>
-<div class="section" id="check-that-the-outputs-are-sensible">
-<h3>3) Check that the outputs are sensible<a class="headerlink" href="#check-that-the-outputs-are-sensible" title="Permalink to this headline">¶</a></h3>
-<p>by trying a few examples</p>
+<div class="section" id="check-that-the-outputs-are-sensible-by-trying-a-few-examples">
+<h3>3) Check that the outputs are sensible by trying a few examples<a class="headerlink" href="#check-that-the-outputs-are-sensible-by-trying-a-few-examples" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="now-write-a-function-that-converts-from-farenheit">
-<h3>4) Now write a function that converts <em>from</em> farenheit<a class="headerlink" href="#now-write-a-function-that-converts-from-farenheit" title="Permalink to this headline">¶</a></h3>
-<p>and uses a keyword argument to specify whether you want the output in celcius or kelvin</p>
+<div class="section" id="now-write-a-function-that-converts-from-farenheit-and-uses-a-keyword-argument-to-specify-whether-you-want-the-output-in-celcius-or-kelvin">
+<h3>4) Now write a function that converts <em>from</em> farenheit and uses a keyword argument to specify whether you want the output in celcius or kelvin<a class="headerlink" href="#now-write-a-function-that-converts-from-farenheit-and-uses-a-keyword-argument-to-specify-whether-you-want-the-output-in-celcius-or-kelvin" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="write-a-function-that-takes-two-arguments-feet-and-inches-and-returns-height-in-meters">
 <h3>5) Write a function that takes two arguments (feet and inches) and returns height in meters<a class="headerlink" href="#write-a-function-that-takes-two-arguments-feet-and-inches-and-returns-height-in-meters" title="Permalink to this headline">¶</a></h3>
