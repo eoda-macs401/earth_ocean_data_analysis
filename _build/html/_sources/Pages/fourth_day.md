@@ -16,7 +16,7 @@ For next week, please read about [Organization and Packaging of Python Projects]
 We'll start class today by going over [Assignment 3: Python Basics](../Assignments/python_basics).  If it was easy for you, plan to mentour some of yoru fellow students. If  you haven't figured it out yet, get ready to pay attention and practice these new commands and tools in class. 
 
 
-We'll then move on to working through some new ideas about [Python Functions and Classes](../Notebooks/functions_and_classes). 
+We'll then move on to working through some new ideas about [Python Functions and Classes](../Notebooks/functions_classes). 
 
 ##### **REMINDER:**  I recommend taking notes as we go over material (follow along with demos, etc.) in a new `Notebook`, maybe saved in your `inclass-working` directory on your thumb drive. You can open a new Jupyter Notebook from within JupyterLab (click on the `Notebook` button when it first opens, or from `File > New`.
 
