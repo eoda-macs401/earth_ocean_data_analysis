@@ -17,23 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import gcdistance
-help(gcdistance) 
+import numpy as np
+print(np.dtype('i2'), np.dtype('i2').itemsize, "bytes")
+print(np.dtype('f8'), np.dtype('f8').itemsize, "bytes")
+print(np.dtype('complex256'), np.dtype('complex256').itemsize, "bytes")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mgcdistance[39;00m
-[1;32m      2[0m help(gcdistance)
-
-File [0;32m~/WWU_GD/WWU_Courses_Master/MACS401/EODA_Book/Earth_Ocean_Data_Analysis_MACS401/Notebooks/gcdistance.py:4[0m, in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [38;5;124;03m"""[39;00m
-[1;32m      2[0m [38;5;124;03mA python module for computing great circle distance[39;00m
-[1;32m      3[0m [38;5;124;03m"""[39;00m
-[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[1;32m      6[0m [38;5;66;03m# approximate radius of Earth[39;00m
-[1;32m      7[0m R [38;5;241m=[39m [38;5;241m6.371e6[39m
+Input [0;32mIn [2][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      2[0m [38;5;28mprint[39m(np[38;5;241m.[39mdtype([38;5;124m'[39m[38;5;124mi2[39m[38;5;124m'[39m), np[38;5;241m.[39mdtype([38;5;124m'[39m[38;5;124mi2[39m[38;5;124m'[39m)[38;5;241m.[39mitemsize, [38;5;124m"[39m[38;5;124mbytes[39m[38;5;124m"[39m)
+[1;32m      3[0m [38;5;28mprint[39m(np[38;5;241m.[39mdtype([38;5;124m'[39m[38;5;124mf8[39m[38;5;124m'[39m), np[38;5;241m.[39mdtype([38;5;124m'[39m[38;5;124mf8[39m[38;5;124m'[39m)[38;5;241m.[39mitemsize, [38;5;124m"[39m[38;5;124mbytes[39m[38;5;124m"[39m)
 
 [0;31mModuleNotFoundError[0m: No module named 'numpy'
 ModuleNotFoundError: No module named 'numpy'
