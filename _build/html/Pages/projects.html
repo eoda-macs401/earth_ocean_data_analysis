@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Projects &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Managing Python Environments" href="python_environments.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_day_of_class.html">
+   <strong>
+    For the first day of class
+   </strong>
+   :
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installing_jupyterlab.html">
+   Installing JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+   First Class - Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_unix.html">
+   Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="second_day.html">
+   <strong>
+    For the second day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_git.html">
+   Intro to Git for Version Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/files_markdown_git.html">
+   Assignment 2: Files, Git, and Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_gitHub_cheatsheet.html">
+   Git/GitHub Cheatsheet!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
+   Python Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="third_day.html">
+   <strong>
+    For the third day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/python_basics.html">
+   Assignment 3: Basic Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/functions_classes.html">
+   Python Functions and Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fourth_day.html">
+   <strong>
+    For the fourth day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/python_functions.html">
+   Assignment 4: Python Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/organization_and_packaging.html">
+   Organization and Packaging of Python Projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fifth_day.html">
+   <strong>
+    For the fifth day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/project_brainstorm.html">
+   Assignment 5 - Data Analysis Project Brainstorm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/data.html">
+   All About Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_environments.html">
+   Managing Python Environments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Final Projects
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Pages/projects.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/projects.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-project-requirements">
+   Final Project Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-goals">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-requirements">
+     Dataset Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-requirements">
+     Analysis Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-requirements">
+     Technical Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-approval">
+     Project Approval
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-presentations">
+     In-Class Presentations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Final Projects</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#final-project-requirements">
+   Final Project Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-goals">
+     Learning Goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset-requirements">
+     Dataset Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-requirements">
+     Analysis Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#technical-requirements">
+     Technical Requirements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-approval">
+     Project Approval
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-presentations">
+     In-Class Presentations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="final-projects">
+<h1>Final Projects<a class="headerlink" href="#final-projects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="final-project-requirements">
+<h2>Final Project Requirements<a class="headerlink" href="#final-project-requirements" title="Permalink to this headline">¶</a></h2>
+<p>For instructors wishing to re-create the final project experience, below we include some specification used in past iterations of the course.</p>
+<div class="section" id="learning-goals">
+<h3>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h3>
+<p>The goal of the final project is to assess your ability to combine and apply the skills you have learned in class in the context of a real-world research problem. Our class has mostly focused on tools for data analysis and visualization, so this must be the focus of your final project. Specifically, we seek to assess your ability to do the following tasks:</p>
+<ul class="simple">
+<li><p>Discover and download real datasets in standard formats (e.g. CSV, netCDF)</p></li>
+<li><p>Load the data into Pandas or Xarray, performing any necessary data cleanup (dealing with missing values, proper time encoding, etc.) along the way.</p></li>
+<li><p>Perform realistic scientific calculation involving, for example tasks such as grouping, aggregating, and applying mathematical formulas.</p></li>
+<li><p>Visualize your results in well-formatted plots.</p></li>
+</ul>
+</div>
+<div class="section" id="dataset-requirements">
+<h3>Dataset Requirements<a class="headerlink" href="#dataset-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Your datasets can involve data collected by yourself or your lab, or can come from a public data repository. Ideally, your choice of dataset should be driven by your research. It is acceptable (and encouraged) to have your final project for this class involve an ongoing research project. <em>However, it is not acceptable to have your final project overlap with the final project for another class.</em></p>
+<p>If you don’t know what dataset to use, here are a couple of links to get you started:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://iridl.ldeo.columbia.edu/">IRI Data Library</a></p></li>
+<li><p><a class="reference external" href="https://data.usgs.gov/datacatalog/">USGS Data Catalog</a></p></li>
+<li><p><a class="reference external" href="https://www.ncdc.noaa.gov/">NOAA National Climate Data Center</a></p></li>
+<li><p><a class="reference external" href="https://earthdata.nasa.gov/">NASA Earth Science Data</a></p></li>
+</ul>
+<p>You may use just one dataset, or you may choose to combine multiple datasets, depending on your scientific question.</p>
+</div>
+<div class="section" id="analysis-requirements">
+<h3>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h3>
+<p>The goal here is the same as with any science project: to use the data to investigate a scientific question or hypothesis. In order to succeed on the project, you will have to draw on your experience <em>outside</em> our class, from your science-focused classes or independent research, in order to define a scientifically interesting question. It is also acceptable to use this project to reproduce the results from a published study that you find interesting, provided you have access to the original data.</p>
+<p>Whatever you choose, you should <em>clearly define a hypothesis or scientific question that you aim to investigate with your analysis</em>. This will determine what you have to do.</p>
+<p>The results of this analysis will be figures. Beautiful figures which clearly provide answers to your question / hypothesis. Your notebook should contain at least 4 and no more than 8 figures. If you have closer to 4, they should be complex, multi-panel figures. All figures must have titles, clearly labeled axes, informative colormaps / colorbars, and legends, where appropriate.</p>
+</div>
+<div class="section" id="technical-requirements">
+<h3>Technical Requirements<a class="headerlink" href="#technical-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Your final project must meet the following technical requirements</p>
+<ul class="simple">
+<li><p>A <em>single jupyter notebook</em></p></li>
+<li><p>Stored in a standalone public github repo</p></li>
+<li><p>All data is either stored in the repo itself or downloaded / accessed from within the notebook (no manual download steps)</p></li>
+<li><p>Complete explanatory text / equations included in the notebook as markdown cells</p></li>
+<li><p>Notebook must execute in sequence with no errors</p></li>
+<li><p>The whole github repo must be configured to run on <a class="reference external" href="https://mybinder.org/">mybinder.org</a> or, for analysis involving dask, <a class="reference external" href="http://binder.pangeo.io/">binder.pangeo.io</a></p></li>
+</ul>
+<p>You <em>must</em> use either Pandas or Xarray (or both) in some part of your project. You <em>may</em> use other scientific python libraries as well, if you wish, to facilitate some analysis that is not possible with Xarray / Pandas alone. Some libraries you may wish to consider are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy</a> for interpolation, signal processing, spectral analysis, linear algebra, and other general purpose scientific computing routines</p></li>
+<li><p><a class="reference external" href="https://github.com/statsmodels/statsmodels">Statsmodels</a> for advanced statistical analysis</p></li>
+<li><p><a class="reference external" href="https://scikit-image.org/">Scikit-image</a> for image processing</p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">Scikit-learn</a> for machine learning</p></li>
+<li><p><a class="reference external" href="https://xgcm.readthedocs.io/en/latest/">XGCM</a> for working with finite-volume data from general circulation models</p></li>
+<li><p><a class="reference external" href="https://xesmf.readthedocs.io/en/latest/">XESMF</a> for regridding of gridded data</p></li>
+<li><p><a class="reference external" href="https://pyresample.readthedocs.io/en/latest/">Pyresample</a> for resampling (reprojection) of satellite data</p></li>
+<li><p><a class="reference external" href="https://ajdawson.github.io/eofs/">EOFS</a> for empirical orthogonal function analysis</p></li>
+<li><p><a class="reference external" href="https://ajdawson.github.io/windspharm/latest/">windspharm</a> for spherical harmonic analysis of global atmospheric wind data</p></li>
+<li><p><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">metpy</a> a collection of tools in Python for reading, visualizing, and performing calculations with weather data</p></li>
+</ul>
+</div>
+<div class="section" id="project-approval">
+<h3>Project Approval<a class="headerlink" href="#project-approval" title="Permalink to this headline">¶</a></h3>
+<p>You must have your dataset(s) and general scope for your project improved by the instructor. The approval process works like this:</p>
+<ul class="simple">
+<li><p>Create a new public github repo for your project</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file which contains the scientific question / hypothesis you plan to investigate, links to the relevant datasets, and a three sentence summary of the analysis you plan to do.</p></li>
+<li><p>Submit a link to your project repo using the method indicated by the instructor.</p></li>
+</ul>
+</div>
+<div class="section" id="in-class-presentations">
+<h3>In-Class Presentations<a class="headerlink" href="#in-class-presentations" title="Permalink to this headline">¶</a></h3>
+<p>You are asked to give a 5-minute presentation about your project. Do not prepare any slides. Instead, make your presentation by opening your notebook from GitHub on the presentation computer and walking us through parts of it. Your presentation should be concise and cover the following topics:</p>
+<ul class="simple">
+<li><p>What data did you analyze and how did you load it?</p></li>
+<li><p>What is the most interesting figure you made? (Show us the figure.)</p></li>
+<li><p>What was the biggest challenge you faced in completing your project.</p></li>
+</ul>
+<p><em>Don’t forget to make your project repo <strong>public</strong>; otherwise we won’t be able to see it.</em></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="python_environments.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Managing Python Environments</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

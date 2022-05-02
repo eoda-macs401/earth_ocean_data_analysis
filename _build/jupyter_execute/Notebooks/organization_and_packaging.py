@@ -3,7 +3,7 @@
 
 # # Organization and Packaging of Python Projects
 # 
-# A complex research project often relies and many different programs and software packages to accomplish the research goals. 
+# A complex research project often relies on many different programs and software packages to accomplish the research goals. 
 # An important part of scientific computing is deciding how to organize and structure the code you use for research.
 # A well-structured project can make you a more efficient and effective researcher.
 # It is also a key component of [scientific reproducibility](http://lorenabarba.com/blog/barbagroup-reproducibility-syllabus/).
@@ -176,7 +176,7 @@ gcdistance.great_circle_distance((60, 0), (50, 15))
 
 # We could just import the function we need
 
-# In[5]:
+# In[3]:
 
 
 from gcdistance import R, great_circle_distance
@@ -185,7 +185,7 @@ R
 
 # If we change the module, we need to either restart our kernel or else reload the module. (Note that functions imported via `from module import func` cannot be reloaded.)
 
-# In[8]:
+# In[4]:
 
 
 from importlib import reload
