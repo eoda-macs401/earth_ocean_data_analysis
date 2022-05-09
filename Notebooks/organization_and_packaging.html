@@ -212,6 +212,33 @@ const thebe_selector_output = ".output, .cell_output"
    Final Projects
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/sixth_day.html">
+   <strong>
+    For the sixth day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy_and_matplotlib.html">
+   Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/numpy_matplotlib.html">
+   Assignment 6 - Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="more_matplotlib.html">
+   More Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/more_matplotlib.html">
+   Assignment 6a (optional for 2022): More Matplotlib
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -623,21 +650,31 @@ There are several <a class="reference external" href="https://pypi.python.org/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">gcdistance</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">help</span><span class="p">(</span><span class="n">gcdistance</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module gcdistance:
 
-<span class="n">File</span> <span class="o">~/</span><span class="n">WWU_GD</span><span class="o">/</span><span class="n">WWU_Courses_Master</span><span class="o">/</span><span class="n">MACS401</span><span class="o">/</span><span class="n">EODA_Book</span><span class="o">/</span><span class="n">Earth_Ocean_Data_Analysis_MACS401</span><span class="o">/</span><span class="n">Notebooks</span><span class="o">/</span><span class="n">gcdistance</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> A python module for computing great circle distance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># approximate radius of Earth</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">R</span> <span class="o">=</span> <span class="mf">6.371e6</span>
+NAME
+    gcdistance - A python module for computing great circle distance
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+FUNCTIONS
+    great_circle_distance(point1, point2)
+        Calculate great-circle distance between two points.
+        
+        PARAMETERS
+        ----------
+        point1 : tuple
+            A (lat, lon) pair of coordinates in degrees
+        point2 : tuple
+            A (lat, lon) pair of coordinates in degrees
+            
+        RETURNS
+        -------
+        distance : float
+
+DATA
+    R = 6371000.0
+
+FILE
+    /Users/emily/WWU_GD/WWU_Courses_Master/MACS401/EODA_Book/Earth_Ocean_Data_Analysis_MACS401/Notebooks/gcdistance.py
 </pre></div>
 </div>
 </div>
