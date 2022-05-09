@@ -25,3 +25,8 @@ chapters:
 - file: Notebooks/data
 - file: Pages/python_environments
 - file: Pages/projects
+- file: Pages/sixth_day
+- file: Notebooks/numpy_and_matplotlib
+- file: Assignments/numpy_matplotlib
+- file: Notebooks/more_matplotlib
+- file: Assignments/more_matplotlib

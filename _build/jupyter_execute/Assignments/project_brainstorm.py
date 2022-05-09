@@ -20,11 +20,11 @@
 # 
 # ### Think about your interests and Goals and Brainstorm your Final Project
 # 
-# For this assignment, I'd like to you to spend a few moments thinking about how you could apply these new skils to an actual Data Analysis project.  Yeah!! Qesitons you could consider when you think about this: *Do you have a topic, dataset, or problem that motivated you to want to learn more about data analysis? Are there specific computationals skills, or a diciplinary focus that you think coudl help you with your academic or career goals? Is there a data set you currently have, or that you know of that you'd like to analyze in a certain way, visualize better, or just play around with?*
+# For this assignment, I'd like to you to spend a few moments thinking about how you could apply these new skils to an actual Data Analysis project.  Yeah!! Questions you could consider when you think about this: *Do you have a topic, dataset, or problem that motivated you to want to learn more about data analysis? Are there specific computationals skills, or a diciplinary focus that you think coudl help you with your academic or career goals? Is there a data set you currently have, or that you know of that you'd like to analyze in a certain way, visualize better, or just play around with?*
 # 
 # To complete the assignment, you can fill out the following markdown cells (we're using a Jupyter Notebook like a form here!) with answers and ideas to the questions listed. 
 # 
-# Ambitions but attainable requrements for final projects for this course can be found on the [Final Projects Page](../Pages/projects).  You might want to reference that in your brainstorm session. 
+# Ambitious but attainable requrements for final projects for this course can be found on the [Final Projects Page](../Pages/projects).  You might want to reference that in your brainstorm session. 
 # 
 # 
 # Question 1:  What is a problem you'd like to solve using Data Analysis skills? Think of a question, problem, or transformation that includes a modern dataset that needs to be accessed via computational tools like those we've just started to explore.  This could include exploratory work, or development of a specific kind of Reusable software element (like a calculation, transformation or modeling excercise):

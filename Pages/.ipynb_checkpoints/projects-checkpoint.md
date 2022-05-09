@@ -1,10 +1,6 @@
 # Final Projects
 
 
-## Final Project Requirements
-
-For instructors wishing to re-create the final project experience, below we include some specification used in past iterations of the course.
-
 ### Learning Goals
 
 The goal of the final project is to assess your ability to combine and apply the skills you have learned in class in the context of a real-world research problem. Our class has mostly focused on tools for data analysis and visualization, so this must be the focus of your final project. Specifically, we seek to assess your ability to do the following tasks:
@@ -52,11 +48,8 @@ You _must_ use either Pandas or Xarray (or both) in some part of your project.
 *   [Statsmodels](https://github.com/statsmodels/statsmodels) for advanced statistical analysis
 *   [Scikit-image](https://scikit-image.org/) for image processing
 *   [Scikit-learn](https://scikit-learn.org/stable/) for machine learning
-*   [XGCM](https://xgcm.readthedocs.io/en/latest/) for working with finite-volume data from general circulation models
 *   [XESMF](https://xesmf.readthedocs.io/en/latest/) for regridding of gridded data
 *   [Pyresample](https://pyresample.readthedocs.io/en/latest/) for resampling (reprojection) of satellite data
-*   [EOFS](https://ajdawson.github.io/eofs/) for empirical orthogonal function analysis
-*   [windspharm](https://ajdawson.github.io/windspharm/latest/) for spherical harmonic analysis of global atmospheric wind data
 *   [metpy](https://unidata.github.io/MetPy/latest/index.html) a collection of tools in Python for reading, visualizing, and performing calculations with weather data
 
 ### Project Approval

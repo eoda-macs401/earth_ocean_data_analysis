@@ -214,6 +214,33 @@ const thebe_selector_output = ".output, .cell_output"
    Final Projects
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/sixth_day.html">
+   <strong>
+    For the sixth day of class:
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy_and_matplotlib.html">
+   Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/numpy_matplotlib.html">
+   Assignment 6 - Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="more_matplotlib.html">
+   More Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/more_matplotlib.html">
+   Assignment 6a (optional for 2022): More Matplotlib
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -759,14 +786,9 @@ The more bytes we use for each value, the more range or precision we get.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;i2&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;i2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">&quot;bytes&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;f8&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;f8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">&quot;bytes&quot;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int16 2 bytes
+float64 8 bytes
+complex256 32 bytes
 </pre></div>
 </div>
 </div>
@@ -974,105 +996,17 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>id</th>
-      <th>nametype</th>
-      <th>recclass</th>
-      <th>mass (g)</th>
-      <th>fall</th>
-      <th>year</th>
-      <th>reclat</th>
-      <th>reclong</th>
-      <th>GeoLocation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Aachen</td>
-      <td>1</td>
-      <td>Valid</td>
-      <td>L5</td>
-      <td>21.0</td>
-      <td>Fell</td>
-      <td>01/01/1880 12:00:00 AM</td>
-      <td>50.77500</td>
-      <td>6.08333</td>
-      <td>(50.775, 6.08333)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Aarhus</td>
-      <td>2</td>
-      <td>Valid</td>
-      <td>H6</td>
-      <td>720.0</td>
-      <td>Fell</td>
-      <td>01/01/1951 12:00:00 AM</td>
-      <td>56.18333</td>
-      <td>10.23333</td>
-      <td>(56.18333, 10.23333)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Abee</td>
-      <td>6</td>
-      <td>Valid</td>
-      <td>EH4</td>
-      <td>107000.0</td>
-      <td>Fell</td>
-      <td>01/01/1952 12:00:00 AM</td>
-      <td>54.21667</td>
-      <td>-113.00000</td>
-      <td>(54.21667, -113.0)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Acapulco</td>
-      <td>10</td>
-      <td>Valid</td>
-      <td>Acapulcoite</td>
-      <td>1914.0</td>
-      <td>Fell</td>
-      <td>01/01/1976 12:00:00 AM</td>
-      <td>16.88333</td>
-      <td>-99.90000</td>
-      <td>(16.88333, -99.9)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Achiras</td>
-      <td>370</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>780.0</td>
-      <td>Fell</td>
-      <td>01/01/1902 12:00:00 AM</td>
-      <td>-33.16667</td>
-      <td>-64.95000</td>
-      <td>(-33.16667, -64.95)</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>This code will work from any computer on the internet! 🎉</p>
 </div>

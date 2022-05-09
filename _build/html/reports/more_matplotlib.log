@@ -1,0 +1,96 @@
+Traceback (most recent call last):
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/emily/anaconda3/envs/MACS497/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+fig, ax = plt.subplots(figsize=(12,4), ncols=2)
+ax[0].imshow(f)
+ax[1].imshow(f, origin='bottom')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Input [0;32mIn [34][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m fig, ax [38;5;241m=[39m plt[38;5;241m.[39msubplots(figsize[38;5;241m=[39m([38;5;241m12[39m,[38;5;241m4[39m), ncols[38;5;241m=[39m[38;5;241m2[39m)
+[1;32m      2[0m ax[[38;5;241m0[39m][38;5;241m.[39mimshow(f)
+[0;32m----> 3[0m [43max[49m[43m[[49m[38;5;241;43m1[39;49m[43m][49m[38;5;241;43m.[39;49m[43mimshow[49m[43m([49m[43mf[49m[43m,[49m[43m [49m[43morigin[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mbottom[39;49m[38;5;124;43m'[39;49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/_api/deprecation.py:459[0m, in [0;36mmake_keyword_only.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    453[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(args) [38;5;241m>[39m name_idx:
+[1;32m    454[0m     warn_deprecated(
+[1;32m    455[0m         since, message[38;5;241m=[39m[38;5;124m"[39m[38;5;124mPassing the [39m[38;5;132;01m%(name)s[39;00m[38;5;124m [39m[38;5;132;01m%(obj_type)s[39;00m[38;5;124m [39m[38;5;124m"[39m
+[1;32m    456[0m         [38;5;124m"[39m[38;5;124mpositionally is deprecated since Matplotlib [39m[38;5;132;01m%(since)s[39;00m[38;5;124m; the [39m[38;5;124m"[39m
+[1;32m    457[0m         [38;5;124m"[39m[38;5;124mparameter will become keyword-only [39m[38;5;132;01m%(removal)s[39;00m[38;5;124m.[39m[38;5;124m"[39m,
+[1;32m    458[0m         name[38;5;241m=[39mname, obj_type[38;5;241m=[39m[38;5;124mf[39m[38;5;124m"[39m[38;5;124mparameter of [39m[38;5;132;01m{[39;00mfunc[38;5;241m.[39m[38;5;18m__name__[39m[38;5;132;01m}[39;00m[38;5;124m()[39m[38;5;124m"[39m)
+[0;32m--> 459[0m [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/__init__.py:1412[0m, in [0;36m_preprocess_data.<locals>.inner[0;34m(ax, data, *args, **kwargs)[0m
+[1;32m   1409[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(func)
+[1;32m   1410[0m [38;5;28;01mdef[39;00m [38;5;21minner[39m(ax, [38;5;241m*[39margs, data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m   1411[0m     [38;5;28;01mif[39;00m data [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m-> 1412[0m         [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[43max[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;28;43mmap[39;49m[43m([49m[43msanitize_sequence[49m[43m,[49m[43m [49m[43margs[49m[43m)[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   1414[0m     bound [38;5;241m=[39m new_sig[38;5;241m.[39mbind(ax, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m   1415[0m     auto_label [38;5;241m=[39m (bound[38;5;241m.[39marguments[38;5;241m.[39mget(label_namer)
+[1;32m   1416[0m                   [38;5;129;01mor[39;00m bound[38;5;241m.[39mkwargs[38;5;241m.[39mget(label_namer))
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/axes/_axes.py:5475[0m, in [0;36mAxes.imshow[0;34m(self, X, cmap, norm, aspect, interpolation, alpha, vmin, vmax, origin, extent, interpolation_stage, filternorm, filterrad, resample, url, **kwargs)[0m
+[1;32m   5473[0m     aspect [38;5;241m=[39m rcParams[[38;5;124m'[39m[38;5;124mimage.aspect[39m[38;5;124m'[39m]
+[1;32m   5474[0m [38;5;28mself[39m[38;5;241m.[39mset_aspect(aspect)
+[0;32m-> 5475[0m im [38;5;241m=[39m [43mmimage[49m[38;5;241;43m.[39;49m[43mAxesImage[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mcmap[49m[43m,[49m[43m [49m[43mnorm[49m[43m,[49m[43m [49m[43minterpolation[49m[43m,[49m
+[1;32m   5476[0m [43m                      [49m[43morigin[49m[43m,[49m[43m [49m[43mextent[49m[43m,[49m[43m [49m[43mfilternorm[49m[38;5;241;43m=[39;49m[43mfilternorm[49m[43m,[49m
+[1;32m   5477[0m [43m                      [49m[43mfilterrad[49m[38;5;241;43m=[39;49m[43mfilterrad[49m[43m,[49m[43m [49m[43mresample[49m[38;5;241;43m=[39;49m[43mresample[49m[43m,[49m
+[1;32m   5478[0m [43m                      [49m[43minterpolation_stage[49m[38;5;241;43m=[39;49m[43minterpolation_stage[49m[43m,[49m
+[1;32m   5479[0m [43m                      [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   5481[0m im[38;5;241m.[39mset_data(X)
+[1;32m   5482[0m im[38;5;241m.[39mset_alpha(alpha)
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/image.py:929[0m, in [0;36mAxesImage.__init__[0;34m(self, ax, cmap, norm, interpolation, origin, extent, filternorm, filterrad, resample, interpolation_stage, **kwargs)[0m
+[1;32m    913[0m [38;5;28;01mdef[39;00m [38;5;21m__init__[39m([38;5;28mself[39m, ax,
+[1;32m    914[0m              cmap[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[1;32m    915[0m              norm[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[0;32m   (...)[0m
+[1;32m    924[0m              [38;5;241m*[39m[38;5;241m*[39mkwargs
+[1;32m    925[0m              ):
+[1;32m    927[0m     [38;5;28mself[39m[38;5;241m.[39m_extent [38;5;241m=[39m extent
+[0;32m--> 929[0m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m
+[1;32m    930[0m [43m        [49m[43max[49m[43m,[49m
+[1;32m    931[0m [43m        [49m[43mcmap[49m[38;5;241;43m=[39;49m[43mcmap[49m[43m,[49m
+[1;32m    932[0m [43m        [49m[43mnorm[49m[38;5;241;43m=[39;49m[43mnorm[49m[43m,[49m
+[1;32m    933[0m [43m        [49m[43minterpolation[49m[38;5;241;43m=[39;49m[43minterpolation[49m[43m,[49m
+[1;32m    934[0m [43m        [49m[43morigin[49m[38;5;241;43m=[39;49m[43morigin[49m[43m,[49m
+[1;32m    935[0m [43m        [49m[43mfilternorm[49m[38;5;241;43m=[39;49m[43mfilternorm[49m[43m,[49m
+[1;32m    936[0m [43m        [49m[43mfilterrad[49m[38;5;241;43m=[39;49m[43mfilterrad[49m[43m,[49m
+[1;32m    937[0m [43m        [49m[43mresample[49m[38;5;241;43m=[39;49m[43mresample[49m[43m,[49m
+[1;32m    938[0m [43m        [49m[43minterpolation_stage[49m[38;5;241;43m=[39;49m[43minterpolation_stage[49m[43m,[49m
+[1;32m    939[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m
+[1;32m    940[0m [43m    [49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/image.py:249[0m, in [0;36m_ImageBase.__init__[0;34m(self, ax, cmap, norm, interpolation, origin, filternorm, filterrad, resample, interpolation_stage, **kwargs)[0m
+[1;32m    247[0m [38;5;28;01mif[39;00m origin [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    248[0m     origin [38;5;241m=[39m mpl[38;5;241m.[39mrcParams[[38;5;124m'[39m[38;5;124mimage.origin[39m[38;5;124m'[39m]
+[0;32m--> 249[0m [43m_api[49m[38;5;241;43m.[39;49m[43mcheck_in_list[49m[43m([49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mupper[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mlower[39;49m[38;5;124;43m"[39;49m[43m][49m[43m,[49m[43m [49m[43morigin[49m[38;5;241;43m=[39;49m[43morigin[49m[43m)[49m
+[1;32m    250[0m [38;5;28mself[39m[38;5;241m.[39morigin [38;5;241m=[39m origin
+[1;32m    251[0m [38;5;28mself[39m[38;5;241m.[39mset_filternorm(filternorm)
+
+File [0;32m~/anaconda3/envs/MACS497/lib/python3.10/site-packages/matplotlib/_api/__init__.py:129[0m, in [0;36mcheck_in_list[0;34m(_values, _print_supported_values, **kwargs)[0m
+[1;32m    127[0m [38;5;28;01mif[39;00m _print_supported_values:
+[1;32m    128[0m     msg [38;5;241m+[39m[38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124m; supported values are [39m[38;5;132;01m{[39;00m[38;5;124m'[39m[38;5;124m, [39m[38;5;124m'[39m[38;5;241m.[39mjoin([38;5;28mmap[39m([38;5;28mrepr[39m, values))[38;5;132;01m}[39;00m[38;5;124m"[39m
+[0;32m--> 129[0m [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(msg)
+
+[0;31mValueError[0m: 'bottom' is not a valid value for origin; supported values are 'upper', 'lower'
+ValueError: 'bottom' is not a valid value for origin; supported values are 'upper', 'lower'
+
