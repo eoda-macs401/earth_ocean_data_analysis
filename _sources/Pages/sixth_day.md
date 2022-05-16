@@ -18,7 +18,7 @@ If this was a 4 credit course, we'd spend easily a whole week (two meetings!) or
 
 We'll spend some time discussing `Python Environments` and how to `import Python packages` and make `NumPy Arrays` in class.  We'll get as far through the [NumPy and Matplotlib](../Pages/numpy_and_matplotlib) content as we can - and you'll take it from there wiht you homework!
 
-For your homework, complete [Assignment 6 - NumPy and Matplotlib](../Assignments/numpy_matplotlib).  Publish this to a new GitHub repostory called `data_analysis` and make me a collaborator!  If you'd like, also complete [*Optional* Assignment 6a on More Matplotlib](../Assignments/more_matplotlib).
+For your homework, complete [Assignment 6 - NumPy and Matplotlib](../Assignments/numpy_matplotlib).  **EDIT** (IGNORE OLD INSTRUCTIONS: Publish this to a new GitHub repostory called `data_analysis` and make me a collaborator!) New Instructions: Publish this to your `python-projects` github repostory - remember to push any changes (this assignment) to that repo.  If you'd like, also complete [*Optional* Assignment 6a on More Matplotlib](../Assignments/more_matplotlib).
 
 ### Homework Summary:
 

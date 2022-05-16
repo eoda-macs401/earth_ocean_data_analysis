@@ -13,7 +13,7 @@ As a final goal for the quarter, we'll also move on toward practicing one of the
 For the final week of new material - we'll be practicing one of the most common ways we can access (import, read - prepare to analyze) tabular data - which makes up the majority of data types we deal with in Earth Science.  This week's assigned reading will once again be necessary to complete the homework, and is focused on a library called [Pandas](../Pages/pandas_intro).  The reading assignment for the week also includes a page focused on examples of how Pandas is implemented via examples and notes on syntax, [coding examples of Pandas Fundamentals](../Notebooks/basic_pandas). 
 
 
-For the final homework, complete [Assignment 7 - Pandas Fundamentals with Earthquake Data](../Assignments/basic_pandas).  Publish this to your same GitHub repostory as last week called `data_analysis` (and if you haven't already, make sure I'm a collaborator! ) 
+For the final homework, complete [Assignment 7 - Pandas Fundamentals with Earthquake Data](../Assignments/basic_pandas).  Publish this to your same GitHub repostory as last week called `python-projects` (and push your changes to GitHub!) 
 
 Note that this week you'll also need to check in with me about your final project (again... we'll keep doing this!).  Submit a modified outline of your plan for you final project by compilint the information outlined in the [Final Projects - 2 Credit Version](../Pages/final_projects_2credit). 
 
