@@ -30,3 +30,9 @@ chapters:
 - file: Assignments/numpy_matplotlib
 - file: Notebooks/more_matplotlib
 - file: Assignments/more_matplotlib
+- file: Pages/seventh_day
+- file: Pages/pandas_intro
+- file: Notebooks/basic_pandas
+- file: Assignments/basic_pandas
+- file: Pages/final_projects_2credit
+- file: Assignments/macs497_extracredit

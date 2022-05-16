@@ -98,6 +98,16 @@
 # ### 1.8 Plot the mean of $f$ with respect to $\phi$ as a function of $r$
 # 
 # This is hard. You will need to define a discrete range of $r$ values and then figure out how to average $f$ within the bins defined by your $r$ grid. There are many different ways to accomplish this.
+# 
+# 
+# ```{admonition} EXTRA CREDIT - 
+# :class: tip
+# 
+# This question is Extra Credit!  Think it over and give it a shot! If you choose to complete it (on time, or later in the quarter), drop a note to emily.roland@wwu.edu, and let me know I should take a closer look at the assignment and give you some extra points for taking on the challenge!
+# 
+# ```
+# 
+# 
 
 # In[ ]:
 
