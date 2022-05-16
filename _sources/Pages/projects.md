@@ -1,5 +1,8 @@
 # Final Projects
 
+Note - this page contains ideas for a ambitious final project - like that which would be appropriate for a typical 4-credit course.  For the Spring 2022 (2 credit) version of this course, the final projects will be paired down to something closer to a single assignment-scale effort.  Some of the informaiton outlined below may still be useful for brainstorming your project, consdiering data sources, computational tools and submission formats.  
+
+Although the learning goals, dataset requrements, and analysis requirements for our paired down final projects are simular to those outlined below, consider how these can be scaled to a ~2 week effort for 2022:
 
 ### Learning Goals
 
