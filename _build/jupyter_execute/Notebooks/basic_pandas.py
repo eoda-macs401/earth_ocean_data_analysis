@@ -14,7 +14,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ## Pandas Data Structures: Series
 # 
-# A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an _index_. The index contains the labels that we use to access the data.
+# A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an _index_. The index contains the labels that we use to access the data. This can be useful.
 # 
 # There are many ways to [create a Series](https://pandas.pydata.org/pandas-docs/stable/dsintro.html#series). We will just show a few.
 # 
