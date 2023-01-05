@@ -11,6 +11,6 @@ parts:
     - file: Pages/intro_to_jupyterlab
     - file: Pages/intro_to_unix
     - file: Notebooks/python_fundamentals
-  - caption: Readings and Tutorials
+  - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment

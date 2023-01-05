@@ -1,0 +1,28 @@
+   
+- file: Pages/second_day
+- file: Pages/intro_to_git
+- file: Assignments/files_markdown_git
+- file: Pages/git_gitHub_cheatsheet
+
+- file: Pages/third_day
+- file: Assignments/python_basics
+- file: Notebooks/functions_classes
+- file: Pages/fourth_day
+- file: Assignments/python_functions
+- file: Notebooks/organization_and_packaging
+- file: Pages/fifth_day
+- file: Assignments/project_brainstorm
+- file: Notebooks/data
+- file: Pages/python_environments
+- file: Pages/projects
+- file: Pages/sixth_day
+- file: Notebooks/numpy_and_matplotlib
+- file: Assignments/numpy_matplotlib
+- file: Notebooks/more_matplotlib
+- file: Assignments/more_matplotlib
+- file: Pages/seventh_day
+- file: Pages/pandas_intro
+- file: Notebooks/basic_pandas
+- file: Assignments/basic_pandas
+- file: Pages/final_projects_2credit
+- file: Assignments/macs497_extracredit
