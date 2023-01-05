@@ -1,9 +1,9 @@
 # Installing JupyterLab
 ## Installation instructions for Anaconda (or miniConda) on your machine:
-## MACS497 (MACS401)
+## MACS401
 
 *Content modified from Greg Waite’s 2019 Cider workshop:*  
-This document outlines instructions for installing Anaconda package manager for Python 3.  Use this document to help you get started if you’re using your personal machine for class work.  If you would prefer to use a University Computer Lab computer (in MH031), you should not need to do any installation, as long as Jupyter Lab has been installed.  
+This document outlines instructions for installing Anaconda package manager for Python 3.  Use this document to help you get started if you’re using your personal machine for class work.  If you would prefer to use a University laptop available in IS410, that is also an option, and installation should be simular to what is outlined below for Windows installation.
 
 ## Step 1 – Make some choices and install: 
 
@@ -32,7 +32,7 @@ $ conda install -c conda-forge jupyterlab
 ```
 $ jupyter lab
 ```
-7. This will open up a Jupyter Lab session in a browser.  Follow the guide here: to start to familiarize yourself with the functions within Jupyter Lab. 
+7. This will open up a Jupyter Lab session in a browser.  Follow the guide: [**Intro to JupyterLab**](../Pages/intro_to_jupyterlab)  to start to familiarize yourself with the functions within Jupyter Lab. 
 8. Moving on to excercises like the Unix Tutorial - you will want to use the terminal, accessed within Jupyter Lab to access your computers directory structure, etc. 
 
 ### Mac (or Linux if you have one!)
@@ -63,7 +63,7 @@ $ conda install -c conda-forge jupyterlab
 $ jupyter lab
 ```
 
-8. This will open up a Jupyter Lab session in a browser.  Follow the guide here: to start to familiarize yourself with the functions within Jupyter Lab. 
+8. This will open up a Jupyter Lab session in a browser.  Follow the guide here: guide: [**Intro to JupyterLab**](../Pages/intro_to_jupyterlab) to start to familiarize yourself with the functions within Jupyter Lab. 
 8. Moving on to excercises like the Unix Tutorial - you will want to use the terminal, accessed within Jupyter Lab to access your computers directory structure, etc. 
 
 ### Next, move on to [Intro to JupyterLab](../Pages/intro_to_jupyterlab.md) to learn more about the tool. 
