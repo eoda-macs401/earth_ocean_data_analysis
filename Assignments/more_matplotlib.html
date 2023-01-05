@@ -361,9 +361,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading file &#39;CRND0103-2017-NY_Millbrook_3_W.txt&#39; from &#39;doi:10.5281/zenodo.5553029/CRND0103-2017-NY_Millbrook_3_W.txt&#39; to &#39;/Users/emily/Library/Caches/noaa-data&#39;.
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading file &#39;CRND0103-2018-NY_Millbrook_3_W.txt&#39; from &#39;doi:10.5281/zenodo.5553029/CRND0103-2018-NY_Millbrook_3_W.txt&#39; to &#39;/Users/emily/Library/Caches/noaa-data&#39;.
 </pre></div>
 </div>
@@ -374,6 +371,39 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">units</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">headers</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WBANNO: XXXXX
+LST_DATE: YYYYMMDD
+CRX_VN: XXXXXX
+LONGITUDE: Decimal_degrees
+LATITUDE: Decimal_degrees
+T_DAILY_MAX: Celsius
+T_DAILY_MIN: Celsius
+T_DAILY_MEAN: Celsius
+T_DAILY_AVG: Celsius
+P_DAILY_CALC: mm
+SOLARAD_DAILY: MJ/m^2
+SUR_TEMP_DAILY_TYPE: X
+SUR_TEMP_DAILY_MAX: Celsius
+SUR_TEMP_DAILY_MIN: Celsius
+SUR_TEMP_DAILY_AVG: Celsius
+RH_DAILY_MAX: %
+RH_DAILY_MIN: %
+RH_DAILY_AVG: %
+SOIL_MOISTURE_5_DAILY: m^3/m^3
+SOIL_MOISTURE_10_DAILY: m^3/m^3
+SOIL_MOISTURE_20_DAILY: m^3/m^3
+SOIL_MOISTURE_50_DAILY: m^3/m^3
+SOIL_MOISTURE_100_DAILY: m^3/m^3
+SOIL_TEMP_5_DAILY: Celsius
+SOIL_TEMP_10_DAILY: Celsius
+SOIL_TEMP_20_DAILY: Celsius
+SOIL_TEMP_50_DAILY: Celsius
+SOIL_TEMP_100_DAILY: Celsius
+: 
 </pre></div>
 </div>
 </div>
@@ -398,6 +428,18 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">temp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="mf">273.15</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">values</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ds_url</span> <span class="o">=</span> <span class="s1">&#39;http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP-NCAR/.CDAS-1/.MONTHLY/.Diagnostic/.surface/.temp/dods&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">ds_url</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;xarray&#39;
 </pre></div>
 </div>
 </div>

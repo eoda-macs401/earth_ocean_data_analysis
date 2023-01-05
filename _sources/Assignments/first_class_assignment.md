@@ -2,7 +2,7 @@
 
 ### What to do: 
 - Make sure JupyterLab is installed correctly on your machine or the University machine you are using.
-- Carefully read the page: **Intro to JupyterLab** and follow the links to read about the Markdown syntax (i.e. [Markdown Guide / Basic Syntax](https://www.markdownguide.org/basic-syntax)). 
+- Carefully read the page: [**Intro to JupyterLab**](../Pages/intro_to_jupyterlab) and follow the links to read about the Markdown syntax (i.e. [Markdown Guide / Basic Syntax](https://www.markdownguide.org/basic-syntax)). 
 - Create a new Markdown file using JupyterLab. Call this file "First_Class_Reflection.md". 
 - Using syntax for headings, lists, etc., that you learned about on the Intro to JupyterLab page (and links embedded), include the following content in your new Markdown file.
 
@@ -10,6 +10,7 @@
 Try to have used the "Show Markdown Preview" functionality within JupyterLab to confirm that your markdown syntax looks good and makes for a nicely formatted document.  Access this in JupyterLab by right-clicking inside the open .md file and selecting "Show Markdown Preview". Ask your classmates or Paige for help!
 
 #### Include in your Markdown file:
+
 1. How are you planning on working this quarter? What computer do you plan to use? What opporating system is it? 
 2. Did you have any issues setting up JupyterLab or accessing it for the first time?
 
