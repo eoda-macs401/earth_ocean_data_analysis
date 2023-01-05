@@ -1,4 +1,4 @@
-   
+- file: Pages/first_day_of_class   
 - file: Pages/second_day
 - file: Pages/intro_to_git
 - file: Assignments/files_markdown_git

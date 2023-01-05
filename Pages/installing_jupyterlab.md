@@ -1,9 +1,9 @@
 # Installing JupyterLab
 ## Installation instructions for Anaconda (or miniConda) on your machine:
-## MACS497 (MACS401)
+## MACS401
 
 *Content modified from Greg Waite’s 2019 Cider workshop:*  
-This document outlines instructions for installing Anaconda package manager for Python 3.  Use this document to help you get started if you’re using your personal machine for class work.  If you would prefer to use a University Computer Lab computer (in MH031), you should not need to do any installation, as long as Jupyter Lab has been installed.  
+This document outlines instructions for installing Anaconda package manager for Python 3.  Use this document to help you get started if you’re using your personal machine for class work.  If you would prefer to use a University laptop available in IS410, that is also an option, and installation should be simular to what is outlined below for Windows installation.
 
 ## Step 1 – Make some choices and install: 
 

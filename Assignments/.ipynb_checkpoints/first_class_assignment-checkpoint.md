@@ -1,7 +1,7 @@
 # First Class - Assignment
 
 ### What to do: 
-- Make sure JupyterLab is installed correctly on your machine, or that you are accessing a University computer with it installed in MH031.
+- Make sure JupyterLab is installed correctly on your machine or the University machine you are using.
 - Carefully read the page: **Intro to JupyterLab** and follow the links to read about the Markdown syntax (i.e. [Markdown Guide / Basic Syntax](https://www.markdownguide.org/basic-syntax)). 
 - Create a new Markdown file using JupyterLab. Call this file "First_Class_Reflection.md". 
 - Using syntax for headings, lists, etc., that you learned about on the Intro to JupyterLab page (and links embedded), include the following content in your new Markdown file.
@@ -13,11 +13,11 @@ Try to have used the "Show Markdown Preview" functionality within JupyterLab to 
 1. How are you planning on working this quarter? What computer do you plan to use? What opporating system is it? 
 2. Did you have any issues setting up JupyterLab or accessing it for the first time?
 
-#### Next, move on to the [Introduciton to Unix](Pages/intro_to_unix) page. Get as far as you can through the tutorial.  
+#### Next, move on to the [Introduciton to Unix](../Pages/intro_to_unix) page. Get as far as you can through the tutorial.  
 
-*I'd say try to give it at least an hour of attention outside of class.*
+*I'd say try to give it at least an hour of attention outside of class.  For 2023, you will have time in class on Tuesday with Paige's help to complete the Unix tutorial, and your EODA thumb drives will be handed out at that time as well.*
 
-When you've completed the [Unix Tutorial](Pages/intro_to_unix), (or as much as possible) add the following additional inforamtion to your new Markdown file:
+When you've completed the [Unix Tutorial](../Pages/intro_to_unix), (or as much as possible) add the following additional inforamtion to your new Markdown file:
 
 3. How did the Unix Tutorial go?  Do you feel like you are understanding how to access and navigate through your computer's file structure? Are there any commands you practiced that are confusing or did you hit any "roadblocks"?
 
@@ -26,6 +26,7 @@ When you've completed the [Unix Tutorial](Pages/intro_to_unix), (or as much as p
 ## Finishing up
 
 Save your Markdown file, "First_Class_Reflection.md" on your new **eoda** thumbdrive.
+For now, we'll also submit it to Canvas (Due after Tuesday's class period), eventually we'll use this file to practice with GitHub.
 
 ##### Note:
 If you origionally opened JupyterLab from your home directory (from a Terminal, without changing directories first), then your new Markdown file will also be saved in your home directory by default!  When you're happy with the Markdown file, save it. Then in order to move it to you thumb drive you could try typing the following command into a Terminal:
@@ -35,4 +36,4 @@ $ mv ~/First_Class_Reflection.md /Volumes/eoda/.
 ```
 If the above doesn't make sense, reference the Unix Tutorial again (`mv` is in the second half). You are also welcome ot move your .md file using a Finder (windows-like environment, drag-n-drop). Good luck!
 
-**Try to come to our class on April 11th with your completed Markdown file saved to your thumb drive.  We'll turn these files in next week (when I'm back with you in class).**
+**Try to come to our class next Thursday with your completed Markdown file saved to your thumb drive.**

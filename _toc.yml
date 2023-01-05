@@ -6,7 +6,6 @@ root: intro
 parts:
   - caption: Readings and Tutorials
     chapters:
-    - file: Pages/first_day_of_class
     - file: Pages/installing_jupyterlab
     - file: Pages/intro_to_jupyterlab
     - file: Pages/intro_to_unix
