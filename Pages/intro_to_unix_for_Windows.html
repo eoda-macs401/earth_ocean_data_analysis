@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Intro to Unix - For Students Working On Windows Machines &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Fundamentals" href="../Notebooks/python_fundamentals.html" />
+    <link rel="prev" title="Intro to Unix" href="intro_to_unix.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Readings and Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installing_jupyterlab.html">
+   Installing JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_unix.html">
+   Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to Unix - For Students Working On Windows Machines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
+   Python Fundamentals
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+   First Class - Assignment
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/intro_to_unix_for_Windows.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Pages/intro_to_unix_for_Windows.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-of-background">
+   A bit of Background:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
+   Navigating Files and Directories in Unix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-pwd">
+     Useful Command: pwd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-ls">
+     Useful Command: ls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
+     NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-f-mac-only">
+     Handy “Flag”: -F (MAC ONLY)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-cd">
+     Useful Command: cd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortcut-for-navigation">
+     Shortcut for Navigation: ..
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-a-mac-only">
+     Handy “Flag”: -a (MAC ONLY!!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-practice">
+     More Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-this">
+     Try this:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion">
+       Tab Completion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-points">
+       Key Points:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-directories">
+   Working with Files and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
+   Good names for files and directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-is-forever">
+     Deleting Is Forever
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
+     Warning - following is different on Windows (rm will work without recursive flag!!)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
+       With Great Power Comes Great Responsibility
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Key Points
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-more">
+   Learning More
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to Unix - For Students Working On Windows Machines</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-bit-of-background">
+   A bit of Background:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
+   Navigating Files and Directories in Unix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-pwd">
+     Useful Command: pwd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-ls">
+     Useful Command: ls
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
+     NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-f-mac-only">
+     Handy “Flag”: -F (MAC ONLY)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-command-cd">
+     Useful Command: cd
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortcut-for-navigation">
+     Shortcut for Navigation: ..
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handy-flag-a-mac-only">
+     Handy “Flag”: -a (MAC ONLY!!)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-practice">
+     More Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-this">
+     Try this:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion">
+       Tab Completion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-points">
+       Key Points:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-directories">
+   Working with Files and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
+   Good names for files and directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-is-forever">
+     Deleting Is Forever
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
+     Warning - following is different on Windows (rm will work without recursive flag!!)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
+       With Great Power Comes Great Responsibility
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Key Points
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-more">
+   Learning More
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-unix-for-students-working-on-windows-machines">
+<h1>Intro to Unix - For Students Working On Windows Machines<a class="headerlink" href="#intro-to-unix-for-students-working-on-windows-machines" title="Permalink to this headline">#</a></h1>
+<p><em>Modified from An <a class="reference external" href="https://earth-env-data-science.github.io">Introduction to Earth and Environmental Data Science</a></em></p>
+<p>An introduction to basic Unix commands and the file system.  This tutorial is simular to the page - <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Introduction to Unix</span></a>, but has been modified to (hopefully!) work for folks on a Windows Machine.  For this class you will always simulate a Unix environment on your Windows computer using the Acaconda Prompt or Anaconda Powershell Prompt applications that was installed with Anaconda (accessed via Anaconda3 folder in startup Menu) or <strong>suggested here</strong> via opening up JupyterLab and using the Terminal from there.  There are alternatives to accessing Unix commands on a Windows computer such as by installing Cygwin <a class="reference external" href="https://sun.iwu.edu/~mliffito/cs_codex/posts/unix-on-your-own-computer/">(some explanation and links here)</a>. It usually requires some additional configuration so we’ll stick with Anaconda and Jupyter tools here.  Good luck!</p>
+<p><em>The notes below are modified from the excellent <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Unix Shell tutorial </a> that is freely available on the Software Carpentry website. We highly recommend checking out the full version for further reading. The material is being used here under the terms of the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a>.</em></p>
+<hr class="docutils" />
+<section id="a-bit-of-background">
+<h2>A bit of Background:<a class="headerlink" href="#a-bit-of-background" title="Permalink to this headline">#</a></h2>
+<p>Did you know that you can access almost any part of your computer, run most software, and create your own computational tools… all from the command line via a Terminal (Mac, Linux) or simulated via the Anaconda Prompt application on Windows machines? In order to do this (and a generally really really handy skill for most coding efforts), you’ll need an understanding of how to navigate a Unix-type operating system.  Macintosh computers are built on a Unix backbone system, so these commands will also work in a Mac Terminal.  If you ever run across a Linux comptuter (running an OS like Ubuntu), it is simular to Unix as well.</p>
+<p>To get started with the following tutorial, simply find a Terminal on the computer you are working on.  <strong>If you are working on a Windows computer, open up an instance of Anaconda Prompt, and start Jupyter Lab (type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> at the prompt). Use the Terminal from there.</strong></p>
+<p>Command output examples are for my computer - yours may be different.  Instead of just typing in commands, pay attention to what you are doing, the output, etc. If something is confusing, get help, or Google it!</p>
+<hr class="docutils" />
+</section>
+<hr class="docutils" />
+<section id="navigating-files-and-directories-in-unix">
+<h2>Navigating Files and Directories in Unix<a class="headerlink" href="#navigating-files-and-directories-in-unix" title="Permalink to this headline">#</a></h2>
+<p>Several commands are frequently used to create, inspect, rename, and delete files and directories.</p>
+<p>To get started, open a terminal using the JupyterLab launcher. You will see
+something like this (note, on Windows machines, different for Mac):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>In general for my tutorials in this book, I use a dollar sign <code class="docutils literal notranslate"><span class="pre">$</span></code> as a <strong>prompt</strong>, which shows us that the shell is waiting for input.  On windows Machines, the Jupyter Lab Terminal applicaiton does not use a dollar sign - it uses a sideways carrot <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.  When you see this or <code class="docutils literal notranslate"><span class="pre">$</span></code> in the instructions/tutorials, know you do not need to type these!  They symbolize the prompt!</p>
+<p>We all have a username that is the log-in user (usually some variation of your name) and the name of the computer you’re using (hostname).</p>
+<p>To find out your username in general, you can use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ whoami
+</pre></div>
+</div>
+<p>When I type the above, I get <code class="docutils literal notranslate"><span class="pre">desktop-ec5egsb\emily</span></code> back, because that’s the username on my laptop.  You may see the domain you’re logged into (‘desktop-ec5egsb’ here) and your WWU log-in name if you’re on a University computer.</p>
+<p>And to find out your hostname:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ hostname
+</pre></div>
+</div>
+<p>When I type this, I see: <code class="docutils literal notranslate"><span class="pre">DESKTOP-EC5EGSB</span></code> because that’s the name of my laptop computer.
+On the podium computer in IS 410 in IS410 I see <code class="docutils literal notranslate"><span class="pre">IS410POD01</span></code></p>
+<section id="useful-command-pwd">
+<h3>Useful Command: pwd<a class="headerlink" href="#useful-command-pwd" title="Permalink to this headline">#</a></h3>
+<p>Next,
+let’s find out where we are by running a command called <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
+(which stands for “print working directory”).
+At any moment,
+our <strong>current working directory</strong>
+is our current default directory,
+i.e.,
+the directory that the computer assumes we want to run commands in
+unless we explicitly specify something else.
+Here, for me,
+the computer’s response is <code class="docutils literal notranslate"><span class="pre">C:\Users\emily</span></code>,
+which is my <strong>home directory</strong>, or more specifically, the home direcgtory of the user named <code class="docutils literal notranslate"><span class="pre">rolande2</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Path</span>
+<span class="o">----</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+</pre></div>
+</div>
+<p><em>Note that one thing that’s pretty weird about Windows vs Unix/Linux/MACs is that they show the file structure in simular ways, but Unix,etc. machines use a forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code> and Windows machines use a backslash (like shown above <code class="docutils literal notranslate"><span class="pre">\</span></code>). I don’t know why this is but it can get confusing!  Even if you see a tutorial in the future that shows a forward slash - but you’re on a PC (Windows) try a backslash if you’re referring to directories!</em></p>
+<p>To understand what a “home directory” is,
+let’s have a look at how the file system as a whole is organized.  For the
+sake of this example, we’ll be
+illustrating the filesystem on our friend Emily’s computer.  After this
+illustration, you’ll be learning commands to explore your own filesystem,
+which will be constructed in a similar way, but not be exactly identical.</p>
+<p>On a Unix (or Mac, based on Unix) computer, the filesystem looks like something this:</p>
+<p><img alt="The File System" src="../_images/directory_structure.png" /></p>
+<p>At the top is the <strong>root directory</strong>
+that holds everything else.
+We refer to it using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own;
+this is the leading slash in <code class="docutils literal notranslate"><span class="pre">/Users/emily</span></code>.</p>
+<p>Inside that directory are several other directories:
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> (which is where some built-in programs are stored),
+<code class="docutils literal notranslate"><span class="pre">lib</span></code> (for the software “libraries” used by different programs),
+<code class="docutils literal notranslate"><span class="pre">Users</span></code> (where users’ personal directories are located, this is true for a Mac. For a pure Unix system, this is called <code class="docutils literal notranslate"><span class="pre">home</span></code>),
+<code class="docutils literal notranslate"><span class="pre">etc</span></code> (system-wide configuration files),
+and so on.</p>
+<p><strong>For Windows</strong> computers, the structure is not too different.  The highest directory is usally called by a letter (often C:) with additional drives (like thumb drives) given a different letter. Then there are sub-foders called things like Program Files and Users.  Note the backslashes! <code class="docutils literal notranslate"><span class="pre">\</span></code>:</p>
+<p><img alt="The File System" src="../_images/windowsdir.png" /></p>
+</section>
+<section id="useful-command-ls">
+<h3>Useful Command: ls<a class="headerlink" href="#useful-command-ls" title="Permalink to this headline">#</a></h3>
+<p>Now let’s learn the command that will let us see the contents of our
+own filesystem.  We can see what’s in our home directory by running <code class="docutils literal notranslate"><span class="pre">ls</span></code>,
+which stands for “listing” (note, this is an example, but yours will look different, depending on the folders and files in your home directory):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+
+
+<span class="n">Mode</span>                 <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="o">----</span>                 <span class="o">-------------</span>         <span class="o">------</span> <span class="o">----</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">11</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">conda</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">10</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">continuum</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">19</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">00</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">GMA</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">2020</span>   <span class="mi">5</span><span class="p">:</span><span class="mi">13</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">idlerc</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">43</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">matplotlib</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="mi">3</span><span class="n">D</span> <span class="n">Objects</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">2</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="n">PM</span>                <span class="n">ComMIT</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Contacts</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="mi">2020</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">08</span> <span class="n">PM</span>                <span class="n">Documents</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">18</span> <span class="n">PM</span>                <span class="n">Downloads</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Favorites</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Google</span> <span class="n">Drive</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Videos</span>
+<span class="o">-</span><span class="n">a</span><span class="o">----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">myfile</span><span class="o">.</span><span class="n">doc</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory in
+alphabetical order,
+arranged neatly into columns.</p>
+</section>
+<section id="note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
+<h3>NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:<a class="headerlink" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="handy-flag-f-mac-only">
+<h3>Handy “Flag”: -F (MAC ONLY)<a class="headerlink" href="#handy-flag-f-mac-only" title="Permalink to this headline">#</a></h3>
+<p>We can make the <code class="docutils literal notranslate"><span class="pre">ls</span></code> output more comprehensible by using the <strong>flag</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code>,
+which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> to the names of directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cute_pic_of_Hugo</span><span class="o">.</span><span class="n">png</span>  <span class="n">Desktop</span><span class="o">/</span> <span class="n">Downloads</span><span class="o">/</span> <span class="n">jupyter_notebooks</span><span class="o">/</span> <span class="n">Pictures</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Interestingly - althought the -F command won’t work for windows, we don’t really need it. If you look in the output of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command above, all items in our current folder that were directories, showed a <code class="docutils literal notranslate"><span class="pre">d</span></code> listed in the first column.  All files (not folders) did not show this <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
+<p>Here,
+we can see that our home directory contains mostly <strong>sub-directories</strong>.
+Any names in your output that don’t have the <code class="docutils literal notranslate"><span class="pre">d</span></code> in front are plain old <strong>files</strong>.</p>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents of a different directory.  Let’s take a
+look at our <code class="docutils literal notranslate"><span class="pre">Videos</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Videos</span></code>,
+i.e.,
+the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <strong>argument</strong> <code class="docutils literal notranslate"><span class="pre">Videos</span></code> (the name of the directory we want to look into).
+The second argument — the one <em>without</em> a leading dash — tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> that
+we want a listing of something other than our current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls Videos
+</pre></div>
+</div>
+<p>(Note, try this for one of your own subdirectories, located in <em>your</em> hone directory… like maybe <code class="docutils literal notranslate"><span class="pre">Documents</span></code> if it’s there. )</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>\<span class="n">Videos</span>
+
+
+<span class="n">Mode</span>                 <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="o">----</span>                 <span class="o">-------------</span>         <span class="o">------</span> <span class="o">----</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>          <span class="mi">2</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">50</span> <span class="n">AM</span>                <span class="n">Captures</span>
+</pre></div>
+</div>
+<p>The output is the list of all the files in the <code class="docutils literal notranslate"><span class="pre">jupyter_notebooks</span></code> directory.
+Execute the ‘ls’ command for a directory in your <code class="docutils literal notranslate"><span class="pre">home</span></code> directory such as <code class="docutils literal notranslate"><span class="pre">Documents</span></code> and see what the output is.</p>
+<p>Unless you have a nice neat Documents folder, it’s likely you’ll see a lot of files and directories listed, but you should recognize some of them as things as documents you’ve created!</p>
+</section>
+<section id="useful-command-cd">
+<h3>Useful Command: cd<a class="headerlink" href="#useful-command-cd" title="Permalink to this headline">#</a></h3>
+<p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
+directory name to change our working directory.
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for “change directory”,
+which is a bit misleading:
+the command doesn’t change the directory,
+it changes the shell’s idea of what directory we are in.</p>
+<p>Let’s say we want to move to the <code class="docutils literal notranslate"><span class="pre">Videos</span></code> directory.  We can
+use the following command to get there:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Videos
+</pre></div>
+</div>
+<p>This commands will move us from our home directory onto into
+the <code class="docutils literal notranslate"><span class="pre">Videos</span></code> folder (or anywhere above or below our home directory). <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything,
+but if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after it, we can see that we are now
+in <code class="docutils literal notranslate"><span class="pre">\Users\emily\Videos</span></code>.</p>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> without arguments now,
+it lists the contents of <code class="docutils literal notranslate"><span class="pre">C:\Users\emily\Videos</span></code>,
+because that’s where we now are.</p>
+</section>
+<section id="shortcut-for-navigation">
+<h3>Shortcut for Navigation: ..<a class="headerlink" href="#shortcut-for-navigation" title="Permalink to this headline">#</a></h3>
+<p>We now know how to go <strong>down</strong> the directory tree, but
+how do we go up?<br />
+There is a shortcut in the shell to move up one directory level
+that looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special directory name meaning
+“the directory containing this one”,
+or more succinctly,
+the <strong>parent</strong> of the current directory.
+Sure enough,
+if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">\Users\emily\</span></code> (or whatever yur home directory is):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+</pre></div>
+</div>
+</section>
+<section id="handy-flag-a-mac-only">
+<h3>Handy “Flag”: -a (MAC ONLY!!)<a class="headerlink" href="#handy-flag-a-mac-only" title="Permalink to this headline">#</a></h3>
+<p>The special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>.  If we want
+to display it, we can give <code class="docutils literal notranslate"><span class="pre">ls</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F -a
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> stands for “show all”;
+it forces <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show us file and directory names that begin with <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">\Users\emily</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">\Users</span></code> directory)
+As you can see,
+it also displays another special directory that’s just called <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+which means “the current working directory”.
+It may seem redundant to have a name for it,
+but we’ll see some uses for it soon.</p>
+<p>Note that in most command line tools, multiple parameters can be combined
+with a single <code class="docutils literal notranslate"><span class="pre">-</span></code> and no spaces between the parameters: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">-a</span></code> is
+equivalent to <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-Fa</span></code>.</p>
+<p>These then, are the basic commands for navigating the filesystem on your computer:
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p>
+<p>Practice changing directories into a directory within your current working directory by typing the following two commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls 
+$ cd &lt;name of a directory&gt;
+</pre></div>
+</div>
+<p>Did it work? What is in the new directory you just moved (down) into? (Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> to figure that out.)</p>
+</section>
+<section id="more-practice">
+<h3>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">#</a></h3>
+<p>Let’s explore some variations on those commands.  What happens
+if you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> with a <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol after it?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~
+</pre></div>
+</div>
+<p>How can you check what happened?  <code class="docutils literal notranslate"><span class="pre">pwd</span></code> gives us the answer!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+</pre></div>
+</div>
+<p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> will return you to you to <strong>your home directory</strong>,
+which is great if you’ve gotten lost in your own filesystem.</p>
+</section>
+<section id="try-this">
+<h3>Try this:<a class="headerlink" href="#try-this" title="Permalink to this headline">#</a></h3>
+<p>As an advance move - let’s try navigating <em>two</em> directories down in our file structure from our home directory.  I had a directory called <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> that was on my <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> (you’ll have some other folder on your Desktop probably that you could practice with).  There are actually two ways to get to this <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> directory one with three commands, one with one. The long way first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Documents
+$ ls
+$ cd PhotosForBlog
+</pre></div>
+</div>
+<p>After you did this (maybe with something other than <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> - a folder in <em>your</em> Documents) - did typing <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command give you something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>\<span class="n">Documents</span>\<span class="n">PhotosForBlog</span>
+</pre></div>
+</div>
+<p>If you type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> it will move you back to your home directory (you knew that). Then we can do the same thing, the slightly easier way.
+This time combine the first and third lines above to one command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd \Documents\PhotosForBlog
+</pre></div>
+</div>
+<p>Check that we’ve moved to the right place by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> again.</p>
+<p>If we want to move up one level from the <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> directory, we could use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.  But
+there is another way to move to any directory, regardless of your
+current location.</p>
+<p>So far, when specifying directory names, or even a directory path (as above),
+we have been using <strong>relative paths</strong>.  When you use a relative path with a command
+like <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span></code>, it tries to find that location  from where we are,
+rather than from the root of the file system.</p>
+<p>However, it is possible to specify the <strong>absolute path</strong> to a directory by
+including its entire path from the root directory, which is indicated by a
+leading slash.  The leading <code class="docutils literal notranslate"><span class="pre">\</span></code> tells the computer to follow the path from
+the root of the file system, so it always refers to exactly one directory,
+no matter where we are when we run the command.</p>
+<p>This allows us to move to our <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory from anywhere on
+the filesystem.  To find the absolute path
+we’re looking for, we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and then extract the piece we need
+to move to <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">Users</span>\<span class="n">emily</span>\<span class="n">Documents</span>\<span class="n">PhotosForBlog</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd \Users\emily\Videos
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to ensure that we’re in the directory we expect.</p>
+<section id="tab-completion">
+<h4>Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">#</a></h4>
+<p>Typing the full path to directories and files can be slow and annoying.
+Fortunately, we have “tab completion” to help us. Try typing <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Des</span></code> and then
+press the <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code>. The system will try to “auto complete” your command.
+Pressing tab twice brings up a list of all the files, and so on.
+This is called <strong>tab completion</strong>,
+and we will see it in many other tools as we go on.</p>
+</section>
+<section id="key-points">
+<h4>Key Points:<a class="headerlink" href="#key-points" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>“The file system is responsible for managing information on the disk.”</p></li>
+<li><p>“Information is stored in files, which are stored in directories (folders).”</p></li>
+<li><p>“Directories can also store other directories, which forms a directory tree.”</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">path</span></code> changes the current working directory.”</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">path</span></code> prints a listing of a specific file or directory; <code class="docutils literal notranslate"><span class="pre">ls</span></code> on its own lists the current working directory.”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> prints the user’s current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">whoami</span></code> shows the user’s current identity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> on its own is the root directory of the whole file system.</p></li>
+<li><p>A relative path specifies a location starting from the current location.</p></li>
+<li><p>An absolute path specifies a location from the root of the file system.</p></li>
+<li><p>Directory names in a path are separated with ‘/’ on Unix, but ‘\’ on Windows.</p></li>
+<li><p>‘..’ means ‘the directory above the current one’; ‘.’ on its own means ‘the current directory’.</p></li>
+<li><p>Most files’ names are <code class="docutils literal notranslate"><span class="pre">something.extension</span></code>. The extension isn’t required, and doesn’t guarantee anything, but is normally used to indicate the type of data in the file.</p></li>
+<li><p>Most commands take options (flags) which begin with a ‘-‘.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="working-with-files-and-directories">
+<h2>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Permalink to this headline">#</a></h2>
+<p>We now know how to explore files and directories,
+but how do we create them in the first place?
+Let’s go back to our home directory
+and use <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> to see what it contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ pwd
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">Users</span>\<span class="n">emily</span>\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+
+
+<span class="n">Mode</span>                 <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="o">----</span>                 <span class="o">-------------</span>         <span class="o">------</span> <span class="o">----</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">11</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">conda</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">10</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">continuum</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">19</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">00</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">GMA</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">2020</span>   <span class="mi">5</span><span class="p">:</span><span class="mi">13</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">idlerc</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">43</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">matplotlib</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="mi">3</span><span class="n">D</span> <span class="n">Objects</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">2</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="n">PM</span>                <span class="n">ComMIT</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Contacts</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="mi">2020</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">08</span> <span class="n">PM</span>                <span class="n">Documents</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">18</span> <span class="n">PM</span>                <span class="n">Downloads</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Favorites</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Google</span> <span class="n">Drive</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Videos</span>
+<span class="o">-</span><span class="n">a</span><span class="o">----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">myfile</span><span class="o">.</span><span class="n">doc</span>
+</pre></div>
+</div>
+<p>Let’s create a new directory called <code class="docutils literal notranslate"><span class="pre">thesis</span></code> using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">thesis</span></code>
+(which has no output):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir thesis
+</pre></div>
+</div>
+<p>As you might guess from its name,
+<code class="docutils literal notranslate"><span class="pre">mkdir</span></code> means “make directory”.
+Since <code class="docutils literal notranslate"><span class="pre">thesis</span></code> is a relative path
+(i.e., doesn’t have a leading slash),
+the new directory is created in the current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
+
+
+<span class="n">Mode</span>                 <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
+<span class="o">----</span>                 <span class="o">-------------</span>         <span class="o">------</span> <span class="o">----</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">11</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">conda</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">10</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">continuum</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">19</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">00</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">GMA</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">2020</span>   <span class="mi">5</span><span class="p">:</span><span class="mi">13</span> <span class="n">PM</span>                <span class="o">.</span><span class="n">idlerc</span>
+<span class="n">d</span><span class="o">-----</span>         <span class="mi">7</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">43</span> <span class="n">AM</span>                <span class="o">.</span><span class="n">matplotlib</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="mi">3</span><span class="n">D</span> <span class="n">Objects</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">2</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2021</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="n">PM</span>                <span class="n">ComMIT</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Contacts</span>
+<span class="n">d</span><span class="o">-----</span>          <span class="mi">8</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="mi">2020</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">08</span> <span class="n">PM</span>                <span class="n">Documents</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">18</span> <span class="n">PM</span>                <span class="n">Downloads</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">4</span><span class="o">/</span><span class="mi">14</span><span class="o">/</span><span class="mi">2022</span>  <span class="mi">12</span><span class="p">:</span><span class="mi">07</span> <span class="n">PM</span>                <span class="n">Favorites</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Google</span> <span class="n">Drive</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>          <span class="mi">1</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">2023</span>  <span class="mi">7</span><span class="p">:</span><span class="mi">00</span> <span class="n">PM</span>                <span class="n">thesis</span>
+<span class="n">d</span><span class="o">-</span><span class="n">r</span><span class="o">---</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">Videos</span>
+<span class="o">-</span><span class="n">a</span><span class="o">----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">myfile</span><span class="o">.</span><span class="n">doc</span>
+</pre></div>
+</div>
+</section>
+<section id="good-names-for-files-and-directories">
+<h2>Good names for files and directories<a class="headerlink" href="#good-names-for-files-and-directories" title="Permalink to this headline">#</a></h2>
+<p>Complicated names of files and directories can make your life painful
+when working on the command line. Here we provide a few useful
+tips for the names of your files.</p>
+<ol>
+<li><p>Don’t use whitespaces.</p>
+<p>Whitespaces can make a name more meaningful
+but since whitespace is used to break arguments on the command line
+is better to avoid them on name of files and directories.
+You can use <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">_</span></code> instead of whitespace.</p>
+</li>
+<li><p>Don’t begin the name with <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash).</p>
+<p>Commands treat names starting with <code class="docutils literal notranslate"><span class="pre">-</span></code> as options.</p>
+</li>
+<li><p>Stick with letters, numbers, <code class="docutils literal notranslate"><span class="pre">.</span></code> (period), <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) and <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore).</p>
+<p>Many other characters have special meanings on the command line.
+We will learn about some of these during this lesson.
+There are special characters that can cause your command to not work as
+expected and can even result in data loss.</p>
+</li>
+</ol>
+<p>If you need to refer to names of files or directories that have whitespace
+or another non-alphanumeric character, you should surround the name in quotes (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>).</p>
+<p>Since we’ve just created the <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory, there’s nothing in it yet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -thesis
+</pre></div>
+</div>
+<p>Let’s change our working directory to <code class="docutils literal notranslate"><span class="pre">thesis</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span></code>.
+We then create a blank new file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code> using the <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">command</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd thesis
+$ touch draft.txt
+</pre></div>
+</div>
+<p>Now we can edit the file in JupyterLab’s text editor.
+Let’s type in a few lines of text.
+Once we’re happy with our text, we save the file, and
+return to the shell.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> now shows that we have created a file called <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+
+    Directory: C:\Users\emily\thesis
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          1/8/2023  11:41 PM              0 draft.txt
+
+</pre></div>
+</div>
+<p>Let’s tidy up by running <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">draft.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm draft.txt
+</pre></div>
+</div>
+<p>This command removes files (<code class="docutils literal notranslate"><span class="pre">rm</span></code> is short for “remove”).
+If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> again,
+its output is empty once more,
+which tells us that our file is gone:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<section id="deleting-is-forever">
+<h3>Deleting Is Forever<a class="headerlink" href="#deleting-is-forever" title="Permalink to this headline">#</a></h3>
+<p>The Unix shell doesn’t have a trash bin that we can recover deleted
+files from (though most graphical interfaces to Unix do).  Instead,
+when we delete files, they are unhooked from the file system so that
+their storage space on disk can be recycled. Tools for finding and
+recovering deleted files do exist, but there’s no guarantee they’ll
+work in any particular situation, since the computer may recycle the
+file’s disk space right away.</p>
+<p>Let’s re-create that file
+and then move up one directory to <code class="docutils literal notranslate"><span class="pre">\Users\emily</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ touch draft.txt
+$ cd ..
+</pre></div>
+</div>
+</section>
+<section id="warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
+<h3>Warning - following is different on Windows (rm will work without recursive flag!!)<a class="headerlink" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag" title="Permalink to this headline">#</a></h3>
+<p>If we try to remove the entire <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory using <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">thesis</span></code>,
+we get an error message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rm: cannot remove `thesis`: Is a directory
+</pre></div>
+</div>
+<p>This happens because <code class="docutils literal notranslate"><span class="pre">rm</span></code> by default only works on files, not directories.</p>
+<p>To really get rid of <code class="docutils literal notranslate"><span class="pre">thesis</span></code> we must also delete the file <code class="docutils literal notranslate"><span class="pre">draft.txt</span></code>.
+We can do this with the <a class="reference external" href="https://en.wikipedia.org/wiki/Recursion">recursive</a> option for <code class="docutils literal notranslate"><span class="pre">rm</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r thesis
+</pre></div>
+</div>
+<section id="with-great-power-comes-great-responsibility">
+<h4>With Great Power Comes Great Responsibility<a class="headerlink" href="#with-great-power-comes-great-responsibility" title="Permalink to this headline">#</a></h4>
+<p>Removing the files in a directory recursively can be very dangerous
+operation. If we’re concerned about what we might be deleting we can
+add the “interactive” flag <code class="docutils literal notranslate"><span class="pre">-i</span></code> to <code class="docutils literal notranslate"><span class="pre">rm</span></code> which will ask us for confirmation
+before each step</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ rm -r -i thesis
+ rm: descend into directory ‘thesis’? y
+ rm: remove regular file ‘thesis/draft.txt’? y
+ rm: remove directory ‘thesis’? y
+</pre></div>
+</div>
+<p>This removes everything in the directory, then the directory itself, asking
+at each step for you to confirm the deletion.</p>
+<p>Let’s create that directory and file one more time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir thesis
+$ touch thesis\draft.txt
+$ ls thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">draft</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">draft.txt</span></code> isn’t a particularly informative name,
+so let’s change the file’s name using <code class="docutils literal notranslate"><span class="pre">mv</span></code>,
+which is short for “move”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv thesis\draft.txt thesis\quotes.txt
+</pre></div>
+</div>
+<p>The first parameter tells <code class="docutils literal notranslate"><span class="pre">mv</span></code> what we’re “moving”,
+while the second is where it’s to go.
+In this case,
+we’re moving <code class="docutils literal notranslate"><span class="pre">thesis\draft.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">thesis\quotes.txt</span></code>,
+which has the same effect as renaming the file.
+Sure enough,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> shows us that <code class="docutils literal notranslate"><span class="pre">thesis</span></code> now contains one file called <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls thesis
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>One has to be careful when specifying the target file name, since <code class="docutils literal notranslate"><span class="pre">mv</span></code> will
+silently overwrite any existing file with the same name, which could
+lead to data loss. An additional flag, <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-i</span></code> (or <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">--interactive</span></code>),
+can be used to make <code class="docutils literal notranslate"><span class="pre">mv</span></code> ask you for confirmation before overwriting.</p>
+<p>Just for the sake of consistency,
+<code class="docutils literal notranslate"><span class="pre">mv</span></code> also works on directories</p>
+<p>Let’s move <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> into the current working directory.
+We use <code class="docutils literal notranslate"><span class="pre">mv</span></code> once again,
+but this time we’ll just use the name of a directory as the second parameter
+to tell <code class="docutils literal notranslate"><span class="pre">mv</span></code> that we want to keep the filename,
+but put the file somewhere new.
+(This is why the command is called “move”.)
+In this case,
+the directory name we use is the special directory name <code class="docutils literal notranslate"><span class="pre">.</span></code> that we mentioned earlier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv thesis\quotes.txt .
+</pre></div>
+</div>
+<p>The effect is to move the file from the directory it was in to the current working directory.
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> now shows us that <code class="docutils literal notranslate"><span class="pre">thesis</span></code> is empty:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls thesis
+</pre></div>
+</div>
+<p>Further,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> with a filename or directory name as a parameter only lists that file or directory.
+We can use this to see that <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> is still in our current directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls quotes.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> command works very much like <code class="docutils literal notranslate"><span class="pre">mv</span></code>,
+except it copies a file instead of moving it.
+We can check that it did the right thing using <code class="docutils literal notranslate"><span class="pre">ls</span></code>
+with two paths as parameters — like most Unix commands,
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> can be given multiple paths at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp quotes.txt thesis\quotations.txt
+$ ls quotes.txt thesis\quotations.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quotes</span><span class="o">.</span><span class="n">txt</span>   <span class="n">thesis</span>\<span class="n">quotations</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>To prove that we made a copy,
+let’s delete the <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> file in the current directory
+and then run that same <code class="docutils literal notranslate"><span class="pre">ls</span></code> again.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm quotes.txt
+$ ls quotes.txt thesis\quotations.txt
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">access</span> <span class="n">quotes</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">thesis</span>\<span class="n">quotations</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This time it tells us that it can’t find <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> in the current directory,
+but it does find the copy in <code class="docutils literal notranslate"><span class="pre">thesis</span></code> that we didn’t delete.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Key Points<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> copies a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">path</span></code> creates a new directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">old</span> <span class="pre">new</span></code> moves (renames) a file or directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">path</span></code> removes (deletes) a file.</p></li>
+<li><p>Use of the Control key may be described in many ways, including <code class="docutils literal notranslate"><span class="pre">Ctrl-X</span></code>, <code class="docutils literal notranslate"><span class="pre">Control-X</span></code>, and <code class="docutils literal notranslate"><span class="pre">^X</span></code>.</p></li>
+<li><p>The shell does not have a trash bin: once something is deleted, it’s really gone.</p></li>
+<li><p>Depending on the type of work you do, you may need a more powerful text editor than Nano.</p></li>
+</ul>
+</section>
+</section>
+<section id="learning-more">
+<h2>Learning More<a class="headerlink" href="#learning-more" title="Permalink to this headline">#</a></h2>
+<p>The goal of this lesson was to familiarize you with the basics of working
+with files and directories.
+There is a <strong>lot more</strong> to the unix shell and filexsystem than what we have  covered here!
+To ge deeper with self study, we recommend the excellent
+<a class="reference external" href="https://swcarpentry.github.io/shell-novice/">Software Carpentry Unix Shell Lesson</a>,
+on which the above material was based.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro_to_unix.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to Unix</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Notebooks/python_fundamentals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Fundamentals</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
