@@ -78,7 +78,7 @@ which will be constructed in a similar way, but not be exactly identical.
 
 On a Unix (or Mac, based on Unix) computer, the filesystem looks like something this:
 
-![The File System](https://www.oreilly.com/library/view/macintosh-terminal-pocket/9781449328962/httpatomoreillycomsourceoreillyimages1448104.png)
+![The File System](../images/directory_structure.png)
 
 At the top is the **root directory**
 that holds everything else.

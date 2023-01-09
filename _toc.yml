@@ -9,6 +9,7 @@ parts:
     - file: Pages/installing_jupyterlab
     - file: Pages/intro_to_jupyterlab
     - file: Pages/intro_to_unix
+    - file: Pages/intro_to_unix_for_Windows
     - file: Notebooks/python_fundamentals
   - caption: Assignments
     chapters:

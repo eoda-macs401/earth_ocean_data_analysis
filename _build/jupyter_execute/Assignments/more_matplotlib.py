@@ -75,7 +75,7 @@ soil_moisture_100 = df.SOIL_MOISTURE_100_DAILY.values
 date = df.index.values
 
 
-# In[2]:
+# In[ ]:
 
 
 units = lines[2].split(' ')
@@ -95,7 +95,7 @@ for name, unit in zip(headers, units):
 # 
 # Now we will visualize some global temperature data from the NCEP-NCAR atmospheric reanalysis.
 
-# In[3]:
+# In[ ]:
 
 
 import xarray as xr
