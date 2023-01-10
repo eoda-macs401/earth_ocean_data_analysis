@@ -1,5 +1,7 @@
-# Intro to Unix - For Students Working On Windows Machines
+# Intro to Unix - For Windows Machines
 *Modified from An [Introduction to Earth and Environmental Data Science](https://earth-env-data-science.github.io)*  
+
+>Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - WINDOWS](../Pages/videos)
 
 An introduction to basic Unix commands and the file system.  This tutorial is simular to the page - [Introduction to Unix](../Pages/intro_to_unix), but has been modified to (hopefully!) work for folks on a Windows Machine.  For this class you will always simulate a Unix environment on your Windows computer using the Acaconda Prompt or Anaconda Powershell Prompt applications that was installed with Anaconda (accessed via Anaconda3 folder in startup Menu) or **suggested here** via opening up JupyterLab and using the Terminal from there.  There are alternatives to accessing Unix commands on a Windows computer such as by installing Cygwin [(some explanation and links here)](https://sun.iwu.edu/~mliffito/cs_codex/posts/unix-on-your-own-computer/). It usually requires some additional configuration so we'll stick with Anaconda and Jupyter tools here.  Good luck!
 
@@ -9,7 +11,13 @@ An introduction to basic Unix commands and the file system.  This tutorial is si
 ##### A bit of Background:
 Did you know that you can access almost any part of your computer, run most software, and create your own computational tools... all from the command line via a Terminal (Mac, Linux) or simulated via the Anaconda Prompt application on Windows machines? In order to do this (and a generally really really handy skill for most coding efforts), you'll need an understanding of how to navigate a Unix-type operating system.  Macintosh computers are built on a Unix backbone system, so these commands will also work in a Mac Terminal.  If you ever run across a Linux comptuter (running an OS like Ubuntu), it is simular to Unix as well. 
 
-To get started with the following tutorial, simply find a Terminal on the computer you are working on.  **If you are working on a Windows computer, open up an instance of Anaconda Prompt, and start Jupyter Lab (type `jupyter lab` at the prompt). Use the Terminal from there.** 
+#### Getting Started:
+If you are using a winddows computer, most Unix commands will work within the Terminal applicaiton that we can access via Jupyter Lab.  Before we get going, lets use one more package that boosts the Unix functionality.  To do this, install the package called `m2-base`.  
+- First open up Anaconda Prompt or Anaconda Powershell Prompt.
+Hopefully you see the `(base)` on the left side of your prompt, telling you that Anaconda is running in the background. 
+- Next type the following after the prompt (here the prompt is a `$`, don't type that!, everything else though):
+`$ conda install m2-base`. When prompted, confirm you want to install  by typing a `y`.
+- Once m2-base has completed installation, you can start an instance of Jupyter Lab. **If you are working on a Windows computer, always access terminal by opening up an instance of Anaconda Prompt, and starting Jupyter Lab (type `jupyter lab` at the prompt). Use the Terminal from there.** 
 
 Command output examples are for my computer - yours may be different.  Instead of just typing in commands, pay attention to what you are doing, the output, etc. If something is confusing, get help, or Google it!
 ***
@@ -99,7 +107,7 @@ and so on.
 
 **For Windows** computers, the structure is not too different.  The highest directory is usally called by a letter (often C:) with additional drives (like thumb drives) given a different letter. Then there are sub-foders called things like Program Files and Users.  Note the backslashes! `\`:
 
-![The File System](../images/windowsdir.png)
+![The File System](../images/DirectoryStructurePC.png)
 
 ### Useful Command: ls
 
@@ -742,6 +750,8 @@ but it does find the copy in `thesis` that we didn't delete.
 - Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
 - The shell does not have a trash bin: once something is deleted, it's really gone.
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
+
+## Next - Don't forget to complete the [Unix Challenge!](../Assignments/unixchallenge)
 
 ## Learning More
 

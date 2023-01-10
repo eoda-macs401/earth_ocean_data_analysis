@@ -14,3 +14,7 @@ parts:
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
+    - file: Assignments/unixchallenge
+  - caption: Resources
+    chapters:
+    - file: Pages/videos

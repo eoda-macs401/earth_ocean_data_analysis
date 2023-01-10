@@ -1,6 +1,10 @@
 # Intro to Unix
 *Modified from An [Introduction to Earth and Environmental Data Science](https://earth-env-data-science.github.io)*  
 
+
+>Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - MAC](https://www.youtube.com/watch?v=4evA4BQWY4w&list=PLbucE-wY4JbFlVbC9rACnmhlrt4Lau_Ax&index=1)
+
+
 An introduction to basic Unix commands and the file system.
 
 *The notes below are modified from the excellent [Unix Shell tutorial ](http://swcarpentry.github.io/shell-novice/) that is freely available on the Software Carpentry website. We highly recommend checking out the full version for further reading. The material is being used here under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/).*
@@ -699,6 +703,8 @@ but it does find the copy in `thesis` that we didn't delete.
 - Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
 - The shell does not have a trash bin: once something is deleted, it's really gone.
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
+
+## Next - Don't forget to complete the [Unix Challenge!](../Assignments/unixchallenge)
 
 ## Learning More
 
