@@ -1,7 +1,7 @@
 ### Unix Tutorial Challenge
 ![Unix Dorks](../images/UnixDorks.png)
 
-Here is a short assignmetn to check your Unix skills.  Try to complete this by the end of class on the day we work on the Unix Tutorial.  If you need extra help, come ready the following day with questions. 
+Here is a short assignment to check your Unix skills.  Try to complete this by the end of class on the day we work on the Unix Tutorial.  If you need extra help, come ready the following day with questions. 
 
 Complete the following tasks:
 

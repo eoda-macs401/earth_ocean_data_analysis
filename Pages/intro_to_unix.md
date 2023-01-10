@@ -2,7 +2,7 @@
 *Modified from An [Introduction to Earth and Environmental Data Science](https://earth-env-data-science.github.io)*  
 
 
->Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - MAC](https://www.youtube.com/watch?v=4evA4BQWY4w&list=PLbucE-wY4JbFlVbC9rACnmhlrt4Lau_Ax&index=1)
+>Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - MAC](https://youtu.be/4evA4BQWY4w)
 
 
 An introduction to basic Unix commands and the file system.
