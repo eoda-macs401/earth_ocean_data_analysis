@@ -1,4 +1,4 @@
-# First Class - Assignment
+# First - Markdown Assignment
 
 ### What to do: 
 - Make sure JupyterLab is installed correctly on your machine or the University machine you are using.
@@ -14,7 +14,7 @@ Try to have used the "Show Markdown Preview" functionality within JupyterLab to 
 1. How are you planning on working this quarter? What computer do you plan to use? What opporating system is it? 
 2. Did you have any issues setting up JupyterLab or accessing it for the first time?
 
-#### Next, move on to the [Introduciton to Unix](../Pages/intro_to_unix) page. Get as far as you can through the tutorial.  
+#### Next, move on to the [Introduciton to Unix](../Pages/intro_to_unix) page if you haven't already. Also chec the [Video Resources](../Pages/videos) link for videos that guide you through the tutorial. Get as far as you can through the tutorial.  
 
 *I'd say try to give it at least an hour of attention outside of class.  For 2023, you will have time in class on Tuesday with Paige's help to complete the Unix tutorial, and your EODA thumb drives will be handed out at that time as well.*
 
@@ -30,7 +30,7 @@ Save your Markdown file, "First_Class_Reflection.md" on your new **eoda** thumbd
 For now, we'll also submit it to Canvas (Due after Tuesday's class period), eventually we'll use this file to practice with GitHub.
 
 ##### Note:
-If you origionally opened JupyterLab from your home directory (from a Terminal, without changing directories first), then your new Markdown file will also be saved in your home directory by default!  When you're happy with the Markdown file, save it. Then in order to move it to you thumb drive you could try typing the following command into a Terminal:
+If you origionally opened Jupyter Lab from your home directory (from a Terminal, without changing directories first), then your new Markdown file will also be saved in your home directory by default!  When you're happy with the Markdown file, save it. Then in order to move it to you thumb drive you could try typing the following command into a Terminal:
 
 ```
 $ mv ~/First_Class_Reflection.md /Volumes/eoda/.

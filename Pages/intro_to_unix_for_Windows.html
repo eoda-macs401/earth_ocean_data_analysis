@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Intro to Unix - For Students Working On Windows Machines &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Intro to Unix - For Windows Machines &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -136,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Intro to Unix - For Students Working On Windows Machines
+   Intro to Unix - For Windows Machines
   </a>
  </li>
  <li class="toctree-l1">
@@ -153,7 +153,24 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Assignments/first_class_assignment.html">
-   First Class - Assignment
+   First - Markdown Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/unixchallenge.html">
+   Unix Tutorial Challenge
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="videos.html">
+   EODA Class Video Links
   </a>
  </li>
 </ul>
@@ -339,6 +356,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
    Navigating Files and Directories in Unix
   </a>
@@ -435,6 +457,14 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-don-t-forget-to-complete-the-unix-challenge">
+   Next - Don’t forget to complete the
+   <span class="xref myst">
+    Unix Challenge!
+   </span>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-more">
@@ -450,7 +480,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Intro to Unix - For Students Working On Windows Machines</h1>
+                <h1>Intro to Unix - For Windows Machines</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -463,6 +493,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-bit-of-background">
    A bit of Background:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -562,6 +597,14 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-don-t-forget-to-complete-the-unix-challenge">
+   Next - Don’t forget to complete the
+   <span class="xref myst">
+    Unix Challenge!
+   </span>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-more">
@@ -578,16 +621,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-unix-for-students-working-on-windows-machines">
-<h1>Intro to Unix - For Students Working On Windows Machines<a class="headerlink" href="#intro-to-unix-for-students-working-on-windows-machines" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-unix-for-windows-machines">
+<h1>Intro to Unix - For Windows Machines<a class="headerlink" href="#intro-to-unix-for-windows-machines" title="Permalink to this headline">#</a></h1>
 <p><em>Modified from An <a class="reference external" href="https://earth-env-data-science.github.io">Introduction to Earth and Environmental Data Science</a></em></p>
+<blockquote>
+<div><p>Note, much of this tutorial is outlined in the video: <a class="reference internal" href="videos.html"><span class="doc std std-doc">YouTube: Intro to Unix - WINDOWS</span></a></p>
+</div></blockquote>
 <p>An introduction to basic Unix commands and the file system.  This tutorial is simular to the page - <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Introduction to Unix</span></a>, but has been modified to (hopefully!) work for folks on a Windows Machine.  For this class you will always simulate a Unix environment on your Windows computer using the Acaconda Prompt or Anaconda Powershell Prompt applications that was installed with Anaconda (accessed via Anaconda3 folder in startup Menu) or <strong>suggested here</strong> via opening up JupyterLab and using the Terminal from there.  There are alternatives to accessing Unix commands on a Windows computer such as by installing Cygwin <a class="reference external" href="https://sun.iwu.edu/~mliffito/cs_codex/posts/unix-on-your-own-computer/">(some explanation and links here)</a>. It usually requires some additional configuration so we’ll stick with Anaconda and Jupyter tools here.  Good luck!</p>
 <p><em>The notes below are modified from the excellent <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Unix Shell tutorial </a> that is freely available on the Software Carpentry website. We highly recommend checking out the full version for further reading. The material is being used here under the terms of the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a>.</em></p>
 <hr class="docutils" />
 <section id="a-bit-of-background">
 <h2>A bit of Background:<a class="headerlink" href="#a-bit-of-background" title="Permalink to this headline">#</a></h2>
 <p>Did you know that you can access almost any part of your computer, run most software, and create your own computational tools… all from the command line via a Terminal (Mac, Linux) or simulated via the Anaconda Prompt application on Windows machines? In order to do this (and a generally really really handy skill for most coding efforts), you’ll need an understanding of how to navigate a Unix-type operating system.  Macintosh computers are built on a Unix backbone system, so these commands will also work in a Mac Terminal.  If you ever run across a Linux comptuter (running an OS like Ubuntu), it is simular to Unix as well.</p>
-<p>To get started with the following tutorial, simply find a Terminal on the computer you are working on.  <strong>If you are working on a Windows computer, open up an instance of Anaconda Prompt, and start Jupyter Lab (type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> at the prompt). Use the Terminal from there.</strong></p>
+</section>
+<section id="getting-started">
+<h2>Getting Started:<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<p>If you are using a winddows computer, most Unix commands will work within the Terminal applicaiton that we can access via Jupyter Lab.  Before we get going, lets use one more package that boosts the Unix functionality.  To do this, install the package called <code class="docutils literal notranslate"><span class="pre">m2-base</span></code>.</p>
+<ul class="simple">
+<li><p>First open up Anaconda Prompt or Anaconda Powershell Prompt.
+Hopefully you see the <code class="docutils literal notranslate"><span class="pre">(base)</span></code> on the left side of your prompt, telling you that Anaconda is running in the background.</p></li>
+<li><p>Next type the following after the prompt (here the prompt is a <code class="docutils literal notranslate"><span class="pre">$</span></code>, don’t type that!, everything else though):
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">conda</span> <span class="pre">install</span> <span class="pre">m2-base</span></code>. When prompted, confirm you want to install  by typing a <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Once m2-base has completed installation, you can start an instance of Jupyter Lab. <strong>If you are working on a Windows computer, always access terminal by opening up an instance of Anaconda Prompt, and starting Jupyter Lab (type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> at the prompt). Use the Terminal from there.</strong></p></li>
+</ul>
 <p>Command output examples are for my computer - yours may be different.  Instead of just typing in commands, pay attention to what you are doing, the output, etc. If something is confusing, get help, or Google it!</p>
 <hr class="docutils" />
 </section>
@@ -655,7 +711,7 @@ this is the leading slash in <code class="docutils literal notranslate"><span cl
 <code class="docutils literal notranslate"><span class="pre">etc</span></code> (system-wide configuration files),
 and so on.</p>
 <p><strong>For Windows</strong> computers, the structure is not too different.  The highest directory is usally called by a letter (often C:) with additional drives (like thumb drives) given a different letter. Then there are sub-foders called things like Program Files and Users.  Note the backslashes! <code class="docutils literal notranslate"><span class="pre">\</span></code>:</p>
-<p><img alt="The File System" src="../_images/windowsdir.png" /></p>
+<p><img alt="The File System" src="../_images/DirectoryStructurePC.png" /></p>
 </section>
 <section id="useful-command-ls">
 <h3>Useful Command: ls<a class="headerlink" href="#useful-command-ls" title="Permalink to this headline">#</a></h3>
@@ -1168,6 +1224,9 @@ but it does find the copy in <code class="docutils literal notranslate"><span cl
 <li><p>Depending on the type of work you do, you may need a more powerful text editor than Nano.</p></li>
 </ul>
 </section>
+</section>
+<section id="next-don-t-forget-to-complete-the-unix-challenge">
+<h2>Next - Don’t forget to complete the <a class="reference internal" href="../Assignments/unixchallenge.html"><span class="doc std std-doc">Unix Challenge!</span></a><a class="headerlink" href="#next-don-t-forget-to-complete-the-unix-challenge" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="learning-more">
 <h2>Learning More<a class="headerlink" href="#learning-more" title="Permalink to this headline">#</a></h2>
