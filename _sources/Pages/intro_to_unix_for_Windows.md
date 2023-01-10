@@ -1,7 +1,8 @@
 # Intro to Unix - For Windows Machines
 *Modified from An [Introduction to Earth and Environmental Data Science](https://earth-env-data-science.github.io)*  
 
->Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - WINDOWS](../Pages/videos)
+
+>Note, much of this tutorial is outlined in the video: [YouTube: Intro to Unix - WINDOWS](https://youtu.be/NuZMbxN2icg)
 
 An introduction to basic Unix commands and the file system.  This tutorial is simular to the page - [Introduction to Unix](../Pages/intro_to_unix), but has been modified to (hopefully!) work for folks on a Windows Machine.  For this class you will always simulate a Unix environment on your Windows computer using the Acaconda Prompt or Anaconda Powershell Prompt applications that was installed with Anaconda (accessed via Anaconda3 folder in startup Menu) or **suggested here** via opening up JupyterLab and using the Terminal from there.  There are alternatives to accessing Unix commands on a Windows computer such as by installing Cygwin [(some explanation and links here)](https://sun.iwu.edu/~mliffito/cs_codex/posts/unix-on-your-own-computer/). It usually requires some additional configuration so we'll stick with Anaconda and Jupyter tools here.  Good luck!
 
@@ -67,7 +68,7 @@ the directory that the computer assumes we want to run commands in
 unless we explicitly specify something else.
 Here, for me,
 the computer's response is `C:\Users\emily`,
-which is my **home directory**, or more specifically, the home direcgtory of the user named `rolande2`.
+which is my **home directory**, or more specifically, the home direcgtory of the user named `emily`.
 
 ~~~
 $ pwd
@@ -189,7 +190,7 @@ Mode                 LastWriteTime         Length Name
 d-r---          2/1/2021  11:50 AM                Captures
 ~~~
 
-The output is the list of all the files in the `jupyter_notebooks` directory.
+The output is the list of all the files in the `Videos` directory.
 Execute the 'ls' command for a directory in your `home` directory such as `Documents` and see what the output is. 
 
 
@@ -750,8 +751,6 @@ but it does find the copy in `thesis` that we didn't delete.
 - Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
 - The shell does not have a trash bin: once something is deleted, it's really gone.
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
-
-## Next - Don't forget to complete the [Unix Challenge!](../Assignments/unixchallenge)
 
 ## Learning More
 
