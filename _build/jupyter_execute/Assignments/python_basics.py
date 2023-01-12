@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Assignment 3: Basic Python
+# # Assignment 2: Basic Python
 # 
 # 
 # ```{admonition} Learning Goals

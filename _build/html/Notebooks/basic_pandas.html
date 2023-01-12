@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pandas Fundamentals &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,30 +18,30 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -59,21 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,10 +66,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -103,15 +86,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Welcome to the Jupyter Book for Earth and Ocean Data Analysis
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Readings and Tutorials
  </span>
@@ -159,6 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
    Unix Tutorial Challenge
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/python_basics.html">
+   Assignment 2: Basic Python
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -171,20 +158,20 @@ const thebe_selector_output = ".output, .cell_output"
    EODA Class Video Links
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/cheat_sheets.html">
+   Links to useful web pages and cheatsheets:
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -192,191 +179,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/basic_pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/basic_pandas.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Notebooks/basic_pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Notebooks/basic_pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/basic_pandas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/basic_pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas-data-structures-series">
    Pandas Data Structures: Series
@@ -440,11 +330,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Pandas Fundamentals</h1>
@@ -524,12 +415,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas-fundamentals">
-<h1>Pandas Fundamentals<a class="headerlink" href="#pandas-fundamentals" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-fundamentals">
+<h1>Pandas Fundamentals<a class="headerlink" href="#pandas-fundamentals" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -539,21 +429,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
 </div>
-</div>
-</div>
-<section id="pandas-data-structures-series">
-<h2>Pandas Data Structures: Series<a class="headerlink" href="#pandas-data-structures-series" title="Permalink to this headline">#</a></h2>
+<div class="section" id="pandas-data-structures-series">
+<h2>Pandas Data Structures: Series<a class="headerlink" href="#pandas-data-structures-series" title="Permalink to this headline">¶</a></h2>
 <p>A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an <em>index</em>. The index contains the labels that we use to access the data. This can be useful.</p>
 <p>There are many ways to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/dsintro.html#series">create a Series</a>. We will just show a few.</p>
 <p>(Data are from the NASA <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">Planetary Fact Sheet</a>.)</p>
@@ -619,8 +497,8 @@ dtype: float64
 </div>
 </div>
 </div>
-<section id="indexing">
-<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
+<div class="section" id="indexing">
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
 <p>We can get values back out using the index via the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,10 +595,10 @@ dtype: float64
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="pandas-data-structures-dataframe">
-<h2>Pandas Data Structures: DataFrame<a class="headerlink" href="#pandas-data-structures-dataframe" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="pandas-data-structures-dataframe">
+<h2>Pandas Data Structures: DataFrame<a class="headerlink" href="#pandas-data-structures-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>There is a lot more to Series, but they are limit to a single “column”. A more useful Pandas data structure is the DataFrame. A DataFrame is basically a bunch of series that share the same index. It’s a lot like a table in a spreadsheet.</p>
 <p>Below we create a DataFrame.</p>
 <div class="cell docutils container">
@@ -1099,9 +977,9 @@ dtype: float64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="merging-data">
-<h2>Merging Data<a class="headerlink" href="#merging-data" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="merging-data">
+<h2>Merging Data<a class="headerlink" href="#merging-data" title="Permalink to this headline">¶</a></h2>
 <p>Pandas supports a wide range of methods for merging different datasets. These are described extensively in the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/merging.html">documentation</a>. Here we just give a few examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1434,8 +1312,8 @@ Name: temperature, dtype: int64
 </table>
 </div></div></div>
 </div>
-<section id="modifying-values">
-<h3>Modifying Values<a class="headerlink" href="#modifying-values" title="Permalink to this headline">#</a></h3>
+<div class="section" id="modifying-values">
+<h3>Modifying Values<a class="headerlink" href="#modifying-values" title="Permalink to this headline">¶</a></h3>
 <p>We often want to modify values in a dataframe based on some rule. To modify values, we need to use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> or <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1500,10 +1378,10 @@ Name: temperature, dtype: int64
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="plotting">
-<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
 <p>DataFrames have all kinds of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/visualization.html">useful plotting</a> built in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1531,9 +1409,9 @@ Name: temperature, dtype: int64
 <img alt="../_images/basic_pandas_57_1.png" src="../_images/basic_pandas_57_1.png" />
 </div>
 </div>
-</section>
-<section id="time-indexes">
-<h2>Time Indexes<a class="headerlink" href="#time-indexes" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="time-indexes">
+<h2>Time Indexes<a class="headerlink" href="#time-indexes" title="Permalink to this headline">¶</a></h2>
 <p>Indexes are very powerful. They are a big part of why Pandas is so useful. There are different indices for different types of data. Time Indexes are especially great!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1596,9 +1474,9 @@ Name: temperature, dtype: int64
 </div>
 </div>
 </div>
-</section>
-<section id="reading-data-files-weather-station-data">
-<h2>Reading Data Files: Weather Station Data<a class="headerlink" href="#reading-data-files-weather-station-data" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="reading-data-files-weather-station-data">
+<h2>Reading Data Files: Weather Station Data<a class="headerlink" href="#reading-data-files-weather-station-data" title="Permalink to this headline">¶</a></h2>
 <p>In this example, we will use NOAA weather station data from <a class="reference external" href="https://www.ncdc.noaa.gov/data-access/land-based-station-data">https://www.ncdc.noaa.gov/data-access/land-based-station-data</a>.</p>
 <p>The details of files we are going to read are described in this <span class="xref myst">README file</span>.</p>
 <div class="cell docutils container">
@@ -1617,28 +1495,19 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/emily/Library/Caches/noaa-data/data.txt&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> head <span class="s1">&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WBANNO LST_DATE CRX_VN LONGITUDE LATITUDE T_DAILY_MAX T_DAILY_MIN T_DAILY_MEAN T_DAILY_AVG P_DAILY_CALC SOLARAD_DAILY SUR_TEMP_DAILY_TYPE SUR_TEMP_DAILY_MAX SUR_TEMP_DAILY_MIN SUR_TEMP_DAILY_AVG RH_DAILY_MAX RH_DAILY_MIN RH_DAILY_AVG SOIL_MOISTURE_5_DAILY SOIL_MOISTURE_10_DAILY SOIL_MOISTURE_20_DAILY SOIL_MOISTURE_50_DAILY SOIL_MOISTURE_100_DAILY SOIL_TEMP_5_DAILY SOIL_TEMP_10_DAILY SOIL_TEMP_20_DAILY SOIL_TEMP_50_DAILY SOIL_TEMP_100_DAILY 
-64756 20170101  2.422  -73.74   41.79     6.6    -5.4     0.6     2.2     0.0     8.68 C     7.9    -6.6    -0.5    84.8    30.7    53.7 -99.000 -99.000   0.207   0.152   0.175    -0.1     0.0     0.6     1.5     3.4
-64756 20170102  2.422  -73.74   41.79     4.0    -6.8    -1.4    -1.2     0.0     2.08 C     4.1    -7.1    -1.6    91.1    49.1    77.4 -99.000 -99.000   0.205   0.151   0.173    -0.2     0.0     0.6     1.5     3.3
-64756 20170103  2.422  -73.74   41.79     4.9     0.7     2.8     2.7    13.1     0.68 C     3.9     0.1     1.6    96.5    80.1    91.5 -99.000 -99.000   0.205   0.150   0.173    -0.1     0.0     0.5     1.5     3.3
-64756 20170104  2.422  -73.74   41.79     8.7    -1.6     3.6     3.5     1.3     2.85 C     9.4    -4.5     1.3    97.4    34.0    73.1 -99.000 -99.000   0.215   0.153   0.174    -0.1     0.0     0.5     1.5     3.2
-64756 20170105  2.422  -73.74   41.79    -0.5    -4.6    -2.5    -2.8     0.0     4.90 C     5.0    -7.6    -3.3    51.0    34.4    42.5 -99.000 -99.000   0.215   0.154   0.177    -0.1     0.0     0.5     1.4     3.1
-64756 20170106  2.422  -73.74   41.79    -2.5   -10.1    -6.3    -4.7     1.3     5.17 C     1.8   -12.9    -5.2    89.8    40.0    60.8 -99.000 -99.000   0.210   0.153   0.177    -0.2     0.0     0.5     1.4     3.1
-64756 20170107  2.422  -73.74   41.79    -7.3   -11.7    -9.5    -8.7     3.1     1.19 C    -5.0   -19.0    -8.5    84.4    50.9    71.2 -99.000 -99.000   0.204   0.152   0.175    -0.4    -0.1     0.5     1.4     3.0
-64756 20170108  2.422  -73.74   41.79    -5.9   -14.5   -10.2    -9.4     0.0     6.15 C    -5.5   -23.1   -14.0    76.9    40.3    59.8 -99.000 -99.000   0.206   0.150   0.175    -0.4    -0.2     0.4     1.4     3.0
-64756 20170109  2.422  -73.74   41.79    -6.5   -20.2   -13.3   -12.5     0.0     5.86 C    -6.4   -23.4   -16.2    82.5    45.1    65.8 -99.000 -99.000   0.223   0.148   0.175    -0.7    -0.4     0.4     1.3     3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: /home/jovyan/.cache/noaa-data/data.txt: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -3214,8 +3083,8 @@ Name: 2017-08-07 00:00:00, dtype: object
 <p>31 rows × 27 columns</p>
 </div></div></div>
 </div>
-<section id="quick-statistics">
-<h3>Quick Statistics<a class="headerlink" href="#quick-statistics" title="Permalink to this headline">#</a></h3>
+<div class="section" id="quick-statistics">
+<h3>Quick Statistics<a class="headerlink" href="#quick-statistics" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -3269,7 +3138,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>count</th>
       <td>365.0</td>
       <td>365.000000</td>
-      <td>3.650000e+02</td>
+      <td>365.00</td>
       <td>3.650000e+02</td>
       <td>364.000000</td>
       <td>364.000000</td>
@@ -3293,7 +3162,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>mean</th>
       <td>64756.0</td>
       <td>2.470767</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>15.720055</td>
       <td>4.037912</td>
@@ -3317,8 +3186,8 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>std</th>
       <td>0.0</td>
       <td>0.085997</td>
-      <td>5.265234e-13</td>
-      <td>3.842198e-13</td>
+      <td>0.00</td>
+      <td>7.115181e-15</td>
       <td>10.502087</td>
       <td>9.460676</td>
       <td>9.727451</td>
@@ -3341,7 +3210,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>min</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>-12.300000</td>
       <td>-21.800000</td>
@@ -3365,7 +3234,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>25%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>6.900000</td>
       <td>-2.775000</td>
@@ -3389,7 +3258,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>50%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>17.450000</td>
       <td>4.350000</td>
@@ -3413,7 +3282,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>75%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>24.850000</td>
       <td>11.900000</td>
@@ -3437,7 +3306,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>max</th>
       <td>64756.0</td>
       <td>2.622000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>33.400000</td>
       <td>20.700000</td>
@@ -3462,9 +3331,9 @@ Name: 2017-08-07 00:00:00, dtype: object
 <p>8 rows × 26 columns</p>
 </div></div></div>
 </div>
-</section>
-<section id="plotting-values">
-<h3>Plotting Values<a class="headerlink" href="#plotting-values" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="plotting-values">
+<h3>Plotting Values<a class="headerlink" href="#plotting-values" title="Permalink to this headline">¶</a></h3>
 <p>We can now quickly make plots of the data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3527,9 +3396,9 @@ Name: 2017-08-07 00:00:00, dtype: object
 <img alt="../_images/basic_pandas_92_1.png" src="../_images/basic_pandas_92_1.png" />
 </div>
 </div>
-</section>
-<section id="resampling">
-<h3>Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="resampling">
+<h3>Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h3>
 <p>Since pandas understands time, we can use it to do resampling.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3540,7 +3409,7 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x7f1f14a1d5e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x114d7efe0&gt;
 </pre></div>
 </div>
 </div>
@@ -3927,9 +3796,9 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <p>Next time we will dig deeper into resampling, rolling means, and grouping operations (groupby).</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -3953,34 +3822,28 @@ Name: 2017-08-07 00:00:00, dtype: object
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
