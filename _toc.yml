@@ -16,6 +16,7 @@ parts:
     - file: Assignments/first_class_assignment
     - file: Assignments/unixchallenge
     - file: Assignments/python_basics
+    - file: Assignments/python_functions
   - caption: Resources
     chapters:
     - file: Pages/videos
