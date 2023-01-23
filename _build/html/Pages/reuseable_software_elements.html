@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reuseable Software Elements &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Readings and Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installing_jupyterlab.html">
+   Installing JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_unix.html">
+   Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_unix_for_Windows.html">
+   Intro to Unix - For Windows Machines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
+   Python Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/functions_classes.html">
+   Python Functions and Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/reuseable_software_elements.html">
+   Reuseable Software Elements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_environments.html">
+   Managing Python Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Notebooks/data.html">
+   All About Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/first_class_assignment.html">
+   First - Markdown Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/unixchallenge.html">
+   Unix Tutorial Challenge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/python_basics.html">
+   Assignment 2: Basic Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Assignments/python_functions.html">
+   Assignment 3: Python Functions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Project Design
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="organization_and_packaging.html">
+   Organization and Packaging of Python Projects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="videos.html">
+   EODA Class Video Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cheat_sheets.html">
+   Links to useful web pages and cheatsheets:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Pages/reuseable_software_elements.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/reuseable_software_elements.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Pages/reuseable_software_elements.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules">
+   Modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-python-style">
+   Aside: Python Style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages">
+   Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-actual-package">
+   The actual package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing">
+   Testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-integration-with-travis-ci">
+     Continuous Integration with Travis CI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reuseable Software Elements</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules">
+   Modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-python-style">
+   Aside: Python Style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages">
+   Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-actual-package">
+   The actual package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing">
+   Testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-integration-with-travis-ci">
+     Continuous Integration with Travis CI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reuseable-software-elements">
+<h1>Reuseable Software Elements<a class="headerlink" href="#reuseable-software-elements" title="Permalink to this headline">¶</a></h1>
+<p>Scientific software can perhaps be grouped into two categories: single-use “scripts” that are used in a very specific context to do a very specific thing (e.g.~to generate a specific figure for a paper), and reuseable components which encapsulate a more generic workflow. Once you find yourself repeating the same chunks of code in many different scripts or projects, it’s time to start composing reusable software elements.</p>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>The basic element of reusability in python is the <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">module</a>.
+A module is a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file which contains python objects which can be <em>imported</em> by other scripts or notebooks.
+Let’s illustrate how modules work with a simple example.</p>
+<p>A common task in geoscience is to calculate the <a class="reference external" href="https://en.wikipedia.org/wiki/Great-circle_distance">great-circle distance</a> between two points on the globe.
+There are several <a class="reference external" href="https://pypi.python.org/pypi/geopy">pacakges</a> that could do this for you, but let’s write our own as an example of a module.</p>
+<p>The formula for great circle distance is</p>
+<p><img alt="great circle distance formula" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/75af53b063ee43aed3de186b1a98af5c150185b8" /></p>
+<p>(Note that this formula requires 64-bit precision for adequate accuracy.)</p>
+<p>Let’s write a module to do this calculation. Open a file called <code class="docutils literal notranslate"><span class="pre">gcdistance.py</span></code> in a text editor. (The file should be in the same directory as the notebook you are working in now.) Populate it with the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A python module for computing great circle distance</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># approximate radius of Earth</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">6.371e6</span>
+
+<span class="k">def</span> <span class="nf">great_circle_distance</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate great-circle distance between two points.</span>
+<span class="sd">    </span>
+<span class="sd">    PARAMETERS</span>
+<span class="sd">    ----------</span>
+<span class="sd">    point1 : tuple</span>
+<span class="sd">        A (lat, lon) pair of coordinates in degrees</span>
+<span class="sd">    point2 : tuple</span>
+<span class="sd">        A (lat, lon) pair of coordinates in degrees</span>
+<span class="sd">        </span>
+<span class="sd">    RETURNS</span>
+<span class="sd">    -------</span>
+<span class="sd">    distance : float</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># unpack coordinates</span>
+    <span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span> <span class="o">=</span> <span class="n">point1</span>
+    <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span> <span class="o">=</span> <span class="n">point2</span>
+    
+    <span class="c1"># unpack and convert everything to radians</span>
+    <span class="n">phi1</span><span class="p">,</span> <span class="n">lambda1</span><span class="p">,</span> <span class="n">phi2</span><span class="p">,</span> <span class="n">lambda2</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> 
+                                    <span class="p">(</span><span class="n">point1</span> <span class="o">+</span> <span class="n">point2</span><span class="p">)]</span>
+    
+    <span class="c1"># apply formula</span>
+    <span class="c1"># https://en.wikipedia.org/wiki/Great-circle_distance</span>
+    <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span> <span class="o">+</span> 
+        <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">lambda2</span> <span class="o">-</span> <span class="n">lambda1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The module begins with a <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstring</a> explaining what it does. Then it contains some data (just a constant <code class="docutils literal notranslate"><span class="pre">R</span></code>) and a single function.</p>
+<p>Now let’s import our module</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcdistance</span>
+<span class="n">help</span><span class="p">(</span><span class="n">gcdistance</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">gcdistance</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">help</span><span class="p">(</span><span class="n">gcdistance</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;gcdistance&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s try using it to make a calculation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcdistance</span><span class="o">.</span><span class="n">great_circle_distance</span><span class="p">((</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1460007.1890493981
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could just import the function we need</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gcdistance</span> <span class="kn">import</span> <span class="n">R</span><span class="p">,</span> <span class="n">great_circle_distance</span>
+<span class="n">R</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6371000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we change the module, we need to either restart our kernel or else reload the module. (Note that functions imported via <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">func</span></code> cannot be reloaded.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
+<span class="n">reload</span><span class="p">(</span><span class="n">gcdistance</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;gcdistance&#39; from &#39;/Users/rpa/Teaching/research_computing/content/lectures/python/gcdistance.py&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Modules are a simple way to share code between different scripts or notebooks in the same project. <em>Module files must reside in the same directory as any script which imports them!</em> This is a big limitation; it means you can’t share modules between different projects.</p>
+<p>Once you have a piece of code that is general-purpose enough to share between projects, you need to create a package.</p>
+</div>
+<div class="section" id="aside-python-style">
+<h2>Aside: Python Style<a class="headerlink" href="#aside-python-style" title="Permalink to this headline">¶</a></h2>
+<p>There are few absolute rules for python code style, but there is a detailed <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">recommended style guide</a>. Some especially relevant points are:</p>
+<ul class="simple">
+<li><p>Line length should not exceed 79 characters</p></li>
+<li><p>Module names should be <code class="docutils literal notranslate"><span class="pre">lowercase</span></code></p></li>
+<li><p>Function and variable names should be <code class="docutils literal notranslate"><span class="pre">lower_case_with_underscores</span></code></p></li>
+<li><p>Class names should be <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">Packages</a> are python’s way of encapsulating reusable code elements for sharing with others. Packaging is a huge and complicated topic. We will just scratch the surface.</p>
+<p>We have already interacted with many packages already. Browse some of their github repositories to explore the structure of a large python package:</p>
+<ul class="simple">
+<li><p>NumPy: <a class="reference external" href="https://github.com/numpy/numpy">https://github.com/numpy/numpy</a></p></li>
+<li><p>Pandas: <a class="reference external" href="https://github.com/pandas-dev/pandas">https://github.com/pandas-dev/pandas</a></p></li>
+<li><p>Xarray: <a class="reference external" href="https://github.com/pydata/xarray">https://github.com/pydata/xarray</a></p></li>
+</ul>
+<p>An example of a smaller, more understandable package is our group’s xrft package:</p>
+<ul class="simple">
+<li><p>xrft: <a class="reference external" href="https://github.com/xgcm/xrft">https://github.com/xgcm/xrft</a></p></li>
+</ul>
+<p>These packages all have a common basic structure. Imagine we wanted to turn our great-circle distance module into a package. It would look like this.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>README.md
+LICENSE
+environment.yml
+requirements.txt
+setup.py
+gcdistance/__init__.py
+gcdistance/gcdistance.py
+gcdistance/tests/__init__.py
+gcdistancs/tests/test_gcdistance.py
+</pre></div>
+</div>
+<p>The actual package is contained in the <code class="docutils literal notranslate"><span class="pre">gcdistance</span></code> subdirectory. The other files are auxilliary files which help others understand and install your package. Here is an overview of what they do</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File Name</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">README.txt</span></code></p></td>
+<td><p>Explain what the package is for</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></p></td>
+<td><p>Defines the legal terms under which other can use the package. <a class="reference external" href="https://opensource.org/licenses/category">Open source</a> is encouraged!</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></p></td>
+<td><p>A conda environment which describes the package’s dependencies (<a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file">more info</a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></td>
+<td><p>A file which describes the package’s dependences for pip. (<a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">more info</a>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p></td>
+<td><p>A special python script which installs your package. (<a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/setuptools.html">more info</a>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-actual-package">
+<h2>The actual package<a class="headerlink" href="#the-actual-package" title="Permalink to this headline">¶</a></h2>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">gcdistance</span></code> is the actual package. Any directory that contains an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file is recognized by python as a package. This file can be blank, bu it needs to be present. From the root directory, we can import a module from the package as follows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gcdistance</span> <span class="kn">import</span> <span class="n">gcdistance</span>
+</pre></div>
+</div>
+<p>Yes, this is a bit redundant. That’s because the <code class="docutils literal notranslate"><span class="pre">gcdistance.py</span></code> module has the same name as the <code class="docutils literal notranslate"><span class="pre">gcdistance</span></code> package directory.</p>
+<p>However, this import will only work from the parent directory. It is not globally accessible from your python environment.</p>
+<p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is the magic file that makes your package installable and accessible anywhere. Here is an extremely basic <code class="docutils literal notranslate"><span class="pre">setup.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;gcdistance&quot;</span><span class="p">,</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Ryan Abernathey&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gcdistance&#39;</span><span class="p">],</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>There is a dizzying range of <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/setuptools.html">options</a> for <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>. More fields are required if you want to <a class="reference external" href="https://pythonhosted.org/an_example_pypi_project/setuptools.html">upload your package</a> to pypi (so it is installable via <code class="docutils literal notranslate"><span class="pre">pip</span></code>).</p>
+<p>To run the setup script, we call the following from the command line</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python setup.py install
+</pre></div>
+</div>
+<p>The package files are copied to our python library directory.
+If we plan to keep developing the package, we can install it in “developer mode” as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python setup.py develop
+</pre></div>
+</div>
+<p>In this case, the files are symlinked rather than copied.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>A software package requires <a class="reference external" href="https://en.wikipedia.org/wiki/Software_testing">tests</a> to ensure that it works properly. Matt Rocklin has a great <a class="reference external" href="http://matthewrocklin.com/blog/work/2016/02/08/tests">blog post</a> on why we should write tests for our code.</p>
+<p>Tests don’t have to be complicated. They are simply a check to verify that your code does what it is supposed to do.</p>
+<p>To add tests to our project, we create create the file <code class="docutils literal notranslate"><span class="pre">gcdistance/tests/test_gcdistance.py</span></code>. (We also need an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory.) The example below shows an example of a test function for our package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">gcdistance.gcdistance</span> <span class="kn">import</span> <span class="n">great_circle_distance</span>
+
+<span class="k">def</span> <span class="nf">test_great_circle_distance</span><span class="p">():</span>
+    <span class="c1"># some known results</span>
+    <span class="c1"># distance between two same points should be zero</span>
+    <span class="k">assert</span> <span class="n">great_circle_distance</span><span class="p">((</span><span class="mf">20.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">),</span> <span class="p">(</span><span class="mf">20.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+
+    <span class="c1"># check distance between new york and london</span>
+    <span class="n">new_york</span> <span class="o">=</span> <span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span>
+    <span class="n">london</span> <span class="o">=</span> <span class="mf">51.5074</span><span class="p">,</span> <span class="mf">0.1278</span>
+    <span class="n">dist_nyc_london</span> <span class="o">=</span> <span class="n">great_circle_distance</span><span class="p">(</span><span class="n">new_york</span><span class="p">,</span> <span class="n">london</span><span class="p">)</span>
+    
+    <span class="c1"># very strict, doesn&#39;t actually work</span>
+    <span class="c1"># assert dist_nyc_london == 5.587e6</span>
+    
+    <span class="c1"># an approximate version of the above</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">dist_nyc_london</span><span class="p">,</span> <span class="mf">5.587e6</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+
+    <span class="c1"># now check that we can&#39;t pass the wrong number of arguments</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+        <span class="n">great_circle_distance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will use <a class="reference external" href="https://docs.pytest.org/en/latest/getting-started.html">pytest</a> to run our tests. If you don’t have pytest installed in your active python environment, take a minute to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pytest</span></code> from the command line. Now run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>py.test -v
+</pre></div>
+</div>
+<p>from the root directory of your project. You should see a notification that the tests passed. Try playing around with the tests to cause something to fail.</p>
+<div class="section" id="continuous-integration-with-travis-ci">
+<h3>Continuous Integration with Travis CI<a class="headerlink" href="#continuous-integration-with-travis-ci" title="Permalink to this headline">¶</a></h3>
+<p>You can configure automatic testing of your package by integrating github with <a class="reference external" href="https://travis-ci.org/">Travis-CI</a>. Travis-CI is a free “continuous integration” service: it automatically downloads your package and runs your tests in the cloud every time you commit to your repository. The travis <a class="reference external" href="https://docs.travis-ci.com/user/getting-started">getting started guide</a> gives a great overview of how to use the service.</p>
+<p>For us to use travis with our project, the steps are simple:</p>
+<ol>
+<li><p>Push the repo to github (repo must be public)</p></li>
+<li><p>Log in to <a class="reference external" href="https://travis-ci.org">https://travis-ci.org</a> and click the switch to enable your repo</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> file to your project with the following contents:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> language: python
+ python:
+ - 3.6
+ script:
+ - pytest
+</pre></div>
+</div>
+</li>
+<li><p>Add the file, commit, and push to github</p></li>
+<li><p>Go to <a class="reference external" href="https://travis-ci.org">https://travis-ci.org</a> and watch the magic happen!</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

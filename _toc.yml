@@ -12,13 +12,19 @@ parts:
     - file: Pages/intro_to_unix_for_Windows
     - file: Notebooks/python_fundamentals
     - file: Notebooks/functions_classes
+    - file: Notebooks/reuseable_software_elements
+    - file: Pages/python_environments
+    - file: Notebooks/data
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
     - file: Assignments/unixchallenge
     - file: Assignments/python_basics
     - file: Assignments/python_functions
-  - caption: Resources
+  - caption: Project Design
     chapters:
+    - file: Pages/organization_and_packaging
+  - caption: Resources
+    chapters: 
     - file: Pages/videos
     - file: Pages/cheat_sheets
