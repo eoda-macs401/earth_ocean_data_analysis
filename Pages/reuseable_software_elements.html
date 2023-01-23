@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Organization and Packaging of Python Projects &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Reuseable Software Elements &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -100,47 +100,47 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/installing_jupyterlab.html">
+  <a class="reference internal" href="installing_jupyterlab.html">
    Installing JupyterLab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_jupyterlab.html">
+  <a class="reference internal" href="intro_to_jupyterlab.html">
    Intro to JupyterLab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_unix.html">
+  <a class="reference internal" href="intro_to_unix.html">
    Intro to Unix
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_unix_for_Windows.html">
+  <a class="reference internal" href="intro_to_unix_for_Windows.html">
    Intro to Unix - For Windows Machines
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_fundamentals.html">
+  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
    Python Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions_classes.html">
+  <a class="reference internal" href="../Notebooks/functions_classes.html">
    Python Functions and Classes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="reuseable_software_elements.html">
+  <a class="reference internal" href="../Notebooks/reuseable_software_elements.html">
    Reuseable Software Elements
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/python_environments.html">
+  <a class="reference internal" href="python_environments.html">
    Managing Python Environments
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
+  <a class="reference internal" href="../Notebooks/data.html">
    All About Data
   </a>
  </li>
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/organization_and_packaging.html">
+  <a class="reference internal" href="organization_and_packaging.html">
    Organization and Packaging of Python Projects
   </a>
  </li>
@@ -191,12 +191,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/videos.html">
+  <a class="reference internal" href="videos.html">
    EODA Class Video Links
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/cheat_sheets.html">
+  <a class="reference internal" href="cheat_sheets.html">
    Links to useful web pages and cheatsheets:
   </a>
  </li>
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Notebooks/organization_and_packaging.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Pages/reuseable_software_elements.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -261,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/organization_and_packaging.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/reuseable_software_elements.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/organization_and_packaging.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Pages/reuseable_software_elements.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -305,58 +305,24 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-projects">
-   Types of Projects
+  <a class="reference internal nav-link" href="#modules">
+   Modules
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploratory-analysis">
-   Exploratory Analysis
+  <a class="reference internal nav-link" href="#aside-python-style">
+   Aside: Python Style
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-single-paper">
-   A Single Paper
+  <a class="reference internal nav-link" href="#packages">
+   Packages
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scientific-reproducibility">
-     Scientific Reproducibility
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-layout">
-     Project Layout
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reuseable-software-elements">
-   Reuseable Software Elements
+  <a class="reference internal nav-link" href="#the-actual-package">
+   The actual package
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aside-python-style">
-     Aside: Python Style
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#packages">
-     Packages
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-actual-package">
-     The actual package
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing">
@@ -380,7 +346,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Organization and Packaging of Python Projects</h1>
+                <h1>Reuseable Software Elements</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -391,58 +357,24 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-projects">
-   Types of Projects
+  <a class="reference internal nav-link" href="#modules">
+   Modules
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exploratory-analysis">
-   Exploratory Analysis
+  <a class="reference internal nav-link" href="#aside-python-style">
+   Aside: Python Style
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-single-paper">
-   A Single Paper
+  <a class="reference internal nav-link" href="#packages">
+   Packages
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scientific-reproducibility">
-     Scientific Reproducibility
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-layout">
-     Project Layout
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reuseable-software-elements">
-   Reuseable Software Elements
+  <a class="reference internal nav-link" href="#the-actual-package">
+   The actual package
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aside-python-style">
-     Aside: Python Style
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#packages">
-     Packages
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-actual-package">
-     The actual package
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#testing">
@@ -465,95 +397,11 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="organization-and-packaging-of-python-projects">
-<h1>Organization and Packaging of Python Projects<a class="headerlink" href="#organization-and-packaging-of-python-projects" title="Permalink to this headline">¶</a></h1>
-<p>A complex research project often relies on many different programs and software packages to accomplish the research goals.
-An important part of scientific computing is deciding how to organize and structure the code you use for research.
-A well-structured project can make you a more efficient and effective researcher.
-It is also a key component of <a class="reference external" href="http://lorenabarba.com/blog/barbagroup-reproducibility-syllabus/">scientific reproducibility</a>.</p>
-<p>Just putting all of your code into git repositories won’t magically turn a mess of scripts into a beautiful, well-organized project.
-More deliberate effort is required.</p>
-<div class="section" id="types-of-projects">
-<h2>Types of Projects<a class="headerlink" href="#types-of-projects" title="Permalink to this headline">¶</a></h2>
-<p>Not all projects are created equal.
-Based on my experience, I categorize three different types of “research code” scenarios commonly encountered in geosciences.</p>
-<ol class="simple">
-<li><p><strong>Exploratory analyses</strong>: When exploring a new idea, a single notebook or script is often all we need.</p></li>
-<li><p><strong>A Single Paper</strong>: The “paper” is a standard unit of scientific output. The code related to a single paper usually belongs together.</p></li>
-<li><p><strong>Reusable software elements</strong>: In the course of our research computing, we often identify specialized routines that we want to package for reuse in other projects, or by other scientists. This is where “scripts” become “software.”</p></li>
-</ol>
-<p>This lecture outlines some suggested practices for each category.</p>
-</div>
-<div class="section" id="exploratory-analysis">
-<h2>Exploratory Analysis<a class="headerlink" href="#exploratory-analysis" title="Permalink to this headline">¶</a></h2>
-<p>When starting something new, we are often motivated to just start coding and get some results quick.
-This is fine!
-Jupyter notebooks are an ideal format for open-ended exploratory analysis, since they are totally self-contained: they encapsulate text, code, and figures.
-If we find someting cool or useful, it is important to preserve these exploratory notebooks.</p>
-<p>A dedicated github repository can be overkill for a single file.
-Instead, I recommend github’s “<a class="reference external" href="https://help.github.com/articles/about-gists/">gist</a>” mechanism for saving and sharing such “one-off” notebooks and code snippets.
-Gists are like mini repos you can easily share and embed.
-(You can create one right now by going to <a class="reference external" href="https://gist.github.com/">https://gist.github.com/</a>.)</p>
-<p>You can upload any file (including an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook file) by dragging and dropping it into the gist website.
-You have the choice of making you gist public or secret. (There is no private option, but a secret gist can only be seen by others if you give them the URL.)</p>
-<p>GitHub’s rendering of Gists is a bit buggy. For a more consistent rendering experience, you can share your gist via <a class="reference external" href="http://nbviewer.ipython.org/">http://nbviewer.ipython.org/</a>.</p>
-</div>
-<div class="section" id="a-single-paper">
-<h2>A Single Paper<a class="headerlink" href="#a-single-paper" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="scientific-reproducibility">
-<h3>Scientific Reproducibility<a class="headerlink" href="#scientific-reproducibility" title="Permalink to this headline">¶</a></h3>
-<p>Reproducibility is a cornerstone of the scientific process.
-However, today one often reads that science is in the midst of a <a class="reference external" href="http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">reproducibility crisis</a>.
-This crisis may be due to increasing complexity and cost of scientific analysis, together with mounting pressure to publish as much and as quickly as possible.</p>
-<p>Today almost all earth science relies on some form of computation, from simple statistical analysis and curve fitting to advanced numerical simulation.
-In principle, computational science should be highly reproducible.
-However, it also brings unique challenges.
-A great overview of the challenges and best practices is given in
-<em>Barba, Lorena A. (2017): Barba-group Reproducibility Syllabus. figshare. <a class="reference external" href="https://doi.org/10.6084/m9.figshare.4879928.v1">https://doi.org/10.6084/m9.figshare.4879928.v1</a>.</em>
-Many of the suggestions in this lecture are adopted or paraphrased from <em>Barba (2017)</em>.</p>
-<p>Keep in mind that the audience for a reproducibile project is not just other scientists…it’s <em>you</em>, a year from now, or whenever you need to repeat and / or build on earlier work. Most scientists build on their Ph.D. work for a decade following graduation. Extra time spent on reproducibility now will make you more productive in the long run.</p>
-<p>We begin with an important observation.</p>
-<blockquote>
-<div><p>An article about computational science … is not the scholarship itself, it’s merely scholarship advertisement. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.</p>
-</div></blockquote>
-<p><em>Donoho, D. et al. (2009), Reproducible research in computational harmonic analysis, Comp. Sci. Eng. 11(1):8–18, doi: <a class="reference external" href="http://dx.doi.org/10.1109/MCSE.2009.15">10.1109/MCSE.2009.15</a></em></p>
-<p><a class="reference external" href="http://dx.doi.org/10.1371/journal.pcbi.1003285">Sandve et al. (2013)</a> give some specific recommmendations for computational reproducibility.</p>
-<ol class="simple">
-<li><p>For every result, keep track of how it was produced</p></li>
-<li><p>Avoid manual data-manipulation steps</p></li>
-<li><p>Archive the exact versions of all external programs used</p></li>
-<li><p>Version-control all custom scripts</p></li>
-<li><p>Record all intermediate results, when possible in standard formats</p></li>
-<li><p>For analyses that include randomness, note underlying random seeds</p></li>
-<li><p>Always store raw data behind plots</p></li>
-<li><p>Generate hierarchical analysis output, allowing layers of increasing detail to be inspected</p></li>
-<li><p>Connect textual statements to underlying results</p></li>
-<li><p>Provide public access to scripts, runs, and results</p></li>
-</ol>
-<p>These recommendations suggest a certain structure for a project.</p>
-</div>
-<div class="section" id="project-layout">
-<h3>Project Layout<a class="headerlink" href="#project-layout" title="Permalink to this headline">¶</a></h3>
-<p>A reproducible single-paper project directory structure might look something like this</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>README.md
-LICENSE
-environment.yml
-data/intermediate_results.csv
-notebooks/process_raw_data.ipynb
-notebooks/figure1.ipynb
-notebooks/figure2.ipynb
-notebooks/helper.py
-manuscript/manuscript.tex
-</pre></div>
-</div>
-<p>A great example of such a paper is <a class="reference external" href="https://crocha700.github.io/">Cesar Rocha</a>’s Upper Ocean Seasonality project: <a class="reference external" href="https://github.com/crocha700/UpperOceanSeasonality">https://github.com/crocha700/UpperOceanSeasonality</a>.</p>
-</div>
-</div>
-<div class="section" id="reuseable-software-elements">
-<h2>Reuseable Software Elements<a class="headerlink" href="#reuseable-software-elements" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="reuseable-software-elements">
+<h1>Reuseable Software Elements<a class="headerlink" href="#reuseable-software-elements" title="Permalink to this headline">¶</a></h1>
 <p>Scientific software can perhaps be grouped into two categories: single-use “scripts” that are used in a very specific context to do a very specific thing (e.g.~to generate a specific figure for a paper), and reuseable components which encapsulate a more generic workflow. Once you find yourself repeating the same chunks of code in many different scripts or projects, it’s time to start composing reusable software elements.</p>
 <div class="section" id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>The basic element of reusability in python is the <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">module</a>.
 A module is a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file which contains python objects which can be <em>imported</em> by other scripts or notebooks.
 Let’s illustrate how modules work with a simple example.</p>
@@ -611,31 +459,13 @@ There are several <a class="reference external" href="https://pypi.python.org/py
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module gcdistance:
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">gcdistance</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">help</span><span class="p">(</span><span class="n">gcdistance</span><span class="p">)</span>
 
-NAME
-    gcdistance - A python module for computing great circle distance
-
-FUNCTIONS
-    great_circle_distance(point1, point2)
-        Calculate great-circle distance between two points.
-        
-        PARAMETERS
-        ----------
-        point1 : tuple
-            A (lat, lon) pair of coordinates in degrees
-        point2 : tuple
-            A (lat, lon) pair of coordinates in degrees
-            
-        RETURNS
-        -------
-        distance : float
-
-DATA
-    R = 6371000.0
-
-FILE
-    /Users/emily/Library/CloudStorage/GoogleDrive-rolande2@wwu.edu/My Drive/WWU_Courses_Master/MACS401/EODA_Book/Earth_Ocean_Data_Analysis_MACS401/Notebooks/gcdistance.py
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;gcdistance&#39;
 </pre></div>
 </div>
 </div>
@@ -648,7 +478,7 @@ FILE
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1460007.189049398
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1460007.1890493981
 </pre></div>
 </div>
 </div>
@@ -676,7 +506,7 @@ FILE
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;gcdistance&#39; from &#39;/Users/emily/Library/CloudStorage/GoogleDrive-rolande2@wwu.edu/My Drive/WWU_Courses_Master/MACS401/EODA_Book/Earth_Ocean_Data_Analysis_MACS401/Notebooks/gcdistance.py&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;gcdistance&#39; from &#39;/Users/rpa/Teaching/research_computing/content/lectures/python/gcdistance.py&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -685,7 +515,7 @@ FILE
 <p>Once you have a piece of code that is general-purpose enough to share between projects, you need to create a package.</p>
 </div>
 <div class="section" id="aside-python-style">
-<h3>Aside: Python Style<a class="headerlink" href="#aside-python-style" title="Permalink to this headline">¶</a></h3>
+<h2>Aside: Python Style<a class="headerlink" href="#aside-python-style" title="Permalink to this headline">¶</a></h2>
 <p>There are few absolute rules for python code style, but there is a detailed <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">recommended style guide</a>. Some especially relevant points are:</p>
 <ul class="simple">
 <li><p>Line length should not exceed 79 characters</p></li>
@@ -695,7 +525,7 @@ FILE
 </ul>
 </div>
 <div class="section" id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#packages">Packages</a> are python’s way of encapsulating reusable code elements for sharing with others. Packaging is a huge and complicated topic. We will just scratch the surface.</p>
 <p>We have already interacted with many packages already. Browse some of their github repositories to explore the structure of a large python package:</p>
 <ul class="simple">
@@ -746,7 +576,7 @@ gcdistancs/tests/test_gcdistance.py
 </table>
 </div>
 <div class="section" id="the-actual-package">
-<h3>The actual package<a class="headerlink" href="#the-actual-package" title="Permalink to this headline">¶</a></h3>
+<h2>The actual package<a class="headerlink" href="#the-actual-package" title="Permalink to this headline">¶</a></h2>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">gcdistance</span></code> is the actual package. Any directory that contains an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file is recognized by python as a package. This file can be blank, bu it needs to be present. From the root directory, we can import a module from the package as follows</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gcdistance</span> <span class="kn">import</span> <span class="n">gcdistance</span>
 </pre></div>
@@ -776,7 +606,6 @@ If we plan to keep developing the package, we can install it in “developer mod
 </pre></div>
 </div>
 <p>In this case, the files are symlinked rather than copied.</p>
-</div>
 </div>
 <div class="section" id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
@@ -850,7 +679,7 @@ If we plan to keep developing the package, we can install it in “developer mod
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Notebooks"
+            path: "./Pages"
         },
         predefinedOutput: true
     }

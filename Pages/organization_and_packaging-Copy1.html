@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For the fourth day of class: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Organization and Packaging of Python Projects &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -174,18 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Project Design
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="organization_and_packaging.html">
-   Organization and Packaging of Python Projects
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -241,9 +229,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/fourth_day.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Pages/organization_and_packaging-Copy1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -261,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/fourth_day.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/organization_and_packaging-Copy1.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -277,6 +265,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Pages/organization_and_packaging-Copy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -288,72 +293,31 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
+  <a class="reference internal nav-link" href="#types-of-projects">
+   Types of Projects
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#exploratory-analysis">
+   Exploratory Analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
+  <a class="reference internal nav-link" href="#a-single-paper">
+   A Single Paper
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reminder-i-recommend-taking-notes-as-we-go-over-material-follow-along-with-demos-etc-in-a-new-notebook-maybe-saved-in-your-inclass-working-directory-on-your-thumb-drive-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new">
-     <strong>
-      REMINDER:
-     </strong>
-     I recommend taking notes as we go over material (follow along with demos, etc.) in a new
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Notebook
-      </span>
-     </code>
-     , maybe saved in your
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       inclass-working
-      </span>
-     </code>
-     directory on your thumb drive. You can open a new Jupyter Notebook from within JupyterLab (click on the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Notebook
-      </span>
-     </code>
-     button when it first opens, or from
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       File
-      </span>
-      <span class="pre">
-       &gt;
-      </span>
-      <span class="pre">
-       New
-      </span>
-     </code>
-     .
+    <a class="reference internal nav-link" href="#scientific-reproducibility">
+     Scientific Reproducibility
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reminder-here-is-that-really-handy-cheatsheet-on-jupyter-notebooks-from-last-week">
-     <strong>
-      REMINDER:
-     </strong>
-     Here is that really handy cheatsheet on Jupyter Notebooks from last week.
+    <a class="reference internal nav-link" href="#project-layout">
+     Project Layout
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
-  </a>
  </li>
 </ul>
 
@@ -365,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>For the fourth day of class:</h1>
+                <h1>Organization and Packaging of Python Projects</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -376,72 +340,31 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-we-re-at">
-   Where we’re at:
+  <a class="reference internal nav-link" href="#types-of-projects">
+   Types of Projects
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preperation-for-the-future">
-   Preperation for the future:
+  <a class="reference internal nav-link" href="#exploratory-analysis">
+   Exploratory Analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for-today-in-class">
-   For today, in class:
+  <a class="reference internal nav-link" href="#a-single-paper">
+   A Single Paper
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reminder-i-recommend-taking-notes-as-we-go-over-material-follow-along-with-demos-etc-in-a-new-notebook-maybe-saved-in-your-inclass-working-directory-on-your-thumb-drive-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new">
-     <strong>
-      REMINDER:
-     </strong>
-     I recommend taking notes as we go over material (follow along with demos, etc.) in a new
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Notebook
-      </span>
-     </code>
-     , maybe saved in your
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       inclass-working
-      </span>
-     </code>
-     directory on your thumb drive. You can open a new Jupyter Notebook from within JupyterLab (click on the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Notebook
-      </span>
-     </code>
-     button when it first opens, or from
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       File
-      </span>
-      <span class="pre">
-       &gt;
-      </span>
-      <span class="pre">
-       New
-      </span>
-     </code>
-     .
+    <a class="reference internal nav-link" href="#scientific-reproducibility">
+     Scientific Reproducibility
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reminder-here-is-that-really-handy-cheatsheet-on-jupyter-notebooks-from-last-week">
-     <strong>
-      REMINDER:
-     </strong>
-     Here is that really handy cheatsheet on Jupyter Notebooks from last week.
+    <a class="reference internal nav-link" href="#project-layout">
+     Project Layout
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homework-summary">
-   Homework Summary:
-  </a>
  </li>
 </ul>
 
@@ -452,38 +375,89 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="for-the-fourth-day-of-class">
-<h1><strong>For the fourth day of class:</strong><a class="headerlink" href="#for-the-fourth-day-of-class" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="where-we-re-at">
-<h2>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h2>
-<p>Last week we just barely scrached the surface, working with <a class="reference internal" href="../Notebooks/python_fundamentals.html"><span class="doc std std-doc">Python Fundamentals</span></a>.  We talked about variables in class, but will use more class time this week to discuss some of the data structures Python uses (such as Libraries and Dictionaries).  We’ll also discuss some of the times you’d used conditional statements (i.e. loops, <code class="docutils literal notranslate"><span class="pre">if</span></code> statements), and how indexing works.  These were some of the things you were asked to practice in your short homework assignment last week.  If you didn’t get that finished up last week, plan to complete it during or after our class this week.</p>
-<p>Last week you also read about <a class="reference internal" href="../Notebooks/functions_classes.html"><span class="doc std std-doc">Python Functions and Classes</span></a>.  We’ll start talking about these in class this week, and you’ll be practicing using functions and classes this week and next in your homework assignments.</p>
-</div>
-<div class="section" id="preperation-for-the-future">
-<h2>Preperation for the future:<a class="headerlink" href="#preperation-for-the-future" title="Permalink to this headline">¶</a></h2>
-<p>For next week, please read about <a class="reference internal" href="../Notebooks/organization_and_packaging.html"><span class="doc std std-doc">Organization and Packaging of Python Projects</span></a>.  Next week - you will be assigned independent work and a mini-research project thinking about a data analysis project you might want to engage in.  The homework reading will assist you in thinking abou this, and there will be a short reading quiz next week on this material.</p>
-</div>
-<div class="section" id="for-today-in-class">
-<h2>For today, in class:<a class="headerlink" href="#for-today-in-class" title="Permalink to this headline">¶</a></h2>
-<p>We’ll start class today by going over <a class="reference internal" href="../Assignments/python_basics.html"><span class="doc std std-doc">Assignment 3: Python Basics</span></a>.  If it was easy for you, plan to mentour some of yoru fellow students. If  you haven’t figured it out yet, get ready to pay attention and practice these new commands and tools in class.</p>
-<p>We’ll then move on to working through some new ideas about <a class="reference internal" href="../Notebooks/functions_classes.html"><span class="doc std std-doc">Python Functions and Classes</span></a>.</p>
-<div class="section" id="reminder-i-recommend-taking-notes-as-we-go-over-material-follow-along-with-demos-etc-in-a-new-notebook-maybe-saved-in-your-inclass-working-directory-on-your-thumb-drive-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new">
-<h3><strong>REMINDER:</strong>  I recommend taking notes as we go over material (follow along with demos, etc.) in a new <code class="docutils literal notranslate"><span class="pre">Notebook</span></code>, maybe saved in your <code class="docutils literal notranslate"><span class="pre">inclass-working</span></code> directory on your thumb drive. You can open a new Jupyter Notebook from within JupyterLab (click on the <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> button when it first opens, or from <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span></code>.<a class="headerlink" href="#reminder-i-recommend-taking-notes-as-we-go-over-material-follow-along-with-demos-etc-in-a-new-notebook-maybe-saved-in-your-inclass-working-directory-on-your-thumb-drive-you-can-open-a-new-jupyter-notebook-from-within-jupyterlab-click-on-the-notebook-button-when-it-first-opens-or-from-file-new" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="reminder-here-is-that-really-handy-cheatsheet-on-jupyter-notebooks-from-last-week">
-<h3><strong>REMINDER:</strong> Here is that <a class="reference external" href="https://www.edureka.co/blog/wp-content/uploads/2018/10/Jupyter_Notebook_CheatSheet_Edureka.pdf">really handy cheatsheet</a> on Jupyter Notebooks from last week.<a class="headerlink" href="#reminder-here-is-that-really-handy-cheatsheet-on-jupyter-notebooks-from-last-week" title="Permalink to this headline">¶</a></h3>
-<p>Following class today, you will be asked to complete a homework assignment, <a class="reference internal" href="../Assignments/python_functions.html"><span class="doc std std-doc">Assignment 4 - Python Functions</span></a>.  This is in the form of a Jupyter Notebook.  You can download the <em>template</em> notebook from the <a class="reference internal" href="../Assignments/python_functions.html"><span class="doc std std-doc">Assignment 4 Page</span></a> directly by pressing the small icon in the upper right side of the page and selecting <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> format -<br />
-<img alt="icon" src="images/icon.png" /></p>
-<p>Then you can save it to the same directory (git repository) on your eoda thumb drive that you were working on last week <code class="docutils literal notranslate"><span class="pre">python-assignments</span></code>. Complete the homework by filling out the <code class="docutils literal notranslate"><span class="pre">code</span></code> cells in the Jupyter Notebook as directed.  You can then <em>submit</em> your assignment by pushing this new file and updating the git repository, <code class="docutils literal notranslate"><span class="pre">python-assignments</span></code> you created last week.</p>
-<p>As long as you already shared your <code class="docutils literal notranslate"><span class="pre">python-assignments</span></code> repository with me via your <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> as a link in your <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file, you’ll have submitted your assignment!</p>
-</div>
-</div>
-<div class="section" id="homework-summary">
-<h2>Homework Summary:<a class="headerlink" href="#homework-summary" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="organization-and-packaging-of-python-projects">
+<h1>Organization and Packaging of Python Projects<a class="headerlink" href="#organization-and-packaging-of-python-projects" title="Permalink to this headline">¶</a></h1>
+<p>A complex research project often relies and many different programs and software packages to accomplish the research goals.
+An important part of scientific computing is deciding how to organize and structure the code you use for research.
+A well-structured project can make you a more efficient and effective researcher.
+It is also a key component of <a class="reference external" href="http://lorenabarba.com/blog/barbagroup-reproducibility-syllabus/">scientific reproducibility</a>.</p>
+<p>Just putting all of your code into git repositories won’t magically turn a mess of scripts into a beautiful, well-organized project.
+More deliberate effort is required.</p>
+<div class="section" id="types-of-projects">
+<h2>Types of Projects<a class="headerlink" href="#types-of-projects" title="Permalink to this headline">¶</a></h2>
+<p>Not all projects are created equal.
+Based on my experience, I categorize three different types of “research code” scenarios commonly encountered in geosciences.</p>
 <ol class="simple">
-<li><p>Complete <a class="reference internal" href="../Assignments/python_functions.html"><span class="doc std std-doc">Assignment 4 - Python Functions</span></a></p></li>
-<li><p>Before next week, read ahead about <a class="reference internal" href="../Notebooks/organization_and_packaging.html"><span class="doc std std-doc">Organization and Packaging of Python Projects</span></a></p></li>
+<li><p><strong>Exploratory analyses</strong>: When exploring a new idea, a single notebook or script is often all we need.</p></li>
+<li><p><strong>A Single Paper</strong>: The “paper” is a standard unit of scientific output. The code related to a single paper usually belongs together.</p></li>
+<li><p><strong>Reusable software elements</strong>: In the course of our research computing, we often identify specialized routines that we want to package for reuse in other projects, or by other scientists. This is where “scripts” become “software.”</p></li>
 </ol>
+<p>This lecture outlines some suggested practices for each category.</p>
+</div>
+<div class="section" id="exploratory-analysis">
+<h2>Exploratory Analysis<a class="headerlink" href="#exploratory-analysis" title="Permalink to this headline">¶</a></h2>
+<p>When starting something new, we are often motivated to just start coding and get some results quick.
+This is fine!
+Jupyter notebooks are an ideal format for open-ended exploratory analysis, since they are totally self-contained: they encapsulate text, code, and figures.
+If we find someting cool or useful, it is important to preserve these exploratory notebooks.</p>
+<p>A dedicated github repository can be overkill for a single file.
+Instead, I recommend github’s “<a class="reference external" href="https://help.github.com/articles/about-gists/">gist</a>” mechanism for saving and sharing such “one-off” notebooks and code snippets.
+Gists are like mini repos you can easily share and embed.
+(You can create one right now by going to <a class="reference external" href="https://gist.github.com/">https://gist.github.com/</a>.)</p>
+<p>You can upload any file (including an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook file) by dragging and dropping it into the gist website.
+You have the choice of making you gist public or secret. (There is no private option, but a secret gist can only be seen by others if you give them the URL.)</p>
+<p>GitHub’s rendering of Gists is a bit buggy. For a more consistent rendering experience, you can share your gist via <a class="reference external" href="http://nbviewer.ipython.org/">http://nbviewer.ipython.org/</a>.</p>
+</div>
+<div class="section" id="a-single-paper">
+<h2>A Single Paper<a class="headerlink" href="#a-single-paper" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scientific-reproducibility">
+<h3>Scientific Reproducibility<a class="headerlink" href="#scientific-reproducibility" title="Permalink to this headline">¶</a></h3>
+<p>Reproducibility is a cornerstone of the scientific process.
+However, today one often reads that science is in the midst of a <a class="reference external" href="http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">reproducibility crisis</a>.
+This crisis may be due to increasing complexity and cost of scientific analysis, together with mounting pressure to publish as much and as quickly as possible.</p>
+<p>Today almost all earth science relies on some form of computation, from simple statistical analysis and curve fitting to advanced numerical simulation.
+In principle, computational science should be highly reproducible.
+However, it also brings unique challenges.
+A great overview of the challenges and best practices is given in
+<em>Barba, Lorena A. (2017): Barba-group Reproducibility Syllabus. figshare. <a class="reference external" href="https://doi.org/10.6084/m9.figshare.4879928.v1">https://doi.org/10.6084/m9.figshare.4879928.v1</a>.</em>
+Many of the suggestions in this lecture are adopted or paraphrased from <em>Barba (2017)</em>.</p>
+<p>Keep in mind that the audience for a reproducibile project is not just other scientists…it’s <em>you</em>, a year from now, or whenever you need to repeat and / or build on earlier work. Most scientists build on their Ph.D. work for a decade following graduation. Extra time spent on reproducibility now will make you more productive in the long run.</p>
+<p>We begin with an important observation.</p>
+<blockquote>
+<div><p>An article about computational science … is not the scholarship itself, it’s merely scholarship advertisement. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.</p>
+</div></blockquote>
+<p><em>Donoho, D. et al. (2009), Reproducible research in computational harmonic analysis, Comp. Sci. Eng. 11(1):8–18, doi: <a class="reference external" href="http://dx.doi.org/10.1109/MCSE.2009.15">10.1109/MCSE.2009.15</a></em></p>
+<p><a class="reference external" href="http://dx.doi.org/10.1371/journal.pcbi.1003285">Sandve et al. (2013)</a> give some specific recommmendations for computational reproducibility.</p>
+<ol class="simple">
+<li><p>For every result, keep track of how it was produced</p></li>
+<li><p>Avoid manual data-manipulation steps</p></li>
+<li><p>Archive the exact versions of all external programs used</p></li>
+<li><p>Version-control all custom scripts</p></li>
+<li><p>Record all intermediate results, when possible in standard formats</p></li>
+<li><p>For analyses that include randomness, note underlying random seeds</p></li>
+<li><p>Always store raw data behind plots</p></li>
+<li><p>Generate hierarchical analysis output, allowing layers of increasing detail to be inspected</p></li>
+<li><p>Connect textual statements to underlying results</p></li>
+<li><p>Provide public access to scripts, runs, and results</p></li>
+</ol>
+<p>These recommendations suggest a certain structure for a project.</p>
+</div>
+<div class="section" id="project-layout">
+<h3>Project Layout<a class="headerlink" href="#project-layout" title="Permalink to this headline">¶</a></h3>
+<p>A reproducible single-paper project directory structure might look something like this</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>README.md
+LICENSE
+environment.yml
+data/intermediate_results.csv
+notebooks/process_raw_data.ipynb
+notebooks/figure1.ipynb
+notebooks/figure2.ipynb
+notebooks/helper.py
+manuscript/manuscript.tex
+</pre></div>
+</div>
+<p>A great example of such a paper is <a class="reference external" href="https://crocha700.github.io/">Cesar Rocha</a>’s Upper Ocean Seasonality project: <a class="reference external" href="https://github.com/crocha700/UpperOceanSeasonality">https://github.com/crocha700/UpperOceanSeasonality</a>.</p>
+</div>
 </div>
 </div>
 
