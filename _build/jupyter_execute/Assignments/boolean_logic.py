@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Assignment 4: Playing with boolean logic.
+# # Assignment 4: Playing with Boolean logic.
 # For some nice helpful background on Boolean Logic, check out the descriptions on the [Real Python page](https://realpython.com/python-boolean/).
 
 # ```{admonition} Learning Goals
