@@ -21,6 +21,7 @@ parts:
     - file: Assignments/unixchallenge
     - file: Assignments/python_basics
     - file: Assignments/python_functions
+    - file: Assignments/boolean_logic
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
@@ -28,3 +29,4 @@ parts:
     chapters: 
     - file: Pages/videos
     - file: Pages/cheat_sheets
+    - file: Notebooks/mini_modules_from_readings
