@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Links to useful web pages and cheatsheets: &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>&lt;no title&gt; &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mini Python Modules - From Readings" href="../Notebooks/mini_modules_from_readings.html" />
-    <link rel="prev" title="EODA Class Video Links" href="videos.html" />
+    <link rel="prev" title="Mini Python Modules - From Readings" href="../Notebooks/mini_modules_from_readings.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -196,14 +195,14 @@ const thebe_selector_output = ".output, .cell_output"
   Resources
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="videos.html">
    EODA Class Video Links
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cheat_sheets.html">
    Links to useful web pages and cheatsheets:
   </a>
  </li>
@@ -253,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/cheat_sheets.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Pages/pangeo_environment.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -273,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/cheat_sheets.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/pangeo_environment.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -294,6 +293,14 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -301,33 +308,132 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Links to useful web pages and cheatsheets:</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="links-to-useful-web-pages-and-cheatsheets">
-<h1>Links to useful web pages and cheatsheets:<a class="headerlink" href="#links-to-useful-web-pages-and-cheatsheets" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Jupyter Notebook Shortcuts:</p></li>
-</ul>
-<p><a class="reference external" href="https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330">Toward Data Science - Jupyter Notebook Shortcuts</a></p>
-<ul class="simple">
-<li><p>Nice explanation of modules and Packages:</p></li>
-</ul>
-<p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html">Real Python - Modules</a></p>
-<ul class="simple">
-<li><p>Package Repositories:</p></li>
-</ul>
-<p><a class="reference external" href="https://pypi.org/">pip</a></p>
-<p><a class="reference external" href="https://conda-forge.org/">conda-forge</a></p>
+  <p>You can copy the below text into a file called: environment.yml, then install this environment by  executing the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
 </div>
+<p>Here’s the text to copy to environment.yml file:</p>
+<hr class="docutils" />
+<p>name: pangeo
+channels:</p>
+<ul class="simple">
+<li><p>conda-forge
+dependencies:</p></li>
+<li><p>python=3.9*</p></li>
+<li><p>pangeo-notebook=2021.09.30</p></li>
+<li><p>pip=20</p></li>
+<li><p>adlfs</p></li>
+<li><p>awscli</p></li>
+<li><p>boto3</p></li>
+<li><p>bottleneck</p></li>
+<li><p>cartopy &gt;= 0.20.0</p></li>
+<li><p>cfgrib</p></li>
+<li><p>cmip6_preprocessing</p></li>
+<li><p>ciso</p></li>
+<li><p>dask-ml</p></li>
+<li><p>datashader</p></li>
+<li><p>descartes</p></li>
+<li><p>earthdata</p></li>
+<li><p>eofs</p></li>
+<li><p>erddapy</p></li>
+<li><p>esmpy</p></li>
+<li><p>fastjmd95</p></li>
+<li><p>fsspec</p></li>
+<li><p>fsspec-reference-maker</p></li>
+<li><p>gcsfs</p></li>
+<li><p>gh</p></li>
+<li><p>geocube</p></li>
+<li><p>geopandas</p></li>
+<li><p>geopy</p></li>
+<li><p>geoviews-core</p></li>
+<li><p>gsw</p></li>
+<li><p>h5netcdf</p></li>
+<li><p>h5py</p></li>
+<li><p>holoviews</p></li>
+<li><p>hvplot</p></li>
+<li><p>intake</p></li>
+<li><p>intake-esm</p></li>
+<li><p>intake-geopandas</p></li>
+<li><p>intake-stac</p></li>
+<li><p>intake-xarray</p></li>
+<li><p>ipyleaflet</p></li>
+<li><p>ipytree</p></li>
+<li><p>ipywidgets</p></li>
+<li><p>jupyter-panel-proxy</p></li>
+<li><p>jupyter-resource-usage</p></li>
+<li><p>lz4</p></li>
+<li><p>matplotlib-base</p></li>
+<li><p>metpy</p></li>
+<li><p>nb_conda_kernels</p></li>
+<li><p>nbstripout</p></li>
+<li><p>nc-time-axis</p></li>
+<li><p>netcdf4</p></li>
+<li><p>nomkl</p></li>
+<li><p>numcodecs</p></li>
+<li><p>numpy</p></li>
+<li><p>pandas</p></li>
+<li><p>panel</p></li>
+<li><p>parcels</p></li>
+<li><p>param!=1.11.0</p></li>
+<li><p>prefect</p></li>
+<li><p>pyarrow</p></li>
+<li><p>pycamhd</p></li>
+<li><p>pydap</p></li>
+<li><p>pygeos</p></li>
+<li><p>pystac</p></li>
+<li><p>python-blosc</p></li>
+<li><p>python-gist</p></li>
+<li><p>python-graphviz</p></li>
+<li><p>rasterio</p></li>
+<li><p>rechunker</p></li>
+<li><p>rio-cogeo</p></li>
+<li><p>rioxarray</p></li>
+<li><p>rise</p></li>
+<li><p>s3fs&gt;0.5</p></li>
+<li><p>sat-search</p></li>
+<li><p>sat-stac</p></li>
+<li><p>satpy</p></li>
+<li><p>scikit-image</p></li>
+<li><p>scikit-learn</p></li>
+<li><p>scipy</p></li>
+<li><p>sparse</p></li>
+<li><p>stackstac</p></li>
+<li><p>tiledb-py</p></li>
+<li><p>timezonefinder</p></li>
+<li><p>xarray</p></li>
+<li><p>xarrayutils</p></li>
+<li><p>xarray_leaflet</p></li>
+<li><p>xarray-spatial</p></li>
+<li><p>xcape</p></li>
+<li><p>xcube</p></li>
+<li><p>xesmf</p></li>
+<li><p>xgcm</p></li>
+<li><p>xhistogram</p></li>
+<li><p>xmitgcm</p></li>
+<li><p>xpublish</p></li>
+<li><p>xrft</p></li>
+<li><p>xskillscore</p></li>
+<li><p>zarr</p></li>
+</ul>
 
     <script type="text/x-thebe-config">
     {
@@ -354,19 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="videos.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Notebooks/mini_modules_from_readings.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EODA Class Video Links</p>
+            <p class="prev-next-title">Mini Python Modules - From Readings</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../Notebooks/mini_modules_from_readings.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mini Python Modules - From Readings</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

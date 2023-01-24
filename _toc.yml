@@ -30,3 +30,4 @@ parts:
     - file: Pages/videos
     - file: Pages/cheat_sheets
     - file: Notebooks/mini_modules_from_readings
+    - file: Pages/pangeo_environment
