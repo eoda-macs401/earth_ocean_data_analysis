@@ -5,11 +5,10 @@
 # 
 # So far in this course, we have introduced you to a few new tools - these include:
 #   - The Unix operating system, and navigating your file structure using the Command Line
-#   - Git and GitHub for collaboration and Versioning
 #   - Basic Python, accessed via Jupyter Notebooks
 #   - Python Functions
 #     
-# In the second half of the quarter, we'll add to this list, focusing on class goals that include:
+# Soon, we'll add to this list, focusing on class goals that include:
 # - utilizing packages
 # - working with numpy 
 # - making figures (MatPlotLib)
@@ -31,7 +30,7 @@
 
 # 
 
-# Question 2: What kind of computational steps do you think this project would entail.  At the least, describe in words a few things you think you woudl need to do. Better - sketch out an 'outline' for a Python project that woudl accomplish these steps. You can refer to simular skills outlined above. 
+# Question 2: What kind of computational steps do you think this project would entail.  At the least, describe in words a few things you think you would need to do. Better - sketch out an 'outline' for a Python project that woudl accomplish these steps. You can refer to simular skills outlined above. 
 
 # 
 
@@ -39,7 +38,7 @@
 
 # 
 
-# #### Submit this file as a notebook (or markdown file... either way), but pushing it to your eoda-assignments project (make sure you've made me a collaborator on that project!)
+# Submit this file as a notebook (or markdown file... either way) to Canvas *but* keep it handy has it will evolve to the Readme.md file that goes with your Final Project GitHub Repository 
 
 # In[ ]:
 

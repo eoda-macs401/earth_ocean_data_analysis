@@ -22,9 +22,11 @@ parts:
     - file: Assignments/python_basics
     - file: Assignments/python_functions
     - file: Assignments/boolean_logic
+    - file: Assignments/project_brainstorm
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
+    - file: Pages/projects
   - caption: Resources
     chapters: 
     - file: Pages/videos
