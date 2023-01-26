@@ -23,7 +23,7 @@
 # 
 # To complete the assignment, you can fill out the following markdown cells (we're using a Jupyter Notebook like a form here!) with answers and ideas to the questions listed. 
 # 
-# Ambitious but attainable requrements for final projects for this course can be found on the [Final Projects Page](../Pages/projects).  You might want to reference that in your brainstorm session. 
+# Ambitious but attainable requrements for final projects for this course can be found on the [Final Projects Page](../Pages/projects).  You might want to reference that in your brainstorm session. It describes that your project should _clearly define a hypothesis or scientific goal that you aim to investigate with your analysis_
 # 
 # 
 # Question 1:  What is a problem you'd like to solve using Data Analysis skills? Think of a question, problem, or transformation that includes a modern dataset that needs to be accessed via computational tools like those we've just started to explore.  This could include exploratory work, or development of a specific kind of Reusable software element (like a calculation, transformation or modeling excercise):
@@ -37,6 +37,25 @@
 # Question 3: What kind of data woudl you use? Be specific here. Is there a data object type that you know you'd be working with?  Are you working with a specific data set, if so, what is the data source? What format does the data come in and how do you access it?
 
 # 
+
+# ### Challenge: 
+# ### Practice importing your data into a jupyter notebook!?  
+# 
+# This is an advanced challenge based on where we are at in terms of the class, but is and essential step for starting with data analysis.  After you have identified what kind of date you'll be working with, determine the following related requrements:
+# - What tools will you use to import your dataset into a python interpreter? In particular is there a package you'll rely on?
+# - Can you install the necessary package if it's not already installed into your project environment?
+# - Is there a webpage documenting the package?
+# - Can you implement at least a trial import function **in this notebook?**
+# 
+# Reference the [All About Data](../Notebooks/data) page for tips on data types and associated packages that are good for working the them.  Ask yourself - is this ascii data or a non-human-readable format?  Can I load my datadset directly over the network via a data stream, or do I need to get it from someone and download it to my computer?
+# 
+# Try importint the data to this notebook using an appropriate Package.  If you succeed you'll be well on your way to making progress on your project goals!
+
+# In[ ]:
+
+
+
+
 
 # Submit this file as a notebook (or markdown file... either way) to Canvas *but* keep it handy has it will evolve to the Readme.md file that goes with your Final Project GitHub Repository 
 

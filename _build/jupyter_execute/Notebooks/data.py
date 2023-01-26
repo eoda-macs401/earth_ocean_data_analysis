@@ -229,13 +229,13 @@ print(np.dtype('complex256'), np.dtype('complex256').itemsize, "bytes")
 # 
 # When we go to this site we see something like this:
 # 
-# ![meteorite page](figures/meteorite_page.png)
+# ![meteorite page](../images/nasa1.png)
 # 
 # Clicking the "export" button gives us an option to export CSV, which we know pandas can read.
 # If we just click the "CSV" button, we download the file to our computer (not what we want).
 # Instead, _right click or CTRL-click the download link_ and select "Copy Link Address".
 # 
-# <img src="figures/meteorite_export.png" width="500px" />
+# <img src="../images/nasa2.png" width="500px" />
 # 
 # Pasting the results into our code editor gives us the desired URL.
 # 

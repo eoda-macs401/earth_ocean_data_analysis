@@ -30,7 +30,7 @@ You may use just one dataset, or you may choose to combine multiple datasets, de
 
 The goal here is the same as with any science project: to use the data to investigate a scientific question or hypothesis. In order to succeed on the project, you will have to draw on your experience _outside_ our class, from your science-focused classes or independent research, in order to define a scientifically interesting question. It is also acceptable to use this project to reproduce the results from a published study that you find interesting, provided you have access to the original data.
 
-Whatever you choose, you should _clearly define a hypothesis or scientific question that you aim to investigate with your analysis_. This will determine what you have to do.
+Whatever you choose, you should _clearly define a hypothesis or scientific goal that you aim to investigate with your analysis_. This will determine what you have to do.
 
 The results of this analysis will be figures. Beautiful figures which clearly provide answers to your question / hypothesis. Your notebook should contain at least 4 and no more than 8 figures. If you have closer to 4, they should be complex, multi-panel figures. All figures must have titles, clearly labeled axes, informative colormaps / colorbars, and legends, where appropriate.
 
