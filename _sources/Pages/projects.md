@@ -1,12 +1,12 @@
 # Final Projects
 
-Note - this page contains ideas for a ambitious final project - like that which would be appropriate for a typical 4-credit course.  For the Spring 2022 (2 credit) version of this course, the final projects will be paired down to something closer to a single assignment-scale effort.  Some of the informaiton outlined below may still be useful for brainstorming your project, consdiering data sources, computational tools and submission formats.  
+Note - this information on Final Projects for MACS 401 will be published early in the quarter - before some of the tools and concepts outlined below (i.e. GitHub, PANDAS, etc.) have been introduced.  Use this page to start forming ideas for your Final Project, even as you learn more about ways of adopting data science tools to engage with Earth and Ocean data sets and questions. 
 
-Although the learning goals, dataset requrements, and analysis requirements for our paired down final projects are simular to those outlined below, consider how these can be scaled to a ~2 week effort for 2022:
+To explore example final projects, please reference the 2019 project archive from the Columbia University course - [Earth and Environmental Data Science - Final Projects](https://earth-env-data-science.github.io/projects.html).
 
 ### Learning Goals
 
-The goal of the final project is to assess your ability to combine and apply the skills you have learned in class in the context of a real-world research problem. Our class has mostly focused on tools for data analysis and visualization, so this must be the focus of your final project. Specifically, we seek to assess your ability to do the following tasks:
+The goal of the final project is to assess your ability to combine and apply the skills you have learned in class in the context of a real-world research problem. Specifically, we seek to assess your ability to do the following tasks:
 
 *   Discover and download real datasets in standard formats (e.g. CSV, netCDF)
 *   Load the data into Pandas or Xarray, performing any necessary data cleanup (dealing with missing values, proper time encoding, etc.) along the way.
