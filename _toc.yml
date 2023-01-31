@@ -15,6 +15,7 @@ parts:
     - file: Notebooks/reuseable_software_elements
     - file: Pages/python_environments
     - file: Notebooks/data
+    - file: Notebooks/numpy_and_matplotlib
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
@@ -23,6 +24,7 @@ parts:
     - file: Assignments/python_functions
     - file: Assignments/boolean_logic
     - file: Assignments/project_brainstorm
+    - file: Assignments/numpy_matplotlib
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
