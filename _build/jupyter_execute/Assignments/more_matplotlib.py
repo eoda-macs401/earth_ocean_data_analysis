@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
-
-
-
 # # Assignment 7: More Matplotlib
 # 
 # The goal here is to replicate the figures you see as closely as possible.
