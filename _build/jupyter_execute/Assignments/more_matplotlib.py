@@ -7,7 +7,7 @@
 
 
 
-# # Assignment 6a (optional for 2022): More Matplotlib
+# # Assignment 7: More Matplotlib
 # 
 # The goal here is to replicate the figures you see as closely as possible.
 # 
@@ -89,7 +89,7 @@ for name, unit in zip(headers, units):
 
 
 
-# ![figure](more_matplotlib_figures/fig1.png)
+# ![figure](../images/fig1.png)
 
 # ### Problem 2: Contour Plots
 # 
@@ -119,7 +119,7 @@ lat = ds.Y.values
 
 
 
-# ![fig2](more_matplotlib_figures/fig2.png)
+# ![fig2](../images/fig2.png)
 
 # ### Problem 3: Scatter plots
 # Here we will make a map plot of earthquakes from a USGS catalog of historic large earthquakes. Color the earthquakes by log10(depth) and adjust the marker size to be magntiude$^4$/100
@@ -146,7 +146,7 @@ longitude = earthquakes[:, 21]
 
 
 
-# ![fig3](more_matplotlib_figures/fig3.png)
+# ![fig3](../images/fig3.png)
 
 # In[ ]:
 
