@@ -1,7 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Assignment 7: More Matplotlib
+# # Assignment 7- More Matplotlib
+# 
+# ```{admonition} Required Packages
+# :class: tip
+# 
+# Note - if you are not using the pangeo environment installation, make sure you have the following libraries installed before starting this assignment:
+# - numpy
+# - matplotlib
+# - pandas
+# - xarray
+# - netCDF4
+# - pydap
+# 
+# All the packages listed above can be installed with the following-type command within a terminal/shell:
+# 
+# `conda install -c conda-forge <name>`
+# 
+# You can list the packages installed in your current environment like this:
+# 
+# `conda list`
+# 
+# ```
 # 
 # The goal here is to replicate the figures you see as closely as possible.
 # 
@@ -118,9 +139,10 @@ lat = ds.Y.values
 # ### Problem 3: Scatter plots
 # Here we will make a map plot of earthquakes from a USGS catalog of historic large earthquakes. Color the earthquakes by log10(depth) and adjust the marker size to be magntiude$^4$/100
 
-# In[ ]:
+# In[4]:
 
 
+import numpy as np
 fname = pooch.retrieve(
     "https://rabernat.github.io/research_computing/signif.txt.tsv.zip",
     known_hash='22b9f7045bf90fb99e14b95b24c81da3c52a0b4c79acf95d72fbe3a257001dbb',

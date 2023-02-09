@@ -26,7 +26,7 @@ parts:
     - file: Assignments/boolean_logic
     - file: Assignments/project_brainstorm
     - file: Assignments/numpy_matplotlib
-    - file: Assignments/more_matplolib
+    - file: Assignments/more_matplotlib
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
