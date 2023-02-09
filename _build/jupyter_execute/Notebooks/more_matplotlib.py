@@ -372,7 +372,7 @@ print(f.shape)
 
 fig, ax = plt.subplots(figsize=(12,4), ncols=2)
 ax[0].imshow(f)
-ax[1].imshow(f, origin='bottom')
+ax[1].imshow(f, origin='lower')
 
 
 # ### pcolormesh
