@@ -18,7 +18,8 @@ parts:
     - file: Notebooks/numpy_and_matplotlib
     - file: Notebooks/more_matplotlib
     - file: Pages/pandas_intro
-    - file: Noteboos/basic_pandas
+      sections:    
+      - file: Notebooks/basic_pandas
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
