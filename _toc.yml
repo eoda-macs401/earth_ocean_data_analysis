@@ -17,6 +17,8 @@ parts:
     - file: Notebooks/data
     - file: Notebooks/numpy_and_matplotlib
     - file: Notebooks/more_matplotlib
+    - file: Pages/pandas_intro
+    - file: Noteboos/basic_pandas
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
@@ -27,6 +29,7 @@ parts:
     - file: Assignments/project_brainstorm
     - file: Assignments/numpy_matplotlib
     - file: Assignments/more_matplotlib
+    - file: Assignments/basic_pandas
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging

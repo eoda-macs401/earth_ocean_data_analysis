@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Assignment 7: Pandas Fundamentals with Earthquake Data
+# # Assignment 8: Pandas Fundamentals with Earthquake Data
 # 
 # In this assignment, we will review pandas fundamentals, such as how to
 # 
