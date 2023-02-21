@@ -18,6 +18,7 @@ parts:
     - file: Notebooks/numpy_and_matplotlib
     - file: Notebooks/more_matplotlib
     - file: Pages/pandas_intro
+    - file: Pages/intro_to_git
       sections:    
       - file: Notebooks/basic_pandas
   - caption: Assignments
@@ -31,6 +32,7 @@ parts:
     - file: Assignments/numpy_matplotlib
     - file: Assignments/more_matplotlib
     - file: Assignments/basic_pandas
+    - file: Assignments/files_markdown_git.md
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
@@ -41,3 +43,4 @@ parts:
     - file: Pages/cheat_sheets
     - file: Notebooks/mini_modules_from_readings
     - file: Pages/pangeo_environment
+    - file: Pages/git_gitHub_cheatsheet

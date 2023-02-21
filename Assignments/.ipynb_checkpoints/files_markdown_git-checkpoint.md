@@ -1,4 +1,4 @@
-# Assignment 2: Files, Git, and Github
+# Assignment 9: Git, and Github
 
 ## Create a Dummy Resume Repository
 
@@ -85,19 +85,23 @@ This will require a basic understanding of how to push material to a GitHub repo
 
 Finally, go back to the editor and add a new subsection called "Research Interests" to your `Readme.md` file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.
 
-To "hand in" this part of the assignment, put a link to it in the `Readme.md` file in the next part.
+To "hand in" this part of the assignment, put a link to it in the Canvas Assignment 9 submission or find out your TA's GitHub handle and make them a collaborator!
 
 
-## Create your Assignments Repository
+## Optionally - Create your Assignments Repository
 
-Now that you know how to create a git repository, you should create your assignments repository. **This will be used for the WHOLE quarter to 'hand in' your assignments. No Canvas Submissions here! Just shared documents (with links to your projects) via GitHub. I think this is so cool!*
+Now that you know how to create a git repository, you can choose to submit your assignments via GitHub. 
+
+If this sounds good to you, follow these steps:
 
 - Create a new directory called `eoda-assignments` on your thumb drive (just like you did for resume.. but NOT WITHIN the resume directory).
 - Inside your `eoda-assignments` project folder, create a `Readme.md` markdown file that contains your name and a link to your "resume" repo (link to github.com URL access point, copy and past this from your web browser into the file).
-- Also place your "First_Class_Reflection.md" file from last week in the new assignments directory (in your new repo). 
+- Also place your "First_Class_Reflection.md" file from week 1 of class in the new assignments directory (in your new repo). 
 - Initialize a new git repository (see [GitHub Cheatsheet](../Pages/git_gitHub_cheatsheet) for help)
-- Add the files and make your first commit
+- Add the files, and any future assignments you want, and make your first commit
 - Create a new **private** repository on GitHub called `eoda-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
 - Push your `eoda-assignments` repository to GitHub
-- **Back on GitHub**, in your new repository, go to "settings" -> "collaborators" and add `rolandocean`.
-- Push new commits to this repository whenever you are ready to hand in your assignments.
+- **Back on GitHub**, in your new repository, go to "settings" -> "collaborators" and add `rolandocean` and your TA's handle so we can see your repository.
+- Push new commits to this repository whenever you are ready to hand in your assignments from here on out.*
+
+*Note, if you choose to submit assignments via GitHub, make sure your TA knows you're doing this!
