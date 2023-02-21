@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2: Files, Git, and Github &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    <title>Assignment 9: Git, and Github &#8212; Earth and Ocean Data Analysis - MACS 401</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Organization and Packaging of Python Projects" href="../Pages/organization_and_packaging.html" />
+    <link rel="prev" title="Assignment 8: Pandas Fundamentals with Earthquake Data" href="basic_pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -154,9 +156,14 @@ const thebe_selector_output = ".output, .cell_output"
    More Matplotlib
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../Pages/pandas_intro.html">
    Pandas
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Pages/intro_to_git.html">
+   Intro to Git for Version Control
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -177,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
   Assignments
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="first_class_assignment.html">
    First - Markdown Assignment
@@ -223,6 +230,11 @@ const thebe_selector_output = ".output, .cell_output"
    Assignment 8: Pandas Fundamentals with Earthquake Data
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment 9: Git, and Github
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -260,6 +272,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../Notebooks/mini_modules_from_readings.html">
    Mini Python Modules - From Readings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">
+   Git/GitHub Cheatsheet!
   </a>
  </li>
 </ul>
@@ -382,8 +399,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-your-assignments-repository">
-   Create your Assignments Repository
+  <a class="reference internal nav-link" href="#optionally-create-your-assignments-repository">
+   Optionally - Create your Assignments Repository
   </a>
  </li>
 </ul>
@@ -396,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment 2: Files, Git, and Github</h1>
+                <h1>Assignment 9: Git, and Github</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -439,8 +456,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-your-assignments-repository">
-   Create your Assignments Repository
+  <a class="reference internal nav-link" href="#optionally-create-your-assignments-repository">
+   Optionally - Create your Assignments Repository
   </a>
  </li>
 </ul>
@@ -452,8 +469,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-2-files-git-and-github">
-<h1>Assignment 2: Files, Git, and Github<a class="headerlink" href="#assignment-2-files-git-and-github" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-9-git-and-github">
+<h1>Assignment 9: Git, and Github<a class="headerlink" href="#assignment-9-git-and-github" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="create-a-dummy-resume-repository">
 <h2>Create a Dummy Resume Repository<a class="headerlink" href="#create-a-dummy-resume-repository" title="Permalink to this headline">¶</a></h2>
 <p>Use JupyterLab to launch a terminal and use the terminal to do the following tasks:</p>
@@ -537,23 +554,25 @@ Get help from Emily if you’re having trouble with this.</p>
 <li><p>View your online resume at <code class="docutils literal notranslate"><span class="pre">http://github.com/&lt;your</span> <span class="pre">github</span> <span class="pre">username&gt;/resume</span></code></p></li>
 </ol>
 <p>Finally, go back to the editor and add a new subsection called “Research Interests” to your <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.</p>
-<p>To “hand in” this part of the assignment, put a link to it in the <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> file in the next part.</p>
+<p>To “hand in” this part of the assignment, put a link to it in the Canvas Assignment 9 submission or find out your TA’s GitHub handle and make them a collaborator!</p>
 </div>
 </div>
-<div class="section" id="create-your-assignments-repository">
-<h2>Create your Assignments Repository<a class="headerlink" href="#create-your-assignments-repository" title="Permalink to this headline">¶</a></h2>
-<p>Now that you know how to create a git repository, you should create your assignments repository. *<em>This will be used for the WHOLE quarter to ‘hand in’ your assignments. No Canvas Submissions here! Just shared documents (with links to your projects) via GitHub. I think this is so cool!</em></p>
+<div class="section" id="optionally-create-your-assignments-repository">
+<h2>Optionally - Create your Assignments Repository<a class="headerlink" href="#optionally-create-your-assignments-repository" title="Permalink to this headline">¶</a></h2>
+<p>Now that you know how to create a git repository, you can choose to submit your assignments via GitHub.</p>
+<p>If this sounds good to you, follow these steps:</p>
 <ul class="simple">
 <li><p>Create a new directory called <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> on your thumb drive (just like you did for resume.. but NOT WITHIN the resume directory).</p></li>
 <li><p>Inside your <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> project folder, create a <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> markdown file that contains your name and a link to your “resume” repo (link to <a class="reference external" href="http://github.com">github.com</a> URL access point, copy and past this from your web browser into the file).</p></li>
-<li><p>Also place your “First_Class_Reflection.md” file from last week in the new assignments directory (in your new repo).</p></li>
+<li><p>Also place your “First_Class_Reflection.md” file from week 1 of class in the new assignments directory (in your new repo).</p></li>
 <li><p>Initialize a new git repository (see <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html"><span class="doc std std-doc">GitHub Cheatsheet</span></a> for help)</p></li>
-<li><p>Add the files and make your first commit</p></li>
+<li><p>Add the files, and any future assignments you want, and make your first commit</p></li>
 <li><p>Create a new <strong>private</strong> repository on GitHub called <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code>. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)</p></li>
 <li><p>Push your <code class="docutils literal notranslate"><span class="pre">eoda-assignments</span></code> repository to GitHub</p></li>
-<li><p><strong>Back on GitHub</strong>, in your new repository, go to “settings” -&gt; “collaborators” and add <code class="docutils literal notranslate"><span class="pre">rolandocean</span></code>.</p></li>
-<li><p>Push new commits to this repository whenever you are ready to hand in your assignments.</p></li>
+<li><p><strong>Back on GitHub</strong>, in your new repository, go to “settings” -&gt; “collaborators” and add <code class="docutils literal notranslate"><span class="pre">rolandocean</span></code> and your TA’s handle so we can see your repository.</p></li>
+<li><p>Push new commits to this repository whenever you are ready to hand in your assignments from here on out.*</p></li>
 </ul>
+<p>*Note, if you choose to submit assignments via GitHub, make sure your TA knows you’re doing this!</p>
 </div>
 </div>
 
@@ -581,7 +600,21 @@ Get help from Emily if you’re having trouble with this.</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="basic_pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Assignment 8: Pandas Fundamentals with Earthquake Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Pages/organization_and_packaging.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Organization and Packaging of Python Projects</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
