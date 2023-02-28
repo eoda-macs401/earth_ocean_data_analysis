@@ -18,9 +18,10 @@ parts:
     - file: Notebooks/numpy_and_matplotlib
     - file: Notebooks/more_matplotlib
     - file: Pages/pandas_intro
-    - file: Pages/intro_to_git
       sections:    
       - file: Notebooks/basic_pandas
+    - file: Pages/intro_to_git
+    - file: Notebooks/time_series
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
@@ -32,11 +33,13 @@ parts:
     - file: Assignments/numpy_matplotlib
     - file: Assignments/more_matplotlib
     - file: Assignments/basic_pandas
-    - file: Assignments/files_markdown_git.md
+    - file: Assignments/files_markdown_git
+    - file: Assignment/time_series
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
     - file: Pages/projects
+    - file: Assignments/project_overview
   - caption: Resources
     chapters: 
     - file: Pages/videos

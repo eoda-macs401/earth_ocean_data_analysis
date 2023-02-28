@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More Work with Time Series &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Readings and Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/installing_jupyterlab.html">
+   Installing JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/intro_to_jupyterlab.html">
+   Intro to JupyterLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/intro_to_unix.html">
+   Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/intro_to_unix_for_Windows.html">
+   Intro to Unix - For Windows Machines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/python_fundamentals.html">
+   Python Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/functions_classes.html">
+   Python Functions and Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/reuseable_software_elements.html">
+   Reuseable Software Elements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/python_environments.html">
+   Managing Python Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/data.html">
+   All About Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/numpy_and_matplotlib.html">
+   Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/more_matplotlib.html">
+   More Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Pages/pandas_intro.html">
+   Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Notebooks/basic_pandas.html">
+     Pandas Fundamentals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/intro_to_git.html">
+   Intro to Git for Version Control
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/first_class_assignment.html">
+   First - Markdown Assignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/unixchallenge.html">
+   Unix Tutorial Challenge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/python_basics.html">
+   Assignment 2: Basic Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/python_functions.html">
+   Assignment 3: Python Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/boolean_logic.html">
+   Assignment 4: Playing with Boolean logic.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/project_brainstorm.html">
+   Assignment 5 - Data Analysis Project Brainstorm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/numpy_matplotlib.html">
+   Assignment 6 - Numpy and Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/more_matplotlib.html">
+   Assignment 7- More Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/basic_pandas.html">
+   Assignment 8: Pandas Fundamentals with Earthquake Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/files_markdown_git.html">
+   Assignment 9: Git, and Github
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Project Design
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/organization_and_packaging.html">
+   Organization and Packaging of Python Projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/projects.html">
+   Final Projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assignments/project_overview.html">
+   Final Project Readme Assignment - Due 1 Week Before Final Project Due date
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/videos.html">
+   EODA Class Video Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/cheat_sheets.html">
+   Links to useful web pages and cheatsheets:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebooks/mini_modules_from_readings.html">
+   Mini Python Modules - From Readings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pages/git_gitHub_cheatsheet.html">
+   Git/GitHub Cheatsheet!
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/time_series.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftime_series.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/time_series.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-import-some-timeseries-data">
+   Let’s import some timeseries data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-datetimes">
+   Part 1: Datetimes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-two-resampling-to-get-ready-for-spectral-analysis">
+   Part Two - resampling to get ready for spectral analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spctral-analysis-and-the-fourier-transform">
+     Spctral Analysis and the Fourier Transform
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>More Work with Time Series</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-import-some-timeseries-data">
+   Let’s import some timeseries data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-datetimes">
+   Part 1: Datetimes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-two-resampling-to-get-ready-for-spectral-analysis">
+   Part Two - resampling to get ready for spectral analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spctral-analysis-and-the-fourier-transform">
+     Spctral Analysis and the Fourier Transform
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="more-work-with-time-series">
+<h1>More Work with Time Series<a class="headerlink" href="#more-work-with-time-series" title="Permalink to this headline">¶</a></h1>
+<p>It is common in working with earth or ocean systems to encounter observational datasets that have been regularly sampled in time.  These are time series datasets and are common tools for making familiar observations such as temperature (often represented in hourly, daily, montly-averages or annual-averages), wave heights (may be sampled hourly or once a second, 1 Hz) or stream flow, earthquake obserations (seismograms are ususally sampled hundreds or thousands of times per second).  There are entire courses (even at WWU) about how to work with timeseries data. Here we’ll spend a bit of time working more with the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> class in Python, which makes working with timeseries date much easier.  We’ll also play with a bit of spectral analysis for fun (see <a class="reference external" href="https://www.jezzamon.com/fourier/index.html">This math-free primer on Fourier Analysis from Jezzamon</a>) that we can use to decompose a time series into it’s periodic contributions.</p>
+<p>First a bit of background -
+According to Wikipedia:</p>
+<blockquote>
+<div><p>A time series is a series of data points indexed (or listed or graphed) in time order. Most commonly, a time series is a sequence taken at successive equally spaced points in time. Thus it is a sequence of discrete-time data. Examples of time series are heights of ocean tides, counts of sunspots, and the daily closing value of the Dow Jones Industrial Average.</p>
+</div></blockquote>
+<p>Pandas and Python in general have some great tools to work with discretely sampled time series.  These can be read about by referencing the datetime module documentation and reading more tutorials such as this one from <a class="reference external" href="https://towardsdatascience.com/working-with-datetime-in-python-e032b8d2f512">Beyond Data Science - Datetime</a>.</p>
+<p>A few noteable points here:</p>
+<p>the datetime module has these object classes:</p>
+<ol class="simple">
+<li><p>datetime — allows us to manipulate dates and times together (month, day, year, hour, second, microsecond).</p></li>
+<li><p>date— allows us to manipulate dates only (month, day, year).</p></li>
+<li><p>time — you probably guessed it; this class allows us to manipulate time only (hour, minute, second, microsecond).</p></li>
+<li><p>timedelta — used for measuring duration, the difference between two dates or times.</p></li>
+<li><p>tzinfo — used for dealing with time zones. We won’t be covering this one in this tutorial.</p></li>
+</ol>
+<ul class="simple">
+<li><p>it’s important (and sometimes confusing) that datetime is both a module and a class within that module - keep in mind when you’re writing your imports</p></li>
+<li><p>you can pass the arguments to datetime starting with the largest time unit and ending with the smallest (year, month, day, hours, minutes, second)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s play with datetime:</span>
+
+<span class="n">mybirthday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1983</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mybirthday</span><span class="p">)</span>
+
+<span class="n">mytime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mytime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1983-01-15 07:15:00
+2023-02-28 12:41:44.745676
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#How does timedelta work?</span>
+
+<span class="n">myage</span> <span class="o">=</span> <span class="n">mytime</span> <span class="o">-</span> <span class="n">mybirthday</span>
+<span class="n">myage</span><span class="o">.</span><span class="n">days</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14654
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">myage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-import-some-timeseries-data">
+<h2>Let’s import some timeseries data.<a class="headerlink" href="#let-s-import-some-timeseries-data" title="Permalink to this headline">¶</a></h2>
+<p>Here’s a sea surface temeprature dataset to play with.  I grabbed this Extended Reconstructed Sea Surface Dataset from a nice search engine on the Columbia Climate School <span class="xref myst">International Research Institue Site</span>.  You can download the csv dataset directly <span class="xref myst">here</span>, or you can also use pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> and point to the link on this page. Either way, let’s play with some data.</p>
+<p>Quick tip - to get a first look at the data, you can download the csv, and open it with your text editor in Jupyter Lab. Even faster, you can use the <code class="docutils literal notranslate"><span class="pre">!</span></code> character to run a Unix command within Jupyter Notebook.  Here we’ll use the Unix <code class="docutils literal notranslate"><span class="pre">head</span></code> command to print the first 10 lines of the file (to get a quick look):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head data/ERSST_nearForks.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time,Extended reconstructed sea surface temperature
+Jan 1854,7.682585
+Feb 1854,7.798013
+Mar 1854,8.468447
+Apr 1854,10.0658
+May 1854,8.840645
+Jun 1854,11.99873
+Jul 1854,13.86106
+Aug 1854,13.79358
+Sep 1854,13.40161
+</pre></div>
+</div>
+</div>
+</div>
+<p>So it looks like the file is pretty well formatted with month year, temperature - with a comma in between (comma seperated..)</p>
+<p>Now we can easily read it in using read_csv - and we’ll remember to parse dates as we learned in <span class="xref myst">Basic Pandas</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/ERSST_nearForks.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Extended reconstructed sea surface temperature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1854-01-01</td>
+      <td>7.682585</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1854-02-01</td>
+      <td>7.798013</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1854-03-01</td>
+      <td>8.468447</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1854-04-01</td>
+      <td>10.065800</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1854-05-01</td>
+      <td>8.840645</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2028 entries, 0 to 2027
+Data columns (total 2 columns):
+ #   Column                                          Non-Null Count  Dtype         
+---  ------                                          --------------  -----         
+ 0   Time                                            2028 non-null   datetime64[ns]
+ 1   Extended reconstructed sea surface temperature  2028 non-null   float64       
+dtypes: datetime64[ns](1), float64(1)
+memory usage: 31.8 KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here we’ll print the first and last datenum entries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1854-01-01 00:00:00
+2022-12-01 00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool!  So this is a nice simple dataset - especially since we already know how to use the datetime class a little.</p>
+</div>
+<div class="section" id="part-1-datetimes">
+<h2>Part 1: Datetimes<a class="headerlink" href="#part-1-datetimes" title="Permalink to this headline">¶</a></h2>
+<p>Before we start working with this data, lets play around a bit with the datetimes.</p>
+<p>What would have happened, for example, if we’d had a value we knew was sampled every month, but we didn’t have the times it was sampled already in a Pandas dataframe or series?</p>
+<p>(Annecdotally - here is how you extract a list from a column of a dataframe - occationally handy - here we’re doing it to simulate making this time series from scratch.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#First pretend like we want the temperatures in a list to start:</span>
+<span class="n">temps</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">temps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now - if we didn’t already have the sample dates all ready - monthly dates since 1854, sampled on the first of the month - we’d want to create our array of datetimes.  Pandas makes this easy on us as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1854-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;1854-01-31&#39;, &#39;1854-02-28&#39;, &#39;1854-03-31&#39;, &#39;1854-04-30&#39;,
+               &#39;1854-05-31&#39;, &#39;1854-06-30&#39;, &#39;1854-07-31&#39;, &#39;1854-08-31&#39;,
+               &#39;1854-09-30&#39;, &#39;1854-10-31&#39;,
+               ...
+               &#39;2022-03-31&#39;, &#39;2022-04-30&#39;, &#39;2022-05-31&#39;, &#39;2022-06-30&#39;,
+               &#39;2022-07-31&#39;, &#39;2022-08-31&#39;, &#39;2022-09-30&#39;, &#39;2022-10-31&#39;,
+               &#39;2022-11-30&#39;, &#39;2022-12-31&#39;],
+              dtype=&#39;datetime64[ns]&#39;, length=2028, freq=&#39;M&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, the ‘M’ references monthly frequency. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">Here is a list</a> of the shorthand (aliases) strings for sampling frequencies datetime understands.</p>
+<p>We see now that we made a pandas <code class="docutils literal notranslate"><span class="pre">series</span></code> of datetime objects, and it’s the correct length <strong>but</strong> it’s starting at the end of the month rather than the begining.  One way to fix this is to define it from the previous month and add a day… What if we want to add a certain amount of time from our datetime objects?</p>
+<p>Here we’ll use the datetime library for the first time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1853-12&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;1854-01-01&#39;, &#39;1854-02-01&#39;, &#39;1854-03-01&#39;, &#39;1854-04-01&#39;,
+               &#39;1854-05-01&#39;, &#39;1854-06-01&#39;, &#39;1854-07-01&#39;, &#39;1854-08-01&#39;,
+               &#39;1854-09-01&#39;, &#39;1854-10-01&#39;,
+               ...
+               &#39;2022-03-01&#39;, &#39;2022-04-01&#39;, &#39;2022-05-01&#39;, &#39;2022-06-01&#39;,
+               &#39;2022-07-01&#39;, &#39;2022-08-01&#39;, &#39;2022-09-01&#39;, &#39;2022-10-01&#39;,
+               &#39;2022-11-01&#39;, &#39;2022-12-01&#39;],
+              dtype=&#39;datetime64[ns]&#39;, length=2028, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool - that looks right now!</p>
+<p>Again - there are multiple ways to do this.  Had we been paying attention - we would have noticed that there was an alias to the Month Start frequency!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1854-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;MS&#39;</span><span class="p">)</span>
+<span class="n">dates</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;1854-01-01&#39;, &#39;1854-02-01&#39;, &#39;1854-03-01&#39;, &#39;1854-04-01&#39;,
+               &#39;1854-05-01&#39;, &#39;1854-06-01&#39;, &#39;1854-07-01&#39;, &#39;1854-08-01&#39;,
+               &#39;1854-09-01&#39;, &#39;1854-10-01&#39;,
+               ...
+               &#39;2022-03-01&#39;, &#39;2022-04-01&#39;, &#39;2022-05-01&#39;, &#39;2022-06-01&#39;,
+               &#39;2022-07-01&#39;, &#39;2022-08-01&#39;, &#39;2022-09-01&#39;, &#39;2022-10-01&#39;,
+               &#39;2022-11-01&#39;, &#39;2022-12-01&#39;],
+              dtype=&#39;datetime64[ns]&#39;, length=2028, freq=&#39;MS&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we pretend like this wasn’t already set up for us - we can now make a series with the temperature values and the dates as the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">sst</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2022-01&#39;</span><span class="p">:</span><span class="s1">&#39;2022-12&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-01     8.078298
+2022-02-01     7.898858
+2022-03-01     8.296480
+2022-04-01     9.060289
+2022-05-01    10.690230
+2022-06-01    12.571850
+2022-07-01    15.114260
+2022-08-01    16.183050
+2022-09-01    15.658580
+2022-10-01    13.926420
+2022-11-01    10.873330
+2022-12-01     8.892098
+Freq: MS, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s do some plotting. You already know that pandas lets us plot time series really nicely:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Simple</span>
+<span class="n">sst</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1">#Or complicated</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time - sampled monthly&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;degrees C&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">24</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;degrees C&#39;)
+</pre></div>
+</div>
+<img alt="_images/time_series_25_1.png" src="_images/time_series_25_1.png" />
+<img alt="_images/time_series_25_2.png" src="_images/time_series_25_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#we can zoom in:</span>
+<span class="n">sst</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/time_series_26_1.png" src="_images/time_series_26_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="part-two-resampling-to-get-ready-for-spectral-analysis">
+<h2>Part Two - resampling to get ready for spectral analysis<a class="headerlink" href="#part-two-resampling-to-get-ready-for-spectral-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Next we’re going to play a bit with spectral analysis, but to do that, we need a ‘regularly sampled’ time series - this means our montly sampling may not be ‘regular’ enough to apply some kinds of time series analysis (keep in mind, different months have different numbers of days!).</p>
+<p>To do that, let’s use the resample function (so handy):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_reg</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;30D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code above, we’re resampling at 30 Days.  You can read about the resample method <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.resample.html">here</a> - it also has several different methods for resampling - which is essentially interpolation.</p>
+<p>Let’s take a lookat how that changed out data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2012&#39;</span><span class="p">:</span><span class="s1">&#39;2022&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sst_reg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2012&#39;</span><span class="p">:</span><span class="s1">&#39;2022&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/time_series_31_1.png" src="_images/time_series_31_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_reg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">:</span><span class="s1">&#39;2022&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-01-01     8.883529
+2020-01-31     8.883529
+2020-03-01     8.442430
+2020-03-31     8.442430
+2020-04-30     9.618597
+2020-05-30    11.979400
+2020-06-29    13.684600
+2020-07-29    14.686490
+2020-08-28    15.881450
+2020-09-27    15.544550
+2020-10-27    14.225620
+2020-11-26    11.155250
+2020-12-26     9.844648
+2021-01-25     9.286531
+2021-02-24     8.594229
+2021-03-26     8.705052
+2021-04-25     9.187806
+2021-05-25    10.926470
+2021-06-24    13.677040
+2021-07-24    15.014510
+2021-08-23    15.799060
+2021-09-22    14.677730
+2021-10-22    12.911790
+2021-11-21    11.216630
+2021-12-21     9.287827
+2022-01-20     8.078298
+2022-02-19     7.898858
+2022-03-21     8.296480
+2022-04-20     9.060289
+2022-05-20    10.690230
+2022-06-19    12.571850
+2022-07-19    15.114260
+2022-08-18    16.183050
+2022-09-17    15.658580
+2022-10-17    13.926420
+2022-11-16    10.873330
+Freq: 30D, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>One thing to note from this example - when we resample our data we need to be cautious of how we are changing it!  There are many strategies we could take to deal with the artifacts we have added to our data (i.e. like the one in January 2020!).  Smoothing or using an <a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/06/power-of-interpolation-in-python-to-fill-missing-values/">interpolation function</a> would likely work well for this.</p>
+<div class="section" id="spctral-analysis-and-the-fourier-transform">
+<h3>Spctral Analysis and the Fourier Transform<a class="headerlink" href="#spctral-analysis-and-the-fourier-transform" title="Permalink to this headline">¶</a></h3>
+<p>Just by looking at the data - you can see that there is some periodicity in it!  What do you think this is? Consider this question for a minute and jot (in you mental notebook, or in your paper notebook or your jupyter notebook) what do you think is causing the peridicity?</p>
+<p>People who work with time series data a lot like to break signals down into the periodic components that are contributing to the signal. To do that, we use spectral analysis and a tool call the Fourier Transform to characterize what periodic functions have the most “power” in our time series.  Read more about spectral analysis… anywhere on the Web really… here’s a good one from <a class="reference external" href="https://towardsdatascience.com/spectral-entropy-an-underestimated-time-series-feature-94e18ae5b958">Beyond Data Science</a>.</p>
+<p>If we want to spectral analysis to our time series, let’s use the library <code class="docutils literal notranslate"><span class="pre">scipy</span></code> for the first time (cool). You can read about the <a class="reference external" href="https://realpython.com/python-scipy-fft/">scipy FFT function here</a> which stands for <code class="docutils literal notranslate"><span class="pre">Fast</span> <span class="pre">Fourier</span> <span class="pre">Transform</span></code>. This is a way to numerically calculate the Fourier Transform on a discretely sampled dataset.</p>
+<p>Now to apply it.  It’s a little complicated, mainly because we’re switching between time domain and frequency domain and we need to set up our frequency axix. When we do this correctly, we can clearly see the yearly signal in our data!  Pay attention to comments in the code below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sst</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sst</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2028
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 7.682585,  7.798013,  8.468447, ..., 13.92642 , 10.87333 ,
+        8.892098])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>First import scipy fft functions and numpy</p></li>
+<li><p>Do the FFT… and figure out how to start setting up our frequency array (essentially the y axis):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">freq_spec</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The sample rate is how many samples per time period - 1 sample per 30 days in our case.</span>
+<span class="c1"># You could do this in terms of days, hours, years, whatever:</span>
+<span class="n">sr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1">#days</span>
+
+<span class="c1"># Total duration of the dataset in days - </span>
+<span class="c1"># You could do this like (number of samples)/(sample rate) OR (number of samples)*(Period between samples)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">sr</span> 
+
+<span class="c1"># This is a quick way of making an array of frequencies - </span>
+<span class="c1"># The largest frequency is frequency that would be sampled only </span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="n">T</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note - the highest frequency we can sample is called the Nyquest Frequency:
+<span class="math notranslate nohighlight">\( \frac{1}{2*sr} \)</span></p>
+<p>Lets check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">freq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.014800197335965
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty Close!</p>
+<p>Note - the FFT output gives us the frequency spectrum for both the postiive and negative frequencies (don’t ask… or ask in a Signal Processing Course!).  Here we’ll grab only the positive frequency response:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the one-sided specturm</span>
+<span class="n">n_oneside</span> <span class="o">=</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span>  <span class="c1">#the double divide operator is the floor dividor (it dumps the decimals!)</span>
+
+<span class="c1"># get the one side frequency</span>
+<span class="n">f_oneside</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_oneside</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">freq_spec</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]),</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq (samples/day - weird unit, I know)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FFT Amplitude&#39;</span><span class="p">)</span>
+<span class="c1">#plt.ylim((0,500))</span>
+<span class="c1">#plt.xlim((.0025, .0035))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;FFT Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="_images/time_series_43_1.png" src="_images/time_series_43_1.png" />
+</div>
+</div>
+<p>Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function… maybe climate change?) and a strong peak at ~ 0.00278 samples/day (this is the same as 360 days!).  Whew… glad this worked!!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mf">.00278</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>359.71223021582733
+</pre></div>
+</div>
+</div>
+</div>
+<p>days/sample of the freqency peak at 0.00278 samples/day</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
