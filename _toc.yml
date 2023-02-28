@@ -34,7 +34,7 @@ parts:
     - file: Assignments/more_matplotlib
     - file: Assignments/basic_pandas
     - file: Assignments/files_markdown_git
-    - file: Assignment/time_series
+    - file: Assignments/time_series
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
