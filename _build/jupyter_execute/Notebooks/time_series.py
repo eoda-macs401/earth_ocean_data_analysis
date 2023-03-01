@@ -63,30 +63,42 @@ type(myage)
 # Here's a sea surface temeprature dataset to play with.  I grabbed this Extended Reconstructed Sea Surface Dataset from a nice search engine on the Columbia Climate School [International Research Institue Site]('http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCDC/.ERSST/.version5/.sst/T/%28Jan%201854%29%28Dec%202022%29RANGEEDGES/Y/%2848N%29VALUES/X/%28125W%29VALUES/datatables.html').  You can download the csv dataset directly [from this link](https://raw.githubusercontent.com/eoda-macs401/earth_ocean_data_analysis/main/data/ERSST_nearForks.csv), or you can also use pandas `read_csv` and point to the link on this page. Either way, let's play with some data. 
 # 
 # Quick tip - to get a first look at the data, you can download the csv, and open it with your text editor in Jupyter Lab. Even faster, you can use the `!` character to run a Unix command within Jupyter Notebook.  Here we'll use the Unix `head` command to print the first 10 lines of the file (to get a quick look):
-
-# In[5]:
-
-
-get_ipython().system('head data/ERSST_nearForks.csv')
-
+# 
+# ```
+# !head data/ERSST_nearForks.csv
+# ```
+# 
+# The output will look like this:
+# 
+# ```Time,Extended reconstructed sea surface temperature
+# Jan 1854,7.682585
+# Feb 1854,7.798013
+# Mar 1854,8.468447
+# Apr 1854,10.0658
+# May 1854,8.840645
+# Jun 1854,11.99873
+# Jul 1854,13.86106
+# Aug 1854,13.79358
+# Sep 1854,13.40161
+# ```
 
 # So it looks like the file is pretty well formatted with month year, temperature - with a comma in between (comma seperated..)
 # 
 # Now we can easily read it in using read_csv - and we'll remember to parse dates as we learned in [Basic Pandas]('Notebooks/basic_pandas.ipynb')
 
-# In[6]:
+# In[5]:
 
 
 #This works if you download the file and save it to a data directory within your working dir:
-df = pd.read_csv('data/ERSST_nearForks.csv', parse_dates=[0])
-df.head()
+#df = pd.read_csv('data/ERSST_nearForks.csv', parse_dates=[0])
+#df.head()
 
 #Note, the following would also work:
 df = pd.read_csv('https://raw.githubusercontent.com/eoda-macs401/earth_ocean_data_analysis/main/data/ERSST_nearForks.csv', parse_dates=[0])
 df.head()
 
 
-# In[7]:
+# In[6]:
 
 
 df.info()
@@ -94,7 +106,7 @@ df.info()
 
 # And here we'll print the first and last datenum entries:
 
-# In[10]:
+# In[7]:
 
 
 print(df.iloc[0][0])
@@ -110,7 +122,7 @@ print(df.iloc[-1][0])
 # 
 # (Annecdotally - here is how you extract a list from a column of a dataframe - occationally handy - here we're doing it to simulate making this time series from scratch.)
 
-# In[35]:
+# In[8]:
 
 
 #First pretend like we want the temperatures in a list to start:
@@ -120,7 +132,7 @@ type(temps)
 
 # Now - if we didn't already have the sample dates all ready - monthly dates since 1854, sampled on the first of the month - we'd want to create our array of datetimes.  Pandas makes this easy on us as well:
 
-# In[36]:
+# In[9]:
 
 
 dates = pd.date_range('1854-01', periods=df.shape[0], freq='M')
@@ -134,7 +146,7 @@ dates
 # 
 # Here we'll use the datetime library for the first time:
 
-# In[37]:
+# In[10]:
 
 
 dates = pd.date_range('1853-12', periods=df.shape[0], freq='M')
@@ -146,7 +158,7 @@ dates
 # 
 # Again - there are multiple ways to do this.  Had we been paying attention - we would have noticed that there was an alias to the Month Start frequency!
 
-# In[38]:
+# In[11]:
 
 
 dates = pd.date_range('1854-01', periods=df.shape[0], freq = 'MS')
@@ -155,7 +167,7 @@ dates
 
 # If we pretend like this wasn't already set up for us - we can now make a series with the temperature values and the dates as the index:
 
-# In[39]:
+# In[12]:
 
 
 
@@ -165,7 +177,7 @@ sst.loc['2022-01':'2022-12']
 
 # Now let's do some plotting. You already know that pandas lets us plot time series really nicely:
 
-# In[40]:
+# In[13]:
 
 
 #Simple
@@ -177,7 +189,7 @@ ax1 = sst.plot(x='time - sampled monthly',figsize=(18,10),linewidth=1, fontsize=
 ax1.set_ylabel('degrees C',fontdict={'fontsize':24})
 
 
-# In[41]:
+# In[14]:
 
 
 #we can zoom in:
@@ -190,7 +202,7 @@ sst.loc['2010':'2020'].plot(figsize=(18, 10))
 # 
 # To do that, let's use the resample function (so handy):
 
-# In[51]:
+# In[15]:
 
 
 sst_reg = sst.resample("30D").ffill()
@@ -200,14 +212,14 @@ sst_reg = sst.resample("30D").ffill()
 
 # Let's take a lookat how that changed out data:
 
-# In[53]:
+# In[16]:
 
 
 sst.loc['2012':'2022'].plot(figsize=(18, 10))
 sst_reg.loc['2012':'2022'].plot()
 
 
-# In[54]:
+# In[17]:
 
 
 sst_reg.loc['2020':'2022']
@@ -227,7 +239,7 @@ sst_reg.loc['2020':'2022']
 
 # Now to apply it.  It's a little complicated, mainly because we're switching between time domain and frequency domain and we need to set up our frequency axix. When we do this correctly, we can clearly see the yearly signal in our data!  Pay attention to comments in the code below:
 
-# In[56]:
+# In[18]:
 
 
 print(sst.shape[0])
@@ -237,7 +249,7 @@ sst.values
 # - First import scipy fft functions and numpy
 # - Do the FFT... and figure out how to start setting up our frequency array (essentially the y axis):
 
-# In[57]:
+# In[19]:
 
 
 from scipy.fft import fft, fftfreq
@@ -250,7 +262,7 @@ n = np.arange(N)
 print(n[0:10])
 
 
-# In[59]:
+# In[20]:
 
 
 # The sample rate is how many samples per time period - 1 sample per 30 days in our case.
@@ -271,7 +283,7 @@ freq = n/T
 # 
 # Lets check:
 
-# In[69]:
+# In[21]:
 
 
 print(1/freq[-1])
@@ -281,7 +293,7 @@ print(1/freq[-1])
 # 
 # Note - the FFT output gives us the frequency spectrum for both the postiive and negative frequencies (don't ask... or ask in a Signal Processing Course!).  Here we'll grab only the positive frequency response:
 
-# In[77]:
+# In[22]:
 
 
 
@@ -301,7 +313,7 @@ plt.ylabel('FFT Amplitude')
 
 # Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function... maybe climate change?) and a strong peak at ~ 0.00278 samples/day (this is the same as 360 days!).  Whew... glad this worked!!
 
-# In[78]:
+# In[23]:
 
 
 1/.00278
