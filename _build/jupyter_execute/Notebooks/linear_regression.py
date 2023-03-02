@@ -48,9 +48,9 @@ sst_reg.plot()
 # The coefficient of determination, denoted as $R^2$, tells you which amount of variation in $y$ can be explained by the dependence on $x$ using the particular regression model. A larger $R^2$ indicates a better fit and means that the model can better explain the variation of the output with different inputs.
 # 
 # In order to quantify the fit - we can use the sum of squared residuals (SSR):
-# $$
+# $
 # SSR = \sum_{i}(y_i -f(x_i))^2
-# $$
+# $
 # 
 # 
 # 
