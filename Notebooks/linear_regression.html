@@ -555,9 +555,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The variation of actual responses <span class="math notranslate nohighlight">\(y_i, i=1, ..., n,\)</span> occurs partly due to the dependence on the predictors <span class="math notranslate nohighlight">\(x_i\)</span>. However, there’s also an additional inherent variance of the output.</p>
 <p>The coefficient of determination, denoted as <span class="math notranslate nohighlight">\(R^2\)</span>, tells you which amount of variation in <span class="math notranslate nohighlight">\(y\)</span> can be explained by the dependence on <span class="math notranslate nohighlight">\(x\)</span> using the particular regression model. A larger <span class="math notranslate nohighlight">\(R^2\)</span> indicates a better fit and means that the model can better explain the variation of the output with different inputs.</p>
 <p>In order to quantify the fit - we can use the sum of squared residuals (SSR):
-$<span class="math notranslate nohighlight">\(
+<span class="math notranslate nohighlight">\(
 SSR = \sum_{i}(y_i -f(x_i))^2
-\)</span>$</p>
+\)</span></p>
 <p>The value <span class="math notranslate nohighlight">\(R^2\)</span> = 1 corresponds to SSR = 0. That’s the perfect fit, since the values of predicted and actual responses fit completely to each other.</p>
 </div>
 </div>
@@ -586,20 +586,6 @@ SSR = \sum_{i}(y_i -f(x_i))^2
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
