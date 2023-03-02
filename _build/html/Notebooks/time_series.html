@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="First - Markdown Assignment" href="../Assignments/first_class_assignment.html" />
+    <link rel="next" title="Linear Regression" href="linear_regression.html" />
     <link rel="prev" title="Intro to Git for Version Control" href="../Pages/intro_to_git.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -183,6 +183,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    More Work with Time Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
   </a>
  </li>
 </ul>
@@ -518,7 +523,7 @@ According to Wikipedia:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1983-01-15 07:15:00
-2023-02-28 20:49:11.594840
+2023-03-02 00:58:20.342410
 </pre></div>
 </div>
 </div>
@@ -533,7 +538,7 @@ According to Wikipedia:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14654
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14655
 </pre></div>
 </div>
 </div>
@@ -789,9 +794,9 @@ Freq: MS, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Simple</span>
-<span class="n">sst</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="c1">#sst.plot(figsize=(18, 10))</span>
 
-<span class="c1">#Or complicated</span>
+<span class="c1">#Or slightly nicer </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax1</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time - sampled monthly&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;degrees C&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">24</span><span class="p">})</span>
@@ -803,18 +808,20 @@ Freq: MS, dtype: float64
 </pre></div>
 </div>
 <img alt="../_images/time_series_24_1.png" src="../_images/time_series_24_1.png" />
-<img alt="../_images/time_series_24_2.png" src="../_images/time_series_24_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#we can zoom in:</span>
-<span class="n">sst</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="c1">#Or slightly nicer </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2010&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time - sampled monthly&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;degrees C&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">24</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;degrees C&#39;)
 </pre></div>
 </div>
 <img alt="../_images/time_series_25_1.png" src="../_images/time_series_25_1.png" />
@@ -926,19 +933,23 @@ Freq: 30D, dtype: float64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">freq_spec</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">freq_spec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">sst_reg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">freq_spec</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2057
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2057,)
 </pre></div>
 </div>
 </div>
@@ -947,30 +958,44 @@ Freq: 30D, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The sample rate is how many samples per time period - 1 sample per 30 days in our case.</span>
 <span class="c1"># You could do this in terms of days, hours, years, whatever:</span>
-<span class="n">sr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1">#days</span>
+
+<span class="c1">#period in between samples</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1">#days</span>
+
+<span class="c1">#sample rate</span>
+<span class="n">sr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">t</span> <span class="c1">#samples/days</span>
+
 
 <span class="c1"># Total duration of the dataset in days - </span>
 <span class="c1"># You could do this like (number of samples)/(sample rate) OR (number of samples)*(Period between samples)</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">sr</span> 
+<span class="n">T</span> <span class="o">=</span> <span class="n">N</span><span class="o">*</span><span class="n">t</span> 
 
 <span class="c1"># This is a quick way of making an array of frequencies - </span>
 <span class="c1"># The largest frequency is frequency that would be sampled only </span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="n">T</span> 
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">freq</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2057,)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note - the highest frequency we can sample is called the Nyquest Frequency:
-<span class="math notranslate nohighlight">\( \frac{1}{2*sr} \)</span></p>
+<span class="math notranslate nohighlight">\( \frac{sr}{2} \)</span></p>
 <p>Lets check:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">freq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">freq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sr</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.014800197335965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.016658564252147137
+0.016666666666666666
 </pre></div>
 </div>
 </div>
@@ -982,15 +1007,19 @@ Freq: 30D, dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the one-sided specturm</span>
 <span class="n">n_oneside</span> <span class="o">=</span> <span class="n">N</span><span class="o">//</span><span class="mi">2</span>  <span class="c1">#the double divide operator is the floor dividor (it dumps the decimals!)</span>
 
-<span class="c1"># get the one side frequency</span>
+<span class="c1"># get the one side frequency and amplitude spectrum</span>
 <span class="n">f_oneside</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]</span>
+<span class="n">f_spec_oneside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">freq_spec</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_oneside</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">freq_spec</span><span class="p">[:</span><span class="n">n_oneside</span><span class="p">]),</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_oneside</span><span class="p">,</span> <span class="n">f_spec_oneside</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq (samples/day - weird unit, I know)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FFT Amplitude&#39;</span><span class="p">)</span>
+
+<span class="c1">#Some optional zooms - uncomment to apply:</span>
 <span class="c1">#plt.ylim((0,500))</span>
-<span class="c1">#plt.xlim((.0025, .0035))</span>
+<span class="c1">#plt.xlim((.0026, .0028))</span>
+<span class="c1">#plt.xlim((.005, .002))</span>
 </pre></div>
 </div>
 </div>
@@ -1001,20 +1030,48 @@ Freq: 30D, dtype: float64
 <img alt="../_images/time_series_42_1.png" src="../_images/time_series_42_1.png" />
 </div>
 </div>
-<p>Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function… maybe climate change?) and a strong peak at ~ 0.00278 samples/day (this is the same as 360 days!).  Whew… glad this worked!!</p>
+<p>Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function… maybe climate change?) and a strong peak at ~ 0.00275 samples/day (this is ABOUT the same as 360 days!).  Whew… glad this worked!!</p>
+<p>To make this a little easier to read - lets plot period (time per cycle) on the x axis instead of frequency, and convert it to years…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mf">.00278</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">f_oneside</span><span class="o">/</span><span class="mi">365</span><span class="p">,</span> <span class="n">f_spec_oneside</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq (Period, years)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FFT Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1">#I like this zoom:</span>
+<span class="c1">#plt.ylim((0,500))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>359.71223021582733
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/dr/7qx5y5kj46z_9gs_10d9mxkh0000gn/T/ipykernel_22583/2556024427.py:2: RuntimeWarning: divide by zero encountered in true_divide
+  plt.plot(1/f_oneside/365, f_spec_oneside, &#39;b&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 25.0)
+</pre></div>
+</div>
+<img alt="../_images/time_series_44_2.png" src="../_images/time_series_44_2.png" />
+</div>
+</div>
+<p>Here we can see peaks at something less than a year, a strong peak at a year - indicating seasonal cycles in SST.  Technically the zero frequency spectral response is for a period of infinity (t = 1/f) - so technically we should make this plot stretch to infinity, but we we are sampling less than a half a cycle for any periods longer than our record length - which is about 170 yeard.</p>
+<p>Do you see the peak at about 7 years - it’s subtle but present in our data (It helps to zoom in by adjusting the x-axis to go from 0 to 25 years to see this).  Any idea what that might be?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here&#39;s the total duration of our record in years</span>
+<span class="n">T</span><span class="o">/</span><span class="mi">365</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>169.06849315068493
 </pre></div>
 </div>
 </div>
 </div>
-<p>days/sample of the freqency peak at 0.00278 samples/day</p>
 </div>
 </div>
 </div>
@@ -1051,10 +1108,10 @@ Freq: 30D, dtype: float64
             <p class="prev-next-title">Intro to Git for Version Control</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Assignments/first_class_assignment.html" title="next page">
+    <a class='right-next' id="next-link" href="linear_regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">First - Markdown Assignment</p>
+        <p class="prev-next-title">Linear Regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

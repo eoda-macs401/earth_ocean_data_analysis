@@ -181,9 +181,9 @@ sst.loc['2022-01':'2022-12']
 
 
 #Simple
-sst.plot(figsize=(18, 10))
+#sst.plot(figsize=(18, 10))
 
-#Or complicated
+#Or slightly nicer 
 plt.figure()
 ax1 = sst.plot(x='time - sampled monthly',figsize=(18,10),linewidth=1, fontsize=16)
 ax1.set_ylabel('degrees C',fontdict={'fontsize':24})
@@ -193,7 +193,10 @@ ax1.set_ylabel('degrees C',fontdict={'fontsize':24})
 
 
 #we can zoom in:
-sst.loc['2010':'2020'].plot(figsize=(18, 10))
+#Or slightly nicer 
+plt.figure()
+ax1 = sst.loc['2010':'2020'].plot(x='time - sampled monthly',figsize=(18,10),linewidth=1, fontsize=16)
+ax1.set_ylabel('degrees C',fontdict={'fontsize':24})
 
 
 # ## Part Two - resampling to get ready for spectral analysis
@@ -252,14 +255,15 @@ sst.values
 # In[19]:
 
 
-from scipy.fft import fft, fftfreq
+import scipy
 import numpy as np
 
-freq_spec = fft(sst_reg.values)
-N = sst.shape[0] 
+freq_spec = np.fft.fft(sst_reg.values)
+N = sst_reg.shape[0]
 n = np.arange(N)
 
-print(n[0:10])
+print(N)
+freq_spec.shape
 
 
 # In[20]:
@@ -267,26 +271,34 @@ print(n[0:10])
 
 # The sample rate is how many samples per time period - 1 sample per 30 days in our case.
 # You could do this in terms of days, hours, years, whatever:
-sr = 1 / (30) #days
+
+#period in between samples
+t = 30 #days
+
+#sample rate
+sr = 1 / t #samples/days
+
 
 # Total duration of the dataset in days - 
 # You could do this like (number of samples)/(sample rate) OR (number of samples)*(Period between samples)
-T = N/sr 
+T = N*t 
 
 # This is a quick way of making an array of frequencies - 
 # The largest frequency is frequency that would be sampled only 
-freq = n/T 
+freq = np.fft.fftfreq(N,t)
+freq.shape
 
 
 # Note - the highest frequency we can sample is called the Nyquest Frequency:
-# $ \frac{1}{2*sr} $
+# $ \frac{sr}{2} $
 # 
 # Lets check:
 
 # In[21]:
 
 
-print(1/freq[-1])
+print(max(freq))
+print(sr/2)
 
 
 # Pretty Close!
@@ -300,26 +312,49 @@ print(1/freq[-1])
 # Get the one-sided specturm
 n_oneside = N//2  #the double divide operator is the floor dividor (it dumps the decimals!)
 
-# get the one side frequency
+# get the one side frequency and amplitude spectrum
 f_oneside = freq[:n_oneside]
+f_spec_oneside = np.abs(freq_spec[:n_oneside])
 
 plt.figure(figsize = (12, 6))
-plt.plot(f_oneside, np.abs(freq_spec[:n_oneside]), 'b')
+plt.plot(f_oneside, f_spec_oneside, 'b')
 plt.xlabel('Freq (samples/day - weird unit, I know)')
 plt.ylabel('FFT Amplitude')
+
+#Some optional zooms - uncomment to apply:
 #plt.ylim((0,500))
-#plt.xlim((.0025, .0035))
+#plt.xlim((.0026, .0028))
+#plt.xlim((.005, .002))
 
 
-# Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function... maybe climate change?) and a strong peak at ~ 0.00278 samples/day (this is the same as 360 days!).  Whew... glad this worked!!
+# Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function... maybe climate change?) and a strong peak at ~ 0.00275 samples/day (this is ABOUT the same as 360 days!).  Whew... glad this worked!!
+# 
+# To make this a little easier to read - lets plot period (time per cycle) on the x axis instead of frequency, and convert it to years...
 
 # In[23]:
 
 
-1/.00278
+plt.figure(figsize = (12, 6))
+plt.plot(1/f_oneside/365, f_spec_oneside, 'b')
+plt.xlabel('Freq (Period, years)')
+plt.ylabel('FFT Amplitude')
+plt.grid()
+
+#I like this zoom:
+#plt.ylim((0,500))
+plt.xlim((0, 25))
 
 
-# days/sample of the freqency peak at 0.00278 samples/day
+# Here we can see peaks at something less than a year, a strong peak at a year - indicating seasonal cycles in SST.  Technically the zero frequency spectral response is for a period of infinity (t = 1/f) - so technically we should make this plot stretch to infinity, but we we are sampling less than a half a cycle for any periods longer than our record length - which is about 170 yeard.  
+# 
+# Do you see the peak at about 7 years - it's subtle but present in our data (It helps to zoom in by adjusting the x-axis to go from 0 to 25 years to see this).  Any idea what that might be?
+
+# In[24]:
+
+
+#Here's the total duration of our record in years
+T/365
+
 
 # In[ ]:
 

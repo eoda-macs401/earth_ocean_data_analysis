@@ -22,6 +22,7 @@ parts:
       - file: Notebooks/basic_pandas
     - file: Pages/intro_to_git
     - file: Notebooks/time_series
+    - file: Notebooks/linear_regression
   - caption: Assignments
     chapters:
     - file: Assignments/first_class_assignment
