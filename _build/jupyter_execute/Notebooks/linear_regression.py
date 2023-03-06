@@ -98,12 +98,14 @@ import datetime
 
 # ## De-trend our SST (climate!) data:
 
-# To get started, lets extract just our datetime times and our SST observations.  We've been using these in a Pandas Dataframe thus far - this should work with the SK-Learn tools. But let's also grab nd arrays of our two variables. Also note (and this is annoying) - many statistics tools do not *yet* work with datetime objects.  That's OK - we can move our datetime timeseries into a nd array of days from the begining of our record:
+# To get started, lets extract just our datetime times and our SST observations.  We've been using these in a Pandas Dataframe thus far - this should work with the scikit-learn tools. But let's also grab nd arrays of our two variables - as these are a little easier to track through the functions that we'll use. Also note (and this is annoying) - many statistics tools do not *yet* work with datetime objects.  That's OK - we can move our datetime timeseries into a nd array of days from the begining of our record:
 
 # In[4]:
 
 
+#This is a deltatime object that we'll convert to a numpy nd-array - it's days relative to the start of our record
 dt = (sst_reg.index -  sst_reg.index[0]).days.to_numpy()
+
 #This is a little tricky - allows us to only fit one 'feature' or independent variable - we're essentially copying our time series:
 # Use only one feature
 X = dt.reshape(-1, 1)
@@ -168,7 +170,7 @@ ax1.set_ylabel('degrees C',fontdict={'fontsize':24})
 ax1.set_xlabel('Time',fontdict={'fontsize':24})
 
 
-# Let's fix the plot so that we are comparing two anomalies relative to our first observationsst_reg.columns
+# Let's fix the plot so that we are comparing two anomalies relative to our first observations:
 # 
 
 # In[9]:
