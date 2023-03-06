@@ -593,10 +593,12 @@ SSR = \sum_{i}(y_i -f(x_i))^2
 </div>
 <div class="section" id="de-trend-our-sst-climate-data">
 <h2>De-trend our SST (climate!) data:<a class="headerlink" href="#de-trend-our-sst-climate-data" title="Permalink to this headline">¶</a></h2>
-<p>To get started, lets extract just our datetime times and our SST observations.  We’ve been using these in a Pandas Dataframe thus far - this should work with the SK-Learn tools. But let’s also grab nd arrays of our two variables. Also note (and this is annoying) - many statistics tools do not <em>yet</em> work with datetime objects.  That’s OK - we can move our datetime timeseries into a nd array of days from the begining of our record:</p>
+<p>To get started, lets extract just our datetime times and our SST observations.  We’ve been using these in a Pandas Dataframe thus far - this should work with the scikit-learn tools. But let’s also grab nd arrays of our two variables - as these are a little easier to track through the functions that we’ll use. Also note (and this is annoying) - many statistics tools do not <em>yet</em> work with datetime objects.  That’s OK - we can move our datetime timeseries into a nd array of days from the begining of our record:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span>  <span class="n">sst_reg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is a deltatime object that we&#39;ll convert to a numpy nd-array - it&#39;s days relative to the start of our record</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span>  <span class="n">sst_reg</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
 <span class="c1">#This is a little tricky - allows us to only fit one &#39;feature&#39; or independent variable - we&#39;re essentially copying our time series:</span>
 <span class="c1"># Use only one feature</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -684,7 +686,7 @@ Coefficient of determination: 0.01
 <img alt="../_images/linear_regression_18_2.png" src="../_images/linear_regression_18_2.png" />
 </div>
 </div>
-<p>Let’s fix the plot so that we are comparing two anomalies relative to our first observationsst_reg.columns</p>
+<p>Let’s fix the plot so that we are comparing two anomalies relative to our first observations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_reg</span><span class="p">[</span><span class="n">sst_reg</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>

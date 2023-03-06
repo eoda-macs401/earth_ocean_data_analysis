@@ -71,10 +71,12 @@ You must have your dataset(s) and general scope for your project improved by the
 
 ### In-Class Presentations (*time permitting for 2022*)
 
-You are asked to give a 5-minute presentation about your project. Do not prepare any slides. Instead, make your presentation by opening your notebook from GitHub on the presentation computer and walking us through parts of it. Your presentation should be concise and cover the following topics:
+You are asked to give a 5-minute presentation about your project. You may present a typical Powerpoint Presentaion or instead, if you are ready you can make your presentation by opening your notebook from GitHub on the presentation computer and walking us through parts of it. Do not spend a lot of time explaining code, but do show workflow and figures. Your presentation should be concise and cover the following topics:
 
-*   What data did you analyze and how did you load it?
-*   What is the most interesting figure you made? (Show us the figure.)
-*   What was the biggest challenge you faced in completing your project.
+* What is the primary goal of your project?
+* What data did you analyze and how did you access it?
+* What analysis are you doing with your data?
+* What is the most interesting figure you made? (Show us the figure.)
+* What was the biggest challenge you faced (or are facing) in completing your project.
 
 _Don't forget to make your project repo **public**; otherwise we won't be able to see it._
