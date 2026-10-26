@@ -1,0 +1,190 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+rs_obj.mean()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mTypeError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[56][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m rs_obj.mean()
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/resample.py:1532[39m, in [36mResampler.mean[39m[34m(self, numeric_only)[39m
+[32m   1480[39m [38;5;129m@final[39m
+[32m   1481[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mmean[39m(
+[32m   1482[39m     [38;5;28mself[39m,
+[32m   1483[39m     numeric_only: [38;5;28mbool[39m = [38;5;28;01mFalse[39;00m,
+[32m   1484[39m ):
+[32m   1485[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m   1486[39m [33;03m    Compute mean of groups, excluding missing values.[39;00m
+[32m   1487[39m 
+[32m   (...)[39m[32m   1530[39m [33;03m    Freq: MS, dtype: float64[39;00m
+[32m   1531[39m [33;03m    """[39;00m
+[32m-> [39m[32m1532[39m     [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_downsample[39;49m[30;43m([39;49m[30;43m"[39;49m[30;43mmean[39;49m[30;43m"[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mnumeric_only[39;49m[30;43m=[39;49m[30;43mnumeric_only[39;49m[30;43m)[39;49m
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/resample.py:2102[39m, in [36mDatetimeIndexResampler._downsample[39m[34m(self, how, **kwargs)[39m
+[32m   2098[39m     [38;5;28;01mreturn[39;00m obj
+[32m   2100[39m [38;5;66;03m# we are downsampling[39;00m
+[32m   2101[39m [38;5;66;03m# we want to call the actual grouper method here[39;00m
+[32m-> [39m[32m2102[39m result = [30;43mobj[39;49m[30;43m.[39;49m[30;43mgroupby[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43m_grouper[39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43maggregate[39;49m[30;43m([39;49m[30;43mhow[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
+[32m   2103[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._wrap_result(result)
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/generic.py:2291[39m, in [36mDataFrameGroupBy.aggregate[39m[34m(self, func, engine, engine_kwargs, *args, **kwargs)[39m
+[32m   2288[39m     kwargs[[33m"[39m[33mengine_kwargs[39m[33m"[39m] = engine_kwargs
+[32m   2290[39m op = GroupByApply([38;5;28mself[39m, func, args=args, kwargs=kwargs)
+[32m-> [39m[32m2291[39m result = [30;43mop[39;49m[30;43m.[39;49m[30;43magg[39;49m[30;43m([39;49m[30;43m)[39;49m
+[32m   2292[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m is_dict_like(func) [38;5;129;01mand[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m   2293[39m     [38;5;66;03m# GH #52849[39;00m
+[32m   2294[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.as_index [38;5;129;01mand[39;00m is_list_like(func):
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:291[39m, in [36mApply.agg[39m[34m(self)[39m
+[32m    288[39m func = [38;5;28mself[39m.func
+[32m    290[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(func, [38;5;28mstr[39m):
+[32m--> [39m[32m291[39m     [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43mapply_str[39;49m[30;43m([39;49m[30;43m)[39;49m
+[32m    293[39m [38;5;28;01mif[39;00m is_dict_like(func):
+[32m    294[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m.agg_dict_like()
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:701[39m, in [36mApply.apply_str[39m[34m(self)[39m
+[32m    697[39m     [38;5;28;01mif[39;00m [33m"[39m[33maxis[39m[33m"[39m [38;5;129;01min[39;00m arg_names [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(
+[32m    698[39m         obj, (SeriesGroupBy, DataFrameGroupBy)
+[32m    699[39m     ):
+[32m    700[39m         [38;5;28mself[39m.kwargs[[33m"[39m[33maxis[39m[33m"[39m] = [38;5;28mself[39m.axis
+[32m--> [39m[32m701[39m [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_apply_str[39;49m[30;43m([39;49m[30;43mobj[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfunc[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:792[39m, in [36mApply._apply_str[39m[34m(self, obj, func, *args, **kwargs)[39m
+[32m    790[39m f = [38;5;28mgetattr[39m(obj, func)
+[32m    791[39m [38;5;28;01mif[39;00m [38;5;28mcallable[39m(f):
+[32m--> [39m[32m792[39m     [38;5;28;01mreturn[39;00m [30;43mf[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
+[32m    794[39m [38;5;66;03m# people may aggregate on a non-callable attribute[39;00m
+[32m    795[39m [38;5;66;03m# but don't let them think they can pass args to it[39;00m
+[32m    796[39m [38;5;28;01massert[39;00m [38;5;28mlen[39m(args) == [32m0[39m
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:2285[39m, in [36mGroupBy.mean[39m[34m(self, numeric_only, skipna, engine, engine_kwargs)[39m
+[32m   2277[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._numba_agg_general(
+[32m   2278[39m         grouped_mean,
+[32m   2279[39m         executor.float_dtype_mapping,
+[32m   (...)[39m[32m   2282[39m         skipna=skipna,
+[32m   2283[39m     )
+[32m   2284[39m [38;5;28;01melse[39;00m:
+[32m-> [39m[32m2285[39m     result = [30;43mself[39;49m[30;43m.[39;49m[30;43m_cython_agg_general[39;49m[30;43m([39;49m
+[32m   2286[39m [30;43m        [39;49m[30;43m"[39;49m[30;43mmean[39;49m[30;43m"[39;49m[30;43m,[39;49m
+[32m   2287[39m [30;43m        [39;49m[30;43malt[39;49m[30;43m=[39;49m[30;43;01mlambda[39;49;00m[30;43m [39;49m[30;43mx[39;49m[30;43m:[39;49m[30;43m [39;49m[30;43mSeries[39;49m[30;43m([39;49m[30;43mx[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcopy[39;49m[30;43m=[39;49m[30;43;01mFalse[39;49;00m[30;43m)[39;49m[30;43m.[39;49m[30;43mmean[39;49m[30;43m([39;49m
+[32m   2288[39m [30;43m            [39;49m[30;43mnumeric_only[39;49m[30;43m=[39;49m[30;43mnumeric_only[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mskipna[39;49m[30;43m=[39;49m[30;43mskipna[39;49m
+[32m   2289[39m [30;43m        [39;49m[30;43m)[39;49m[30;43m,[39;49m
+[32m   2290[39m [30;43m        [39;49m[30;43mnumeric_only[39;49m[30;43m=[39;49m[30;43mnumeric_only[39;49m[30;43m,[39;49m
+[32m   2291[39m [30;43m        [39;49m[30;43mskipna[39;49m[30;43m=[39;49m[30;43mskipna[39;49m[30;43m,[39;49m
+[32m   2292[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m   2293[39m     [38;5;28;01mreturn[39;00m result.__finalize__([38;5;28mself[39m.obj, method=[33m"[39m[33mgroupby[39m[33m"[39m)
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:1808[39m, in [36mGroupBy._cython_agg_general[39m[34m(self, how, alt, numeric_only, min_count, **kwargs)[39m
+[32m   1805[39m     result = [38;5;28mself[39m._agg_py_fallback(how, values, ndim=data.ndim, alt=alt)
+[32m   1806[39m     [38;5;28;01mreturn[39;00m result
+[32m-> [39m[32m1808[39m new_mgr = [30;43mdata[39;49m[30;43m.[39;49m[30;43mgrouped_reduce[39;49m[30;43m([39;49m[30;43marray_func[39;49m[30;43m)[39;49m
+[32m   1809[39m res = [38;5;28mself[39m._wrap_agged_manager(new_mgr)
+[32m   1810[39m [38;5;28;01mif[39;00m how [38;5;129;01min[39;00m [[33m"[39m[33midxmin[39m[33m"[39m, [33m"[39m[33midxmax[39m[33m"[39m]:
+[32m   1811[39m     [38;5;66;03m# mypy expects how to be Literal["idxmin", "idxmax"].[39;00m
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/internals/managers.py:1667[39m, in [36mBlockManager.grouped_reduce[39m[34m(self, func)[39m
+[32m   1665[39m             result_blocks = extend_blocks(applied, result_blocks)
+[32m   1666[39m     [38;5;28;01melse[39;00m:
+[32m-> [39m[32m1667[39m         applied = [30;43mblk[39;49m[30;43m.[39;49m[30;43mapply[39;49m[30;43m([39;49m[30;43mfunc[39;49m[30;43m)[39;49m
+[32m   1668[39m         result_blocks = extend_blocks(applied, result_blocks)
+[32m   1670[39m [38;5;28;01mif[39;00m [38;5;28mlen[39m(result_blocks) == [32m0[39m:
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/internals/blocks.py:347[39m, in [36mBlock.apply[39m[34m(self, func, **kwargs)[39m
+[32m    341[39m [38;5;129m@final[39m
+[32m    342[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mapply[39m([38;5;28mself[39m, func, **kwargs) -> [38;5;28mlist[39m[Block]:
+[32m    343[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    344[39m [33;03m    apply the function to my values; return a block if we are not[39;00m
+[32m    345[39m [33;03m    one[39;00m
+[32m    346[39m [33;03m    """[39;00m
+[32m--> [39m[32m347[39m     result = [30;43mfunc[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mvalues[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
+[32m    349[39m     result = maybe_coerce_values(result)
+[32m    350[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._split_op_result(result)
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:1783[39m, in [36mGroupBy._cython_agg_general.<locals>.array_func[39m[34m(values)[39m
+[32m   1781[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34marray_func[39m(values: ArrayLike) -> ArrayLike:
+[32m   1782[39m     [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1783[39m         result = [30;43mself[39;49m[30;43m.[39;49m[30;43m_grouper[39;49m[30;43m.[39;49m[30;43m_cython_operation[39;49m[30;43m([39;49m
+[32m   1784[39m [30;43m            [39;49m[30;43m"[39;49m[30;43maggregate[39;49m[30;43m"[39;49m[30;43m,[39;49m
+[32m   1785[39m [30;43m            [39;49m[30;43mvalues[39;49m[30;43m,[39;49m
+[32m   1786[39m [30;43m            [39;49m[30;43mhow[39;49m[30;43m,[39;49m
+[32m   1787[39m [30;43m            [39;49m[30;43maxis[39;49m[30;43m=[39;49m[30;43mdata[39;49m[30;43m.[39;49m[30;43mndim[39;49m[30;43m [39;49m[30;43m-[39;49m[30;43m [39;49m[30;43m1[39;49m[30;43m,[39;49m
+[32m   1788[39m [30;43m            [39;49m[30;43mmin_count[39;49m[30;43m=[39;49m[30;43mmin_count[39;49m[30;43m,[39;49m
+[32m   1789[39m [30;43m            [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m,[39;49m
+[32m   1790[39m [30;43m        [39;49m[30;43m)[39;49m
+[32m   1791[39m     [38;5;28;01mexcept[39;00m [38;5;167;01mNotImplementedError[39;00m:
+[32m   1792[39m         [38;5;66;03m# generally if we have numeric_only=False[39;00m
+[32m   1793[39m         [38;5;66;03m# and non-applicable functions[39;00m
+[32m   1794[39m         [38;5;66;03m# try to python agg[39;00m
+[32m   1795[39m         [38;5;66;03m# TODO: shouldn't min_count matter?[39;00m
+[32m   1796[39m         [38;5;66;03m# TODO: avoid special casing SparseArray here[39;00m
+[32m   1797[39m         [38;5;28;01mif[39;00m how [38;5;129;01min[39;00m [[33m"[39m[33many[39m[33m"[39m, [33m"[39m[33mall[39m[33m"[39m] [38;5;129;01mand[39;00m [38;5;28misinstance[39m(values, SparseArray):
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/ops.py:963[39m, in [36mBaseGrouper._cython_operation[39m[34m(self, kind, values, how, axis, min_count, **kwargs)[39m
+[32m    959[39m [38;5;28;01massert[39;00m kind [38;5;129;01min[39;00m [[33m"[39m[33mtransform[39m[33m"[39m, [33m"[39m[33maggregate[39m[33m"[39m]
+[32m    961[39m cy_op = WrappedCythonOp(kind=kind, how=how, has_dropped_na=[38;5;28mself[39m.has_dropped_na)
+[32m--> [39m[32m963[39m [38;5;28;01mreturn[39;00m [30;43mcy_op[39;49m[30;43m.[39;49m[30;43mcython_operation[39;49m[30;43m([39;49m
+[32m    964[39m [30;43m    [39;49m[30;43mvalues[39;49m[30;43m=[39;49m[30;43mvalues[39;49m[30;43m,[39;49m
+[32m    965[39m [30;43m    [39;49m[30;43maxis[39;49m[30;43m=[39;49m[30;43maxis[39;49m[30;43m,[39;49m
+[32m    966[39m [30;43m    [39;49m[30;43mmin_count[39;49m[30;43m=[39;49m[30;43mmin_count[39;49m[30;43m,[39;49m
+[32m    967[39m [30;43m    [39;49m[30;43mcomp_ids[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mids[39;49m[30;43m,[39;49m
+[32m    968[39m [30;43m    [39;49m[30;43mngroups[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mngroups[39;49m[30;43m,[39;49m
+[32m    969[39m [30;43m    [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m,[39;49m
+[32m    970[39m [30;43m[39;49m[30;43m)[39;49m
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/ops.py:553[39m, in [36mWrappedCythonOp.cython_operation[39m[34m(self, values, axis, min_count, comp_ids, ngroups, **kwargs)[39m
+[32m    549[39m [38;5;28mself[39m._validate_axis(axis, values)
+[32m    551[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(values, np.ndarray):
+[32m    552[39m     [38;5;66;03m# i.e. ExtensionArray[39;00m
+[32m--> [39m[32m553[39m     [38;5;28;01mreturn[39;00m [30;43mvalues[39;49m[30;43m.[39;49m[30;43m_groupby_op[39;49m[30;43m([39;49m
+[32m    554[39m [30;43m        [39;49m[30;43mhow[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mhow[39;49m[30;43m,[39;49m
+[32m    555[39m [30;43m        [39;49m[30;43mhas_dropped_na[39;49m[30;43m=[39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mhas_dropped_na[39;49m[30;43m,[39;49m
+[32m    556[39m [30;43m        [39;49m[30;43mmin_count[39;49m[30;43m=[39;49m[30;43mmin_count[39;49m[30;43m,[39;49m
+[32m    557[39m [30;43m        [39;49m[30;43mngroups[39;49m[30;43m=[39;49m[30;43mngroups[39;49m[30;43m,[39;49m
+[32m    558[39m [30;43m        [39;49m[30;43mids[39;49m[30;43m=[39;49m[30;43mcomp_ids[39;49m[30;43m,[39;49m
+[32m    559[39m [30;43m        [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m,[39;49m
+[32m    560[39m [30;43m    [39;49m[30;43m)[39;49m
+[32m    562[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._cython_op_ndim_compat(
+[32m    563[39m     values,
+[32m    564[39m     min_count=min_count,
+[32m   (...)[39m[32m    568[39m     **kwargs,
+[32m    569[39m )
+
+[36mFile [39m[32m/opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/arrays/arrow/array.py:2748[39m, in [36mArrowExtensionArray._groupby_op[39m[34m(self, how, has_dropped_na, min_count, ngroups, ids, **kwargs)[39m
+[32m   2736[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m([38;5;28mself[39m.dtype, StringDtype):
+[32m   2737[39m     [38;5;28;01mif[39;00m how [38;5;129;01min[39;00m [
+[32m   2738[39m         [33m"[39m[33mprod[39m[33m"[39m,
+[32m   2739[39m         [33m"[39m[33mmean[39m[33m"[39m,
+[32m   (...)[39m[32m   2746[39m         [33m"[39m[33mskew[39m[33m"[39m,
+[32m   2747[39m     ]:
+[32m-> [39m[32m2748[39m         [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
+[32m   2749[39m             [33mf[39m[33m"[39m[33mdtype [39m[33m'[39m[38;5;132;01m{[39;00m[38;5;28mself[39m.dtype[38;5;132;01m}[39;00m[33m'[39m[33m does not support operation [39m[33m'[39m[38;5;132;01m{[39;00mhow[38;5;132;01m}[39;00m[33m'[39m[33m"[39m
+[32m   2750[39m         )
+[32m   2751[39m     [38;5;28;01mreturn[39;00m [38;5;28msuper[39m()._groupby_op(
+[32m   2752[39m         how=how,
+[32m   2753[39m         has_dropped_na=has_dropped_na,
+[32m   (...)[39m[32m   2757[39m         **kwargs,
+[32m   2758[39m     )
+[32m   2760[39m [38;5;66;03m# maybe convert to a compatible dtype optimized for groupby[39;00m
+
+[31mTypeError[39m: dtype 'str' does not support operation 'mean'
+

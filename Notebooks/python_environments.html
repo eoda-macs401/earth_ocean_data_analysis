@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Managing Python Environments &#8212; Earth and Ocean Data Analysis - MACS 401</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/python_environments';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings and Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Pages/installing_jupyterlab.html">Installing JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_jupyterlab.html">Intro to JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_unix.html">Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_unix_for_Windows.html">Intro to Unix - For Windows Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_fundamentals.html">Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions_classes.html">Python Functions and Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reuseable_software_elements.html">Reuseable Software Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/python_environments.html">Managing Python Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">All About Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_and_matplotlib.html">Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_matplotlib.html">More Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Pages/pandas_intro.html">Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_pandas.html">Pandas Fundamentals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_git.html">Intro to Git for Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">More Work with Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_regression.html">Linear Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/first_class_assignment.html">First - Markdown Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/unixchallenge.html">Unix Tutorial Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_basics.html">Assignment 2: Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_functions.html">Assignment 3: Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/boolean_logic.html">Assignment 4: Playing with Boolean logic.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_brainstorm.html">Assignment 5 - Data Analysis Project Brainstorm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/numpy_matplotlib.html">Assignment 6 - Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/more_matplotlib.html">Assignment 7- More Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/basic_pandas.html">Assignment 8: Pandas Fundamentals with Earthquake Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/files_markdown_git.html">Assignment 9: Git, and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/time_series.html">Optional Assignment 10: Time Series Play</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Pages/organization_and_packaging.html">Organization and Packaging of Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/projects.html">Final Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_overview.html">Final Project Readme Assignment - Due 1 Week Before Final Project Due date</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Pages/videos.html">EODA Class Video Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/cheat_sheets.html">Links to useful web pages and cheatsheets:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_modules_from_readings.html">Mini Python Modules - From Readings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">Git/GitHub Cheatsheet!</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/python_environments.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Notebooks/python_environments.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Managing Python Environments</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-installation-method-use-anaconda-python">Recommended Installation Method: Use Anaconda Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-command-line">Accessing the Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-alternative-miniconda">Lightweight Alternative: Miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-environments-with-conda">Managing Environments with Conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-more-packages">Installing More Packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#channels-and-conda-forge">Channels and Conda Forge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speeding-things-up-with-mamba">Speeding things up with Mamba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pangeo-python-environment">Pangeo Python Environment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="managing-python-environments">
+<h1>Managing Python Environments<a class="headerlink" href="#managing-python-environments" title="Link to this heading">#</a></h1>
+<p><em>Note: many elements in this guide 2343 adapted from
+<a class="reference external" href="http://danielrothenberg.com/">Daniel Rothenberg</a>’s excellent
+<a class="reference external" href="http://danielrothenberg.com/gcpy/getting_started.html">getting started guide</a>.</em></p>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<p>Python and nearly all of the software packages in the scientific python
+ecosystem are <a class="reference external" href="https://opensource.org/">open-source</a>.
+They are maintained and developed by a community of scientists and programmers,
+some of whose work is supported by universities, non-profits, and for-profit
+corporations.
+This work mostly happens in the open, via <a class="reference external" href="http://github.com/">github</a> and other
+online collaboration platforms.</p>
+<p>Because there is no single authority which controls all of these packages, it
+can be intimidating for new users to figure out how to set up a functional
+scientific python environment.
+Coordinating the compatibility between these different packages and their
+multiple versions used to be a nightmare!
+Fortunately, the problem is solved completely by using a Python <em>distribution</em>
+and / or a Python <em>package manager</em> (described in detail below).</p>
+<p>One important rule about scientific computing in Python is this:</p>
+<p><strong>Do not use your system Python installation!</strong></p>
+<p>The version of Python that ships with operating systems such as Red Hat Linux and
+macOS is usually outdated and configured to support system functions. Although it
+is entirely possible to install and use the necessary packages using the system
+Python, it’s much more practical on both
+your local machine and any other computers you work with to use a specialized Python
+installation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Everything in this course uses Python 3, the latest version of Python.
+Python 2 is similar, but has some important differences that can make
+Python 2 code incompatible with Python 3.
+Python 2 was officially deprecated (declared obsolete) on
+<a class="reference external" href="https://www.python.org/doc/sunset-python-2/">Jan 1, 2020</a></p>
+</div>
+</section>
+<section id="recommended-installation-method-use-anaconda-python">
+<h2>Recommended Installation Method: Use Anaconda Python<a class="headerlink" href="#recommended-installation-method-use-anaconda-python" title="Link to this heading">#</a></h2>
+<p>The easiest way to set up a full-stack scientific Python deployment is to use a
+Python distribution. This is an installation of Python with a set of curated
+packages which are guaranteed to work together.
+For this class, we recommend the
+<strong><a class="reference external" href="https://www.anaconda.com/download/">Anaconda Python Distribution</a></strong>.
+Follow the link above to obtain a one-click installer for Linux, Mac, or
+Windows.
+(Make sure you select the Python 3 installer, not Python 2.7.)
+In addition to the packages themselves, Anaconda includes a graphical
+utility to help manage any packages you may want to install which are not
+already included in the default inclusion list.</p>
+</section>
+<section id="accessing-the-command-line">
+<h2>Accessing the Command Line<a class="headerlink" href="#accessing-the-command-line" title="Link to this heading">#</a></h2>
+<p>These notes assume you have access to a Unix command line to type in shell commands.
+For Linux and MacOS users, you can access the command line by opening the <em>terminal</em> program.
+It’s more difficult for Windows users.
+For Windows users, you should first install Anaconda (described above) or Miniconda (described below), which gives you access to the “Anaconda Prompt” desktop app.
+(Instructions for this are given on the <a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/getting-started/#write-a-python-program-using-anaconda-prompt-or-terminal">Andaconda Website</a>.)
+From the Anaconda Prompt, you should be able to run <code class="docutils literal notranslate"><span class="pre">conda</span></code> and other shell commands.</p>
+</section>
+<section id="lightweight-alternative-miniconda">
+<h2>Lightweight Alternative: Miniconda<a class="headerlink" href="#lightweight-alternative-miniconda" title="Link to this heading">#</a></h2>
+<p>If you are installing python on a remote machine via ssh, or you simply don’t
+want to download a huge file like the Anaconda Python Distribution, there is a
+lightweight alternative installation method.</p>
+<ol class="arabic">
+<li><p><strong>Obtain a minimal Python installer</strong>
+We recommend the <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a> installer;
+this provides a Python install for your operating system, plus the <strong>conda</strong>
+package manager. This way, you can only install the packages you <em>want</em>.</p></li>
+<li><p><strong>Run the installer</strong>
+You’ll probably need to do this from the command line, e.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> $ sh Miniconda3-latest-MacOSX-x86_64.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Follow the instructions; you can choose where to place the installation (
+preferably somewhere you have write access without super-user/root access,
+like your home directory). At the end of this process, add this path to your
+*rc configuration</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ echo ". $HOME/miniconda3/etc/profile.d/conda.sh" &gt; ~/.bashrc
+</pre></div>
+</div>
+<p>If you do this, your <code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code> will be implicitly configured correctly
+and you will never have to touch it.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Create an environment and install packages.</strong>
+This is described in the next section.</p></li>
+</ol>
+</section>
+<section id="managing-environments-with-conda">
+<h2>Managing Environments with Conda<a class="headerlink" href="#managing-environments-with-conda" title="Link to this heading">#</a></h2>
+<p>Python coupled with a package manager provides a way to make isolated,
+reproducible <em>environments</em> where you have fine-tuned control over all packages
+and configuration. <strong>You should always work within an environment</strong>, rather
+than the “default” environment.</p>
+<p>It is strongly recommended to read official
+<a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html#">Getting Started with Conda</a>
+guide.</p>
+<p>To create a conda environment, you execute the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda create --name my_environment python=3.9 numpy
+</pre></div>
+</div>
+<p>This will create a special environment in <code class="docutils literal notranslate"><span class="pre">$MINICONDA_HOME/envs/my_environment</span></code>
+with only Python and numpy to begin with. Here, we’ve also told conda to install
+Python version 3.9; you can specify exact versions or minima, and conda will
+take care of figuring out all the compatibilities between versions for you. To use
+this environment, simply “activate” it by executing:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda activate my_environment
+</pre></div>
+</div>
+<p>Regardless of your shell, you should now see the string <code class="docutils literal notranslate"><span class="pre">(my_environment)</span></code>
+prepended to your prompt. Now, if you execute any Python-related tool from the
+command line, it will first search in <code class="docutils literal notranslate"><span class="pre">$MINICONDA_HOME/envs/my_environment/bin</span></code>
+to find them.</p>
+<p>You can deactivate your environment by typing:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
+</pre></div>
+</div>
+<p>To see all the environments on your system:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda info --envs
+</pre></div>
+</div>
+<p>If you want to permanently remove an environment and delete all the data
+associated with it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda remove --name my_environment --all
+</pre></div>
+</div>
+<p>For extensive documentation on using environments, please see
+<a class="reference external" href="https://conda.io/docs/using/envs.html">the conda documentation</a>. The most
+important feature to review here is the ability to <em>share and export</em> your
+environment; this is the basis for reproducibility in the scientific Python stack.
+At any time from the shell, you can execute</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda list
+</pre></div>
+</div>
+<p>to get a complete summary of all the packages installed in your environment, the
+channel they were installed from, and their full version info. Using this info,
+you can create an <strong>environment file</strong> in
+<a class="reference external" href="http://docs.ansible.com/ansible/latest/YAMLSyntax.html">YAML syntax</a>
+which documents the exact
+contents of your environment. With that file, a new environment with the exact
+configuration can be installed by executing</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda env create -f my_environment.yml
+</pre></div>
+</div>
+<p>Below we will see an example of an environment file.</p>
+</section>
+<section id="installing-more-packages">
+<h2>Installing More Packages<a class="headerlink" href="#installing-more-packages" title="Link to this heading">#</a></h2>
+<p>Once you have a basic Python environment, you can easily add or remove packages
+using conda.
+Conda was created to help manage the complex dependencies and
+pre-compiled binary libraries that are necessary in scientific python.</p>
+<p>If you set up your python environment using the Anaconda Python Distribution or
+with miniconda, you should already have the <strong>conda</strong> command available on
+the command line.
+With it, you can easily install packages from an official, curated set of packages which are
+built and tested for a number of different system configurations on Linux,
+Windows, and macOS</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda install &lt;package-name&gt;
+</pre></div>
+</div>
+<p>Additionally, there is a
+community-maintained collection of packages/recipes called
+<a class="reference external" href="https://conda-forge.github.io/%3E">conda forge</a>
+which is accessible through conda as a special “channel”</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge &lt;package-name&gt;
+</pre></div>
+</div>
+<p>While conda allows you to install almost any science-related package, there may
+be other general-use python packages you wish to you that are not available in
+via conda. For these, you can use an alternative installation method.</p>
+<p>Outside of the scientific python community,
+the most common way to install packages is to search for them on the official
+<a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> index. Once you’ve found the package you
+want to install (you may have also just found it on github or elsewhere), you
+use the <strong>pip</strong> command from a the command line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip install &lt;package-name&gt;
+</pre></div>
+</div>
+<p>This will fetch the source code, build it, and install it to wherever your
+<code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code> is set. This works in the vast majority of cases, particularly
+when the code you’re installing doesn’t have any compiled dependencies.</p>
+<p>If you can’t find a package on either PyPI or conda-forge, you can always install it
+directly from the source code. If the package is on github, <code class="docutils literal notranslate"><span class="pre">pip</span></code> already has
+an alias to do this for you:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/&lt;user&gt;/&lt;package-name&gt;.git
+</pre></div>
+</div>
+</section>
+<section id="channels-and-conda-forge">
+<h2>Channels and Conda Forge<a class="headerlink" href="#channels-and-conda-forge" title="Link to this heading">#</a></h2>
+<p>Where do conda packages come from?
+The packages are hosted on conda <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html">“channels”</a>. From the conda docs:</p>
+<blockquote>
+<div><p>Conda channels are the locations where packages are stored. They serve as the base for hosting and managing packages. Conda packages are downloaded from remote channels, which are URLs to directories containing conda packages. The conda command searches a set of channels. By default, packages are automatically downloaded and updated from the default channel <a class="reference external" href="https://repo.anaconda.com/pkgs/">https://repo.anaconda.com/pkgs/</a> which may require a paid license, as described in the repository <a class="reference external" href="https://www.anaconda.com/terms-of-service">terms of service</a> a commercial license. The conda-forge channel is free for all to use. You can modify what remote channels are automatically searched. You might want to do this to maintain a private or internal channel. For details, see how to modify your channel lists.</p>
+<p>Conda-forge is a community channel made up of thousands of contributors. Conda-forge itself is analogous to PyPI but with a unified, automated build infrastructure and more peer review of recipes.</p>
+</div></blockquote>
+<p>Don’t be worried by the “commercial license part”.
+The Anaconda channel terms of service clearly excludes all educational activities
+and all research activities at non-profit institutions from their definition of commercial usage.
+Even companies with fewer than 200 employees are excluded.
+The aim of the commercial paid license for Anaconda is to require large corporations
+which use the repository heavily to contribute financially to its maintenance and development.
+Without such contributions, Anaconda might not be able to sustain itself.</p>
+<p>Despite this, we still recommend <strong>always using the conda-forge channel for your python environments</strong>.
+The reason are as follows:</p>
+<ul class="simple">
+<li><p>Conda Forge is always free from commercial license restrictions</p></li>
+<li><p>Conda Forge generally has the largest volume of packages and the most up-to-date versions</p></li>
+<li><p>You can contribute your own packages to conda forge! This is not covered by this book,
+but you can read about it in the <a class="reference external" href="https://conda-forge.org/docs/maintainer/adding_pkgs.html">Conda Forge docs</a>.</p></li>
+</ul>
+<p>A simple way to use the conda forge channel is to pass the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option when you run conda:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge  {package_name}
+</pre></div>
+</div>
+<p>As shown below, you can also add conda-forge to your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
+</section>
+<section id="speeding-things-up-with-mamba">
+<h2>Speeding things up with Mamba<a class="headerlink" href="#speeding-things-up-with-mamba" title="Link to this heading">#</a></h2>
+<p>In order to put together an actual python environment from your package specifications,
+conda has to solve a difficult puzzle.
+Each package specified has certain dependencies on other packages.
+For example, Xarray depends on Numpy, Pandas, and several others.
+Moreoever, each version of Xarray requires certain minimum versions of other
+packages (e.g. Xarray 0.19 requires Numpy &gt;= 1.17 and Pandas &gt;= 1.0).
+Other packages in your environment may have different or incompatible versions.
+Finding a combination of packages that are mutually compatible can be framed
+mathematically as a <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">boolean satisfiability problem</a>.</p>
+<p>The default “solver” of this problem for conda can be <a class="reference external" href="https://www.anaconda.com/blog/understanding-and-improving-condas-performance">slow</a>
+It is not unheard of to spend 30 minutes or more solving large environments! 😱
+Fortunately, a much faster alternative called <a class="reference external" href="https://github.com/mamba-org/mamba">mamba</a>
+has recently come out.
+To install it, just run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -n base -c conda-forge mamba
+</pre></div>
+</div>
+<p>Now you can install environments and packages as before, but using the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command
+instead of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Everything will be faster.</p>
+</section>
+<section id="pangeo-python-environment">
+<h2>Pangeo Python Environment<a class="headerlink" href="#pangeo-python-environment" title="Link to this heading">#</a></h2>
+<p>The environment on our cloud JupyterHub is a highly curated combination of packages
+maintained by the <a class="reference external" href="http://pangeo.io/">Pangeo Project</a>.
+Then environment lives at <a class="github reference external" href="https://github.com/pangeo-data/pangeo-docker-images/">pangeo-data/pangeo-docker-images</a>.
+In addition to just specifying a combination of packages, this repo automatically
+builds <a class="reference external" href="https://docs.docker.com/get-started/">Docker containers</a>.</p>
+<p>The latest Pangeo notebook environment lives at <a class="github reference external" href="https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/environment.yml">pangeo-data/pangeo-docker-images</a>.
+Below are the contents of that file as of 2021-11-04.
+Copy and paste the following <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file somewhere
+on your local hard drive:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>name: pangeo
+channels:
+ - conda-forge
+dependencies:
+ - python=3.9*
+ - pangeo-notebook=2021.09.30
+ - pip=20
+ - adlfs
+ - awscli
+ - boto3
+ - bottleneck
+ - cartopy &gt;= 0.20.0
+ - cfgrib
+ - cmip6_preprocessing
+ - ciso
+ - dask-ml
+ - datashader
+ - descartes
+ - earthdata
+ - eofs
+ - erddapy
+ - esmpy
+ - fastjmd95
+ - fsspec
+ - fsspec-reference-maker
+ - gcsfs
+ - gh
+ - geocube
+ - geopandas
+ - geopy
+ - geoviews-core
+ - gsw
+ - h5netcdf
+ - h5py
+ - holoviews
+ - hvplot
+ - intake
+ - intake-esm
+ - intake-geopandas
+ - intake-stac
+ - intake-xarray
+ - ipyleaflet
+ - ipytree
+ - ipywidgets
+ - jupyter-panel-proxy
+ - jupyter-resource-usage
+ - lz4
+ - matplotlib-base
+ - metpy
+ - nb_conda_kernels
+ - nbstripout
+ - nc-time-axis
+ - netcdf4
+ - nomkl
+ - numcodecs
+ - numpy
+ - pandas
+ - panel
+ - parcels
+ - param!=1.11.0
+ - prefect
+ - pyarrow
+ - pycamhd
+ - pydap
+ - pygeos
+ - pystac
+ - python-blosc
+ - python-gist
+ - python-graphviz
+ - rasterio
+ - rechunker
+ - rio-cogeo
+ - rioxarray
+ - rise
+ - s3fs&gt;0.5
+ - sat-search
+ - sat-stac
+ - satpy
+ - scikit-image
+ - scikit-learn
+ - scipy
+ - sparse
+ - stackstac
+ - tiledb-py
+ - timezonefinder
+ - xarray
+ - xarrayutils
+ - xarray_leaflet
+ - xarray-spatial
+ - xcape
+ - xcube
+ - xesmf
+ - xgcm
+ - xhistogram
+ - xmitgcm
+ - xpublish
+ - xrft
+ - xskillscore
+ - zarr
+</pre></div>
+</div>
+<p>Create this environment using mamba</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mamba env create -f environment.yml
+</pre></div>
+</div>
+<p>Activate this environment</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ conda activate pangeo
+</pre></div>
+</div>
+<p>This environment should be sufficient for all of your work in this class.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-installation-method-use-anaconda-python">Recommended Installation Method: Use Anaconda Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-command-line">Accessing the Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-alternative-miniconda">Lightweight Alternative: Miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-environments-with-conda">Managing Environments with Conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-more-packages">Installing More Packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#channels-and-conda-forge">Channels and Conda Forge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speeding-things-up-with-mamba">Speeding things up with Mamba</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pangeo-python-environment">Pangeo Python Environment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emily Roland (Modified from https://earth-env-data-science.github.io)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
