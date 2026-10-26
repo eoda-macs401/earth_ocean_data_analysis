@@ -1,825 +1,489 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>All About Data &#8212; Earth and Ocean Data Analysis - MACS 401</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Notebooks/data';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numpy and Matplotlib" href="numpy_and_matplotlib.html" />
     <link rel="prev" title="Managing Python Environments" href="../Pages/python_environments.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Readings and Tutorials
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings and Tutorials</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/installing_jupyterlab.html">
-   Installing JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_jupyterlab.html">
-   Intro to JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_unix.html">
-   Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_unix_for_Windows.html">
-   Intro to Unix - For Windows Machines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_fundamentals.html">
-   Python Fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="functions_classes.html">
-   Python Functions and Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reuseable_software_elements.html">
-   Reuseable Software Elements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/python_environments.html">
-   Managing Python Environments
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   All About Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="numpy_and_matplotlib.html">
-   Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="more_matplotlib.html">
-   More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Pages/pandas_intro.html">
-   Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basic_pandas.html">
-     Pandas Fundamentals
-    </a>
-   </li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/installing_jupyterlab.html">Installing JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_jupyterlab.html">Intro to JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_unix.html">Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_unix_for_Windows.html">Intro to Unix - For Windows Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_fundamentals.html">Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions_classes.html">Python Functions and Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reuseable_software_elements.html">Reuseable Software Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/python_environments.html">Managing Python Environments</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">All About Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_and_matplotlib.html">Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_matplotlib.html">More Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Pages/pandas_intro.html">Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_pandas.html">Pandas Fundamentals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/intro_to_git.html">Intro to Git for Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">More Work with Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_regression.html">Linear Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/first_class_assignment.html">First - Markdown Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/unixchallenge.html">Unix Tutorial Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_basics.html">Assignment 2: Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_functions.html">Assignment 3: Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/boolean_logic.html">Assignment 4: Playing with Boolean logic.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_brainstorm.html">Assignment 5 - Data Analysis Project Brainstorm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/numpy_matplotlib.html">Assignment 6 - Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/more_matplotlib.html">Assignment 7- More Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/basic_pandas.html">Assignment 8: Pandas Fundamentals with Earthquake Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/files_markdown_git.html">Assignment 9: Git, and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/time_series.html">Optional Assignment 10: Time Series Play</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Pages/organization_and_packaging.html">Organization and Packaging of Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/projects.html">Final Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_overview.html">Final Project Readme Assignment - Due 1 Week Before Final Project Due date</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Pages/videos.html">EODA Class Video Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/cheat_sheets.html">Links to useful web pages and cheatsheets:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mini_modules_from_readings.html">Mini Python Modules - From Readings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">Git/GitHub Cheatsheet!</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/intro_to_git.html">
-   Intro to Git for Version Control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="time_series.html">
-   More Work with Time Series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="linear_regression.html">
-   Linear Regression
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/first_class_assignment.html">
-   First - Markdown Assignment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/unixchallenge.html">
-   Unix Tutorial Challenge
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/python_basics.html">
-   Assignment 2: Basic Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/python_functions.html">
-   Assignment 3: Python Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/boolean_logic.html">
-   Assignment 4: Playing with Boolean logic.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/project_brainstorm.html">
-   Assignment 5 - Data Analysis Project Brainstorm
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/numpy_matplotlib.html">
-   Assignment 6 - Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/more_matplotlib.html">
-   Assignment 7- More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/basic_pandas.html">
-   Assignment 8: Pandas Fundamentals with Earthquake Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/files_markdown_git.html">
-   Assignment 9: Git, and Github
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/time_series.html">
-   Optional Assignment 10: Time Series Play
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Project Design
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/organization_and_packaging.html">
-   Organization and Packaging of Python Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/projects.html">
-   Final Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/project_overview.html">
-   Final Project Readme Assignment - Due 1 Week Before Final Project Due date
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/videos.html">
-   EODA Class Video Links
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/cheat_sheets.html">
-   Links to useful web pages and cheatsheets:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mini_modules_from_readings.html">
-   Mini Python Modules - From Readings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Pages/git_gitHub_cheatsheet.html">
-   Git/GitHub Cheatsheet!
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Notebooks/data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  
 </div>
-
 </div>
+              
+              
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>All About Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Notebooks/data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNotebooks/data.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebooks/data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-are-data">
-   What is (are) data?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-encoding">
-     Data Encoding
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       Numerical Data
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#text-data">
-       Text Data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data">
-     Tabular Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-data">
-     Array Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gis-data">
-     “GIS” Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#raster-data">
-       Raster Data
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vector-data">
-       Vector Data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graph-data">
-     Graph Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unstructured-data">
-     Unstructured Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metadata">
-     Metadata
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-programs-access-data">
-   How do programs access data?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
-     Reproducibility and Manual Download Steps
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
-     Loading Data Directly Over the Network
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#http-streams">
-       HTTP streams
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#opendap">
-       OPeNDAP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
-       Filesystem-Spec (fsspec)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cloud-object-storage">
-     Cloud Object Storage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-files">
-     Local Files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
-   Best practices for data sharing: FAIR
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-findable">
-     To be Findable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-accessible">
-     To be Accessible:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-interoperable">
-     To be Interoperable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-re-useable">
-     To be Re-useable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
-     Persistent Identifiers (PI / PID)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#digital-object-identifiers">
-       Digital Object Identifiers
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
-     How can YOU can create FAIR data and code?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-not-to-do">
-     What not to do
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
-     Rough guide to FAIRly sharing data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
-       Step 1: Quality control the data and metadata
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
-       Step 2: Upload the data to Zenodo
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
-       Step 3: Verify you can access the data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sharing-code">
-     Sharing Code
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-are-data">What is (are) data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encoding">Data Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">Text Data</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-data">Array Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data">“GIS” Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data">Graph Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstructured-data">Unstructured Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-programs-access-data">How do programs access data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">Reproducibility and Manual Download Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-directly-over-the-network">Loading Data Directly Over the Network</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-streams">HTTP streams</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opendap">OPeNDAP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-spec-fsspec">Filesystem-Spec (fsspec)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-object-storage">Cloud Object Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-files">Local Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">Best practices for data sharing: FAIR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-findable">To be Findable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-accessible">To be Accessible:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-interoperable">To be Interoperable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-re-useable">To be Re-useable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">Persistent Identifiers (PI / PID)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-object-identifiers">Digital Object Identifiers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">How can YOU can create FAIR data and code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-not-to-do">What not to do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">Rough guide to FAIRly sharing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">Step 1: Quality control the data and metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">Step 2: Upload the data to Zenodo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">Step 3: Verify you can access the data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-code">Sharing Code</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>All About Data</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-are-data">
-   What is (are) data?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-encoding">
-     Data Encoding
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       Numerical Data
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#text-data">
-       Text Data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data">
-     Tabular Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-data">
-     Array Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gis-data">
-     “GIS” Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#raster-data">
-       Raster Data
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vector-data">
-       Vector Data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graph-data">
-     Graph Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unstructured-data">
-     Unstructured Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metadata">
-     Metadata
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-programs-access-data">
-   How do programs access data?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
-     Reproducibility and Manual Download Steps
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
-     Loading Data Directly Over the Network
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#http-streams">
-       HTTP streams
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#opendap">
-       OPeNDAP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
-       Filesystem-Spec (fsspec)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cloud-object-storage">
-     Cloud Object Storage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-files">
-     Local Files
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
-   Best practices for data sharing: FAIR
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-findable">
-     To be Findable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-accessible">
-     To be Accessible:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-interoperable">
-     To be Interoperable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-re-useable">
-     To be Re-useable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
-     Persistent Identifiers (PI / PID)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#digital-object-identifiers">
-       Digital Object Identifiers
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
-     How can YOU can create FAIR data and code?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-not-to-do">
-     What not to do
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
-     Rough guide to FAIRly sharing data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
-       Step 1: Quality control the data and metadata
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
-       Step 2: Upload the data to Zenodo
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
-       Step 3: Verify you can access the data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sharing-code">
-     Sharing Code
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="all-about-data">
-<h1>All About Data<a class="headerlink" href="#all-about-data" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="all-about-data">
+<h1>All About Data<a class="headerlink" href="#all-about-data" title="Link to this heading">#</a></h1>
 <p>This lecture attempts to give a broad overview of Earth and Environment Science data formats, exchange protocols, and best practices.</p>
-<div class="section" id="what-is-are-data">
-<h2>What is (are) data?<a class="headerlink" href="#what-is-are-data" title="Permalink to this headline">¶</a></h2>
+<section id="what-is-are-data">
+<h2>What is (are) data?<a class="headerlink" href="#what-is-are-data" title="Link to this heading">#</a></h2>
 <p>Ultimately, as we know, all digital data are just 1s and 0s. Each 1 or 0 value is called a <em>bit</em>.
 Bits are usually grouped together in groups of 8 bits, called a <em>byte</em>.
 A byte can represent <span class="math notranslate nohighlight">\(2^8\)</span>, or 256, distinct values.
 We can choose to <em>encode</em> and <em>organize</em> the bytes in many different ways to represent different types of information.</p>
-<div class="section" id="data-encoding">
-<h3>Data Encoding<a class="headerlink" href="#data-encoding" title="Permalink to this headline">¶</a></h3>
+<section id="data-encoding">
+<h3>Data Encoding<a class="headerlink" href="#data-encoding" title="Link to this heading">#</a></h3>
 <p>Encoding is the way that we map raw bytes to meaningful values.</p>
-<div class="section" id="numerical-data">
-<h4>Numerical Data<a class="headerlink" href="#numerical-data" title="Permalink to this headline">¶</a></h4>
+<section id="numerical-data">
+<h4>Numerical Data<a class="headerlink" href="#numerical-data" title="Link to this heading">#</a></h4>
 <p>The most straightforward way to interpret a byte is as an integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,24 +502,34 @@ We can choose to <em>encode</em> and <em>organize</em> the bytes in many differe
 The more bytes we use for each value, the more range or precision we get.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;i2&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;i2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">&quot;bytes&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;f8&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;f8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">&quot;bytes&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;complex256&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;complex256&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">&quot;bytes&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'i2'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'i2'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'f8'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'f8'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'complex256'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'complex256'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int16 2 bytes
 float64 8 bytes
-complex256 32 bytes
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'i2'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'i2'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'f8'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'f8'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'complex256'</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">'complex256'</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span><span class="p">,</span> <span class="s2">"bytes"</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: data type 'complex256' not understood
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="text-data">
-<h4>Text Data<a class="headerlink" href="#text-data" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="text-data">
+<h4>Text Data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h4>
 <p>We can also encode text as bytes.</p>
 <p>The simplest encoding is <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> (American Standard Code for Information Interchange).
 ASCII uses one byte per character and therefore the ASCII alphabet only contains 256 different characters.</p>
@@ -867,29 +541,29 @@ This web page the the Jupyter Notebook it was generated from all use UTF-8 encod
 <p>Fun fact: emojis are UTF-8 characters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;😀&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">"😀"</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\xf0\x9f\x98\x80&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b'\xf0\x9f\x98\x80'
 </pre></div>
 </div>
 </div>
 </div>
 <p>Single values will only take us so far.
 To represent scientific data, we need to think about data <em>organization</em>.</p>
-</div>
-</div>
-<div class="section" id="tabular-data">
-<h3>Tabular Data<a class="headerlink" href="#tabular-data" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="tabular-data">
+<h3>Tabular Data<a class="headerlink" href="#tabular-data" title="Link to this heading">#</a></h3>
 <p>A very common type of data is “tabular data”.
 We discussed it already in our Pandas lecture.
 Tabular data consists of <em>rows</em> and <em>columns</em>.
 The columns usually have a name and a specific data type.
 Each row is a distinct sample.</p>
 <p>Here is an example of tabular data</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Mass</p></th>
@@ -911,6 +585,7 @@ Each row is a distinct sample.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>(Via <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">https://nssdc.gsfc.nasa.gov/planetary/factsheet/</a>)</p>
 <p>The simplest and most common way to encode tabular data is in a text file as <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV (comma-separated values)</a>.
 CSV is readable by humans and computer programs.</p>
@@ -919,9 +594,9 @@ Parquet files are not human readable, but they can be parsed by computers much m
 They also use compression to achieve a smaller file size compared to CSV.</p>
 <p>Multiple related tabular datasets can be stored and queried in a <a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">relational database</a>.
 Databases are very useful but beyond the scope of this class.</p>
-</div>
-<div class="section" id="array-data">
-<h3>Array Data<a class="headerlink" href="#array-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="array-data">
+<h3>Array Data<a class="headerlink" href="#array-data" title="Link to this heading">#</a></h3>
 <p>When we have numerical data that are organized into an N-dimensional rectangular grid of values, we are dealing with array data.</p>
 <img src="http://xarray.pydata.org/en/stable/_images/dataset-diagram.png" width="600px" />
 <p>(via <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/data-structures.html">http://xarray.pydata.org/en/stable/user-guide/data-structures.html</a>)</p>
@@ -933,15 +608,15 @@ Databases are very useful but beyond the scope of this class.</p>
 <li><p><a class="reference external" href="https://zarr.readthedocs.io/en/stable/">Zarr</a> - New cloud-optimized format for array storage</p></li>
 <li><p><a class="reference external" href="https://docs.tiledb.com/main/">TileDB Embedded</a> - New cloud-optimized format for array storage</p></li>
 </ul>
-</div>
-<div class="section" id="gis-data">
-<h3>“GIS” Data<a class="headerlink" href="#gis-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="gis-data">
+<h3>“GIS” Data<a class="headerlink" href="#gis-data" title="Link to this heading">#</a></h3>
 <p>A common term in Earth and Environmental Data Analysis is “GIS”: Geographical Information Systems
 The term GIS was <a class="reference external" href="https://www.esri.com/en-us/what-is-gis/overview">coined by the company ESRI</a> and is most commonly associated with that companies software products like ArcGIS.
 Are we doing “GIS” in this class? Hard to say for sure.
 However, it is important to understand some of the common terminology from GIS as it relates to data.</p>
-<div class="section" id="raster-data">
-<h4>Raster Data<a class="headerlink" href="#raster-data" title="Permalink to this headline">¶</a></h4>
+<section id="raster-data">
+<h4>Raster Data<a class="headerlink" href="#raster-data" title="Link to this heading">#</a></h4>
 <p>From <a class="reference external" href="https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm">ESRI’s definition</a>:</p>
 <blockquote>
 <div><p>In its simplest form, a raster consists of a matrix of cells (or pixels) organized into rows and columns (or a grid) where each cell contains a value representing information, such as temperature. Rasters are digital aerial photographs, imagery from satellites, digital pictures, or even scanned maps.</p>
@@ -952,9 +627,9 @@ However, it is important to understand some of the common terminology from GIS a
 Raster data nearly always includes a <a class="reference external" href="https://en.wikipedia.org/wiki/Spatial_reference_system">Coordinate Reference System</a> that allows one to translate the pixels of the image to specific geographic locations on Earth.</p>
 <p>The most common format for Raster data is the <a class="reference external" href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a> and its recent evolution, the <a class="reference external" href="https://www.cogeo.org/">Cloud-optimized GeoTIFF (CoG)</a>.
 In Python, raster data is commonly read with <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">rasterio</a>. Rasterio integrates with Xarray via the <a class="reference external" href="https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html">rioxarray package</a>, allowing you to read geotiffs directly into Xarray.</p>
-</div>
-<div class="section" id="vector-data">
-<h4>Vector Data<a class="headerlink" href="#vector-data" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="vector-data">
+<h4>Vector Data<a class="headerlink" href="#vector-data" title="Link to this heading">#</a></h4>
 <p>From the <a class="reference external" href="https://datacarpentry.org/organization-geospatial/02-intro-vector-data/">Data Carpentry vector data lesson</a>:</p>
 <blockquote>
 <div><p>Vector data structures represent specific features on the Earth’s surface, and assign attributes to those features. Vectors are composed of discrete geometric locations (x, y values) known as vertices that define the shape of the spatial object. The organization of the vertices determines the type of vector that we are working with: point, line or polygon.</p>
@@ -968,26 +643,26 @@ However, others <a class="reference external" href="http://switchfromshapefile.o
 <li><p><a class="reference external" href="https://www.geopackage.org/">GeoPackage</a></p></li>
 <li><p><a class="reference external" href="https://flatgeobuf.org/">FlatGeoBuf</a></p></li>
 </ul>
-<p>Vector data can be read in python using <a class="reference external" href="https://fiona.readthedocs.io/en/latest/">Fiona</a> and <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/io.html">GeoPandas</a>.</p>
-</div>
-</div>
-<div class="section" id="graph-data">
-<h3>Graph Data<a class="headerlink" href="#graph-data" title="Permalink to this headline">¶</a></h3>
+<p>Vector data can be read in python using <a class="reference external" href="https://fiona.readthedocs.io/en/latest/#">Fiona</a> and <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/io.html">GeoPandas</a>.</p>
+</section>
+</section>
+<section id="graph-data">
+<h3>Graph Data<a class="headerlink" href="#graph-data" title="Link to this heading">#</a></h3>
 <p>Some phenomena are best represented as a discrete <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">graph</a>, consisting of nodes and edges (vertices).</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/6n-graf.png" />
 <p>Graph data can be stored in a range of different formats.
 In python, we can analyze graph data using <a class="reference external" href="https://networkx.org/">NetworkX</a>.</p>
 <p>We do not work with graph data in this class, but it’s important to know it exists.</p>
-</div>
-<div class="section" id="unstructured-data">
-<h3>Unstructured Data<a class="headerlink" href="#unstructured-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unstructured-data">
+<h3>Unstructured Data<a class="headerlink" href="#unstructured-data" title="Link to this heading">#</a></h3>
 <p>Data that does not fit one of the above paradigms is often called <a class="reference external" href="https://en.wikipedia.org/wiki/Unstructured_data">“unstructured” data</a>.
 Unstructured data is often characterized by nested or hierarchical structures.</p>
 <p>A common container for unstructured data is <a class="reference external" href="https://www.json.org/json-en.html">JavaScript Object Notation (JSON)</a>.
 JSON can be read into a Python dictionary using the <a class="reference external" href="https://docs.python.org/3/library/json.html">json</a> package from the Python standard library.</p>
-</div>
-<div class="section" id="metadata">
-<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h3>
 <p>Metadata are “data about the data”, for example:</p>
 <ul class="simple">
 <li><p>Who created the dataset?</p></li>
@@ -1005,25 +680,25 @@ Common metadata conventions for NetCDF-style data include:</p>
 <li><p><a class="reference external" href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a></p></li>
 </ul>
 <p>Other types of data may have other metadata conventions. <a class="reference external" href="https://schema.org/">Schema.org</a> provides a very general framework for metadata.</p>
-</div>
-</div>
-<div class="section" id="how-do-programs-access-data">
-<h2>How do programs access data?<a class="headerlink" href="#how-do-programs-access-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="reproducibility-and-manual-download-steps">
-<h3>Reproducibility and Manual Download Steps<a class="headerlink" href="#reproducibility-and-manual-download-steps" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="how-do-programs-access-data">
+<h2>How do programs access data?<a class="headerlink" href="#how-do-programs-access-data" title="Link to this heading">#</a></h2>
+<section id="reproducibility-and-manual-download-steps">
+<h3>Reproducibility and Manual Download Steps<a class="headerlink" href="#reproducibility-and-manual-download-steps" title="Link to this heading">#</a></h3>
 <p>To perform a reproducible scientific workflow, you cannot assume that the input data for your analysis are already present on the computer where the code is running.
 Such code may work for you, but it won’t work when you share it with others, unless they happen to have the exact same files in the same locations.</p>
 <p>Instead, your code should aim to <em>explicitly acquire the data from the original data provider</em> via a persistent identifier such as a DOI or stable URL.
 Manual data download steps, in which the user must click on buttons on a website, save the files manually, and then move them to a specific location, are a significant barrier to reproducibility and open science.</p>
 <p>Below we will explore some strategies for writing data analysis code that avoids manual download steps.</p>
-</div>
-<div class="section" id="loading-data-directly-over-the-network">
-<h3>Loading Data Directly Over the Network<a class="headerlink" href="#loading-data-directly-over-the-network" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="loading-data-directly-over-the-network">
+<h3>Loading Data Directly Over the Network<a class="headerlink" href="#loading-data-directly-over-the-network" title="Link to this heading">#</a></h3>
 <p>A great way of loading data is to read it directly over the network into your program.
 When you write code in this way, you avoid any reliance on the local filesystem and local path names.
 This is particularly effective for smallish datasets (&lt; 100 MB) that are quick to transfer.</p>
-<div class="section" id="http-streams">
-<h4>HTTP streams<a class="headerlink" href="#http-streams" title="Permalink to this headline">¶</a></h4>
+<section id="http-streams">
+<h4>HTTP streams<a class="headerlink" href="#http-streams" title="Link to this heading">#</a></h4>
 <p>HTTP - HyperText Transfer Protocol - is the standard way that web pages and other data are transferred over the internet.
 HTTP connections are typically established via URLs - Universal Resource Locators. The URL for this book is</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">earth</span><span class="o">-</span><span class="n">env</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">science</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
@@ -1042,14 +717,14 @@ If we just click the “CSV” button, we download the file to our computer (not
 Instead, <em>right click or CTRL-click the download link</em> and select “Copy Link Address”.</p>
 <img src="../images/nasa2.png" width="500px" />
 <p>Pasting the results into our code editor gives us the desired URL.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD"
 </pre></div>
 </div>
 <p>We can feed this directly to Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD"</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1095,7 +770,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
       <td>L5</td>
       <td>21.0</td>
       <td>Fell</td>
-      <td>1880.0</td>
+      <td>01/01/1880 12:00:00 AM</td>
       <td>50.77500</td>
       <td>6.08333</td>
       <td>(50.775, 6.08333)</td>
@@ -1108,7 +783,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
       <td>H6</td>
       <td>720.0</td>
       <td>Fell</td>
-      <td>1951.0</td>
+      <td>01/01/1951 12:00:00 AM</td>
       <td>56.18333</td>
       <td>10.23333</td>
       <td>(56.18333, 10.23333)</td>
@@ -1121,7 +796,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
       <td>EH4</td>
       <td>107000.0</td>
       <td>Fell</td>
-      <td>1952.0</td>
+      <td>01/01/1952 12:00:00 AM</td>
       <td>54.21667</td>
       <td>-113.00000</td>
       <td>(54.21667, -113.0)</td>
@@ -1134,7 +809,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
       <td>Acapulcoite</td>
       <td>1914.0</td>
       <td>Fell</td>
-      <td>1976.0</td>
+      <td>01/01/1976 12:00:00 AM</td>
       <td>16.88333</td>
       <td>-99.90000</td>
       <td>(16.88333, -99.9)</td>
@@ -1147,7 +822,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
       <td>L6</td>
       <td>780.0</td>
       <td>Fell</td>
-      <td>1902.0</td>
+      <td>01/01/1902 12:00:00 AM</td>
       <td>-33.16667</td>
       <td>-64.95000</td>
       <td>(-33.16667, -64.95)</td>
@@ -1157,9 +832,9 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
 </div></div></div>
 </div>
 <p>This code will work from any computer on the internet! 🎉</p>
-</div>
-<div class="section" id="opendap">
-<h4>OPeNDAP<a class="headerlink" href="#opendap" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="opendap">
+<h4>OPeNDAP<a class="headerlink" href="#opendap" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://www.opendap.org/">OPeNDAP</a> - “Open-source Project for a Network Data Access Protocol” - is a highly established protocol for tranferring NetCDF-style data over HTTP.
 NetCDF and Xarray can open OPeNDAP links directly.</p>
 <p>As an example, we will use a dataset from the <a class="reference external" href="https://iridl.ldeo.columbia.edu/">IRI Data Library</a>:</p>
@@ -1167,8 +842,8 @@ NetCDF and Xarray can open OPeNDAP links directly.</p>
 <p>Clicking on the “Data Files” tab shows a link to “OPeNDAP”, which point to the URL <a class="reference external" href="http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain/dods">http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain/dods</a>. We can open this directly in Xarray.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain/dods&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain/dods"</span>
 <span class="c1"># decode_times=False is required because the IRI Data Library uses non-standard encoding of times</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ds</span>
@@ -1207,7 +882,6 @@ NetCDF and Xarray can open OPeNDAP links directly.</p>
 }
 
 html[theme=dark],
-body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -1220,7 +894,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block !important;
+  display: block;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1437,11 +1111,6 @@ body.vscode-dark {
   grid-column: 4;
 }
 
-.xr-index-preview {
-  grid-column: 2 / 5;
-  color: var(--xr-font-color2);
-}
-
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -1463,16 +1132,14 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
+.xr-var-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data,
-.xr-index-data-in:checked ~ .xr-index-data {
+.xr-var-data-in:checked ~ .xr-var-data {
   display: block;
 }
 
@@ -1482,16 +1149,13 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
-.xr-index-name div,
-.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
+.xr-var-data {
   grid-column: 1 / -1;
 }
 
@@ -1529,8 +1193,7 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2,
-.xr-no-icon {
+.xr-icon-file-text2 {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -1548,27 +1211,12 @@ Coordinates:
 Data variables:
     rain     (T, Y, X) float32 ...
 Attributes:
-    Conventions:  IRIDL</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-2c4c9f52-1cd5-470c-96d9-589137ea32ba' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2c4c9f52-1cd5-470c-96d9-589137ea32ba' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>X</span>: 720</li><li><span class='xr-has-index'>T</span>: 324</li><li><span class='xr-has-index'>Y</span>: 360</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-e246ab7f-9bbb-4e62-840b-83dc2604111a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e246ab7f-9bbb-4e62-840b-83dc2604111a' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>X</span></div><div class='xr-var-dims'>(X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.25 0.75 1.25 ... 359.2 359.8</div><input id='attrs-f07a3187-089f-47fd-bf1b-959878c04d71' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f07a3187-089f-47fd-bf1b-959878c04d71' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07bfdadf-e0d2-4233-a668-a4f16ab5c702' class='xr-var-data-in' type='checkbox'><label for='data-07bfdadf-e0d2-4233-a668-a4f16ab5c702' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>1</dd><dt><span>units :</span></dt><dd>degree_east</dd></dl></div><div class='xr-var-data'><pre>array([2.5000e-01, 7.5000e-01, 1.2500e+00, ..., 3.5875e+02, 3.5925e+02,
-       3.5975e+02], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>T</span></div><div class='xr-var-dims'>(T)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>228.5 229.5 230.5 ... 550.5 551.5</div><input id='attrs-040b22c2-1317-4519-aa9a-df2a5051ea57' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-040b22c2-1317-4519-aa9a-df2a5051ea57' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d15d8ef8-bfea-480b-affa-4224c964b25f' class='xr-var-data-in' type='checkbox'><label for='data-d15d8ef8-bfea-480b-affa-4224c964b25f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>1.0</dd><dt><span>calendar :</span></dt><dd>360</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>months since 1960-01-01</dd></dl></div><div class='xr-var-data'><pre>array([228.5, 229.5, 230.5, ..., 549.5, 550.5, 551.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Y</span></div><div class='xr-var-dims'>(Y)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-89.75 -89.25 ... 89.25 89.75</div><input id='attrs-84a0a69e-98d0-4e42-9139-bd58c077c886' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-84a0a69e-98d0-4e42-9139-bd58c077c886' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-133f574b-4c8f-4697-adc5-1267f7296a55' class='xr-var-data-in' type='checkbox'><label for='data-133f574b-4c8f-4697-adc5-1267f7296a55' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>degree_north</dd></dl></div><div class='xr-var-data'><pre>array([-89.75, -89.25, -88.75, ...,  88.75,  89.25,  89.75], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c436fcf8-99b9-4cc8-bd80-d4f4d1bff6c1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c436fcf8-99b9-4cc8-bd80-d4f4d1bff6c1' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>rain</span></div><div class='xr-var-dims'>(T, Y, X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b616b1b8-ca15-4876-8ecb-8a3524a6963d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b616b1b8-ca15-4876-8ecb-8a3524a6963d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e566f3a5-5f38-42f7-9686-889b967b5a27' class='xr-var-data-in' type='checkbox'><label for='data-e566f3a5-5f38-42f7-9686-889b967b5a27' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>0</dd><dt><span>standard_name :</span></dt><dd>lwe_precipitation_rate</dd><dt><span>file_missing_value :</span></dt><dd>-999.0</dd><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>history :</span></dt><dd>Boxes with less than 0.0% dropped</dd><dt><span>long_name :</span></dt><dd>Monthly Precipitation</dd></dl></div><div class='xr-var-data'><pre>[83980800 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a81152e1-8d5b-4cb8-a612-d3e213d6469e' class='xr-section-summary-in' type='checkbox'  ><label for='section-a81152e1-8d5b-4cb8-a612-d3e213d6469e' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>X</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-1ed7e554-0009-4e0c-ae45-7be0ab20919e' class='xr-index-data-in' type='checkbox'/><label for='index-1ed7e554-0009-4e0c-ae45-7be0ab20919e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([  0.25,   0.75,   1.25,   1.75,   2.25,   2.75,   3.25,   3.75,
-                4.25,   4.75,
-              ...
-              355.25, 355.75, 356.25, 356.75, 357.25, 357.75, 358.25, 358.75,
-              359.25, 359.75],
-             dtype=&#x27;float64&#x27;, name=&#x27;X&#x27;, length=720))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>T</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-18e82e2a-641d-41ce-a58c-6cde57ffff4d' class='xr-index-data-in' type='checkbox'/><label for='index-18e82e2a-641d-41ce-a58c-6cde57ffff4d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([228.5, 229.5, 230.5, 231.5, 232.5, 233.5, 234.5, 235.5, 236.5,
-              237.5,
-              ...
-              542.5, 543.5, 544.5, 545.5, 546.5, 547.5, 548.5, 549.5, 550.5,
-              551.5],
-             dtype=&#x27;float64&#x27;, name=&#x27;T&#x27;, length=324))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>Y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-3e3e4db7-d2dd-4e1b-99d7-dbea4eefa16e' class='xr-index-data-in' type='checkbox'/><label for='index-3e3e4db7-d2dd-4e1b-99d7-dbea4eefa16e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([-89.75, -89.25, -88.75, -88.25, -87.75, -87.25, -86.75, -86.25,
-              -85.75, -85.25,
-              ...
-               85.25,  85.75,  86.25,  86.75,  87.25,  87.75,  88.25,  88.75,
-               89.25,  89.75],
-             dtype=&#x27;float64&#x27;, name=&#x27;Y&#x27;, length=360))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b5c2bbe0-5a6f-4b18-8d51-e9a19906578c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b5c2bbe0-5a6f-4b18-8d51-e9a19906578c' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>IRIDL</dd></dl></div></li></ul></div></div></div></div>
+    Conventions:  IRIDL</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-5fdeea4e-f6b4-4460-8d69-d24da6acda76' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5fdeea4e-f6b4-4460-8d69-d24da6acda76' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>X</span>: 720</li><li><span class='xr-has-index'>T</span>: 324</li><li><span class='xr-has-index'>Y</span>: 360</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-747acdd0-3f5a-4bd6-b7f0-b220b3360ef2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-747acdd0-3f5a-4bd6-b7f0-b220b3360ef2' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>X</span></div><div class='xr-var-dims'>(X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.25 0.75 1.25 ... 359.2 359.8</div><input id='attrs-4c529a24-20e2-47ae-b2c7-6afdcf4d3381' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4c529a24-20e2-47ae-b2c7-6afdcf4d3381' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8c6f059a-7e83-4e1d-9c1a-361b61b0ee29' class='xr-var-data-in' type='checkbox'><label for='data-8c6f059a-7e83-4e1d-9c1a-361b61b0ee29' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>1</dd><dt><span>units :</span></dt><dd>degree_east</dd></dl></div><div class='xr-var-data'><pre>array([2.5000e-01, 7.5000e-01, 1.2500e+00, ..., 3.5875e+02, 3.5925e+02,
+       3.5975e+02], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>T</span></div><div class='xr-var-dims'>(T)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>228.5 229.5 230.5 ... 550.5 551.5</div><input id='attrs-8b14dd35-6cb0-4160-b9b1-f15ac81cd864' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b14dd35-6cb0-4160-b9b1-f15ac81cd864' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6297818c-4cca-4f7f-97ee-611a249f9ed1' class='xr-var-data-in' type='checkbox'><label for='data-6297818c-4cca-4f7f-97ee-611a249f9ed1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>1.0</dd><dt><span>calendar :</span></dt><dd>360</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>months since 1960-01-01</dd></dl></div><div class='xr-var-data'><pre>array([228.5, 229.5, 230.5, ..., 549.5, 550.5, 551.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Y</span></div><div class='xr-var-dims'>(Y)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-89.75 -89.25 ... 89.25 89.75</div><input id='attrs-663522fc-985d-4483-b1d3-87e8a91081b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-663522fc-985d-4483-b1d3-87e8a91081b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b8d58ad-4422-4424-8230-fbf244db082d' class='xr-var-data-in' type='checkbox'><label for='data-6b8d58ad-4422-4424-8230-fbf244db082d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>degree_north</dd></dl></div><div class='xr-var-data'><pre>array([-89.75, -89.25, -88.75, ...,  88.75,  89.25,  89.75], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d3b2b4cd-2917-4310-aeb5-a157e4f9f8cb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d3b2b4cd-2917-4310-aeb5-a157e4f9f8cb' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>rain</span></div><div class='xr-var-dims'>(T, Y, X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9b7cefb8-eb36-4544-ae3e-e9f85ad731bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9b7cefb8-eb36-4544-ae3e-e9f85ad731bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-292604fe-9393-4b72-9351-4b1b3d2ffa95' class='xr-var-data-in' type='checkbox'><label for='data-292604fe-9393-4b72-9351-4b1b3d2ffa95' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>0</dd><dt><span>standard_name :</span></dt><dd>lwe_precipitation_rate</dd><dt><span>file_missing_value :</span></dt><dd>-999.0</dd><dt><span>history :</span></dt><dd>Boxes with less than 0.0% dropped</dd><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Monthly Precipitation</dd></dl></div><div class='xr-var-data'><pre>[83980800 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7192f24c-5ed5-4d4e-93f8-0d7a5d98318f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7192f24c-5ed5-4d4e-93f8-0d7a5d98318f' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>IRIDL</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="filesystem-spec-fsspec">
-<h4>Filesystem-Spec (fsspec)<a class="headerlink" href="#filesystem-spec-fsspec" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="filesystem-spec-fsspec">
+<h4>Filesystem-Spec (fsspec)<a class="headerlink" href="#filesystem-spec-fsspec" title="Link to this heading">#</a></h4>
 <blockquote>
 <div><p>Filesystem Spec (<a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a>) is a project to provide a unified pythonic interface to local, remote and embedded file systems and bytes storage.</p>
 </div></blockquote>
@@ -1582,38 +1230,38 @@ These include</p>
 <li><p><a class="reference external" href="https://github.com/fsspec/adlfs">adlfs</a> for Azure DataLake storage</p></li>
 </ul>
 <p>and <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#other-known-implementations">several others</a>.</p>
-</div>
-</div>
-<div class="section" id="cloud-object-storage">
-<h3>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="cloud-object-storage">
+<h3>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Link to this heading">#</a></h3>
 <p>Cloud object storage is the easiest and most performant way to share data over the internet.
 Data stored in cloud object storage is always available and can be read extremely quickly, particularly from the same cloud region.</p>
 <p>More TODO here…</p>
-</div>
-<div class="section" id="local-files">
-<h3>Local Files<a class="headerlink" href="#local-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="local-files">
+<h3>Local Files<a class="headerlink" href="#local-files" title="Link to this heading">#</a></h3>
 <p>Some programs require data to be on your local hard drive to read.</p>
 <p>To download files to your local computer, we strongly recommend <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a>.</p>
 <p>Here is an example of using Pooch to download data from the <a class="reference external" href="https://data.cresis.ku.edu/">CRESIS Radar Database</a>.
 As with the examples above, the first step is to nagivate to web page and try to figure out the actual URL of the files you want to download.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pooch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pooch</span>
 <span class="n">POOCH</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;2017_Antarctica_P3/CSARP_mvdr&quot;</span><span class="p">),</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://data.cresis.ku.edu/data/rds/2017_Antarctica_P3/CSARP_mvdr/20171124_03/&quot;</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">"2017_Antarctica_P3/CSARP_mvdr"</span><span class="p">),</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://data.cresis.ku.edu/data/rds/2017_Antarctica_P3/CSARP_mvdr/20171124_03/"</span><span class="p">,</span>
     <span class="n">registry</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Data_img_02_20171124_03_020.mat&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"Data_img_02_20171124_03_020.mat"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">local_fname</span> <span class="o">=</span> <span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;Data_img_02_20171124_03_020.mat&quot;</span><span class="p">)</span>
+<span class="n">local_fname</span> <span class="o">=</span> <span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">"Data_img_02_20171124_03_020.mat"</span><span class="p">)</span>
 <span class="n">local_fname</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/emily/Library/Caches/2017_Antarctica_P3/CSARP_mvdr/Data_img_02_20171124_03_020.mat&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'/home/jovyan/.cache/2017_Antarctica_P3/CSARP_mvdr/Data_img_02_20171124_03_020.mat'
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1269,7 @@ As with the examples above, the first step is to nagivate to web page and try to
 <p>The file is now saved locally and can be read, e.g. with h5py.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">h5py</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">local_fname</span><span class="p">)</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -1629,14 +1277,21 @@ As with the examples above, the first step is to nagivate to web page and try to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">local_fname</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['#refs#',
+ 'Bottom',
+ 'Data',
+ 'Elevation',
+ 'GPS_time',
+ 'Heading',
+ 'Latitude',
+ 'Longitude',
+ 'Pitch',
+ 'Roll',
+ 'Surface',
+ 'Time',
+ 'param_combine',
+ 'param_csarp',
+ 'param_records']
 </pre></div>
 </div>
 </div>
@@ -1645,20 +1300,20 @@ As with the examples above, the first step is to nagivate to web page and try to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">POOCH</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;greenland_ice_sheet&quot;</span><span class="p">),</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://zenodo.org/record/4977910/files/&quot;</span><span class="p">,</span>
+    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">"greenland_ice_sheet"</span><span class="p">),</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">"https://zenodo.org/record/4977910/files/"</span><span class="p">,</span>
     <span class="n">registry</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;vel_2010-07-01_2011-06-31.nc&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:80ad1a3c381af185069bc032a6459745&quot;</span><span class="p">,</span>
+        <span class="s2">"vel_2010-07-01_2011-06-31.nc"</span><span class="p">:</span> <span class="s2">"md5:80ad1a3c381af185069bc032a6459745"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">fname</span> <span class="o">=</span> <span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;vel_2010-07-01_2011-06-31.nc&quot;</span><span class="p">)</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">"vel_2010-07-01_2011-06-31.nc"</span><span class="p">)</span>
 <span class="n">fname</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/greenland_ice_sheet/vel_2010-07-01_2011-06-31.nc&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'/home/jovyan/.cache/greenland_ice_sheet/vel_2010-07-01_2011-06-31.nc'
 </pre></div>
 </div>
 </div>
@@ -2047,47 +1702,47 @@ Attributes: (12/27)
     comment:                    
     license:                   No restrictions on access or use</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1159c5ec-c009-4575-851c-8c1b1800d2f8' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1159c5ec-c009-4575-851c-8c1b1800d2f8' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>x</span>: 10018</li><li><span class='xr-has-index'>y</span>: 17946</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-75ddde74-b038-453c-ad78-669a6ec92871' class='xr-section-summary-in' type='checkbox'  checked><label for='section-75ddde74-b038-453c-ad78-669a6ec92871' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.38e+05 -6.378e+05 ... 8.646e+05</div><input id='attrs-5eb99ea4-b274-4f0b-8f16-e9bf9e5342d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5eb99ea4-b274-4f0b-8f16-e9bf9e5342d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9790caa0-3a15-478c-9126-30d93260aaeb' class='xr-var-data-in' type='checkbox'><label for='data-9790caa0-3a15-478c-9126-30d93260aaeb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian x-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-638000., -637850., -637700., ...,  864250.,  864400.,  864550.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.576e+05 ... -3.349e+06</div><input id='attrs-2198e59c-bab1-4b76-98c3-8327b179bf35' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2198e59c-bab1-4b76-98c3-8327b179bf35' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08e3b6c0-62c8-45bb-9417-6285a40ccc07' class='xr-var-data-in' type='checkbox'><label for='data-08e3b6c0-62c8-45bb-9417-6285a40ccc07' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian y-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([ -657600.,  -657750.,  -657900., ..., -3349050., -3349200., -3349350.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d67cc7bf-8caa-4340-acb9-82036ed7c4b7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d67cc7bf-8caa-4340-acb9-82036ed7c4b7' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>coord_system</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>|S1</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7dc19cf4-f815-4ec3-acf5-fd5ce3d79b1a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7dc19cf4-f815-4ec3-acf5-fd5ce3d79b1a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bf79b69f-2a63-4cb1-ad31-d19927a12ef8' class='xr-var-data-in' type='checkbox'><label for='data-bf79b69f-2a63-4cb1-ad31-d19927a12ef8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>ellipsoid :</span></dt><dd>WGS84</dd><dt><span>false_easting :</span></dt><dd>0.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>grid_mapping_name :</span></dt><dd>polar_stereographic</dd><dt><span>longitude_of_projection_origin :</span></dt><dd>45.0</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>90.0</dd><dt><span>standard_parallel :</span></dt><dd>70.0</dd><dt><span>straight_vertical_longitude_from_pole :</span></dt><dd>0.0</dd></dl></div><div class='xr-var-data'><pre>array(b&#x27;&#x27;, dtype=&#x27;|S1&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VX</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cd79798f-6918-4e40-bbb4-8397d9efa9f8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cd79798f-6918-4e40-bbb4-8397d9efa9f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9631b42e-f14a-4d89-955e-95f106616bdf' class='xr-var-data-in' type='checkbox'><label for='data-9631b42e-f14a-4d89-955e-95f106616bdf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in x direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_x_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VY</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-541cad93-c964-41c9-a21a-b893a1de4f50' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-541cad93-c964-41c9-a21a-b893a1de4f50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9056733e-efea-472b-aa26-169e3fbc04d3' class='xr-var-data-in' type='checkbox'><label for='data-9056733e-efea-472b-aa26-169e3fbc04d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in y direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_y_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e2620a59-ca15-45c4-a61c-c8c433638497' class='xr-section-summary-in' type='checkbox'  ><label for='section-e2620a59-ca15-45c4-a61c-c8c433638497' class='xr-section-summary' >Attributes: <span>(27)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>CF-1.6, Unidata Dataset Discovery v1.0, GDS v2.0</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table (v22, 12 February 2013)</dd><dt><span>id :</span></dt><dd>vel_final.t.nc</dd><dt><span>title :</span></dt><dd>MEaSURES Antarctica Ice Velocity Map 450m spacing</dd><dt><span>product_version :</span></dt><dd> </dd><dt><span>summary :</span></dt><dd> </dd><dt><span>keywords :</span></dt><dd> </dd><dt><span>keywords_vocabulary :</span></dt><dd> </dd><dt><span>platform :</span></dt><dd> </dd><dt><span>sensor :</span></dt><dd> </dd><dt><span>date_created :</span></dt><dd>2017-06-14T23:00:25.00003874301591Z</dd><dt><span>institution :</span></dt><dd>Department of Earth System Science, University of California, Irvine</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lat_min :</span></dt><dd>60</dd><dt><span>geospatial_lat_max :</span></dt><dd>90</dd><dt><span>geospatial_lon_min :</span></dt><dd>-180</dd><dt><span>geospatial_lon_max :</span></dt><dd>180</dd><dt><span>spatial_resolution :</span></dt><dd>150 m</dd><dt><span>time_coverage_start :</span></dt><dd>1995-01-01</dd><dt><span>time_coverage_end :</span></dt><dd>2016-12-31</dd><dt><span>project :</span></dt><dd>NASA/MEaSUREs_UC-Irvine</dd><dt><span>creator_name :</span></dt><dd>J. Mouginot</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>license :</span></dt><dd>No restrictions on access or use</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="best-practices-for-data-sharing-fair">
-<h2>Best practices for data sharing: FAIR<a class="headerlink" href="#best-practices-for-data-sharing-fair" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="best-practices-for-data-sharing-fair">
+<h2>Best practices for data sharing: FAIR<a class="headerlink" href="#best-practices-for-data-sharing-fair" title="Link to this heading">#</a></h2>
 <p>The acronym FAIR - Findable, Accessible, Interoperable, Reusable - has recently caught on as the gold standard for data sharing.
 The <a class="reference external" href="https://www.force11.org/group/fairgroup/fairprinciples">FAIR principles</a> are <a class="reference external" href="https://eos.org/editors-vox/enabling-findable-accessible-interoperable-and-reusable-data">growing rapidly</a> in the geoscience community.</p>
 <p>Here we repeat and discuss the FAIR principles (via <a class="reference external" href="https://www.force11.org/group/fairgroup/fairprinciples">https://www.force11.org/group/fairgroup/fairprinciples</a>)</p>
-<div class="section" id="to-be-findable">
-<h3>To be Findable:<a class="headerlink" href="#to-be-findable" title="Permalink to this headline">¶</a></h3>
+<section id="to-be-findable">
+<h3>To be Findable:<a class="headerlink" href="#to-be-findable" title="Link to this heading">#</a></h3>
 <p>F1. (meta)data are assigned a globally unique and eternally persistent identifier.</p>
 <p>F2. data are described with rich metadata.</p>
 <p>F3. (meta)data are registered or indexed in a searchable resource.</p>
 <p>F4. metadata specify the data identifier.</p>
-</div>
-<div class="section" id="to-be-accessible">
-<h3>To be Accessible:<a class="headerlink" href="#to-be-accessible" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="to-be-accessible">
+<h3>To be Accessible:<a class="headerlink" href="#to-be-accessible" title="Link to this heading">#</a></h3>
 <p>A1  (meta)data are retrievable by their identifier using a standardized communications protocol.</p>
 <p>A1.1 the protocol is open, free, and universally implementable.</p>
 <p>A1.2 the protocol allows for an authentication and authorization procedure, where necessary.</p>
 <p>A2 metadata are accessible, even when the data are no longer available.</p>
-</div>
-<div class="section" id="to-be-interoperable">
-<h3>To be Interoperable:<a class="headerlink" href="#to-be-interoperable" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="to-be-interoperable">
+<h3>To be Interoperable:<a class="headerlink" href="#to-be-interoperable" title="Link to this heading">#</a></h3>
 <p>I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.</p>
 <p>I2. (meta)data use vocabularies that follow FAIR principles.</p>
 <p>I3. (meta)data include qualified references to other (meta)data.</p>
-</div>
-<div class="section" id="to-be-re-useable">
-<h3>To be Re-useable:<a class="headerlink" href="#to-be-re-useable" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="to-be-re-useable">
+<h3>To be Re-useable:<a class="headerlink" href="#to-be-re-useable" title="Link to this heading">#</a></h3>
 <p>R1. meta(data) have a plurality of accurate and relevant attributes.</p>
 <p>R1.1. (meta)data are released with a clear and accessible data usage license.</p>
 <p>R1.2. (meta)data are associated with their provenance.</p>
 <p>R1.3. (meta)data meet domain-relevant community standards.</p>
-</div>
-<div class="section" id="persistent-identifiers-pi-pid">
-<h3>Persistent Identifiers (PI / PID)<a class="headerlink" href="#persistent-identifiers-pi-pid" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="persistent-identifiers-pi-pid">
+<h3>Persistent Identifiers (PI / PID)<a class="headerlink" href="#persistent-identifiers-pi-pid" title="Link to this heading">#</a></h3>
 <p>Persistent identifier are quasi-permanent unique identifiers that can be used to look up data, articles, books, etc.
 They are a key aspect of making data <em>Findable</em>.
 Digitial persistent identifiers are usually HTTP URLs that are guaranteed to continue working for a long time (in contrast to general URLs, which could change or disappear at any time.)</p>
-<div class="section" id="digital-object-identifiers">
-<h4>Digital Object Identifiers<a class="headerlink" href="#digital-object-identifiers" title="Permalink to this headline">¶</a></h4>
+<section id="digital-object-identifiers">
+<h4>Digital Object Identifiers<a class="headerlink" href="#digital-object-identifiers" title="Link to this heading">#</a></h4>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/DOI_logo.svg/1200px-DOI_logo.svg.png" width="20%" />
 <p>In science, the <a class="reference external" href="https://www.doi.org/">DOI system</a> has become a univerally accepted way to identify and find digital scholarly objects.
 A DOI consists of a string of characters. Prepending the URL <code class="docutils literal notranslate"><span class="pre">https://doi.org/</span></code> to a DOI will generate a web link that can be used to look up the object.</p>
@@ -2095,7 +1750,7 @@ A DOI consists of a string of characters. Prepending the URL <code class="docuti
 The publisher commits to making the DOI work “forever”.
 That’s why not just anyone can create a DOI; it’s a commitment.</p>
 <p>Here are some examples of DOIs. Click the links to see where they go.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Product Type</p></th>
 <th class="head"><p>DOI</p></th>
@@ -2118,34 +1773,35 @@ That’s why not just anyone can create a DOI; it’s a commitment.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="how-can-you-can-create-fair-data-and-code">
-<h3>How can YOU can create FAIR data and code?<a class="headerlink" href="#how-can-you-can-create-fair-data-and-code" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="what-not-to-do">
-<h3>What not to do<a class="headerlink" href="#what-not-to-do" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="how-can-you-can-create-fair-data-and-code">
+<h3>How can YOU can create FAIR data and code?<a class="headerlink" href="#how-can-you-can-create-fair-data-and-code" title="Link to this heading">#</a></h3>
+</section>
+<section id="what-not-to-do">
+<h3>What not to do<a class="headerlink" href="#what-not-to-do" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Put the data / code on your personal website</p></li>
 <li><p>Put the data / code in Google Drive / Dropbox / etc.</p></li>
 <li><p>Put the data / code in GitHub</p></li>
 </ul>
 <p>The problem with these solutions is that they are <em>not persistent</em> and therefore not <em>findable</em>.</p>
-</div>
-<div class="section" id="rough-guide-to-fairly-sharing-data">
-<h3>Rough guide to FAIRly sharing data<a class="headerlink" href="#rough-guide-to-fairly-sharing-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rough-guide-to-fairly-sharing-data">
+<h3>Rough guide to FAIRly sharing data<a class="headerlink" href="#rough-guide-to-fairly-sharing-data" title="Link to this heading">#</a></h3>
 <p>This guide applies to <em>small</em> data (&lt; 10 GB).
 Sharing medium or large datasets is more difficult and complicated–clear solutions and best practices do not yet exist.</p>
-<div class="section" id="step-1-quality-control-the-data-and-metadata">
-<h4>Step 1: Quality control the data and metadata<a class="headerlink" href="#step-1-quality-control-the-data-and-metadata" title="Permalink to this headline">¶</a></h4>
+<section id="step-1-quality-control-the-data-and-metadata">
+<h4>Step 1: Quality control the data and metadata<a class="headerlink" href="#step-1-quality-control-the-data-and-metadata" title="Link to this heading">#</a></h4>
 <p>Before sharing a dataset, you should apply quality control to ensure there are not bad or incorrect values.
 Choose a standard data format appropriate to the structure of your data, as reviewed above.
 You also need to generate metadata for your data.
 If your format supports embedded metadata (e.g. NetCDF, Zarr), you should provide it following one or more of the metadata conventions reviewed above (e.g. CF, ACDD, etc.)
 If not (e.g. csv files), you should provide a separate metadata file (e.g. <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>) to accompany your data.
 Once your data and metadata quality control is complete, export the data file[s] to a local folder.</p>
-</div>
-<div class="section" id="step-2-upload-the-data-to-zenodo">
-<h4>Step 2: Upload the data to Zenodo<a class="headerlink" href="#step-2-upload-the-data-to-zenodo" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="step-2-upload-the-data-to-zenodo">
+<h4>Step 2: Upload the data to Zenodo<a class="headerlink" href="#step-2-upload-the-data-to-zenodo" title="Link to this heading">#</a></h4>
 <p><img alt="Zenodo" src="https://about.zenodo.org/static/img/logos/zenodo-gradient-200.png" /></p>
 <p>Our recommended data repository is <a class="reference external" href="https://zenodo.org/">Zenodo</a>.</p>
 <blockquote>
@@ -2162,25 +1818,25 @@ Make sure to choose an open-access license such as Creative Commons.
 This will make your data more Interoperable and Re-useable.</p>
 <p>When all your data are uploaded and you have double-checked the metadata, you can click “Publish”.
 This will create a permanent archive for your data and generate a new DOI! 🎉</p>
-</div>
-<div class="section" id="step-3-verify-you-can-access-the-data">
-<h4>Step 3: Verify you can access the data<a class="headerlink" href="#step-3-verify-you-can-access-the-data" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="step-3-verify-you-can-access-the-data">
+<h4>Step 3: Verify you can access the data<a class="headerlink" href="#step-3-verify-you-can-access-the-data" title="Link to this heading">#</a></h4>
 <p>Use the <a class="reference external" href="https://www.fatiando.org/pooch/latest/api/generated/pooch.DOIDownloader.html">Pooch DOI downloader</a> to download and open your data files from a Jupyter Notebook.</p>
 <p>Here is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi</span> <span class="o">=</span> <span class="s2">&quot;doi:10.5281/zenodo.5739406&quot;</span>
-<span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;wind_po_hrly.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi</span> <span class="o">=</span> <span class="s2">"doi:10.5281/zenodo.5739406"</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s2">"wind_po_hrly.csv"</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;md5:cf059b73d6831282c5580776ac07309a&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="s2">"md5:cf059b73d6831282c5580776ac07309a"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">file_path</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'/home/jovyan/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv'
 </pre></div>
 </div>
 </div>
@@ -2286,10 +1942,10 @@ This will create a permanent archive for your data and generate a new DOI! 🎉<
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="sharing-code">
-<h3>Sharing Code<a class="headerlink" href="#sharing-code" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sharing-code">
+<h3>Sharing Code<a class="headerlink" href="#sharing-code" title="Link to this heading">#</a></h3>
 <p>Putting code on GitHub is very convenient for collaboration.
 But GitHub does not meet the FAIR requirements.
 Therefore, to make your code truly FAIR, you need to deposit it in a permamenent repository.
@@ -2300,9 +1956,9 @@ Fortunately, Zenodo and GitHub integrate very well with each other.</p>
 <p class="admonition-title">Note</p>
 <p>Prior to archiving your repo, you need to <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files">create a CITATION.cff file</a>.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2316,7 +1972,7 @@ Fortunately, Zenodo and GitHub integrate very well with each other.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Notebooks"
         },
         predefinedOutput: true
@@ -2324,44 +1980,154 @@ Fortunately, Zenodo and GitHub integrate very well with each other.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../Pages/python_environments.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Managing Python Environments</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Pages/python_environments.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Managing Python Environments</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="numpy_and_matplotlib.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="numpy_and_matplotlib.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Numpy and Matplotlib</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-are-data">What is (are) data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encoding">Data Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">Numerical Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">Text Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-data">Array Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data">“GIS” Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raster-data">Raster Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data">Vector Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-data">Graph Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstructured-data">Unstructured Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-programs-access-data">How do programs access data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">Reproducibility and Manual Download Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-directly-over-the-network">Loading Data Directly Over the Network</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-streams">HTTP streams</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#opendap">OPeNDAP</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-spec-fsspec">Filesystem-Spec (fsspec)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-object-storage">Cloud Object Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-files">Local Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">Best practices for data sharing: FAIR</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-findable">To be Findable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-accessible">To be Accessible:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-interoperable">To be Interoperable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-re-useable">To be Re-useable:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">Persistent Identifiers (PI / PID)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-object-identifiers">Digital Object Identifiers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">How can YOU can create FAIR data and code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-not-to-do">What not to do</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">Rough guide to FAIRly sharing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">Step 1: Quality control the data and metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">Step 2: Upload the data to Zenodo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">Step 3: Verify you can access the data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-code">Sharing Code</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emily Roland (Modified from https://earth-env-data-science.github.io)
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

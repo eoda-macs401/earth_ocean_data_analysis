@@ -1,648 +1,454 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Intro to Unix - For Windows Machines &#8212; Earth and Ocean Data Analysis - MACS 401</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Pages/intro_to_unix_for_Windows';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python Fundamentals" href="../Notebooks/python_fundamentals.html" />
     <link rel="prev" title="Intro to Unix" href="intro_to_unix.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <dialog id="pst-search-dialog">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Earth and Ocean Data Analysis - MACS 401</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Welcome to the Jupyter Book for Earth and Ocean Data Analysis
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Readings and Tutorials
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Earth and Ocean Data Analysis - MACS 401 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Jupyter Book for Earth and Ocean Data Analysis
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings and Tutorials</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="installing_jupyterlab.html">
-   Installing JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_jupyterlab.html">
-   Intro to JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_unix.html">
-   Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Intro to Unix - For Windows Machines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/python_fundamentals.html">
-   Python Fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/functions_classes.html">
-   Python Functions and Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/reuseable_software_elements.html">
-   Reuseable Software Elements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_environments.html">
-   Managing Python Environments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/data.html">
-   All About Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/numpy_and_matplotlib.html">
-   Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/more_matplotlib.html">
-   More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pandas_intro.html">
-   Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Notebooks/basic_pandas.html">
-     Pandas Fundamentals
-    </a>
-   </li>
+<li class="toctree-l1"><a class="reference internal" href="installing_jupyterlab.html">Installing JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_jupyterlab.html">Intro to JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_unix.html">Intro to Unix</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to Unix - For Windows Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/python_fundamentals.html">Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/functions_classes.html">Python Functions and Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/reuseable_software_elements.html">Reuseable Software Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_environments.html">Managing Python Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/data.html">All About Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/numpy_and_matplotlib.html">Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/more_matplotlib.html">More Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas_intro.html">Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Notebooks/basic_pandas.html">Pandas Fundamentals</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_git.html">Intro to Git for Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/time_series.html">More Work with Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/linear_regression.html">Linear Regression</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/first_class_assignment.html">First - Markdown Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/unixchallenge.html">Unix Tutorial Challenge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_basics.html">Assignment 2: Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/python_functions.html">Assignment 3: Python Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/boolean_logic.html">Assignment 4: Playing with Boolean logic.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_brainstorm.html">Assignment 5 - Data Analysis Project Brainstorm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/numpy_matplotlib.html">Assignment 6 - Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/more_matplotlib.html">Assignment 7- More Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/basic_pandas.html">Assignment 8: Pandas Fundamentals with Earthquake Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/files_markdown_git.html">Assignment 9: Git, and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/time_series.html">Optional Assignment 10: Time Series Play</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Design</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="organization_and_packaging.html">Organization and Packaging of Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Final Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/project_overview.html">Final Project Readme Assignment - Due 1 Week Before Final Project Due date</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="videos.html">EODA Class Video Links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cheat_sheets.html">Links to useful web pages and cheatsheets:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Notebooks/mini_modules_from_readings.html">Mini Python Modules - From Readings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_gitHub_cheatsheet.html">Git/GitHub Cheatsheet!</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/intro_to_unix_for_Windows.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_git.html">
-   Intro to Git for Version Control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/time_series.html">
-   More Work with Time Series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/linear_regression.html">
-   Linear Regression
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Assignments
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/first_class_assignment.html">
-   First - Markdown Assignment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/unixchallenge.html">
-   Unix Tutorial Challenge
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/python_basics.html">
-   Assignment 2: Basic Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/python_functions.html">
-   Assignment 3: Python Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/boolean_logic.html">
-   Assignment 4: Playing with Boolean logic.
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/project_brainstorm.html">
-   Assignment 5 - Data Analysis Project Brainstorm
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/numpy_matplotlib.html">
-   Assignment 6 - Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/more_matplotlib.html">
-   Assignment 7- More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/basic_pandas.html">
-   Assignment 8: Pandas Fundamentals with Earthquake Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/files_markdown_git.html">
-   Assignment 9: Git, and Github
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/time_series.html">
-   Optional Assignment 10: Time Series Play
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Project Design
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="organization_and_packaging.html">
-   Organization and Packaging of Python Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projects.html">
-   Final Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Assignments/project_overview.html">
-   Final Project Readme Assignment - Due 1 Week Before Final Project Due date
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="videos.html">
-   EODA Class Video Links
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cheat_sheets.html">
-   Links to useful web pages and cheatsheets:
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notebooks/mini_modules_from_readings.html">
-   Mini Python Modules - From Readings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="git_gitHub_cheatsheet.html">
-   Git/GitHub Cheatsheet!
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Pages/intro_to_unix_for_Windows.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  
 </div>
-
 </div>
+              
+              
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Intro to Unix - For Windows Machines</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Pages/intro_to_unix_for_Windows.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPages/intro_to_unix_for_Windows.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-bit-of-background">
-   A bit of Background:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
-   Navigating Files and Directories in Unix
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-pwd">
-     Useful Command: pwd
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-ls">
-     Useful Command: ls
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
-     NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handy-flag-f-mac-only">
-     Handy “Flag”: -F (MAC ONLY)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-cd">
-     Useful Command: cd
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shortcut-for-navigation">
-     Shortcut for Navigation: ..
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handy-flag-a-mac-only">
-     Handy “Flag”: -a (MAC ONLY!!)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-practice">
-     More Practice
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#try-this">
-     Try this:
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tab-completion">
-       Tab Completion
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-points">
-       Key Points:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-files-and-directories">
-   Working with Files and Directories
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
-   Good names for files and directories
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-is-forever">
-     Deleting Is Forever
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
-     Warning - following is different on Windows (rm will work without recursive flag!!)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
-       With Great Power Comes Great Responsibility
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Key Points
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-more">
-   Learning More
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bit-of-background">A bit of Background:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">Navigating Files and Directories in Unix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-pwd">Useful Command: pwd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-ls">Useful Command: ls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handy-flag-f-mac-only">Handy “Flag”: -F (MAC ONLY)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-cd">Useful Command: cd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-for-navigation">Shortcut for Navigation: ..</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handy-flag-a-mac-only">Handy “Flag”: -a (MAC ONLY!!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-this">Try this:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-completion">Tab Completion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points:</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">Working with Files and Directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-names-for-files-and-directories">Good names for files and directories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-is-forever">Deleting Is Forever</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">Warning - following is different on Windows (rm will work without recursive flag!!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">With Great Power Comes Great Responsibility</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Key Points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-more">Learning More</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Intro to Unix - For Windows Machines</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-bit-of-background">
-   A bit of Background:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">
-   Navigating Files and Directories in Unix
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-pwd">
-     Useful Command: pwd
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-ls">
-     Useful Command: ls
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
-     NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handy-flag-f-mac-only">
-     Handy “Flag”: -F (MAC ONLY)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-command-cd">
-     Useful Command: cd
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#shortcut-for-navigation">
-     Shortcut for Navigation: ..
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handy-flag-a-mac-only">
-     Handy “Flag”: -a (MAC ONLY!!)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-practice">
-     More Practice
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#try-this">
-     Try this:
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tab-completion">
-       Tab Completion
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-points">
-       Key Points:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-files-and-directories">
-   Working with Files and Directories
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-names-for-files-and-directories">
-   Good names for files and directories
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-is-forever">
-     Deleting Is Forever
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
-     Warning - following is different on Windows (rm will work without recursive flag!!)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">
-       With Great Power Comes Great Responsibility
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Key Points
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-more">
-   Learning More
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-unix-for-windows-machines">
-<h1>Intro to Unix - For Windows Machines<a class="headerlink" href="#intro-to-unix-for-windows-machines" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-unix-for-windows-machines">
+<h1>Intro to Unix - For Windows Machines<a class="headerlink" href="#intro-to-unix-for-windows-machines" title="Link to this heading">#</a></h1>
 <p><em>Modified from An <a class="reference external" href="https://earth-env-data-science.github.io">Introduction to Earth and Environmental Data Science</a></em></p>
 <blockquote>
 <div><p>Note, much of this tutorial is outlined in the video: <a class="reference external" href="https://youtu.be/NuZMbxN2icg">YouTube: Intro to Unix - WINDOWS</a></p>
@@ -650,12 +456,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>An introduction to basic Unix commands and the file system.  This tutorial is simular to the page - <a class="reference internal" href="intro_to_unix.html"><span class="doc std std-doc">Introduction to Unix</span></a>, but has been modified to (hopefully!) work for folks on a Windows Machine.  For this class you will always simulate a Unix environment on your Windows computer using the Acaconda Prompt or Anaconda Powershell Prompt applications that was installed with Anaconda (accessed via Anaconda3 folder in startup Menu) or <strong>suggested here</strong> via opening up JupyterLab and using the Terminal from there.  There are alternatives to accessing Unix commands on a Windows computer such as by installing Cygwin <a class="reference external" href="https://sun.iwu.edu/~mliffito/cs_codex/posts/unix-on-your-own-computer/">(some explanation and links here)</a>. It usually requires some additional configuration so we’ll stick with Anaconda and Jupyter tools here.  Good luck!</p>
 <p><em>The notes below are modified from the excellent <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Unix Shell tutorial </a> that is freely available on the Software Carpentry website. We highly recommend checking out the full version for further reading. The material is being used here under the terms of the <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a>.</em></p>
 <hr class="docutils" />
-<div class="section" id="a-bit-of-background">
-<h2>A bit of Background:<a class="headerlink" href="#a-bit-of-background" title="Permalink to this headline">¶</a></h2>
+<section id="a-bit-of-background">
+<h2>A bit of Background:<a class="headerlink" href="#a-bit-of-background" title="Link to this heading">#</a></h2>
 <p>Did you know that you can access almost any part of your computer, run most software, and create your own computational tools… all from the command line via a Terminal (Mac, Linux) or simulated via the Anaconda Prompt application on Windows machines? In order to do this (and a generally really really handy skill for most coding efforts), you’ll need an understanding of how to navigate a Unix-type operating system.  Macintosh computers are built on a Unix backbone system, so these commands will also work in a Mac Terminal.  If you ever run across a Linux comptuter (running an OS like Ubuntu), it is simular to Unix as well.</p>
-</div>
-<div class="section" id="getting-started">
-<h2>Getting Started:<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-started">
+<h2>Getting Started:<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
 <p>If you are using a winddows computer, most Unix commands will work within the Terminal applicaiton that we can access via Jupyter Lab.  Before we get going, lets use one more package that boosts the Unix functionality.  To do this, install the package called <code class="docutils literal notranslate"><span class="pre">m2-base</span></code>.</p>
 <ul class="simple">
 <li><p>First open up Anaconda Prompt or Anaconda Powershell Prompt.
@@ -666,10 +472,10 @@ Hopefully you see the <code class="docutils literal notranslate"><span class="pr
 </ul>
 <p>Command output examples are for my computer - yours may be different.  Instead of just typing in commands, pay attention to what you are doing, the output, etc. If something is confusing, get help, or Google it!</p>
 <hr class="docutils" />
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="navigating-files-and-directories-in-unix">
-<h2>Navigating Files and Directories in Unix<a class="headerlink" href="#navigating-files-and-directories-in-unix" title="Permalink to this headline">¶</a></h2>
+<section id="navigating-files-and-directories-in-unix">
+<h2>Navigating Files and Directories in Unix<a class="headerlink" href="#navigating-files-and-directories-in-unix" title="Link to this heading">#</a></h2>
 <p>Several commands are frequently used to create, inspect, rename, and delete files and directories.</p>
 <p>To get started, open a terminal using the JupyterLab launcher. You will see
 something like this (note, on Windows machines, different for Mac):</p>
@@ -689,8 +495,8 @@ something like this (note, on Windows machines, different for Mac):</p>
 </div>
 <p>When I type this, I see: <code class="docutils literal notranslate"><span class="pre">DESKTOP-EC5EGSB</span></code> because that’s the name of my laptop computer.
 On the podium computer in IS 410 in IS410 I see <code class="docutils literal notranslate"><span class="pre">IS410POD01</span></code></p>
-<div class="section" id="useful-command-pwd">
-<h3>Useful Command: pwd<a class="headerlink" href="#useful-command-pwd" title="Permalink to this headline">¶</a></h3>
+<section id="useful-command-pwd">
+<h3>Useful Command: pwd<a class="headerlink" href="#useful-command-pwd" title="Link to this heading">#</a></h3>
 <p>Next,
 let’s find out where we are by running a command called <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
 (which stands for “print working directory”).
@@ -732,9 +538,9 @@ this is the leading slash in <code class="docutils literal notranslate"><span cl
 and so on.</p>
 <p><strong>For Windows</strong> computers, the structure is not too different.  The highest directory is usally called by a letter (often C:) with additional drives (like thumb drives) given a different letter. Then there are sub-foders called things like Program Files and Users.  Note the backslashes! <code class="docutils literal notranslate"><span class="pre">\</span></code>:</p>
 <p><img alt="The File System" src="../_images/DirectoryStructurePC.png" /></p>
-</div>
-<div class="section" id="useful-command-ls">
-<h3>Useful Command: ls<a class="headerlink" href="#useful-command-ls" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="useful-command-ls">
+<h3>Useful Command: ls<a class="headerlink" href="#useful-command-ls" title="Link to this heading">#</a></h3>
 <p>Now let’s learn the command that will let us see the contents of our
 own filesystem.  We can see what’s in our home directory by running <code class="docutils literal notranslate"><span class="pre">ls</span></code>,
 which stands for “listing” (note, this is an example, but yours will look different, depending on the folders and files in your home directory):</p>
@@ -765,12 +571,12 @@ which stands for “listing” (note, this is an example, but yours will look di
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory in
 alphabetical order,
 arranged neatly into columns.</p>
-</div>
-<div class="section" id="note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
-<h3>NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:<a class="headerlink" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="handy-flag-f-mac-only">
-<h3>Handy “Flag”: -F (MAC ONLY)<a class="headerlink" href="#handy-flag-f-mac-only" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">
+<h3>NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:<a class="headerlink" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference" title="Link to this heading">#</a></h3>
+</section>
+<section id="handy-flag-f-mac-only">
+<h3>Handy “Flag”: -F (MAC ONLY)<a class="headerlink" href="#handy-flag-f-mac-only" title="Link to this heading">#</a></h3>
 <p>We can make the <code class="docutils literal notranslate"><span class="pre">ls</span></code> output more comprehensible by using the <strong>flag</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code>,
 which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> to the names of directories:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
@@ -804,9 +610,9 @@ we want a listing of something other than our current working directory:</p>
 <p>The output is the list of all the files in the <code class="docutils literal notranslate"><span class="pre">Videos</span></code> directory.
 Execute the ‘ls’ command for a directory in your <code class="docutils literal notranslate"><span class="pre">home</span></code> directory such as <code class="docutils literal notranslate"><span class="pre">Documents</span></code> and see what the output is.</p>
 <p>Unless you have a nice neat Documents folder, it’s likely you’ll see a lot of files and directories listed, but you should recognize some of them as things as documents you’ve created!</p>
-</div>
-<div class="section" id="useful-command-cd">
-<h3>Useful Command: cd<a class="headerlink" href="#useful-command-cd" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="useful-command-cd">
+<h3>Useful Command: cd<a class="headerlink" href="#useful-command-cd" title="Link to this heading">#</a></h3>
 <p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
 directory name to change our working directory.
 <code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for “change directory”,
@@ -825,9 +631,9 @@ in <code class="docutils literal notranslate"><span class="pre">\Users\emily\Vid
 <p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> without arguments now,
 it lists the contents of <code class="docutils literal notranslate"><span class="pre">C:\Users\emily\Videos</span></code>,
 because that’s where we now are.</p>
-</div>
-<div class="section" id="shortcut-for-navigation">
-<h3>Shortcut for Navigation: ..<a class="headerlink" href="#shortcut-for-navigation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="shortcut-for-navigation">
+<h3>Shortcut for Navigation: ..<a class="headerlink" href="#shortcut-for-navigation" title="Link to this heading">#</a></h3>
 <p>We now know how to go <strong>down</strong> the directory tree, but
 how do we go up?<br />
 There is a shortcut in the shell to move up one directory level
@@ -847,9 +653,9 @@ if we run <code class="docutils literal notranslate"><span class="pre">pwd</span
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">emily</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="handy-flag-a-mac-only">
-<h3>Handy “Flag”: -a (MAC ONLY!!)<a class="headerlink" href="#handy-flag-a-mac-only" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="handy-flag-a-mac-only">
+<h3>Handy “Flag”: -a (MAC ONLY!!)<a class="headerlink" href="#handy-flag-a-mac-only" title="Link to this heading">#</a></h3>
 <p>The special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>.  If we want
 to display it, we can give <code class="docutils literal notranslate"><span class="pre">ls</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F -a
@@ -874,9 +680,9 @@ $ cd &lt;name of a directory&gt;
 </pre></div>
 </div>
 <p>Did it work? What is in the new directory you just moved (down) into? (Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> to figure that out.)</p>
-</div>
-<div class="section" id="more-practice">
-<h3>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="more-practice">
+<h3>More Practice<a class="headerlink" href="#more-practice" title="Link to this heading">#</a></h3>
 <p>Let’s explore some variations on those commands.  What happens
 if you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> with a <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol after it?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~
@@ -891,9 +697,9 @@ if you type <code class="docutils literal notranslate"><span class="pre">cd</spa
 </div>
 <p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> will return you to you to <strong>your home directory</strong>,
 which is great if you’ve gotten lost in your own filesystem.</p>
-</div>
-<div class="section" id="try-this">
-<h3>Try this:<a class="headerlink" href="#try-this" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="try-this">
+<h3>Try this:<a class="headerlink" href="#try-this" title="Link to this heading">#</a></h3>
 <p>As an advance move - let’s try navigating <em>two</em> directories down in our file structure from our home directory.  I had a directory called <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> that was on my <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> (you’ll have some other folder on your Desktop probably that you could practice with).  There are actually two ways to get to this <code class="docutils literal notranslate"><span class="pre">PhotosForBlog</span></code> directory one with three commands, one with one. The long way first:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd Documents
 $ ls
@@ -936,17 +742,17 @@ to move to <code class="docutils literal notranslate"><span class="pre">Desktop<
 </pre></div>
 </div>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to ensure that we’re in the directory we expect.</p>
-<div class="section" id="tab-completion">
-<h4>Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h4>
+<section id="tab-completion">
+<h4>Tab Completion<a class="headerlink" href="#tab-completion" title="Link to this heading">#</a></h4>
 <p>Typing the full path to directories and files can be slow and annoying.
 Fortunately, we have “tab completion” to help us. Try typing <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Des</span></code> and then
 press the <code class="docutils literal notranslate"><span class="pre">&lt;tab&gt;</span></code>. The system will try to “auto complete” your command.
 Pressing tab twice brings up a list of all the files, and so on.
 This is called <strong>tab completion</strong>,
 and we will see it in many other tools as we go on.</p>
-</div>
-<div class="section" id="key-points">
-<h4>Key Points:<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="key-points">
+<h4>Key Points:<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>“The file system is responsible for managing information on the disk.”</p></li>
 <li><p>“Information is stored in files, which are stored in directories (folders).”</p></li>
@@ -963,11 +769,11 @@ and we will see it in many other tools as we go on.</p>
 <li><p>Most files’ names are <code class="docutils literal notranslate"><span class="pre">something.extension</span></code>. The extension isn’t required, and doesn’t guarantee anything, but is normally used to indicate the type of data in the file.</p></li>
 <li><p>Most commands take options (flags) which begin with a ‘-‘.</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="working-with-files-and-directories">
-<h2>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="working-with-files-and-directories">
+<h2>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
 <p>We now know how to explore files and directories,
 but how do we create them in the first place?
 Let’s go back to our home directory
@@ -1038,13 +844,13 @@ the new directory is created in the current working directory:</p>
 <span class="o">-</span><span class="n">a</span><span class="o">----</span>         <span class="mi">8</span><span class="o">/</span><span class="mi">26</span><span class="o">/</span><span class="mi">2021</span>   <span class="mi">7</span><span class="p">:</span><span class="mi">12</span> <span class="n">PM</span>                <span class="n">myfile</span><span class="o">.</span><span class="n">doc</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="good-names-for-files-and-directories">
-<h2>Good names for files and directories<a class="headerlink" href="#good-names-for-files-and-directories" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="good-names-for-files-and-directories">
+<h2>Good names for files and directories<a class="headerlink" href="#good-names-for-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
 tips for the names of your files.</p>
-<ol>
+<ol class="arabic">
 <li><p>Don’t use whitespaces.</p>
 <p>Whitespaces can make a name more meaningful
 but since whitespace is used to break arguments on the command line
@@ -1100,8 +906,8 @@ which tells us that our file is gone:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
 </pre></div>
 </div>
-<div class="section" id="deleting-is-forever">
-<h3>Deleting Is Forever<a class="headerlink" href="#deleting-is-forever" title="Permalink to this headline">¶</a></h3>
+<section id="deleting-is-forever">
+<h3>Deleting Is Forever<a class="headerlink" href="#deleting-is-forever" title="Link to this heading">#</a></h3>
 <p>The Unix shell doesn’t have a trash bin that we can recover deleted
 files from (though most graphical interfaces to Unix do).  Instead,
 when we delete files, they are unhooked from the file system so that
@@ -1115,9 +921,9 @@ and then move up one directory to <code class="docutils literal notranslate"><sp
 $ cd ..
 </pre></div>
 </div>
-</div>
-<div class="section" id="warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
-<h3>Warning - following is different on Windows (rm will work without recursive flag!!)<a class="headerlink" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">
+<h3>Warning - following is different on Windows (rm will work without recursive flag!!)<a class="headerlink" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag" title="Link to this heading">#</a></h3>
 <p>If we try to remove the entire <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory using <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">thesis</span></code>,
 we get an error message:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm thesis
@@ -1132,8 +938,8 @@ We can do this with the <a class="reference external" href="https://en.wikipedia
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm -r thesis
 </pre></div>
 </div>
-<div class="section" id="with-great-power-comes-great-responsibility">
-<h4>With Great Power Comes Great Responsibility<a class="headerlink" href="#with-great-power-comes-great-responsibility" title="Permalink to this headline">¶</a></h4>
+<section id="with-great-power-comes-great-responsibility">
+<h4>With Great Power Comes Great Responsibility<a class="headerlink" href="#with-great-power-comes-great-responsibility" title="Link to this heading">#</a></h4>
 <p>Removing the files in a directory recursively can be very dangerous
 operation. If we’re concerned about what we might be deleting we can
 add the “interactive” flag <code class="docutils literal notranslate"><span class="pre">-i</span></code> to <code class="docutils literal notranslate"><span class="pre">rm</span></code> which will ask us for confirmation
@@ -1230,10 +1036,10 @@ $ ls quotes.txt thesis\quotations.txt
 </div>
 <p>This time it tells us that it can’t find <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> in the current directory,
 but it does find the copy in <code class="docutils literal notranslate"><span class="pre">thesis</span></code> that we didn’t delete.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h3>Key Points<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id1">
+<h3>Key Points<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> copies a file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">path</span></code> creates a new directory.</p></li>
@@ -1243,18 +1049,18 @@ but it does find the copy in <code class="docutils literal notranslate"><span cl
 <li><p>The shell does not have a trash bin: once something is deleted, it’s really gone.</p></li>
 <li><p>Depending on the type of work you do, you may need a more powerful text editor than Nano.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="learning-more">
-<h2>Learning More<a class="headerlink" href="#learning-more" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="learning-more">
+<h2>Learning More<a class="headerlink" href="#learning-more" title="Link to this heading">#</a></h2>
 <p>The goal of this lesson was to familiarize you with the basics of working
 with files and directories.
 There is a <strong>lot more</strong> to the unix shell and filexsystem than what we have  covered here!
 To ge deeper with self study, we recommend the excellent
 <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">Software Carpentry Unix Shell Lesson</a>,
 on which the above material was based.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1268,7 +1074,7 @@ on which the above material was based.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Pages"
         },
         predefinedOutput: true
@@ -1276,44 +1082,133 @@ on which the above material was based.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro_to_unix.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Intro to Unix</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro_to_unix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Intro to Unix</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../Notebooks/python_fundamentals.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../Notebooks/python_fundamentals.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Python Fundamentals</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Emily Roland (Modified from https://earth-env-data-science.github.io)<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bit-of-background">A bit of Background:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-files-and-directories-in-unix">Navigating Files and Directories in Unix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-pwd">Useful Command: pwd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-ls">Useful Command: ls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-the-following-flag-works-for-unix-but-not-windows-via-powershell-incluede-here-for-reference">NOTE: The following flag works for UNIX but not WINDOWS via Powershell.  Incluede here for reference:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handy-flag-f-mac-only">Handy “Flag”: -F (MAC ONLY)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-cd">Useful Command: cd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcut-for-navigation">Shortcut for Navigation: ..</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handy-flag-a-mac-only">Handy “Flag”: -a (MAC ONLY!!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practice">More Practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-this">Try this:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-completion">Tab Completion</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">Key Points:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">Working with Files and Directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-names-for-files-and-directories">Good names for files and directories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-is-forever">Deleting Is Forever</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-following-is-different-on-windows-rm-will-work-without-recursive-flag">Warning - following is different on Windows (rm will work without recursive flag!!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#with-great-power-comes-great-responsibility">With Great Power Comes Great Responsibility</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Key Points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-more">Learning More</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Emily Roland (Modified from https://earth-env-data-science.github.io)
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
