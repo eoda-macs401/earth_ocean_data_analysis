@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -1512,9 +1512,6 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading file 'data.txt' from 'doi:10.5281/zenodo.5564850/data.txt' to '/Users/emily/Library/Caches/noaa-data'.
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'/Users/emily/Library/Caches/noaa-data/data.txt'
 </pre></div>
 </div>
@@ -1522,12 +1519,21 @@ Name: temperature, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">'/home/jovyan/.cache/noaa-data/data.txt'</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">'/Users/emily/Library/Caches/noaa-data/data.txt'</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>head: /home/jovyan/.cache/noaa-data/data.txt: No such file or directory
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WBANNO LST_DATE CRX_VN LONGITUDE LATITUDE T_DAILY_MAX T_DAILY_MIN T_DAILY_MEAN T_DAILY_AVG P_DAILY_CALC SOLARAD_DAILY SUR_TEMP_DAILY_TYPE SUR_TEMP_DAILY_MAX SUR_TEMP_DAILY_MIN SUR_TEMP_DAILY_AVG RH_DAILY_MAX RH_DAILY_MIN RH_DAILY_AVG SOIL_MOISTURE_5_DAILY SOIL_MOISTURE_10_DAILY SOIL_MOISTURE_20_DAILY SOIL_MOISTURE_50_DAILY SOIL_MOISTURE_100_DAILY SOIL_TEMP_5_DAILY SOIL_TEMP_10_DAILY SOIL_TEMP_20_DAILY SOIL_TEMP_50_DAILY SOIL_TEMP_100_DAILY 
+64756 20170101  2.422  -73.74   41.79     6.6    -5.4     0.6     2.2     0.0     8.68 C     7.9    -6.6    -0.5    84.8    30.7    53.7 -99.000 -99.000   0.207   0.152   0.175    -0.1     0.0     0.6     1.5     3.4
+64756 20170102  2.422  -73.74   41.79     4.0    -6.8    -1.4    -1.2     0.0     2.08 C     4.1    -7.1    -1.6    91.1    49.1    77.4 -99.000 -99.000   0.205   0.151   0.173    -0.2     0.0     0.6     1.5     3.3
+64756 20170103  2.422  -73.74   41.79     4.9     0.7     2.8     2.7    13.1     0.68 C     3.9     0.1     1.6    96.5    80.1    91.5 -99.000 -99.000   0.205   0.150   0.173    -0.1     0.0     0.5     1.5     3.3
+64756 20170104  2.422  -73.74   41.79     8.7    -1.6     3.6     3.5     1.3     2.85 C     9.4    -4.5     1.3    97.4    34.0    73.1 -99.000 -99.000   0.215   0.153   0.174    -0.1     0.0     0.5     1.5     3.2
+64756 20170105  2.422  -73.74   41.79    -0.5    -4.6    -2.5    -2.8     0.0     4.90 C     5.0    -7.6    -3.3    51.0    34.4    42.5 -99.000 -99.000   0.215   0.154   0.177    -0.1     0.0     0.5     1.4     3.1
+64756 20170106  2.422  -73.74   41.79    -2.5   -10.1    -6.3    -4.7     1.3     5.17 C     1.8   -12.9    -5.2    89.8    40.0    60.8 -99.000 -99.000   0.210   0.153   0.177    -0.2     0.0     0.5     1.4     3.1
+64756 20170107  2.422  -73.74   41.79    -7.3   -11.7    -9.5    -8.7     3.1     1.19 C    -5.0   -19.0    -8.5    84.4    50.9    71.2 -99.000 -99.000   0.204   0.152   0.175    -0.4    -0.1     0.5     1.4     3.0
+64756 20170108  2.422  -73.74   41.79    -5.9   -14.5   -10.2    -9.4     0.0     6.15 C    -5.5   -23.1   -14.0    76.9    40.3    59.8 -99.000 -99.000   0.206   0.150   0.175    -0.4    -0.2     0.4     1.4     3.0
+64756 20170109  2.422  -73.74   41.79    -6.5   -20.2   -13.3   -12.5     0.0     5.86 C    -6.4   -23.4   -16.2    82.5    45.1    65.8 -99.000 -99.000   0.223   0.148   0.175    -0.7    -0.4     0.4     1.3     3.0
 </pre></div>
 </div>
 </div>
@@ -1592,18 +1598,12 @@ Name: temperature, dtype: int64
 <p>Pandas failed to identify the different columns. This is because it was expecting standard CSV (comma-separated values) file. In our file, instead, the values are separated by whitespace. And not a single whilespace–the amount of whitespace between values varies. We can tell pandas this using the <code class="docutils literal notranslate"><span class="pre">sep</span></code> keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'\s+'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\s+'</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_82803/3110905342.py:1: SyntaxWarning: invalid escape sequence '\s'
-  df = pd.read_csv(datafile, sep='\s+')
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1775,18 +1775,12 @@ Name: temperature, dtype: int64
 <p>If we look closely, we will see there are lots of -99 and -9999 values in the file. The <a class="reference internal" href="#ftp://ftp.ncdc.noaa.gov/pub/data/uscrn/products/daily01/README.txt"><span class="xref myst">README file</span></a> tells us that these are values used to represent missing data. Let’s tell this to pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'\s+'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\s+'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.0</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_82803/4090761360.py:1: SyntaxWarning: invalid escape sequence '\s'
-  df = pd.read_csv(datafile, sep='\s+', na_values=[-9999.0, -99.0])
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1958,46 +1952,77 @@ Name: temperature, dtype: int64
 <p>What data types did pandas infer?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.DataFrame'&gt;
-RangeIndex: 365 entries, 0 to 364
-Data columns (total 28 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   WBANNO                   365 non-null    int64  
- 1   LST_DATE                 365 non-null    int64  
- 2   CRX_VN                   365 non-null    float64
- 3   LONGITUDE                365 non-null    float64
- 4   LATITUDE                 365 non-null    float64
- 5   T_DAILY_MAX              364 non-null    float64
- 6   T_DAILY_MIN              364 non-null    float64
- 7   T_DAILY_MEAN             364 non-null    float64
- 8   T_DAILY_AVG              364 non-null    float64
- 9   P_DAILY_CALC             364 non-null    float64
- 10  SOLARAD_DAILY            364 non-null    float64
- 11  SUR_TEMP_DAILY_TYPE      365 non-null    str    
- 12  SUR_TEMP_DAILY_MAX       364 non-null    float64
- 13  SUR_TEMP_DAILY_MIN       364 non-null    float64
- 14  SUR_TEMP_DAILY_AVG       364 non-null    float64
- 15  RH_DAILY_MAX             364 non-null    float64
- 16  RH_DAILY_MIN             364 non-null    float64
- 17  RH_DAILY_AVG             364 non-null    float64
- 18  SOIL_MOISTURE_5_DAILY    317 non-null    float64
- 19  SOIL_MOISTURE_10_DAILY   317 non-null    float64
- 20  SOIL_MOISTURE_20_DAILY   336 non-null    float64
- 21  SOIL_MOISTURE_50_DAILY   364 non-null    float64
- 22  SOIL_MOISTURE_100_DAILY  359 non-null    float64
- 23  SOIL_TEMP_5_DAILY        364 non-null    float64
- 24  SOIL_TEMP_10_DAILY       364 non-null    float64
- 25  SOIL_TEMP_20_DAILY       364 non-null    float64
- 26  SOIL_TEMP_50_DAILY       364 non-null    float64
- 27  SOIL_TEMP_100_DAILY      364 non-null    float64
-dtypes: float64(25), int64(2), str(1)
-memory usage: 80.3 KB
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method DataFrame.info of      WBANNO  LST_DATE  CRX_VN  LONGITUDE  LATITUDE  T_DAILY_MAX  T_DAILY_MIN  \
+0     64756  20170101   2.422     -73.74     41.79          6.6         -5.4   
+1     64756  20170102   2.422     -73.74     41.79          4.0         -6.8   
+2     64756  20170103   2.422     -73.74     41.79          4.9          0.7   
+3     64756  20170104   2.422     -73.74     41.79          8.7         -1.6   
+4     64756  20170105   2.422     -73.74     41.79         -0.5         -4.6   
+..      ...       ...     ...        ...       ...          ...          ...   
+360   64756  20171227   2.622     -73.74     41.79         -6.7        -19.3   
+361   64756  20171228   2.622     -73.74     41.79        -10.3        -21.5   
+362   64756  20171229   2.622     -73.74     41.79         -9.4        -19.0   
+363   64756  20171230   2.622     -73.74     41.79         -7.1        -18.9   
+364   64756  20171231   2.622     -73.74     41.79        -12.3        -21.8   
+
+     T_DAILY_MEAN  T_DAILY_AVG  P_DAILY_CALC  ...  SOIL_MOISTURE_5_DAILY  \
+0             0.6          2.2           0.0  ...                    NaN   
+1            -1.4         -1.2           0.0  ...                    NaN   
+2             2.8          2.7          13.1  ...                    NaN   
+3             3.6          3.5           1.3  ...                    NaN   
+4            -2.5         -2.8           0.0  ...                    NaN   
+..            ...          ...           ...  ...                    ...   
+360         -13.0        -12.9           0.0  ...                  0.258   
+361         -15.9        -15.8           0.0  ...                  0.235   
+362         -14.2        -14.7           0.0  ...                    NaN   
+363         -13.0        -13.6           1.1  ...                    NaN   
+364         -17.0        -16.7           0.0  ...                    NaN   
+
+    SOIL_MOISTURE_10_DAILY  SOIL_MOISTURE_20_DAILY  SOIL_MOISTURE_50_DAILY  \
+0                      NaN                   0.207                   0.152   
+1                      NaN                   0.205                   0.151   
+2                      NaN                   0.205                   0.150   
+3                      NaN                   0.215                   0.153   
+4                      NaN                   0.215                   0.154   
+..                     ...                     ...                     ...   
+360                  0.238                   0.215                   0.166   
+361                  0.244                   0.211                   0.165   
+362                    NaN                   0.207                   0.163   
+363                    NaN                   0.203                   0.161   
+364                    NaN                   0.200                   0.160   
+
+     SOIL_MOISTURE_100_DAILY  SOIL_TEMP_5_DAILY  SOIL_TEMP_10_DAILY  \
+0                      0.175               -0.1                 0.0   
+1                      0.173               -0.2                 0.0   
+2                      0.173               -0.1                 0.0   
+3                      0.174               -0.1                 0.0   
+4                      0.177               -0.1                 0.0   
+..                       ...                ...                 ...   
+360                    0.170                0.8                 1.0   
+361                    0.168                0.4                 0.6   
+362                    0.167                0.1                 0.4   
+363                    0.166                0.0                 0.2   
+364                    0.165               -0.2                 0.1   
+
+     SOIL_TEMP_20_DAILY  SOIL_TEMP_50_DAILY  SOIL_TEMP_100_DAILY  
+0                   0.6                 1.5                  3.4  
+1                   0.6                 1.5                  3.3  
+2                   0.5                 1.5                  3.3  
+3                   0.5                 1.5                  3.2  
+4                   0.5                 1.4                  3.1  
+..                  ...                 ...                  ...  
+360                 1.7                 3.1                  4.6  
+361                 1.4                 2.8                  4.5  
+362                 1.1                 2.6                  4.3  
+363                 0.9                 2.4                  4.1  
+364                 0.8                 2.2                  4.0  
+
+[365 rows x 28 columns]&gt;
 </pre></div>
 </div>
 </div>
@@ -2005,7 +2030,7 @@ memory usage: 80.3 KB
 <p>One problem here is that pandas did not recognize the <code class="docutils literal notranslate"><span class="pre">LDT_DATE</span></code> column as a date. Let’s help it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'\s+'</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\s+'</span><span class="p">,</span>
                  <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.0</span><span class="p">],</span>
                  <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -2048,12 +2073,6 @@ Data columns (total 28 columns):
  27  SOIL_TEMP_100_DAILY      364 non-null    float64       
 dtypes: datetime64[us](1), float64(25), int64(1), str(1)
 memory usage: 80.3 KB
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-&lt;&gt;:1: SyntaxWarning: invalid escape sequence '\s'
-/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_82803/293020238.py:1: SyntaxWarning: invalid escape sequence '\s'
-  df = pd.read_csv(datafile, sep='\s+',
 </pre></div>
 </div>
 </div>
@@ -3440,207 +3459,384 @@ Name: 2017-08-07 00:00:00, dtype: object
 <p>Since pandas understands time, we can use it to do resampling.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># monthly reampler object</span>
-<span class="n">rs_obj</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'MS'</span><span class="p">)</span>
-<span class="n">rs_obj</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># monthly reampler object + mean </span>
+<span class="n">df_mm</span>  <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'MS'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_mm</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x174e83e60&gt;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WBANNO</th>
+      <th>CRX_VN</th>
+      <th>LONGITUDE</th>
+      <th>LATITUDE</th>
+      <th>T_DAILY_MAX</th>
+      <th>T_DAILY_MIN</th>
+      <th>T_DAILY_MEAN</th>
+      <th>T_DAILY_AVG</th>
+      <th>P_DAILY_CALC</th>
+      <th>SOLARAD_DAILY</th>
+      <th>...</th>
+      <th>SOIL_MOISTURE_5_DAILY</th>
+      <th>SOIL_MOISTURE_10_DAILY</th>
+      <th>SOIL_MOISTURE_20_DAILY</th>
+      <th>SOIL_MOISTURE_50_DAILY</th>
+      <th>SOIL_MOISTURE_100_DAILY</th>
+      <th>SOIL_TEMP_5_DAILY</th>
+      <th>SOIL_TEMP_10_DAILY</th>
+      <th>SOIL_TEMP_20_DAILY</th>
+      <th>SOIL_TEMP_50_DAILY</th>
+      <th>SOIL_TEMP_100_DAILY</th>
+    </tr>
+    <tr>
+      <th>LST_DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>3.945161</td>
+      <td>-3.993548</td>
+      <td>-0.025806</td>
+      <td>0.038710</td>
+      <td>3.090323</td>
+      <td>4.690000</td>
+      <td>...</td>
+      <td>0.236900</td>
+      <td>0.248300</td>
+      <td>0.204550</td>
+      <td>0.152806</td>
+      <td>0.175194</td>
+      <td>0.209677</td>
+      <td>0.267742</td>
+      <td>0.696774</td>
+      <td>1.438710</td>
+      <td>2.877419</td>
+    </tr>
+    <tr>
+      <th>2017-02-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>7.246429</td>
+      <td>-4.360714</td>
+      <td>1.442857</td>
+      <td>1.839286</td>
+      <td>2.414286</td>
+      <td>10.364286</td>
+      <td>...</td>
+      <td>0.226333</td>
+      <td>0.243000</td>
+      <td>0.207545</td>
+      <td>0.152857</td>
+      <td>0.175786</td>
+      <td>1.125000</td>
+      <td>1.100000</td>
+      <td>1.192857</td>
+      <td>1.492857</td>
+      <td>2.367857</td>
+    </tr>
+    <tr>
+      <th>2017-03-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>5.164516</td>
+      <td>-5.335484</td>
+      <td>-0.090323</td>
+      <td>0.167742</td>
+      <td>3.970968</td>
+      <td>13.113548</td>
+      <td>...</td>
+      <td>0.218033</td>
+      <td>0.229267</td>
+      <td>0.196258</td>
+      <td>0.153484</td>
+      <td>0.174548</td>
+      <td>2.122581</td>
+      <td>2.161290</td>
+      <td>2.345161</td>
+      <td>2.700000</td>
+      <td>3.387097</td>
+    </tr>
+    <tr>
+      <th>2017-04-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>17.813333</td>
+      <td>5.170000</td>
+      <td>11.493333</td>
+      <td>11.540000</td>
+      <td>2.300000</td>
+      <td>14.645000</td>
+      <td>...</td>
+      <td>0.199733</td>
+      <td>0.210300</td>
+      <td>0.190667</td>
+      <td>0.151000</td>
+      <td>0.172400</td>
+      <td>11.066667</td>
+      <td>10.666667</td>
+      <td>9.636667</td>
+      <td>8.426667</td>
+      <td>6.903333</td>
+    </tr>
+    <tr>
+      <th>2017-05-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>19.151613</td>
+      <td>7.338710</td>
+      <td>13.229032</td>
+      <td>13.638710</td>
+      <td>4.141935</td>
+      <td>16.519677</td>
+      <td>...</td>
+      <td>0.206613</td>
+      <td>0.210935</td>
+      <td>0.185613</td>
+      <td>0.147710</td>
+      <td>0.170000</td>
+      <td>16.454839</td>
+      <td>16.290323</td>
+      <td>15.361290</td>
+      <td>14.270968</td>
+      <td>12.696774</td>
+    </tr>
+    <tr>
+      <th>2017-06-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>25.423333</td>
+      <td>12.176667</td>
+      <td>18.796667</td>
+      <td>18.986667</td>
+      <td>3.743333</td>
+      <td>21.655000</td>
+      <td>...</td>
+      <td>0.185167</td>
+      <td>0.184300</td>
+      <td>0.173167</td>
+      <td>0.142533</td>
+      <td>0.167000</td>
+      <td>22.350000</td>
+      <td>22.166667</td>
+      <td>20.880000</td>
+      <td>19.370000</td>
+      <td>17.333333</td>
+    </tr>
+    <tr>
+      <th>2017-07-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>26.912903</td>
+      <td>15.183871</td>
+      <td>21.048387</td>
+      <td>20.993548</td>
+      <td>2.732258</td>
+      <td>20.566129</td>
+      <td>...</td>
+      <td>0.131226</td>
+      <td>0.115774</td>
+      <td>0.116613</td>
+      <td>0.121032</td>
+      <td>0.156677</td>
+      <td>24.993548</td>
+      <td>24.980645</td>
+      <td>23.925806</td>
+      <td>22.745161</td>
+      <td>21.164516</td>
+    </tr>
+    <tr>
+      <th>2017-08-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>25.741935</td>
+      <td>12.954839</td>
+      <td>19.351613</td>
+      <td>19.477419</td>
+      <td>2.758065</td>
+      <td>18.360000</td>
+      <td>...</td>
+      <td>0.143871</td>
+      <td>0.122258</td>
+      <td>0.105452</td>
+      <td>0.115290</td>
+      <td>0.151034</td>
+      <td>23.374194</td>
+      <td>23.519355</td>
+      <td>22.848387</td>
+      <td>22.193548</td>
+      <td>21.377419</td>
+    </tr>
+    <tr>
+      <th>2017-09-01</th>
+      <td>64756.0</td>
+      <td>2.422000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>24.186667</td>
+      <td>11.300000</td>
+      <td>17.746667</td>
+      <td>17.463333</td>
+      <td>1.893333</td>
+      <td>15.154667</td>
+      <td>...</td>
+      <td>0.145167</td>
+      <td>0.139633</td>
+      <td>0.117267</td>
+      <td>0.112167</td>
+      <td>0.141926</td>
+      <td>20.256667</td>
+      <td>20.386667</td>
+      <td>19.966667</td>
+      <td>19.766667</td>
+      <td>19.530000</td>
+    </tr>
+    <tr>
+      <th>2017-10-01</th>
+      <td>64756.0</td>
+      <td>2.602645</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>21.043333</td>
+      <td>7.150000</td>
+      <td>14.100000</td>
+      <td>13.976667</td>
+      <td>3.500000</td>
+      <td>10.395000</td>
+      <td>...</td>
+      <td>0.151767</td>
+      <td>0.137767</td>
+      <td>0.111900</td>
+      <td>0.108900</td>
+      <td>0.122067</td>
+      <td>16.086667</td>
+      <td>16.193333</td>
+      <td>16.370000</td>
+      <td>16.893333</td>
+      <td>17.386667</td>
+    </tr>
+    <tr>
+      <th>2017-11-01</th>
+      <td>64756.0</td>
+      <td>2.622000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>10.346667</td>
+      <td>-2.093333</td>
+      <td>4.120000</td>
+      <td>4.336667</td>
+      <td>0.826667</td>
+      <td>6.723333</td>
+      <td>...</td>
+      <td>0.241633</td>
+      <td>0.224467</td>
+      <td>0.203367</td>
+      <td>0.159500</td>
+      <td>0.155233</td>
+      <td>7.056667</td>
+      <td>7.273333</td>
+      <td>8.043333</td>
+      <td>9.633333</td>
+      <td>11.440000</td>
+    </tr>
+    <tr>
+      <th>2017-12-01</th>
+      <td>64756.0</td>
+      <td>2.622000</td>
+      <td>-73.74</td>
+      <td>41.79</td>
+      <td>1.496774</td>
+      <td>-7.412903</td>
+      <td>-2.967742</td>
+      <td>-2.838710</td>
+      <td>2.109677</td>
+      <td>4.474194</td>
+      <td>...</td>
+      <td>0.255929</td>
+      <td>0.239071</td>
+      <td>0.213258</td>
+      <td>0.165387</td>
+      <td>0.163290</td>
+      <td>2.064516</td>
+      <td>2.241935</td>
+      <td>2.874194</td>
+      <td>4.248387</td>
+      <td>6.019355</td>
+    </tr>
+  </tbody>
+</table>
+<p>12 rows × 26 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/resample.py:1532,</span> in <span class="ni">Resampler.mean</span><span class="nt">(self, numeric_only)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1480</span> <span class="nd">@final</span>
-<span class="g g-Whitespace">   </span><span class="mi">1481</span> <span class="k">def</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1482</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1483</span>     <span class="n">numeric_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1484</span> <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1485</span><span class="w">     </span><span class="sd">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1486</span><span class="sd">     Compute mean of groups, excluding missing values.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1487</span><span class="sd"> </span>
-<span class="sd">   (...)   1530     Freq: MS, dtype: float64</span>
-<span class="g g-Whitespace">   </span><span class="mi">1531</span><span class="sd">     """</span>
-<span class="ne">-&gt; </span><span class="mi">1532</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_downsample</span><span class="p">(</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/resample.py:2102,</span> in <span class="ni">DatetimeIndexResampler._downsample</span><span class="nt">(self, how, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2098</span>     <span class="k">return</span> <span class="n">obj</span>
-<span class="g g-Whitespace">   </span><span class="mi">2100</span> <span class="c1"># we are downsampling</span>
-<span class="g g-Whitespace">   </span><span class="mi">2101</span> <span class="c1"># we want to call the actual grouper method here</span>
-<span class="ne">-&gt; </span><span class="mi">2102</span> <span class="n">result</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_grouper</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">how</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2103</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/generic.py:2291,</span> in <span class="ni">DataFrameGroupBy.aggregate</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2288</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">"engine_kwargs"</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_kwargs</span>
-<span class="g g-Whitespace">   </span><span class="mi">2290</span> <span class="n">op</span> <span class="o">=</span> <span class="n">GroupByApply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2291</span> <span class="n">result</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">agg</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2292</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_dict_like</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2293</span>     <span class="c1"># GH #52849</span>
-<span class="g g-Whitespace">   </span><span class="mi">2294</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_index</span> <span class="ow">and</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:291,</span> in <span class="ni">Apply.agg</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">291</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_str</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="k">if</span> <span class="n">is_dict_like</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_dict_like</span><span class="p">()</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:701,</span> in <span class="ni">Apply.apply_str</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span>     <span class="k">if</span> <span class="s2">"axis"</span> <span class="ow">in</span> <span class="n">arg_names</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">698</span>         <span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="n">SeriesGroupBy</span><span class="p">,</span> <span class="n">DataFrameGroupBy</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">699</span>     <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span>         <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">"axis"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span>
-<span class="ne">--&gt; </span><span class="mi">701</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_str</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/apply.py:792,</span> in <span class="ni">Apply._apply_str</span><span class="nt">(self, obj, func, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span> <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">792</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="c1"># people may aggregate on a non-callable attribute</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span> <span class="c1"># but don't let them think they can pass args to it</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span> <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:2285,</span> in <span class="ni">GroupBy.mean</span><span class="nt">(self, numeric_only, skipna, engine, engine_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2277</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numba_agg_general</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2278</span>         <span class="n">grouped_mean</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2279</span>         <span class="n">executor</span><span class="o">.</span><span class="n">float_dtype_mapping</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2282</span>         <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2283</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2284</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2285</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cython_agg_general</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2286</span>         <span class="s2">"mean"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2287</span>         <span class="n">alt</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2288</span>             <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span>
-<span class="g g-Whitespace">   </span><span class="mi">2289</span>         <span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2290</span>         <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2291</span>         <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2292</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2293</span>     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"groupby"</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:1808,</span> in <span class="ni">GroupBy._cython_agg_general</span><span class="nt">(self, how, alt, numeric_only, min_count, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1805</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_py_fallback</span><span class="p">(</span><span class="n">how</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="n">alt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1806</span>     <span class="k">return</span> <span class="n">result</span>
-<span class="ne">-&gt; </span><span class="mi">1808</span> <span class="n">new_mgr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">grouped_reduce</span><span class="p">(</span><span class="n">array_func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1809</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_agged_manager</span><span class="p">(</span><span class="n">new_mgr</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1810</span> <span class="k">if</span> <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"idxmin"</span><span class="p">,</span> <span class="s2">"idxmax"</span><span class="p">]:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1811</span>     <span class="c1"># mypy expects how to be Literal["idxmin", "idxmax"].</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/internals/managers.py:1667,</span> in <span class="ni">BlockManager.grouped_reduce</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1665</span>             <span class="n">result_blocks</span> <span class="o">=</span> <span class="n">extend_blocks</span><span class="p">(</span><span class="n">applied</span><span class="p">,</span> <span class="n">result_blocks</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1666</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1667</span>         <span class="n">applied</span> <span class="o">=</span> <span class="n">blk</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1668</span>         <span class="n">result_blocks</span> <span class="o">=</span> <span class="n">extend_blocks</span><span class="p">(</span><span class="n">applied</span><span class="p">,</span> <span class="n">result_blocks</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1670</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result_blocks</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/internals/blocks.py:347,</span> in <span class="ni">Block.apply</span><span class="nt">(self, func, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="nd">@final</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Block</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="w">     </span><span class="sd">"""</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span><span class="sd">     apply the function to my values; return a block if we are not</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     one</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="sd">     """</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">maybe_coerce_values</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_split_op_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/groupby.py:1783,</span> in <span class="ni">GroupBy._cython_agg_general.&lt;locals&gt;.array_func</span><span class="nt">(values)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1781</span> <span class="k">def</span><span class="w"> </span><span class="nf">array_func</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayLike</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1782</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1783</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grouper</span><span class="o">.</span><span class="n">_cython_operation</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1784</span>             <span class="s2">"aggregate"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1785</span>             <span class="n">values</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1786</span>             <span class="n">how</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1787</span>             <span class="n">axis</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1788</span>             <span class="n">min_count</span><span class="o">=</span><span class="n">min_count</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1789</span>             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1790</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1791</span>     <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1792</span>         <span class="c1"># generally if we have numeric_only=False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1793</span>         <span class="c1"># and non-applicable functions</span>
-<span class="g g-Whitespace">   </span><span class="mi">1794</span>         <span class="c1"># try to python agg</span>
-<span class="g g-Whitespace">   </span><span class="mi">1795</span>         <span class="c1"># TODO: shouldn't min_count matter?</span>
-<span class="g g-Whitespace">   </span><span class="mi">1796</span>         <span class="c1"># TODO: avoid special casing SparseArray here</span>
-<span class="g g-Whitespace">   </span><span class="mi">1797</span>         <span class="k">if</span> <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"any"</span><span class="p">,</span> <span class="s2">"all"</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">):</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/ops.py:963,</span> in <span class="ni">BaseGrouper._cython_operation</span><span class="nt">(self, kind, values, how, axis, min_count, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span> <span class="k">assert</span> <span class="n">kind</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"aggregate"</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">961</span> <span class="n">cy_op</span> <span class="o">=</span> <span class="n">WrappedCythonOp</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">has_dropped_na</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">has_dropped_na</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">963</span> <span class="k">return</span> <span class="n">cy_op</span><span class="o">.</span><span class="n">cython_operation</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">964</span>     <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">965</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">966</span>     <span class="n">min_count</span><span class="o">=</span><span class="n">min_count</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">967</span>     <span class="n">comp_ids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">968</span>     <span class="n">ngroups</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ngroups</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">969</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">970</span> <span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/groupby/ops.py:553,</span> in <span class="ni">WrappedCythonOp.cython_operation</span><span class="nt">(self, values, axis, min_count, comp_ids, ngroups, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">552</span>     <span class="c1"># i.e. ExtensionArray</span>
-<span class="ne">--&gt; </span><span class="mi">553</span>     <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">_groupby_op</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span>         <span class="n">how</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">how</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">555</span>         <span class="n">has_dropped_na</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">has_dropped_na</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span>         <span class="n">min_count</span><span class="o">=</span><span class="n">min_count</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span>         <span class="n">ngroups</span><span class="o">=</span><span class="n">ngroups</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span>         <span class="n">ids</span><span class="o">=</span><span class="n">comp_ids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cython_op_ndim_compat</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span>     <span class="n">values</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span>     <span class="n">min_count</span><span class="o">=</span><span class="n">min_count</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">568</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/arrays/arrow/array.py:2748,</span> in <span class="ni">ArrowExtensionArray._groupby_op</span><span class="nt">(self, how, has_dropped_na, min_count, ngroups, ids, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2736</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">StringDtype</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2737</span>     <span class="k">if</span> <span class="n">how</span> <span class="ow">in</span> <span class="p">[</span>
-<span class="g g-Whitespace">   </span><span class="mi">2738</span>         <span class="s2">"prod"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2739</span>         <span class="s2">"mean"</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2746</span>         <span class="s2">"skew"</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2747</span>     <span class="p">]:</span>
-<span class="ne">-&gt; </span><span class="mi">2748</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2749</span>             <span class="sa">f</span><span class="s2">"dtype '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">' does not support operation '</span><span class="si">{</span><span class="n">how</span><span class="si">}</span><span class="s2">'"</span>
-<span class="g g-Whitespace">   </span><span class="mi">2750</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2751</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_groupby_op</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2752</span>         <span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2753</span>         <span class="n">has_dropped_na</span><span class="o">=</span><span class="n">has_dropped_na</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2757</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2758</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2760</span> <span class="c1"># maybe convert to a compatible dtype optimized for groupby</span>
-
-<span class="ne">TypeError</span>: dtype 'str' does not support operation 'mean'
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can chain all of that together</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'MS'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Incredible!!</span>
 <span class="n">df_mm</span><span class="p">[[</span><span class="s1">'T_DAILY_MIN'</span><span class="p">,</span> <span class="s1">'T_DAILY_MEAN'</span><span class="p">,</span> <span class="s1">'T_DAILY_MAX'</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel='LST_DATE'&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel='LST_DATE'&gt;
 </pre></div>
 </div>
-<img alt="../_images/09504cad077daa596678e831e097795fb3fd0e4dad8c3c97da2a3d40b9baaa04.png" src="../_images/09504cad077daa596678e831e097795fb3fd0e4dad8c3c97da2a3d40b9baaa04.png" />
+<img alt="../_images/a6c2da0363f62e334648fd3437b5c7804ad60120f04bc647e90df724daf947c7.png" src="../_images/a6c2da0363f62e334648fd3437b5c7804ad60120f04bc647e90df724daf947c7.png" />
 </div>
 </div>
 <p>Next time we will dig deeper into resampling, rolling means, and grouping operations (groupby).</p>
