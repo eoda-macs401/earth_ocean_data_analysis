@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -471,7 +471,7 @@ According to Wikipedia:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1983-01-15 07:15:00
-2026-10-25 23:50:17.271174
+2026-11-09 13:19:05.285963
 </pre></div>
 </div>
 </div>
@@ -486,7 +486,7 @@ According to Wikipedia:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15989
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16004
 </pre></div>
 </div>
 </div>
@@ -537,7 +537,7 @@ Sep 1854,13.40161
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_82891/2687805252.py:6: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_74490/2687805252.py:6: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv('https://raw.githubusercontent.com/eoda-macs401/earth_ocean_data_analysis/main/data/ERSST_nearForks.csv', parse_dates=[0])
 </pre></div>
 </div>
@@ -616,68 +616,16 @@ memory usage: 31.8 KB
 <p>And here we’ll print the first and last datenum entries:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"First and last values of datenum column:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/indexes/base.py:3641,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3640</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3641</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3642</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File pandas/_libs/index.pyx:168,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-<span class="ne">--&gt; </span><span class="mi">168</span> <span class="s1">'Could not get source, probably due dynamically evaluated source code.'</span>
-
-<span class="nn">File pandas/_libs/index.pyx:176,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-<span class="ne">--&gt; </span><span class="mi">176</span> <span class="s1">'Could not get source, probably due dynamically evaluated source code.'</span>
-
-<span class="nn">File pandas/_libs/index.pyx:583,</span> in <span class="ni">pandas._libs.index.StringObjectEngine._check_type</span><span class="nt">()</span>
-<span class="ne">--&gt; </span><span class="mi">583</span> <span class="s1">'Could not get source, probably due dynamically evaluated source code.'</span>
-
-<span class="ne">KeyError</span>: 0
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/series.py:959,</span> in <span class="ni">Series.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">954</span>     <span class="n">key</span> <span class="o">=</span> <span class="n">unpack_1tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="k">elif</span> <span class="n">key_is_scalar</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">957</span>     <span class="c1"># Note: GH#50617 in 3.0 we changed int key to always be treated as</span>
-<span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="c1">#  a label, matching DataFrame behavior.</span>
-<span class="ne">--&gt; </span><span class="mi">959</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_value</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">961</span> <span class="c1"># Convert generator to list before going through hashable part</span>
-<span class="g g-Whitespace">    </span><span class="mi">962</span> <span class="c1"># (We will iterate through the generator there to check for slices)</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span> <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/series.py:1046,</span> in <span class="ni">Series._get_value</span><span class="nt">(self, label, takeable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1043</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1045</span> <span class="c1"># Similar to Index.get_value, but we do not fall back to positional</span>
-<span class="ne">-&gt; </span><span class="mi">1046</span> <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">loc</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">loc</span><span class="p">]</span>
-
-<span class="nn">File /opt/homebrew/anaconda3/envs/geoscience/lib/python3.12/site-packages/pandas/core/indexes/base.py:3648,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3643</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3644</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3645</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3646</span>     <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3647</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
-<span class="ne">-&gt; </span><span class="mi">3648</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">3649</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3650</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3651</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3652</span>     <span class="c1">#  the TypeError.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3653</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First and last values of datenum column:
+1854-01-01 00:00:00
+2022-12-01 00:00:00
 </pre></div>
 </div>
 </div>
@@ -706,7 +654,7 @@ memory usage: 31.8 KB
 <p>Now - if we didn’t already have the sample dates all ready - monthly dates since 1854, sampled on the first of the month - we’d want to create our array of datetimes.  Pandas makes this easy on us as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1854-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1854-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'ME'</span><span class="p">)</span>
 <span class="n">dates</span>
 </pre></div>
 </div>
@@ -719,17 +667,17 @@ memory usage: 31.8 KB
                '2022-03-31', '2022-04-30', '2022-05-31', '2022-06-30',
                '2022-07-31', '2022-08-31', '2022-09-30', '2022-10-31',
                '2022-11-30', '2022-12-31'],
-              dtype='datetime64[ns]', length=2028, freq='M')
+              dtype='datetime64[us]', length=2028, freq='ME')
 </pre></div>
 </div>
 </div>
 </div>
-<p>In the above, the ‘M’ references monthly frequency. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">Here is a list</a> of the shorthand (aliases) strings for sampling frequencies datetime understands.</p>
-<p>We see now that we made a pandas <code class="docutils literal notranslate"><span class="pre">series</span></code> of datetime objects, and it’s the correct length <strong>but</strong> it’s starting at the end of the month rather than the begining.  One way to fix this is to define it from the previous month and add a day… What if we want to add a certain amount of time from our datetime objects?</p>
-<p>Here we’ll use the datetime library for the first time:</p>
+<p>In the above, the ‘ME’ references monthly (Month-End) frequency. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">Here is a list</a> of the shorthand (aliases) strings for sampling frequencies datetime understands.</p>
+<p>We see now that we made a pandas <code class="docutils literal notranslate"><span class="pre">series</span></code> of datetime objects, and it’s the correct length <strong>but</strong> it’s starting at the end of the month rather than the begining.  Of course, there are multiple ways to fix this - one would be to use the “MS” alias. Another (maybe more fun?) way to fix this is to define it from the previous month and add a day… Here’s a demonstration of how we add a certain amount of time to our datetime objects.</p>
+<p>We’ll use the datetime library for the first time:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1853-12'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'M'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1853-12'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'ME'</span><span class="p">)</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">dates</span>
 </pre></div>
@@ -743,13 +691,13 @@ memory usage: 31.8 KB
                '2022-03-01', '2022-04-01', '2022-05-01', '2022-06-01',
                '2022-07-01', '2022-08-01', '2022-09-01', '2022-10-01',
                '2022-11-01', '2022-12-01'],
-              dtype='datetime64[ns]', length=2028, freq=None)
+              dtype='datetime64[us]', length=2028, freq=None)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Cool - that looks right now!</p>
-<p>Again - there are multiple ways to do this.  Had we been paying attention - we would have noticed that there was an alias to the Month Start frequency!</p>
+<p>Cool - that looks like what we want!</p>
+<p>Again - there are multiple ways to do this.  Had we been paying attention - we would have noticed that there was an alias to the Month Start frequency and that might have been the fastest way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1854-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">freq</span> <span class="o">=</span> <span class="s1">'MS'</span><span class="p">)</span>
@@ -765,7 +713,7 @@ memory usage: 31.8 KB
                '2022-03-01', '2022-04-01', '2022-05-01', '2022-06-01',
                '2022-07-01', '2022-08-01', '2022-09-01', '2022-10-01',
                '2022-11-01', '2022-12-01'],
-              dtype='datetime64[ns]', length=2028, freq='MS')
+              dtype='datetime64[us]', length=2028, freq='MS')
 </pre></div>
 </div>
 </div>
@@ -813,7 +761,7 @@ Freq: MS, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'degrees C')
 </pre></div>
 </div>
-<img alt="../_images/60600471328f25496212c652721e86e3adb884443020db2d06eb40a1d9fd456b.png" src="../_images/60600471328f25496212c652721e86e3adb884443020db2d06eb40a1d9fd456b.png" />
+<img alt="../_images/8cf258e2fed1d60c51e734f967b2e90c000799da5b91c7a02246eeb636d085b2.png" src="../_images/8cf258e2fed1d60c51e734f967b2e90c000799da5b91c7a02246eeb636d085b2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -830,7 +778,7 @@ Freq: MS, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'degrees C')
 </pre></div>
 </div>
-<img alt="../_images/010dd62df3dd21c4c1350fcef7ad090e8cd5296de7849559d9830657f5374475.png" src="../_images/010dd62df3dd21c4c1350fcef7ad090e8cd5296de7849559d9830657f5374475.png" />
+<img alt="../_images/9fff1907fa2d6eb2c16dbd75bd116f19dc69fe9c685f2689c2687b63c466ee75.png" src="../_images/9fff1907fa2d6eb2c16dbd75bd116f19dc69fe9c685f2689c2687b63c466ee75.png" />
 </div>
 </div>
 </section>
@@ -855,10 +803,10 @@ Freq: MS, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../_images/ce8ff2731bb716295a5b59835e2a5c88fdd1dd273324e4cf3a298f87beb3193a.png" src="../_images/ce8ff2731bb716295a5b59835e2a5c88fdd1dd273324e4cf3a298f87beb3193a.png" />
+<img alt="../_images/3386eab838d676c8d9a342bfef8a8d60514b1a684ebb54039bc35d0d2ed1807a.png" src="../_images/3386eab838d676c8d9a342bfef8a8d60514b1a684ebb54039bc35d0d2ed1807a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -928,7 +876,7 @@ Freq: 30D, dtype: float64
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 7.682585,  7.798013,  8.468447, ..., 13.92642 , 10.87333 ,
-        8.892098])
+        8.892098], shape=(2028,))
 </pre></div>
 </div>
 </div>
@@ -1033,7 +981,7 @@ Freq: 30D, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, 'FFT Amplitude')
 </pre></div>
 </div>
-<img alt="../_images/b74570e75e3536641e710c2334f05f7be5f064adaa1abd7ebe9832c9e7eca8b4.png" src="../_images/b74570e75e3536641e710c2334f05f7be5f064adaa1abd7ebe9832c9e7eca8b4.png" />
+<img alt="../_images/e909962635858647ec1eef6f5d5fbdcebf38039ac13eac1a078e0e87dc7c592f.png" src="../_images/e909962635858647ec1eef6f5d5fbdcebf38039ac13eac1a078e0e87dc7c592f.png" />
 </div>
 </div>
 <p>Great!  Here we see a signal at zero freqency (this is a DC, or non-periodic function… maybe climate change?) and a strong peak at ~ 0.00275 samples/day (this is ABOUT the same as 360 days!).  Whew… glad this worked!!</p>
@@ -1053,14 +1001,14 @@ Freq: 30D, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-23-b0a5c4b0907e&gt;:2: RuntimeWarning: divide by zero encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/z0/wrqywbc546q6t6qyr2y02h6m0000gp/T/ipykernel_74490/2556024427.py:2: RuntimeWarning: divide by zero encountered in divide
   plt.plot(1/f_oneside/365, f_spec_oneside, 'b')
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 25.0)
 </pre></div>
 </div>
-<img alt="../_images/312b9238758cfdfb4c7e2365b7731bd9f1e0942790aab8a11133e53922acaa8f.png" src="../_images/312b9238758cfdfb4c7e2365b7731bd9f1e0942790aab8a11133e53922acaa8f.png" />
+<img alt="../_images/021dc25598ad5e9c85852f565c5ab62d302ca3812001af171a2a4524a9ceaeb0.png" src="../_images/021dc25598ad5e9c85852f565c5ab62d302ca3812001af171a2a4524a9ceaeb0.png" />
 </div>
 </div>
 <p>Here we can see peaks at something less than a year, a strong peak at a year - indicating seasonal cycles in SST.  Technically the zero frequency spectral response is for a period of infinity (t = 1/f) - so technically we should make this plot stretch to infinity, but we we are sampling less than a half a cycle for any periods longer than our record length - which is about 170 yeard.</p>
