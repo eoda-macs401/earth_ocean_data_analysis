@@ -36,6 +36,7 @@ parts:
     - file: Assignments/basic_pandas
     - file: Assignments/files_markdown_git
     - file: Assignments/time_series
+    - file: Assignments/regression
   - caption: Project Design
     chapters:
     - file: Pages/organization_and_packaging
